@@ -502,6 +502,54 @@ converter.addEventListener('click', function () {
 */
 
 
+// project - 10 || আপনাকে ৩ টা ডাটা দেয়া আছে।যেখানে একজন মানুষের  বয়স , ভ্যাকসিন গ্রহণের  সংখ্যা এবং সব গুলো ভ্যাকসিন গ্রহণের স্ট্যাটাস দেয়া আছে। ভ্যারিয়েবল গুলোর ডাটার প্যাটার্ন নিচে দেয়া হলো। age = 23 ; vaccineCount = 1 ; isVaccinated = false || আপনাকে নিচে কয়েকটি শর্ত দেয়া হলো। শর্ত গুলো আপনাকে চিন্তা ভাবনা করে সমাধান করতে হবে। আপনি  প্রয়োজন অনুসারে ভ্যারিয়েবল গুলোর  মান পরিবর্তন করতে পারেন ।যাদের বয়স ২০ এর উপরে এবং যারা ২ ডোজ ভ্যাকসিন গ্রহণ করেছে তারা বিদেশ গমন করতে  পারবে।যাদের বয়স ১৫-২০ এর মধ্যে এবং যারা একবারও ভ্যাকসিন গ্রহণ করেনি তাদের কাছে একটি মেসেজ যাবে ভ্যাকসিন দেয়ার জন্য।যাদের বয়স ১৫-২০ এর মধ্যে এবং ২ ডোজ ভ্যাকসিন গ্রহণ করেছে  তাদের isVaccinated আপডেট হয়ে true হয়ে যাবে এবং তাদের কাছে একটি মেসেজ যাবে -“ আপনার ২ ডোজ  ভ্যাকসিন সম্পন্ন হয়েছে। ” ।
+/*
+let age = prompt("How old are you?");
+let vaccineCount = prompt("How many times are you vaccinated?");
+let isVaccinated = false;
+
+if (age > 20 && vaccineCount >= 2) {
+    vaccineCount = true;
+    console.log(`বিদেশ গমন করতে  পারবে।`);
+} else if ((age > 15 && age < 20 && vaccineCount == 0) || vaccineCount == 0) {
+
+    alert(`plz vaccine নিন`);
+} else if (age > 15 && age < 20 && vaccineCount == 2) {
+    vaccineCount = true;
+    alert(`আপনার ২ ডোজ  ভ্যাকসিন সম্পন্ন হয়েছে।`);
+} else {
+    vaccineCount = true;
+    alert(`vaccine নেয়ার জন্য ধন্যবাদ`);
+}
+*/
+
+// project - 11 || তোমার কাছে বর্তমানে একটা নির্দিষ্ট বাজেট রয়েছে ফ্যামিলি ট্যুর দেয়ার জন্য। যেটা budget নামক একটা ভেরিএবলে থাকবে।  নিচের প্রবলেম গুলো পড়  এবং তোমার সিদ্ধান্ত নাও  ।যদি তোমার বাজেট  ৫০০০ এর বেশি হয় তাহলে তুমি ফ্যামিলি কে নিয়ে ট্যুর দিবে । অন্যথায় ৫০০০ এর কম হয় তাহলে ট্যুর না দিয়ে ঘুম দিবে।  যদি তুমি ট্যুর দিতে পারো তার মানে তোমার কাছে ৫০০০ এর বেশি টাকা আছে।  এখন ধরো হোটেল ভাড়া ৪০০০। তাহলে তুমি হিসেবে করো তাহলে হাতে আর কত টাকা এক্সট্রা আছে।  যদি ২০০০এর বেশি টাকা হাতে থাকে তাহলে তুমি বারবিকিউ পার্টি করবে , না হলে ট্যুরে গিয়ে অল্প শপিং করবে।
+
+/*
+let budget = prompt("What's your tour budget?") ;
+
+if (budget > 5000){
+alert(`Get ready for tour`);
+
+
+let hotelCost = 4000;
+let pocketMoney = budget - hotelCost;
+console.log(pocketMoney);
+if (pocketMoney > 2000){
+console.log(`Get ready for BBQ`);
+}
+else{
+console.log(`Get ready for tiny shopping`);
+}
+
+}
+else{
+alert(`Sleep mode on cause budget is low`);
+}
+
+*/
+
+
 // switch, case, default মূলত এক ধরনের conditional statement কিন্তু এক্ষেত্রে কোন রকম range define করা যায় না
 /*
 // this function will not work if you just use prompt only cause switch may work on only number typeof data type. !!!???
