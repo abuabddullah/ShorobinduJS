@@ -1037,15 +1037,19 @@ do {
 
 // same code যাতে বার বার লিখতে না হয় সেই জন্যে function use করা হয়
 
-// basic function structure:
+// ************************** f1. basic function structure: Declare a Function
+
 /*
 function functionName() {
-    // second bracket এর ভিতরে দিতে হয় function এর features বা কর্ম
+    console.log(`second bracket এর ভিতরে দিতে হয় function এর features বা কর্ম`); 
 }
 functionName();
 
-// Function keyword টা use করার পর function এর একটা নাম দিতে হবে। তারপর Function টাকে call করাতে হবে second bracket এর বাহিরে।second bracket পর্যন্ত অংশকে বলা হয় function declaration এবং second bracket এর বাহিরের অংশকে বলা হয় invock of functi0n or calling function. আর function invocking function declaration এর আগেও করা যায় বা পরেও করা যায়।
+// Function keyword টা use করার পর function এর একটা নাম দিতে হবে। তারপর Function টাকে call করাতে হবে second bracket এর বাহিরে।second bracket পর্যন্ত অংশকে বলা হয় function declaration এবং second bracket এর বাহিরের অংশকে বলা হয় invock of functi0n or calling function.
 */
+
+//  আর function invocking function declaration এর আগেও করা যায় বা পরেও করা যায়।
+
 /*
 function function1() {
     console.log(`this is a function invock after declaration`);
@@ -1058,30 +1062,28 @@ function function2() {
 }
 */
 
-/*
-// 1.  making a basiic justFunction
 
-function functionName() {
-    alert('hi my name is asif i am 25 years old and i love js');
-}
-functionName();
-*/
+// ***************************** f2.  making a simply dinamic dyStage1 type Function: Function with parameter
 
-// 1.  making a simply dinamic dyStage1 type Function: dynamic করার জন্য আমাদেরকে function declaration এর সময় এর মধ্যে parameter দিয়ে দিতে হবে যা অনেকটা variable এর মত কাজ করবে আর function invocking এর সময় এর মধ্যে arguments দিয়ে দিতে হবে যা অনেকটা variable এর valueর মত কাজ করবে। আর arguments খালি রাখলে parameter undefined অথবা default value দেখাবে।
+//  dynamic করার জন্য আমাদেরকে function declaration এর সময় এর মধ্যে parameter দিয়ে দিতে হবে যা অনেকটা variable এর মত কাজ করবে আর function invocking এর সময় এর মধ্যে arguments দিয়ে দিতে হবে যা অনেকটা variable এর valueর মত কাজ করবে। আর arguments খালি রাখলে parameter undefined অথবা default value দেখাবে।
 
 /*
 function nameFunction(nameParameter) {
     console.log(`hi my name is ${nameParameter} i am 25 years old and i love js`);
 }
+nameFunction(); // parameter undefined দেখাবে। কারণ nameParameter খালি
+
 nameFunction('RahimArguments');
-nameFunction(); // parameter undefined দেখাবে।
 */
 
+
 // default valued parameter example with multiple  parameter: multiple  parameter এর ক্ষেত্রে parameterগুলো কমা দিয়ে দিয়ে লিখতে হবে এবং argumentsগুলো parameter অনু
+
 /*
-function nameFunction(nameParameter = 'defaultNazrul', ageParameter = 20, skillParameter = 'Default') {
+function nameFunction(nameParameter = 'defaultNazrul', ageParameter = 20, skillParameter = 'skillDefault') {
     console.log(`hi my name is ${nameParameter} i am ${ageParameter} years old and i love ${skillParameter}`);
 }
-nameFunction('RahimArguments', 30, 'Ghum');
+
 nameFunction();
+nameFunction('RahimArguments', 30, 'Ghum');
 */
