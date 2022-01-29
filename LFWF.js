@@ -1322,3 +1322,15 @@ number two = ${numTwo},
 ------------------------------
 result     = ${result}`);
 */
+
+// project f5 : দুদুটা parameter 12,5 কে modulus করতে হবে যার একটা string থাকবে
+/*
+function getReminder(number1, number2) {
+    return number1 % number2;
+}
+
+
+console.log(getReminder(12, "5"));
+console.log(typeof (getReminder(12, "5")));
+
+*/
