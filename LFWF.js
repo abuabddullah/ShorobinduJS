@@ -127,6 +127,7 @@ console.log(`This is concatinated by Template literals, Interpolation : Hi, My n
 ২) Number: সংখ্যা বাচক data যা ('' / "") Symbol ছাড়া লিখতে হয়। সংখ্যা বাচক data কে ('' / "") Symbol ভিতরে লিখলে তা আবার string হয়ে যায়।
 ৩) Boolean: সত্য / মিথ্যা অথবা হ্যা / না মুলক তথ্য সংগ্রহ করা হয়।
 ৪) Array: a combo package of multiple data-type in a sigle variable অর্থাৎ একাধিক type এর data যখন একত্রে কোন variable এর value নির্দেশ করে তখন সেই data গুলোর type কে array data type বলে। array data type গুলোকে  অবশ্যই [] ব্র্যাকেটের ভতরে (,) দিয়ে দিয়ে লিখতে হয়।
+
 for example:*/
 /*
 let varStringWhatsYourName = "Abdullah";
@@ -151,6 +152,76 @@ console.log(`
 --------------------------------
     মোট খরচ = ${মোট} টাকা
 `);*/
+
+
+// ****************************************** Array example:
+/*
+let array1 = [0, 1, 2, 3, 4, 5, 6];
+let array2 = ["a", "e", "i", "o", "u"];
+
+console.log(array1); // arry কে concole এ দেখার জন্য
+console.log(array1.length); // arry তে কয়টা উপাদান আছে জানার জন্য
+console.log(array1.indexOf(5)); // array1 variable এর  উপাদান 5 এর position  জানতে চাই 
+console.log(array1.indexOf(45)); //যদি এমন কোন উপাদানের  বা  indexof জানতে চাওয়া হয় যা আসলে সেই variable এ নাই তখন indexof দেখায় -1
+console.log(array1[5]); // arry এর 5 no index এর উপাদান জানার জন্য
+console.log(array1[5] = "five"); // numbers variable এর 5th index এর উপাদান  change করে five করার জন্য
+console.log(array1); // arry এর recent update কে concole এ দেখার জন্য
+console.log(array1.push("six")); // arry তে শেষ উপাদান হিসেবে six কে add করতে
+console.log(array1);
+console.log(array1.unshift("- one")); // arry তে প্রথম উপাদান হিসেবে - one কে add করতে
+console.log(array1);
+console.log(array1.push("seven")); // arry তে শেষ উপাদান হিসেবে seven কে add করতে
+console.log(array1);
+console.log(array1.unshift("-two")); // arry তে প্রথম উপাদান হিসেবে - two কে add করতে
+console.log(array1);
+console.log(array1.pop()); // arry এর শেষ উপাদানকে  কে remove করতে
+console.log(array1);
+console.log(array1.shift()); // arry এর প্রথম উপাদানকে remove করতে
+console.log(array1);
+let array3 = array1.concat(array2); // দুইটা array এর উপাদান গুলোকে concatenate করে নতুন একটা array এর value হিসেবে declare করতে
+console.log(array3); // array3 কে concole এ দেখার জন্য
+
+
+// special example
+
+const numbersArray = [22, 200, 34, 56, 41, 77];
+const numbersArray2 = new Array(25, 36, 48, 59);
+const stringArray = ["red", "yellow", "green", "orange"];
+const mixedArray = [26, "hello", true, undefined, null, {
+    a: 1,
+    b: 2
+}, new Date()];
+
+let value = Array.isArray(numbersArray); // variable টা আসলে arry কিনা জানার জন্য
+let lastRemovedItem = numbersArray.pop(); // আবার pop করা item টাকে অন্য একটা variable এ declare ও করা যায় এখানে pop করা item 77 টাকে lastRemovedItem এ assigned হয়ে গেছে
+
+numbersArray.splice(1, 3)
+
+numbersArray.reverse(); // array এর উপাদান গুলোকে  উলটো ক্রমানুসারে সাজাতে
+
+let newValue = numbersArray.sort(function (x, y) {
+    return y - x;
+}); // array এর উপাদান গুলোকে বড় থেকে ছোট ক্রমানুসারে সাজাতে
+
+AnotherNewValue = numbersArray.sort(function (x, y) {
+    return x - y;
+}); // array এর উপাদান গুলোকে ছোট থেকে বড় ক্রমানুসারে সাজাতে
+
+function over50(num) {
+    return num > 20;
+}
+let ExtraAnotherNewValue = numbersArray.find(over50);
+
+
+// Output
+console.log(numbersArray);
+console.log(newValue);
+console.log(AnotherNewValue);
+console.log(ExtraAnotherNewValue);
+*/
+
+
+
 
 // ******************************** JavaScript Live Class 2, Part 4 - Operators অপারেটরস কি?
 
