@@ -220,6 +220,55 @@ console.log(AnotherNewValue);
 console.log(ExtraAnotherNewValue);
 */
 
+// ********************* 19-5 Declare objects with multiple properties and value
+
+
+// object হচ্ছে এমন type data যার একাধিক property ও তার against এ value আছে। example
+/*
+let student1 = {
+    name: "asif",
+    age: 25,
+    height: "5ft 9inch",
+    marritualStatus: "married"
+};
+
+let pc1 = {
+    name: "Asus",
+    processors: "intel core i3 10 gen",
+    ram: "8 gb",
+    rom: "120gb ssd + 500 hdd"
+};
+
+*/
+
+// ******************** 19-6 multiple ways to get and set object property , object method
+/*
+let pc1 = {
+    name: "Asus",
+    processors: "intel core i3 10 gen",
+    ram: "8 gb",
+    rom: "120gb ssd + 500 hdd"
+};
+
+
+console.log(pc1); // pc1 কে concole এ দেখার জন্য
+console.log(pc1.processors); // pc1 এর processors property এর value কে concole এ দেখার জন্য
+
+let pcProcessor = pc1.processors; // pc1 এর processors property এর value কে pcProcessor variable এ assign করার জন্য
+console.log(pcProcessor); // pcProcessor কে concole এ দেখার জন্য
+
+// set object value
+
+pc1.processors = "asus 3200g"; // (1) pc1 এর processors property এর value কে change করে "asus 3200g" করার জন্য
+console.log(pc1); // pc1 এর recent updated value কে concole এ দেখার জন্য
+pc1["processors"] = "MSI 3400g"; // (2) pc1 এর processors property এর value কে change করে "MSI 3400g" করার জন্য
+console.log(pc1); // pc1 এর recent updated value কে concole এ দেখার জন্য
+
+let propertyNameProcessor = "processors"; // (৩-১) pc1 এর processors property কে propertyNameProcessor variable এর value হিসেবে assign করতে হবে
+pc1[propertyNameProcessor] = "GigaByte 3000g"; // (৩-২) propertyNameProcessor variable এর সাহায্যে pc1 processors property এর value কে change করে "MSI 3400g" করার জন্য
+console.log(pc1); // pc1 এর recent updated value কে concole এ দেখার জন্য
+
+*/
 
 
 
@@ -617,31 +666,49 @@ console.log(`Get ready for tiny shopping`);
 else{
 alert(`Sleep mode on cause budget is low`);
 }
-
 */
 
 
-// switch, case, default মূলত এক ধরনের conditional statement কিন্তু এক্ষেত্রে কোন রকম range define করা যায় না
-/*
-// this function will not work if you just use prompt only cause switch may work on only number typeof data type. !!!???
-let height = parseInt(prompt('Type Your Height', '6'));
-switch (height) {
-    case 5:
-        console.log('you are short');
-        break;
-    case 4:
-        console.log('you are very short');
-        break;
-    
-    case 3:
-        console.log('you are too short');
-        break;
 
-    default:
-        console.log('You are eligible');
-        break;
+// project - 14 || একটা array থাকবে। এমন একটা condition লিখতে হবে যেখানে যদি value টা array তে exist করে তবে একটা message দিবে আর exist না করলে অন্য একটা message দিবে
+/*
+let colors = ["Red", "Green", "Yellow", "Blue"];
+let askiiElement = prompt("Write the color?");
+
+
+if (colors.indexOf(askiiElement) == -1) {
+
+    alert(`Opps! you are not colors in the array. `)
+
+} else if (colors.indexOf(askiiElement) != -1) {
+
+    console.log(colors.indexOf(askiiElement));
+} else {
+
 }
 */
+
+// second way
+
+/*
+for (let i = 0; i < colors.length; i++) {
+
+    const element = colors[i];
+
+    if (askiiElement == element) {
+
+        console.log(colors.indexOf(element));
+
+    } else {
+
+        console.log(`Opps! you are not colors in the array.`);
+
+    }
+
+}
+*/
+
+
 
 // **************************** JavaScript Live Class 3, Part 1 - Currency Converter logic by if else statement
 
@@ -799,7 +866,7 @@ Bellow is you marksheet,
 */
 // ****************************** JavaScript Live Class 3, Part 3 - Switch Statement in JavaScript
 
-// swithch, casw, default মূলত এক ধরনের conditional statement কিন্তু এক্ষেত্রে কোন রকম range define করা যায় না
+// swithch, casw, default মূলত এক ধরনের conditional statement just if-else condition এর short form কিন্তু এক্ষেত্রে কোন রকম range define করা যায় না এটা অর্থাৎ এখানে case কাজ করে if == value হিসেবে আর default কাজ করে else হিসেবে কোন range নেয়া যায় না
 /*
 // this function will not work if you just use prompt only cause switch may work on only number typeof data type. !!!???
 
@@ -821,6 +888,75 @@ switch (height) {
         break;
 }
 */
+
+/*
+const expr = 'Papayas';
+switch (expr) {
+    case 'Oranges':
+        console.log('Oranges are $0.59 a pound.');
+        break;
+    case 'Mangoes':
+    case 'Papayas':
+        console.log('Mangoes and papayas are $2.79 a pound.');
+        // expected output: "Mangoes and papayas are $2.79 a pound."
+        break;
+    default:
+        console.log(`Sorry, we are out of ${expr}.`);
+}
+*/
+
+// ***************************** 19-8 (advanced) while and for loop break and continue
+
+// use of break
+/*
+for (let i = 1; i < 20; i++) {
+    console.log(i + ` i love u satu `);
+    if (i > 5) {
+        break;
+    }
+}
+*/
+
+// use of continue
+/*
+for (let i = 1; i < 10; i++) {
+    if (i == 5) {
+        continue;
+    }
+    console.log(i + ` i love u satu `);
+}
+*/
+
+// use of continue on array
+
+/*
+let anArray = [00, 11, 22, 33, 44, 55, 66, 77, 88, 99, 111];
+for (let i = 0; i < anArray.length; i++) {
+    const element = anArray[i];
+    console.log(element); // সবগুলো উপাদানকে দেখতে
+}
+*/
+/*
+let anArray = [00, 11, 22, 33, 44, 55, 66, 77, 88, 99, 111];
+for (let i = 0; i < anArray.length; i++) {
+    const element = anArray[i];
+    if (element > 40 && element < 70) {
+        continue
+    }
+    console.log(element); // continue এর effect দেখতে
+}
+*/
+/*
+let anArray = [00, 11, 22, 33, 44, 55, 66, 77, 88, 99, 111];
+for (let i = 0; i < anArray.length; i++) {
+    const element = anArray[i];
+    if (element > 90) {
+        break
+    }
+    console.log(element); // break এর effect দেখতে
+}
+*/
+
 
 // ********************************** JavaScript Live Class 3, Part 4 - undefined, NULL, empty value in JavaScript
 
@@ -1113,8 +1249,76 @@ function takaAse(taka) {
     let potatoQty = taka / potatoPiecePrice;
     return potatoQty;
 }
-let potatoQty = takaAse(taka);
-console.log(`ddokandar  : ei nen mama ${potatoQty} ta potato nen`);
+let potatoPieceQty = takaAse(taka);
+console.log(`ddokandar  : ei nen mama ${potatoPieceQty} ta potato nen`);
 
-// explaining project f2 : ১) taka prompt থেকে value নিচ্ছে line-1108; 2) taka prompt থেকে পাওয়া value পাঠিয়ে দিচ্ছে  takaAse এর আর্গুমেন্ট হিসিবে line-1108;  ৩) takaAse তার আর্গুমেন্ট কে পাঠিয়ে দিচ্ছে function এর takaAse এর value হিসিবে line-1110;  ৪) সেই value console এ প্রিন্ট হচ্ছে line-1111; ৫) আবার সেই value চলে গেছে potatoQty এর মান বের করতে line-1113; ৬) এখন পুরা function এর output হিসেবে potatoQty তার value return করে বসে আছে আর তা পাঠিয়ে দিয়েছে line-1116 তে; ৭) আর তারপর সেই return value console এ প্রিন্ট হচ্ছে line-1117;
+// explaining project f2 : ১) taka prompt থেকে value নিচ্ছে line-1108; 2) taka prompt থেকে পাওয়া value পাঠিয়ে দিচ্ছে  takaAse এর আর্গুমেন্ট হিসিবে line-1108;  ৩) takaAse তার আর্গুমেন্ট কে পাঠিয়ে দিচ্ছে function এর takaAse এর value হিসিবে line-1110;  ৪) সেই value console এ প্রিন্ট হচ্ছে line-1111; ৫) আবার সেই value চলে গেছে potatoQty এর মান বের করতে line-1113; ৬) এখন return potatoQty লিখার মাধ্যমে পুরা function এর output হিসেবে potatoQty তার value return করে বসে আছে আর তা পাঠিয়ে দিয়েছে line-1116 তে ivoke function takaAse(taka) এর কাছে; ৭) আর তারপর সেই return value console এ প্রিন্ট হচ্ছে line-1117;
+*/
+
+
+// ****************** 19-4 (advanced) Multiple parameter add, multiplication, et
+
+
+// বিঃ দ্রঃ : (১) variable হল যা function এর বাহিয়ে declared ।। আর parameter হল এমন variable যা শুধু function এর জন্য নির্ধারিত ও কেবল মাত্র function ভিতরেই কাজ করে। (২) যাকে return করা হবে সে মুলত full function এর value কে hold করে
+
+// project f3 : দুটা parameter কে যোগ করতে হবে
+/*
+let numberOne = 50;
+let numberTwo = 150;
+
+function addTwoNumbers(number1, number2) {
+
+    console.log(`in the function number1 = ${number1} number2 = ${number2}`);
+
+    let resultOfAddition = number1 + number2;
+    return resultOfAddition;
+}
+let resultOfAddition = addTwoNumbers(numberOne, numberTwo);
+console.log(`out of the function: ${numberOne} + ${numberTwo} = ${resultOfAddition}`);
+*/
+
+// project f3 : দুটা parameter 50,155 কে গুণ করতে হবে
+/*
+// multipliedFunction(50,155); // function call আগেও করা যায়
+function multipliedFunction(params1, params2) {
+    // return params1 * params2; // এভাবেও same result দিবে
+    let resultOfMultiplication = params1 * params2;
+    return resultOfMultiplication;
+}
+
+multipliedFunction(50, 155);
+console.log(multipliedFunction(50, 155));
+*/
+
+// project f3 : দুটা parameter prompt দিয়ে নিয়ে তাদের বিয়োগ কর
+/*
+let num1 = prompt("type first number");
+let num2 = prompt("type second number");
+
+function SubstractedFunction(params1, params2) {
+
+    let resultOfSubstractio = params1 - params2;
+    return resultOfSubstractio;
+}
+
+SubstractedFunction(num1, num2);
+console.log(SubstractedFunction(num1, num2));
+*/
+
+// project f4 : দুটা parameter prompt দিয়ে নিয়ে তাদের ভাগ কর আর details ouput দেখাও
+/*
+let numOne = prompt("type first number");
+let numTwo = prompt("type second number");
+
+function DevidedFunction(params1, params2) {
+
+    let resultOfdividation = params1 / params2;
+    return resultOfdividation;
+}
+
+let result = DevidedFunction(numOne, numTwo);
+console.log(`number one = ${numOne},
+number two = ${numTwo},
+------------------------------
+result     = ${result}`);
 */
