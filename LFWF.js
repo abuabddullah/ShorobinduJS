@@ -1076,8 +1076,21 @@ nameFunction(); // parameter undefined দেখাবে। কারণ namePa
 nameFunction('RahimArguments');
 */
 
+// project f1 : 100 টাকা নিয়ে গিয়ে দোকানদার মামার কাছে পটেটো চাওয়ার function লিখতে হবে
+/*
+let taka = 100;
 
-// default valued parameter example with multiple  parameter: multiple  parameter এর ক্ষেত্রে parameterগুলো কমা দিয়ে দিয়ে লিখতে হবে এবং argumentsগুলো parameter অনু
+function takaAse(taka) {
+    console.log(`ami  : ei nen mama ${taka} tk, ar potato den?`);
+}
+takaAse(taka);
+*/
+
+
+
+// ************************* default valued parameter 
+
+// example with multiple  parameter: multiple  parameter এর ক্ষেত্রে parameterগুলো কমা দিয়ে দিয়ে লিখতে হবে এবং argumentsগুলো parameter অনু
 
 /*
 function nameFunction(nameParameter = 'defaultNazrul', ageParameter = 20, skillParameter = 'skillDefault') {
@@ -1086,4 +1099,22 @@ function nameFunction(nameParameter = 'defaultNazrul', ageParameter = 20, skillP
 
 nameFunction();
 nameFunction('RahimArguments', 30, 'Ghum');
+*/
+
+
+
+// project f2 : টাকা নিয়ে গিয়ে দোকানদার মামার কাছে পটেটো চাওয়ার function লিখতে হবে আর কয়টা পটেটো দিবে তাও জানতে হবে একপিচ ৫ টাকা
+/*
+let taka = prompt("ammount of money");
+
+function takaAse(taka) {
+    console.log(`ami  : ei nen mama ${taka} tk, ar potato den?`);
+    let potatoPiecePrice = 5;
+    let potatoQty = taka / potatoPiecePrice;
+    return potatoQty;
+}
+let potatoQty = takaAse(taka);
+console.log(`ddokandar  : ei nen mama ${potatoQty} ta potato nen`);
+
+// explaining project f2 : ১) taka prompt থেকে value নিচ্ছে line-1108; 2) taka prompt থেকে পাওয়া value পাঠিয়ে দিচ্ছে  takaAse এর আর্গুমেন্ট হিসিবে line-1108;  ৩) takaAse তার আর্গুমেন্ট কে পাঠিয়ে দিচ্ছে function এর takaAse এর value হিসিবে line-1110;  ৪) সেই value console এ প্রিন্ট হচ্ছে line-1111; ৫) আবার সেই value চলে গেছে potatoQty এর মান বের করতে line-1113; ৬) এখন পুরা function এর output হিসেবে potatoQty তার value return করে বসে আছে আর তা পাঠিয়ে দিয়েছে line-1116 তে; ৭) আর তারপর সেই return value console এ প্রিন্ট হচ্ছে line-1117;
 */
