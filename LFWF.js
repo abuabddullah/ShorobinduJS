@@ -1612,6 +1612,17 @@ let resultOfRevisedFactorial = reviseFactorial(factorial2revised);
 console.log(`Revisedfactorial of ${factorial2revised} = ${resultOfRevisedFactorial}`);
 */
 
+// PROJECT : এক্তা FUNCtion লিখতে হবে যেখানে কোন value input দিল তা উল্টোক্রমে ১ পর্যন্ত গিন ফলএর যোগফল দেখাবে
+/*
+let n = 12;
+let sum = 0;
+for (let i = 1; i <= n; i++) {
+    sum += Math.pow(i, 3);
+}
+console.log("Output = " + sum);
+*/
+
+
 
 // ১. leapYear() নামে ফাংশন লিখো এবং নেক্সট ইয়ার অর্থাৎ ২০২৩ কি leap year নাকি সেটা চেক করো। Leap year হলে ফাংশন true রিটার্ন করবে আর leap year না হলে false রিটার্ন করবে।
 /*
@@ -1672,4 +1683,8 @@ console.log(`${hours} hrs  =  ${resultInMin} mins`);
 
 
 
-// ******************************* unsolved problems of curses
+
+
+
+// ******************************* unsolved problems of curses 
+// project 9 || বন্ধুদের নাম+mark জানা আছে তাদের নাম বসিয়ে দিলে মার্ক + রেজালতের গ্রেড বের  হবে।
