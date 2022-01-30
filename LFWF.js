@@ -1134,14 +1134,30 @@ for (let i = 1; i <= 100; i++) {
 */
 
 // project:প্রতিদিন তোমার কাজ কি? ১) রাত ৮ টা বাজে মডিউল আনলক করো  ২) ফটাফট ভিডিও দেখে দেখে প্রাকটিস করো ৩) ভিডিও দেখতে দেখতে নোটস নাও ৪) মডিউল শেষ হলে পুরা মডিউল নিজে নিজে প্রাকটিস করো ৫) কোন কিছু বুঝতে না পারলে (চিন্তা করে দেখো এইখানে কিন্তু একটা শর্ত আছে ), সাপোর্ট সেশনে জয়েন করো .এখন তোমার কাজ হচ্ছে একটা for লুপ ১০ বার চালিয়ে উপরের জিনিসগুলা আউটপুট হিসেবে দেখানো। আবার একই জিনিস while লুপ চালিয়ে ১০ বার দেখানো। 
-/*
-let myDailyTask = ["১) রাত ৮ টা বাজে মডিউল আনলক করো", "২) ফটাফট ভিডিও দেখে দেখে প্রাকটিস করো", "৩) ভিডিও দেখতে দেখতে নোটস নাও", "৪) মডিউল শেষ হলে পুরা মডিউল নিজে নিজে প্রাকটিস করো", "৫) কোন কিছু বুঝতে না পারলে (চিন্তা করে দেখো এইখানে কিন্তু একটা শর্ত আছে ), সাপোর্ট সেশনে জয়েন করো", ];
 
+
+// let myDailyTask = ["১) রাত ৮ টা বাজে মডিউল আনলক করো", "২) ফটাফট ভিডিও দেখে দেখে প্রাকটিস করো", "৩) ভিডিও দেখতে দেখতে নোটস নাও", "৪) মডিউল শেষ হলে পুরা মডিউল নিজে নিজে প্রাকটিস করো", "৫) কোন কিছু বুঝতে না পারলে (চিন্তা করে দেখো এইখানে কিন্তু একটা শর্ত আছে ), সাপোর্ট সেশনে জয়েন করো"];
+
+
+// to see all the element in console as a list
+/*
 console.log(myDailyTask);
 
 for (let index = 0; index < myDailyTask.length; index++) {
     const element = myDailyTask[index];
     console.log(element);
+
+}
+*/
+// solve of the math
+/*
+for (let i = 0; i < myDailyTask.length; i++) {
+
+    for (let j = 1; j <= 10; j++) {
+        console.log(myDailyTask[i]);
+        // console.log(j);
+
+    }
 
 }
 */
@@ -1511,7 +1527,8 @@ resultOfChecking = isYearLeapYear(mammasYear);
 console.log(`${mammasYear} -  ${resultOfChecking}`);
 */
 
-// ************************************ 20-5 Calculate Factorial of a number using for loop
+// ************************************ 20-5 Calculate Factorial of a number using for loop // ********************************* 20-6 Recalculate factorial multiple times using a function
+
 
 // Factorial of 7 by loop
 /*
@@ -1524,12 +1541,12 @@ for (let i = 1; i <= 7; i++) {
 }
 */
 
-// ********************************* 20-6 Recalculate factorial multiple times using a function
 
 
-// Factorial of a askii Number by functio and loop
 
-// Cautions: don't set value more than 10 for factorial calculation
+// Factorial of a askii Number by functio and loop [Cautions: don't set value more than 10 for factorial calculation]
+
+
 /*
 let factorialOf = 9; // value is setting here
 getFactorial(factorialOf); // function declared and defining bellow
@@ -1549,21 +1566,110 @@ console.log(`Factorial of ${factorialOf} is, ${resulOfFactorial}`);
 
 */
 
+// explanation: (১) requirement টা লাইন নাম্বার 1535 এ factorialOf এ feed দেয়া হল; (২) তারপর লাইন নাম্বার 1536 এ একটা function declared করা হল;; (৩) তারপর লাইন নাম্বার 1538 function টা defining শুরু করা হল; (৪) function এর ভিতরে একটা foreign variable নেইয়া হল factorial নামে যাতে ফ্যক্টরিয়ালের নিয়ম অনুযায়ী গুন চালানো যায়; (৫) for loop চালানো হল  (৬) এখন loop অনুযায়ী যখন i = ১ তখন factorial এর value update হয়ে হল ১ X ১ = ১ ; যখন i = ২ তখন factorial এর value update হয়ে হল ১ X ২ = ২; যখন i = ৩ তখন factorial এর value update হয়ে হল ২ X ৩ = ৬;  যখন i = ৪ তখন factorial এর value update হয়ে হল ৬ X ৪ = ২৪; এভাবে চলতে চলতে যখন শর্ত শেষ হবে বের হয়ে রেজাল্ট দেখাবে
 
 
+// *****************************●	20-7 Factorial using a while loop or a decrementing loop
+
+/*
+let needFactorialOf = 7;
+
+calcFactorial(needFactorialOf);
+
+function calcFactorial(value2BFactorised) {
+
+    let factorial4Two = 1;
+    let i = 1;
+    while (i <= needFactorialOf) {
+        factorial4Two = factorial4Two * i;
+        i++;
+    }
+
+    return factorial4Two;
+
+}
+
+let resultOfFactorial4Two = calcFactorial(needFactorialOf);
+console.log(`Factorial of ${needFactorialOf} = ${resultOfFactorial4Two}`);
+*/
 
 
+// example of reverse factorial
+/*
+let factorial2revised = 10;
+reviseFactorial(factorial2revised);
+
+function reviseFactorial(revisedValue) {
+
+    let factorial4Revised = 1;
+    for (let i = factorial2revised; i > 0; i--) {
+        factorial4Revised = factorial4Revised * i;
+    }
+    return factorial4Revised;
+}
+
+let resultOfRevisedFactorial = reviseFactorial(factorial2revised);
+console.log(`Revisedfactorial of ${factorial2revised} = ${resultOfRevisedFactorial}`);
+*/
 
 
+// ১. leapYear() নামে ফাংশন লিখো এবং নেক্সট ইয়ার অর্থাৎ ২০২৩ কি leap year নাকি সেটা চেক করো। Leap year হলে ফাংশন true রিটার্ন করবে আর leap year না হলে false রিটার্ন করবে।
+/*
+let year2check = 2023;
+checkLpYear(year2check);
+
+function checkLpYear(ValueOfYear) {
+
+    if ((ValueOfYear % 4 == 0 && ValueOfYear % 100 != 0) || ValueOfYear % 400 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+let resultOfChecking = checkLpYear(year2check);
+console.log(`Your year ${year2check} is a leapyear : ${resultOfChecking}`);
+*/
 
 
+// ২.তো মার বয়স কি odd নাকি even সংখ্ যা সেটা চেক কর একটা ফাংশন দিয়ে। সেই ফাংশনকে কো ন সংখ্ যা প্ যারামিটার হিসেবে দিলে, সেই সংখ্ যা Even হলে ফাংশন true রিটার্ ন করবে আর Odd হলে false রিটার্ ন করবে।
+/*
+let myAge = 25;
+OddEvenCheck(myAge);
+
+function OddEvenCheck(valueInDigit) {
+    if (valueInDigit % 2 == 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+let resultOfMyAge = OddEvenCheck(myAge);
+console.log(`I am ${myAge} years old. and its an odd number : ${resultOfMyAge}`);
+
+let yourAge = prompt("Type Your Age");
+
+let resultOfYourAge = OddEvenCheck(yourAge);
+console.log(`I am ${yourAge} years old. prit true for even and false for odd : ${resultOfYourAge}`);
+*/
 
 
+// ৩. এমন একটা ফ্যাংশনা লিখো যেটাকে তুমি ঘন্টাকে ইনপুট প্যারামিটার হিসেবে দিবে। আর সে সেই ঘন্টাকে মিনিটে কনভার্ট করে মিনিট রিটার্ন করবে।
 
+/*
+let hours = prompt("Type Hours");
+hrs2min(hours);
+
+function hrs2min(valueInHrs) {
+    let valuInMin = valueInHrs * 60;
+    return valuInMin;
+}
+let resultInMin = hrs2min(hours);
+console.log(`${hours} hrs  =  ${resultInMin} mins`);
+*/
 
 
 
 
 // ******************************* unsolved problems of curses
-
-// // Module 18-5 || project:প্রতিদিন তোমার কাজ কি? ১) রাত ৮ টা বাজে মডিউল আনলক করো  ২) ফটাফট ভিডিও দেখে দেখে প্রাকটিস করো ৩) ভিডিও দেখতে দেখতে নোটস নাও ৪) মডিউল শেষ হলে পুরা মডিউল নিজে নিজে প্রাকটিস করো ৫) কোন কিছু বুঝতে না পারলে (চিন্তা করে দেখো এইখানে কিন্তু একটা শর্ত আছে ), সাপোর্ট সেশনে জয়েন করো .এখন তোমার কাজ হচ্ছে একটা for লুপ ১০ বার চালিয়ে উপরের জিনিসগুলা আউটপুট হিসেবে দেখানো। আবার একই জিনিস while লুপ চালিয়ে ১০ বার দেখানো। 
