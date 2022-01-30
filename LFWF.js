@@ -267,7 +267,17 @@ console.log(pc1); // pc1 এর recent updated value কে concole এ দে�
 let propertyNameProcessor = "processors"; // (৩-১) pc1 এর processors property কে propertyNameProcessor variable এর value হিসেবে assign করতে হবে
 pc1[propertyNameProcessor] = "GigaByte 3000g"; // (৩-২) propertyNameProcessor variable এর সাহায্যে pc1 processors property এর value কে change করে "MSI 3400g" করার জন্য
 console.log(pc1); // pc1 এর recent updated value কে concole এ দেখার জন্য
+*/
 
+// Module 19 ||  ৫) pizza নামের একটা object কে নিচের উদাহরণ মতো define করবা:const pizza = {toppings: ['cheese', 'sauce', 'pepperoni']crust: 'deep dish', serves: 2} এবং pepperoni print করবা।
+/*
+const pizza = {
+    toppings: ['cheese', 'sauce', 'pepperoni'],
+    crust: 'deep dish',
+    serves: 2
+}
+
+console.log(pizza.toppings[2]);
 */
 
 
@@ -1470,7 +1480,8 @@ let outPutResult = checkOddEven(inputNumber);
 console.log(`${inputNumber} |||   ${outPutResult}`);
 */
 
-// leapYear calculation
+// ***************************	20-4 Check whether a year is a Leap Year or not
+
 /*
 let year = prompt(`Type The year You Want To Check`);
 
@@ -1490,10 +1501,53 @@ function isYearLeapYear(year2Check) {
 
 let resultOfChecking = isYearLeapYear(year);
 console.log(`${year} -  ${resultOfChecking}`);
+
+
+// same function বিভিন্ন জায়গায় থেকে  ডাকা 
+
+let mammasYear = 1987;
+
+resultOfChecking = isYearLeapYear(mammasYear);
+console.log(`${mammasYear} -  ${resultOfChecking}`);
 */
 
+// ************************************ 20-5 Calculate Factorial of a number using for loop
+
+// Factorial of 7 by loop
+/*
+let Factorial = 1;
+for (let i = 1; i <= 7; i++) {
+
+    Factorial = Factorial * i;
+    console.log(Factorial);
+
+}
+*/
+
+// ********************************* 20-6 Recalculate factorial multiple times using a function
 
 
+// Factorial of a askii Number by functio and loop
+
+// Cautions: don't set value more than 10 for factorial calculation
+/*
+let factorialOf = 9; // value is setting here
+getFactorial(factorialOf); // function declared and defining bellow
+
+function getFactorial(valu2GetFactorialOf) {
+
+    let factorial = 1;
+    for (let i = 1; i <= valu2GetFactorialOf; i++) {
+        factorial = factorial * i;
+    }
+    return factorial;
+
+}
+
+let resulOfFactorial = getFactorial(factorialOf);
+console.log(`Factorial of ${factorialOf} is, ${resulOfFactorial}`);
+
+*/
 
 
 
@@ -1513,4 +1567,3 @@ console.log(`${year} -  ${resultOfChecking}`);
 // ******************************* unsolved problems of curses
 
 // // Module 18-5 || project:প্রতিদিন তোমার কাজ কি? ১) রাত ৮ টা বাজে মডিউল আনলক করো  ২) ফটাফট ভিডিও দেখে দেখে প্রাকটিস করো ৩) ভিডিও দেখতে দেখতে নোটস নাও ৪) মডিউল শেষ হলে পুরা মডিউল নিজে নিজে প্রাকটিস করো ৫) কোন কিছু বুঝতে না পারলে (চিন্তা করে দেখো এইখানে কিন্তু একটা শর্ত আছে ), সাপোর্ট সেশনে জয়েন করো .এখন তোমার কাজ হচ্ছে একটা for লুপ ১০ বার চালিয়ে উপরের জিনিসগুলা আউটপুট হিসেবে দেখানো। আবার একই জিনিস while লুপ চালিয়ে ১০ বার দেখানো। 
-// Module 19 ||  ৫) pizza নামের একটা object কে নিচের উদাহরণ মতো define করবা:const pizza = {toppings: ['cheese', 'sauce', 'pepperoni']crust: 'deep dish', serves: 2} এবং pepperoni print করবা।
