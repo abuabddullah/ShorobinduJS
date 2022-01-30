@@ -1436,18 +1436,57 @@ console.log(`${inches}" = ${resultInFeet}'`);
 */
 
 // Convert miles to kilometer
-
-let miles = 1300;
-
+/*
+let miles = Number(prompt("Type value in miles"));
+// console.log("typeof miles is " + "'" + typeof (miles) + "'");
 miles2Km(miles);
 
 function miles2Km(valueInMiles) {
-    let valueInKm = valueInMiles / 1.6;
+    let valueInKm = valueInMiles * 1.6;
     return valueInKm;
 }
 
 let resultInKm = miles2Km(miles);
 console.log(`${miles} miles = ${resultInKm} Km`);
+*/
+
+// *********************** 20-3 Check even and odd number using function
+/*
+let inputNumber = prompt(`Type The Number You Want To Check`);
+
+checkOddEven(inputNumber);
+
+function checkOddEven(number2Check) {
+
+    let reminder = number2Check % 2;
+    if (reminder == 0) {
+        return "This is an Even number";
+    } else {
+        return "This is an Odd number";
+    }
+}
+
+let outPutResult = checkOddEven(inputNumber);
+console.log(`${inputNumber} |||   ${outPutResult}`);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
