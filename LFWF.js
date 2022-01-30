@@ -1470,8 +1470,27 @@ let outPutResult = checkOddEven(inputNumber);
 console.log(`${inputNumber} |||   ${outPutResult}`);
 */
 
+// leapYear calculation
+/*
+let year = prompt(`Type The year You Want To Check`);
 
+isYearLeapYear(year);
 
+function isYearLeapYear(year2Check) {
+    if ((year2Check % 4 == 0 && year2Check % 10 != 0) || year2Check % 400 == 0) {
+
+        return "This is a Leap Year"
+
+    } else {
+
+        return "This is not a Leap Year"
+    }
+
+}
+
+let resultOfChecking = isYearLeapYear(year);
+console.log(`${year} -  ${resultOfChecking}`);
+*/
 
 
 
