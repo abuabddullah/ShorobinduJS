@@ -1396,6 +1396,58 @@ console.log(`The result is ${finalResultOfSquare}`);
 
 // ******************************** 20-2 Unit Convert Inch to Feet, miles to kilometer
 
+// Convert Inch to Feet
+/*
+let inches = 120;
+
+inches2feets(inches);
+
+function inches2feets(valueInInch) {
+    let valueInFeet = valueInInch / 12;
+    return valueInFeet;
+}
+
+let resultInFeet = inches2feets(inches);
+console.log(`${inches}" = ${resultInFeet}'`);
+
+
+
+// same function বিভিন্ন জায়গায় থেকে বিভিন্ন ভাবে ডাকা যায়
+
+let naniInches = 1200;
+
+resultInFeet = inches2feets(naniInches);
+console.log(`${inches}" = ${resultInFeet}'`);
+
+let nanaInches = 12000;
+
+resultInFeet = inches2feets(nanaInches);
+console.log(`${inches}" = ${resultInFeet}'`);
+
+let dadiInches = 120000;
+
+resultInFeet = inches2feets(dadiInches);
+console.log(`${inches}" = ${resultInFeet}'`);
+
+let dadaInches = 12;
+
+resultInFeet = inches2feets(dadaInches);
+console.log(`${inches}" = ${resultInFeet}'`);
+*/
+
+// Convert miles to kilometer
+
+let miles = 1300;
+
+miles2Km(miles);
+
+function miles2Km(valueInMiles) {
+    let valueInKm = valueInMiles / 1.6;
+    return valueInKm;
+}
+
+let resultInKm = miles2Km(miles);
+console.log(`${miles} miles = ${resultInKm} Km`);
 
 
 
