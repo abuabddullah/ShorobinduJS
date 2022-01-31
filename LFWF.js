@@ -989,8 +989,9 @@ console.log(typeof aNullData); //null is a object type data অর্থাৎ �
 // *************************** JavaScript Live Class 3, Part 5 - Ternary Operator & Null Coalescing Operator in JavaScript
 
 // Ternary Operator হচ্ছে ifelse condition এর short form এখানে কিন্তু else if condition কাজ করবে না অর্থাৎ সংক্ষিপ্ত বা ছোট condition run করার জন্য ব্যবহৃত হয়। বড় condition এর ক্ষেত্রে তখন ifelse elseif use করাই উত্তম।
-/*
+
 // ifelse condition:
+/*
 let age = prompt('How old are you?','20');
 
 if (age >= 21) {
@@ -998,18 +999,25 @@ if (age >= 21) {
 } else {
     console.log('Boy! You can\'t marry. (Else)');    
 }
+*/
 
 // উপরের এই condition টার short form বা ternary operator form:
-
+/*
 (age >= 21) ? console.log('Boy! You can marry. (Ternary)') : console.log('Boy! You can\'t marry. (Ternary)');  
+*/
 
+/*
 let marritualStatus = (age >= 21) ? 'Boy! চলে চলে দৌড়ায়। (Ternary)' : 'Boy! আস্তে, থামো যারা, সাবার কারো। (Ternary)';  
 console.log(`Your maritual status = ${marritualStatus}`);
-
+*/
 
 // ternary operator structure:
-// (condition) ? true rejults : false rejults;
+/*
+let ternaryOperator;
+ternaryOperator = (condition) ? true rejults : false rejults;
+console.log(ternaryOperator);
 */
+
 
 // Null Coalescing Operator: অনেক সময় undefined অথবা null value ওয়ালা data এর ক্ষেত্রে output এ undefined অথবা null না যাতে দেখায় সেই প্রয়োজন পরতে পারে হতে পারে আগে undefined অথবা null value এর aginst এ কোন condition দেয়া হয়েছে এখন আবার value undefined অথবা nullদেখালে পুরা function টাই error দেখাবে তখন আমরা Null Coalescing Operator দিয়ে undefined অথবা null value ওয়ালা data এর output হিসেবে undefined অথবা null না দেখিয়ে অন্য যা চাই দেখাতে পারি। তবে মনে রাখতে হবে Null Coalescing Operator দিয়ে কেবল undefined অথবা null value ওয়ালা data কেই controll করা যায়।
 
