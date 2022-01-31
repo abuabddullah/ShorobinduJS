@@ -155,6 +155,8 @@ console.log(`
 
 
 // ****************************************** Array example:
+
+
 /*
 let array1 = [0, 1, 2, 3, 4, 5, 6];
 let array2 = ["a", "e", "i", "o", "u"];
@@ -168,6 +170,10 @@ console.log(array1[5] = "five"); // numbers variable এর 5th index এর উ
 console.log(array1); // arry এর recent update কে concole এ দেখার জন্য
 console.log(array1.push("six")); // arry তে শেষ উপাদান হিসেবে six কে add করতে
 console.log(array1);
+
+
+
+
 console.log(array1.unshift("- one")); // arry তে প্রথম উপাদান হিসেবে - one কে add করতে
 console.log(array1);
 console.log(array1.push("seven")); // arry তে শেষ উপাদান হিসেবে seven কে add করতে
@@ -218,6 +224,18 @@ console.log(numbersArray);
 console.log(newValue);
 console.log(AnotherNewValue);
 console.log(ExtraAnotherNewValue);
+*/
+
+// Experiment
+/*
+let array1 = [0, 1, 2, 3, 4, 5, 6];
+console.log(array1);
+let newiee = array1.push("Hundred");
+console.log(array1);
+console.log(array1.indexOf("Hundred"));
+console.log(newiee); // length of array1
+console.log(array1.length)
+console.log(newiee == array1.length);
 */
 
 // ********************* 19-5 Declare objects with multiple properties and value
@@ -718,6 +736,37 @@ for (let i = 0; i < colors.length; i++) {
 }
 */
 
+// 1. কোনো একটা লেটার vowel কিনা তা নির্ণয় করা যায় কিভাবে ?
+/*
+var input = prompt("Write the letter?");
+var letter = input.toLowerCase();
+if (letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u") {
+    console.log(letter, "is vowel");
+} else {
+    console.log(letter, "is not vowel");
+}
+*/
+
+// 2. তিনটি সংখ্যার মধ্যে বড়ো সংখ্যাটি বের কর 
+/*
+var number1 = 1000;
+var number2 = 6000;
+var number3 = 7000;
+
+if(number1 > number2){
+    if(number1 > number3){
+        console.log("Number1 is big");
+    }
+}
+else if(number2 > number3){
+    if(number2 > number1){
+        console.log("Number2 is big");
+    }
+}
+else{
+    console.log("Number3 is big");
+}
+*/
 
 
 // **************************** JavaScript Live Class 3, Part 1 - Currency Converter logic by if else statement
@@ -964,6 +1013,16 @@ for (let i = 0; i < anArray.length; i++) {
         break
     }
     console.log(element); // break এর effect দেখতে
+}
+*/
+
+// 5. একটা লুপ এর সাহায্যে ৭ ঘরের নামতা লিখো 
+/*
+let namta = 7;
+for (let i = 1; i <= 10; i++) {
+    let gunFol = 7 * i;
+    console.log(`${namta} X ${i} = ${gunFol}`);
+
 }
 */
 
@@ -1765,10 +1824,50 @@ console.log(`${hours} hrs  =  ${resultInMin} mins`);
 */
 
 
+// একটা ফাংশন যেটা একটা নাম নিবে আরা একটা মেসেজ আলার্ট দিবে
+/*
+let inputName = "Rahim";
+alertName(inputName)
+
+function alertName(params) {
+    let sms = `hi mr ${params}`
+    return sms
+}
+
+console.log(alertName(inputName));
+*/
+
+// একটা ফাংশন যেখানে কোন পিজা কোম্পানি অর্ডার নিবে পিচ হিসেবে আর মেসেজ দিবে কয়টা পিজা অর্দার হইল, অন্যকোন খাবার এর অর্ডার নিতে পারবে না
+/*
+let item = "pizza";
+let foodName = item.toLowerCase();
+let qty = 10;
+let price = 500;
+
+orderSlep(foodName, qty, price);
+
+function orderSlep(foodItem, ammount, mrpRate) {
+    if (foodItem != "pizza") {
+        return `Sorry sir we don have ${foodItem}.
+        We only sell Pizza.`
+    }
+    let totalPrice = ammount * mrpRate;
+    let sms = `Dear Consumer,
+    Your ${foodItem} order successful!
+    quantity = ${ammount}
+    total cost = ${totalPrice}`
+    return sms;
+}
+
+let printedOrderSlip = orderSlep(foodName, qty, price);
+console.log(printedOrderSlip);
+*/
 
 
 
 
 
 // ******************************* unsolved problems of curses 
-// project 9 || বন্ধুদের নাম+mark জানা আছে তাদের নাম বসিয়ে দিলে মার্ক + রেজালতের গ্রেড বের  হবে।
+// project 9 || বন্ধুদের নাম+mark জানা আছে তাদের নাম বসিয়ে দিলে মার্ক + রেজালতের গ্রেড বের  হবে। 
+
+// 2. তিনটি সংখ্যার মধ্যে বড়ো সংখ্যাটি বের কর showing sequence
