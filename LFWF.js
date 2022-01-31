@@ -1036,49 +1036,76 @@ console.log(moja);//aNulledValuedData এটার value null না দেখ�
 
 // for loop examfa:
 
-/*
+
 // 100 times runable loop
+/*
 for (let startingValue = 0; startingValue < 100; startingValue++) {
     console.log(` i love you satu ${1 + startingValue}`);    
 }
 */
 
-/*
-// 500 times runable loop where inital value is 1000
 
+// ২. একটা লুপ লিখতে হবে যেটা ১ থেকে ১০০ পর্যন্ত যত সংখ্যা আছে সেটা দেখাবে 
+/*
+for (let index = 1; index <= 100; index++) {
+    console.log(index);
+}
+*/
+
+// ৩. ৫০ থেকে ৮০ এর মধ্যে যতো বিজোড় সংখ্যা আছে সেগুলাকে দেখাবে। 
+/*
+for (let index = 50; index <= 80; index++) {
+    if (index % 2 != 0) {
+        console.log(index);
+    }
+}
+*/
+
+
+// 500 times runable loop where inital value is 1000
+/*
 for (let i = 1000; i >= 0; i -= 2) {
     console.log(`${i}. ${i}th value = ${i}`);    
 }
 */
-/*
+
+
 // 20 times runable loop where inital value is 7000
+/*
 
 for (let i = 7000; i < 7020; i++) {
     console.log(`${i}`);    
 }
 */
-/*
-//100 times runable loop 
 
+
+//100 times runable loop 
+/*
 for (let i = 1; i <= 100; i++) {
     console.log(i);    
 }
 */
-/*
+
+
 //100 times runable loop with decrement operator
+/*
 
 for (let i = 100; i >= 0; i--) {
     console.log(i);    
 }
 */
-/*
+
+
 //1000 to 300 runable loop with decrement operator
+/*
 for (let i = 1000; i >= 300; i--) {
     console.log(i);    
 }
 */
-/*
+
+
 //100 to 500 runable loop with all even number
+/*
 let count = 1;
 for (let i = 100; i <= 500; i++) {
     if (i % 2 == 0) {
@@ -1087,8 +1114,10 @@ for (let i = 100; i <= 500; i++) {
     }
 }
 */
-/*
+
+
 //100 to 500 runable loop with all even number
+/*
 let countOdd = 1;
 for (let i = 100; i <= 500; i++) {
     if (i % 2 != 0) {
@@ -1097,8 +1126,10 @@ for (let i = 100; i <= 500; i++) {
     }
 }
 */
-/*
+
+
 //1 to 500 runable loop with all divided by 5
+/*
 let countSerial = 1;
 for (let i = 100; i <= 500; i++) {
     if (i % 5 == 0) {
@@ -1108,8 +1139,9 @@ for (let i = 100; i <= 500; i++) {
 }
 */
 
-/*
+
 //1 to 100 runable loop with all divided by 3 and > 70
+/*
 let countSerial = 1;
 for (let i = 1; i <= 100; i++) {
     if (i % 3 == 0 && i >= 70) {
@@ -1118,8 +1150,10 @@ for (let i = 1; i <= 100; i++) {
     }
 }
 */
-/*
+
+
 // 1 to 100 পর্যন্ত loop যাবে তারপর আবার ১০০ থেকে ১ এ নেমে আসবে
+/*
 let countSerial = 1;
 for (let i = 1; i <= 100; i++) {
     console.log(`${countSerial}.  ${i} `);
@@ -1130,6 +1164,14 @@ for (let i = 1; i <= 100; i++) {
             countSerial++;            
         }
     }
+}
+*/
+
+
+// ২. একটা লুপ লিখতে হবে যেটা ১ থেকে ১০০ পর্যন্ত যত সংখ্যা আছে সেটা দেখাবে 
+/*
+for (let index = 1; index <= 100; index++) {
+    console.log(index);
 }
 */
 
@@ -1400,7 +1442,41 @@ let userNameIs = fullName(firstName, lastName);
 console.log(`hi! mr. ${userNameIs}`);
 */
 
-// ৪. একটা ফাংশন লিখবা যেটাকে তুমি কোন সংখ্যাকে ইনপুট হিসেবে দিলে সে সেই সংখ্যার square করে সেই square কে রিটার্ন করবে।অর্থাৎ তুমি ইনপুট হিসেবে 5 দিলে সেটাতে স্কয়ারে হিসেবে 25 আউটপুট হিসেবে পাবে।  
+// ৪-1. তিনটা সংখ্যা এর যোগ করতে পারবে এমন একটা ফাংশন লিখো 
+/*
+let num1 = Number(prompt(`type number 1 `));
+let num2 = Number(prompt(`type number 2 `));
+let num3 = Number(prompt(`type number 3 `));
+
+sumOFThree(num1, num2, num3);
+
+function sumOFThree(n1, n2, n3) {
+    let sum = n1 + n2 + n3;
+    return sum;
+}
+
+let resulOfThreeSome = sumOFThree(num1, num2, num3);
+console.log(`result Of Three Some = ${resulOfThreeSome}`);
+*/
+
+// ১. তোমাকে ফাংশনের ইনপুট হিসেবে সেলসিয়াস দিবে। তুমি ক্যালকুলেশন করে তাপমাত্রা ফারেনহাইট এ কনভার্ট করে সেটার আউটপুট রিটার্ন করবে 
+/*
+let tempInCel = Number(prompt(`type temparature in celcious`));
+
+convertTemp(tempInCel);
+
+function convertTemp(tempValue) {
+    let fahrenheit = (tempValue * (9 / 5)) + 32;
+    return fahrenheit;
+}
+
+let tempfahrenheit = convertTemp(tempInCel);
+console.log(`${tempInCel}°C = ${tempfahrenheit}°F`);
+*/
+
+
+
+// ৪-2. একটা ফাংশন লিখবা যেটাকে তুমি কোন সংখ্যাকে ইনপুট হিসেবে দিলে সে সেই সংখ্যার square করে সেই square কে রিটার্ন করবে।অর্থাৎ তুমি ইনপুট হিসেবে 5 দিলে সেটাতে স্কয়ারে হিসেবে 25 আউটপুট হিসেবে পাবে।  
 
 /*
 let inputNumber = prompt("type Number");
