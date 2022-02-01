@@ -1,5 +1,8 @@
 // ********************* JavaScript Live Class 1, Part 2 Devtols, Alert, Confirm, Prompt, Variable, Statement, Concatenation
 
+
+
+
 /*
 javascript 3 প্রকার
 ১) inline javascript(using onclick)
@@ -12,60 +15,100 @@ console.dir('we are js learners');
 console.log('we are js learners');
 */
 
-/*3 Basic functions
+/*
+3 Basic functions
 i) alert - to alert about like sineboard
 ii) confirm - to ask question and asking value in bolean i.e yes or No
-iii)prompt - to ask value of any variable.*/
+iii)prompt - to ask value of any variable.
+*/
 
-// console.log(alert('be care full'));
-// console.log(confirm('do you like JS?'));
+/*
+console.log(alert('be care full'));
+console.log(confirm('do you like JS?'));
+*/
+
+
+
 
 // ********************* Get Elements: getElementById()- getElementsByClassName()- getElementsByTagName()- querySelector()- querySelectorAll()
 
+
+
+
 // getElementById
-/*document.getElementById('item1').textContent = 'আমি item-1 ছিলাম আর এখন itemOne হইয়া গেছি textContent এর বদৌলতে';*/
+
+/*
+document.getElementById('item1').textContent = 'আমি item-1 ছিলাম আর এখন itemOne হইয়া গেছি textContent এর বদৌলতে';
+*/
 
 // [n.b: = command টার বাংলা হইল, document তো মার ভিতরে item1 নামের যে id আছে তাকে ধর [getElementById], তার ভিতরে যা কিছু লিখা থাকুক না কেন [item-1] তা change করে তুমি বসায়া দাও[textContent/innerText] 'আমি item1 ছিলাম আর এখন itemOne হইয়া গেছি' text হিসেবে। নিচে আরো কিছু example দেয়া হলঃ===]
 
-/*document.getElementById('item2').textContent = 'আমি item-2 ছিলাম আর এখন itemTwo হইয়া গেছি textContent এর বদৌলতে';
+/*
+document.getElementById('item2').textContent = 'আমি item-2 ছিলাম আর এখন itemTwo হইয়া গেছি textContent এর বদৌলতে';
 
-document.getElementById('item3').innerText = 'আমি item-3 ছিলাম আর এখন itemThree হইয়া গেছি innerText এর বদৌলতে';*/
+document.getElementById('item3').innerText = 'আমি item-3 ছিলাম আর এখন itemThree হইয়া গেছি innerText এর বদৌলতে';
+*/
 
 // [তবে আমি যদি চাই document তার ভিতরের কোন id এর innerText দিয়ে নতুন একটা text ত বসাবই এবং সেইসাথে কিছু css ও aply করব তাহলে তখন innerHTML use করতে হবে। কিছু example দেয়া হলঃ===]
 
-/*document.getElementById('item5').innerHTML = 'আমি item-5 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemFive</span> হইয়া গেছি innerHTML এর বদৌলতে';
+/*
+document.getElementById('item5').innerHTML = 'আমি item-5 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemFive</span> হইয়া গেছি innerHTML এর বদৌলতে';
 
-document.getElementById('item6').innerHTML = 'আমি item-6 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemSix</span> হইয়া গেছি innerHTML এর বদৌলতে';*/
+document.getElementById('item6').innerHTML = 'আমি item-6 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemSix</span> হইয়া গেছি innerHTML এর বদৌলতে';
+*/
 
 
 // getElementsByClassName
 
-/*document.getElementsByClassName('items')[6].textContent = 'আমি item-7 ছিলাম আর এখন itemSeven হইয়া গেছি ClassName এর বদৌলতে';*/
+/*
+document.getElementsByClassName('items')[6].textContent = 'আমি item-7 ছিলাম আর এখন itemSeven হইয়া গেছি ClassName এর বদৌলতে';
+*/
 
 // [বিঃদ্রঃ command টার বাংলা হইল, document তো মার ভিতরে items নামের যতগুলা class আছে তাদেরকে ধর [getElementsByClassName], তাদের ভিতরে [s/l] সিরিয়াল নাম্বারে যা কিছু লিখা থাকুক না কেন [item-$] তা change করে তুমি বসায়া দাও[textContent/innerText] 'আমি item$ ছিলাম আর এখন item$ হইয়া গেছি' text হিসেবে।আরো একটা example দেয়া হলঃ===]
 
-/*document.getElementsByClassName('items')[7].innerHTML = 'আমি item-8 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemEight</span> হইয়া গেছি ClassName এর বদৌলতে';*/
+/*
+document.getElementsByClassName('items')[7].innerHTML = 'আমি item-8 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemEight</span> হইয়া গেছি ClassName এর বদৌলতে';
+*/
 
 // getElementsByTagName
 
-/*document.getElementsByTagName('p')[8].innerHTML = 'আমি item-9 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemNine</span> হইয়া গেছি TagName এর বদৌলতে';*/
+/*
+document.getElementsByTagName('p')[8].innerHTML = 'আমি item-9 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemNine</span> হইয়া গেছি TagName এর বদৌলতে';
+*/
 
 // querySelector for class name
 
-/*document.querySelector('#queryItem10').innerHTML = 'আমি item-10 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemTen</span> হইয়া গেছি grap id by querySelector এর বদৌলতে';*/
+/*
+document.querySelector('#queryItem10').innerHTML = 'আমি item-10 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemTen</span> হইয়া গেছি grap id by querySelector এর বদৌলতে';
+*/
 
 // querySelector for id name
 
-/*ocument.querySelector('.queryItems').innerHTML = 'আমি item-10 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemTen</span> হইয়া গেছি class by querySelector এর বদৌলতে';*/
+/*
+ocument.querySelector('.queryItems').innerHTML = 'আমি item-10 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemTen</span> হইয়া গেছি class by querySelector এর বদৌলতে';
+*/
 
 // [বিঃদ্রঃ  এখানে querySelector কিন্তু item-10 তে #queryItem10 effect থাকার পরও তাকেই over write করেছে কারণ কোন s/l no. না থাকায় querySelector দেখতেছে first .queryItems class এর under এ কে আছে তাকে ধরে ফেলেছে]
+
 // যদি queryselector দিয়ে class এর ভিতরের specific কোন item চেঞ্জ করতে চাই তাহলে তার মাঝে  s/l no. দিতে আর queryselector এর পরিবর্তে querySelectorAll লিখতে হবে।আরো একটা example দেয়া হলঃ===
 
-/*document.querySelectorAll('.queryItems')[1].innerHTML = 'আমি item-11 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemEleven</span> হইয়া গেছি class by querySelectorAll এর বদৌলতে';*/
+/*
+document.querySelectorAll('.queryItems')[1].innerHTML = 'আমি item-11 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemEleven</span> হইয়া গেছি class by querySelectorAll এর বদৌলতে';
+*/
+
+
 
 //[বিঃদ্রঃ js দিয়ে কোন কিছুকে ধরার জন্য queryselector / querySelectorAll বেস্ট এবং html এর ভিতরে কিছু লিখার জন্য innerHTML বেস্ট]
 
+
+
+
+
 // ******************** Adding Style with css start
+
+
+
+
 /*
 document.querySelector('h1').style.backgroundColor = 'red';
 document.querySelector('h1').style.color = 'white';
@@ -76,20 +119,35 @@ document.querySelector('p').style.color = 'white';
 document.querySelector('p').style.textAlign = 'justify';
 */
 
+
+
+
 // ******************* first JS apk
-/*let name = prompt('what is your name?','Mr. XXX');
+
+
+
+
+/*
+let name = prompt('what is your name?','Mr. XXX');
 let food = prompt('what is your favourite food?','Beef');
 
 //prompt দিয়ে কোন variable এর value নিলে তা সর্বদা string হিসেবে value assign হয়
 
-console.log('My name is' + ' ' + name + ' and I love to eat' + ' ' + food + ' very very much.'); */
+console.log('My name is' + ' ' + name + ' and I love to eat' + ' ' + food + ' very very much.'); 
+*/
+
+
 
 
 // ****************** JavaScript Live Class 2, Part 1 - Var, Let, and Const in JavaScript in Details
 
+
+
+
 // variables declare করার শর্ত (১) একটা keyword থাকবে let/var/const/nothing ; (2) variables নাম দিতে হবে ; (৩) "=" sign দিয়ে value assign করতে হবে।
 
-/*var অনেক বার declare এবং অনেক বার assign করা যায়।যা একটা সমস্যা কারন team work করার সময় এটা সমস্যা করে তাই এটা use করা উচিত না।
+/*
+var অনেক বার declare এবং অনেক বার assign করা যায়।যা একটা সমস্যা কারন team work করার সময় এটা সমস্যা করে তাই এটা use করা উচিত না।
 
 let একবারই বার declare এবং অনেক বার assign করা যায়।
 
@@ -98,37 +156,57 @@ const একবারই বার declare এবং একবারই বা�
 কোণ keyword ছাড়াই variables declare করা যায় যা nothing এটা সমস্যা করে তাই এটা use করা উচিত না।
 */
 
+
+
+
 // ************************* JavaScript Live Class 2, Part 2 - Statement, Concatenation, Scaping, Template literals, Interpolation in JavaScript
+
+
+
 
 // Statement হচ্ছে JS এর একটি full লাইন যা কোন একটী পুর্নাঙ্গ instruction carry করে এবং এর শেষ হয় (;) চিহ্ন দিয়ে
 
 // Concatenation হচ্ছে কোন রকম arithmatic operation না করে পাশা-পাশি মিলিয়ে বসানো
 
 // Scaping মানে হচ্ছে, আমরা যানি কোড লিখার সময় আমাদের ('')/("") এই symbol এর ভিতরে লিখতে হয় । এখন কোন কারনে যদি symbol এর ভতরেও একই রকম symbol ব্যাবহারের প্রয়োজন হয়( don't,"coating speech") তখন আমাদের কে সেই specific symbol এর আগে একটা (\) use করতে হয় (don\'t,\"coating speech\") একেই scaping বলা হয়।
-/*console.log("he said,\"You are a good boy\".");
+
+/*
+console.log("he said,\"You are a good boy\".");
 console.log('i don\'t have so money that you are asking for.');*/
 
 // Template literals, Interpolation মানে হল, normally concatination এর জন্য আমরা ('' / "") symbol break করে তারপর (+) symbol দিয়ে দিয়ে করতাম যা অনেকটা বিশ্রি ও হিজিবিজি লাগে। এখন এই same কাজ টাই করা যায় (``) এর ভিতরে (`${variableName}`) দিয়ে। এবং আরো সুবিধা হল এই style লিখলে scaping এর কোন ঝামেলা নেই অর্থাঠ যে কোন যায়গায় ('' / "") symbol use করা যাবে। এটা অনেকটা HTML এর 'pre' tag এর মত কারণ এর ভিতরেও যেভাবে space-টিspace দিয়ে লিখা হয় ঠিক সেইভাবেই print output হয়।
 
-/*let personName = "Abdullah";
+/*
+let personName = "Abdullah";
 let personAge = 2;
 let personSkill = "Playing";
 
 console.log("This is concatinated by \"+\" symbol : Hi, My name is " + personName + " I am just " + personAge + " years old & I like to do " + personSkill + " all the time.");
 
-console.log(`This is concatinated by Template literals, Interpolation : Hi, My name is ${personName} I am just ${personAge} years old & I like to do ${personSkill} all the time.`);*/
+console.log(`This is concatinated by Template literals, Interpolation : Hi, My name is ${personName} I am just ${personAge} years old & I like to do ${personSkill} all the time.`);
+*/
 
-/* ******************************JavaScript Live Class 2, Part 3 - DadaType ডাটাটাইপ কি?, কিভাবে?, কেমনে বিস্তারিত..
+
+
+
+// ******************************JavaScript Live Class 2, Part 3 - DadaType ডাটাটাইপ কি?, কিভাবে?, কেমনে বিস্তারিত..
+
+
+
 
 // যেকোন ফর্ম যখন আমরা ফিল করতে যাই সেখানে আমরা মূলত প্রায়৪ ধরনের তথ্য দিয়ে থাকি যা প্রত্যেকেই আলাদা আলাদা DataTypes। example: (1) Whats you name ? -Asif;(2) How old are you ? -25; (3) Are you married ? - Yes ; (5) Your hobbies ? - coding,playing,sleeping.
 
+/*
 ৫ type  এর data হয়ঃ
 ১) string: asset of charecters অর্থাৎ একগুচ্ছ বর্নমালা । যা ('' / "") Symbol এর ভিতরে লিখতে হয়। সংখ্যা বাচক data কে ('' / "") Symbol ভিতরে লিখলে তা আবার string হয়ে যায়।
 ২) Number: সংখ্যা বাচক data যা ('' / "") Symbol ছাড়া লিখতে হয়। সংখ্যা বাচক data কে ('' / "") Symbol ভিতরে লিখলে তা আবার string হয়ে যায়।
 ৩) Boolean: সত্য / মিথ্যা অথবা হ্যা / না মুলক তথ্য সংগ্রহ করা হয়।
 ৪) Array: a combo package of multiple data-type in a sigle variable অর্থাৎ একাধিক type এর data যখন একত্রে কোন variable এর value নির্দেশ করে তখন সেই data গুলোর type কে array data type বলে। array data type গুলোকে  অবশ্যই [] ব্র্যাকেটের ভতরে (,) দিয়ে দিয়ে লিখতে হয়।
+5) object
+*/
 
-for example:*/
+// for example:
+
 /*
 let varStringWhatsYourName = "Abdullah";
 let varNumberHowOldAreYou = 2;
@@ -139,8 +217,9 @@ console.log(typeof varStringWhatsYourName);
 console.log(typeof varNumberHowOldAreYou);
 console.log(typeof varBooleanYouAreAKidRight);
 console.log(typeof varArrayWriteYourAim);
+*/
 
-
+/*
 let আলু = 50;
 let পটল = 20;
 let মোট = আলু + পটল;
@@ -151,10 +230,13 @@ console.log(`
     পটলের দাম = ${পটল} টাকা
 --------------------------------
     মোট খরচ = ${মোট} টাকা
-`);*/
+`);
+*/
+
 
 
 // ****************************************** Array example:
+
 
 
 /*
@@ -170,8 +252,6 @@ console.log(array1[5] = "five"); // numbers variable এর 5th index এর উ
 console.log(array1); // arry এর recent update কে concole এ দেখার জন্য
 console.log(array1.push("six")); // arry তে শেষ উপাদান হিসেবে six কে add করতে
 console.log(array1);
-
-
 
 
 console.log(array1.unshift("- one")); // arry তে প্রথম উপাদান হিসেবে - one কে add করতে
@@ -226,6 +306,8 @@ console.log(AnotherNewValue);
 console.log(ExtraAnotherNewValue);
 */
 
+
+
 // Experiment
 /*
 let array1 = [0, 1, 2, 3, 4, 5, 6];
@@ -238,7 +320,12 @@ console.log(array1.length)
 console.log(newiee == array1.length);
 */
 
+
+
+
 // ********************* 19-5 Declare objects with multiple properties and value
+
+
 
 
 // object হচ্ছে এমন type data যার একাধিক property ও তার against এ value আছে। example
@@ -259,7 +346,12 @@ let pc1 = {
 
 */
 
+
+
 // ******************** 19-6 multiple ways to get and set object property , object method
+
+
+
 /*
 let pc1 = {
     name: "Asus",
@@ -302,7 +394,11 @@ console.log(pizza.toppings[2]);
 
 // ******************************** JavaScript Live Class 2, Part 4 - Operators অপারেটরস কি?
 
-/*Operators হচ্ছে programming language এ ব্যবহৃত সকল সাঙ্কেতিক চিহ্ন ব্যবহৃত হয়। javascript এ ৭ প্রকার operators আছে।
+
+
+
+/*
+Operators হচ্ছে programming language এ ব্যবহৃত সকল সাঙ্কেতিক চিহ্ন ব্যবহৃত হয়। javascript এ ৭ প্রকার operators আছে।
 [ better to learn also from SATT academy]
 
 ১) Arith matical opt: +, -, *, /, %, ++, --
@@ -311,7 +407,9 @@ console.log(pizza.toppings[2]);
 ৪) logical opt: AND (&&), OR (||)
 ৫) string opt: +, += 
 ৬) bitwise opt: &, -, ^, |, <<, >>, >>>, <<<
-৭) special opt: delete, in, instanceof, typeof, new, void, yield*/
+৭) special opt: delete, in, instanceof, typeof, new, void, yield
+*/
+
 
 /*
 // use of Assignment opt
@@ -350,9 +448,16 @@ console.log(txt1 + " " + txt2);
 
 txt1 += " হক ";
 console.log(txt1);
-console.log(txt1 + " " + txt2);*/
+console.log(txt1 + " " + txt2);
+*/
+
+
+
 
 // ***************************** Action with Event Listener- click- dblclick- mouseenter- mouseleav
+
+
+
 
 //project -1 :  আমি চাচ্ছি button টাতে click পরলে তারপর start লিখাটা মুছে নতুন কিছু আসবে
 /*
@@ -371,6 +476,7 @@ document.querySelector('button').addEventListener('click', function () {
 */
 
 //project -2: তজবি apk 
+
 /*
 // targeting
 let h1Tag = document.querySelector('h1');
@@ -399,7 +505,9 @@ tajbiDana.addEventListener('mouseleave', function () {
 });
 */
 
+
 // project -3:  button এ click করলে তা input এ যা লিখব তা h1 tag এ দেখাবে
+
 /*
 let buttonTAg = document.querySelector('button');
 let h1Tag = document.querySelector('h1');
@@ -412,7 +520,8 @@ buttonTAg.addEventListener('click', function () {
 */
 
 //project -4: সাইন আপ ফর্ম ফিল করার পর তার ডাটা দিয়ে একটা স্লিপ তৈরী করব,
-/*-
+
+/*
 let notificationInH1Tag = document.querySelector('h1');
 
 let submit = document.querySelectorAll('p input')[5];
@@ -430,7 +539,11 @@ submit.addEventListener('click', function () {
 
 
 
+
 // ***************************** JavaScript Live Class 2, Part 5 - conditional statement কন্ডিশনাল সেন্টেন্স কি?
+
+
+
 
 // example 1
 /*
@@ -441,9 +554,11 @@ if (age >= 18) {
 } else {
     console.log(`you are not eligible for marriage as per bd rule.doya kore ${18 - age} bosor wait korun.`);
     
-}*/
+}
+*/
 
 // example 12
+
 /*
 let firstName = prompt('First Name Plz', 'Mr.');
 let lastName = prompt('Last Name Plz', 'XXX');
@@ -459,6 +574,8 @@ if (lastName == "Haq") {
     
     manager: ${firstName} ${lastName} ভাই কেমন আছেন?`);    
 }*/
+
+
 /*
 let marks = prompt('Put your SSC Marks', '50');
 
@@ -487,7 +604,8 @@ if (marks >= 0 && marks <= 49) {
     console.log(`
     Your got only ${marks} mark.
     Your grade is ${grade}`);
-}*/
+}
+*/
 
 
 //project -5: বিয়ের বয়স calculate করব,
@@ -523,7 +641,9 @@ submit.addEventListener('click', function () {
 });
 */
 
+
 //project -6: name নিব আর বয়স চেক করব যদি ২০ এর ু উপরে হয় তাহলে allow করব,
+
 /*
 let btn = document.querySelector('#submit');
 
@@ -599,15 +719,20 @@ BTN.addEventListener('click', function () {
 */
 
 //project ৮: user তার নাম ও জন্ম সাল লিখবে এবং automatic age calculate হবে
+
 /*
 let Name = prompt("name");
 let DoB = prompt("DoB");
 
 console.log(`hi! ${Name}, you are ${2022-DoB} years old`);
 */
+
+
 // project 9 || বন্ধুদের নাম+mark জানা আছে তাদের নাম বসিয়ে দিলে মার্ক + রেজালতের গ্রেড বের  হবে।
 
+
 // project - 10 || traffic signal select করলে সেই অনুযায়ী instruction দেখাবে এবং রঙ চেঞ্জ হবে
+
 /*
 let signal = prompt("Traffic signal");
 
@@ -621,7 +746,10 @@ if (signal == "Red") {
     console.log(`Wrong signal`);
 }
 */
+
+
 // project - 11 || select option থেকে currency select করে তাদেরকে বাংলাদেশি টাকায় convert করতে হবে
+
 /*
 let converter = document.querySelector('button');
 
@@ -651,6 +779,7 @@ converter.addEventListener('click', function () {
 
 
 // project - 12 || আপনাকে ৩ টা ডাটা দেয়া আছে।যেখানে একজন মানুষের  বয়স , ভ্যাকসিন গ্রহণের  সংখ্যা এবং সব গুলো ভ্যাকসিন গ্রহণের স্ট্যাটাস দেয়া আছে। ভ্যারিয়েবল গুলোর ডাটার প্যাটার্ন নিচে দেয়া হলো। age = 23 ; vaccineCount = 1 ; isVaccinated = false || আপনাকে নিচে কয়েকটি শর্ত দেয়া হলো। শর্ত গুলো আপনাকে চিন্তা ভাবনা করে সমাধান করতে হবে। আপনি  প্রয়োজন অনুসারে ভ্যারিয়েবল গুলোর  মান পরিবর্তন করতে পারেন ।যাদের বয়স ২০ এর উপরে এবং যারা ২ ডোজ ভ্যাকসিন গ্রহণ করেছে তারা বিদেশ গমন করতে  পারবে।যাদের বয়স ১৫-২০ এর মধ্যে এবং যারা একবারও ভ্যাকসিন গ্রহণ করেনি তাদের কাছে একটি মেসেজ যাবে ভ্যাকসিন দেয়ার জন্য।যাদের বয়স ১৫-২০ এর মধ্যে এবং ২ ডোজ ভ্যাকসিন গ্রহণ করেছে  তাদের isVaccinated আপডেট হয়ে true হয়ে যাবে এবং তাদের কাছে একটি মেসেজ যাবে -“ আপনার ২ ডোজ  ভ্যাকসিন সম্পন্ন হয়েছে। ” ।
+
 /*
 let age = prompt("How old are you?");
 let vaccineCount = prompt("How many times are you vaccinated?");
@@ -699,6 +828,7 @@ alert(`Sleep mode on cause budget is low`);
 
 
 // project - 14 || একটা array থাকবে। এমন একটা condition লিখতে হবে যেখানে যদি value টা array তে exist করে তবে একটা message দিবে আর exist না করলে অন্য একটা message দিবে
+
 /*
 let colors = ["Red", "Green", "Yellow", "Blue"];
 let askiiElement = prompt("Write the color?");
@@ -715,6 +845,7 @@ if (colors.indexOf(askiiElement) == -1) {
 
 }
 */
+
 
 // second way
 
@@ -737,6 +868,7 @@ for (let i = 0; i < colors.length; i++) {
 */
 
 // 1. কোনো একটা লেটার vowel কিনা তা নির্ণয় করা যায় কিভাবে ?
+
 /*
 var input = prompt("Write the letter?");
 var letter = input.toLowerCase();
@@ -748,6 +880,7 @@ if (letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter =
 */
 
 // 2. তিনটি সংখ্যার মধ্যে বড়ো সংখ্যাটি বের কর 
+
 /*
 var number1 = 1000;
 var number2 = 6000;
@@ -769,7 +902,12 @@ else{
 */
 
 
+
+
 // **************************** JavaScript Live Class 3, Part 1 - Currency Converter logic by if else statement
+
+
+
 
 /*
 alert(`
@@ -822,8 +960,10 @@ if (ammount == '' || currency == '') {
 }*/
 
 
-/*
+
 // Personal project 1
+
+/*
 let gender = prompt('Are you male or female?','Male');
 if (gender == '') {
     alert('All the fills need to be filled !!!')
@@ -851,9 +991,16 @@ if (gender == '') {
 }
 */
 
+
+
+
 // ********************************************* js data convertion 
 
+
+
+
 // আমরা আগে যেনেছি যে prompt use করে কোন variable এর value নেয়া হলে তার typeof হচ্ছে string যদিও আমরা কোন number কে value হিসেবে assign করাই নে কেন।আর এ সমস্যা কে সমাধান করার জন্য আমরা parseInt function use করি যা prompt এ assign কৃত number কে typeof number ই দেয়। তবে এক্ষেত্রে মনে রাখতে হবে যে parseInt function use করে string value assign করলে তারও typeof number ই হয় যায়।
+
 /*
 let onlyPrompt = prompt('Type Your Number');
 console.log(typeof onlyPrompt);
@@ -869,6 +1016,7 @@ console.log(typeof parseFloatPrompt);
 */
 
 // problem of parseInt parseFloat 
+
 /*
 let parsePrompt1 = parseInt(prompt('Type Your Number parsePrompt1'));
 let parsePrompt2 = parseInt(prompt('Type Your Number parsePrompt2'));
@@ -888,7 +1036,12 @@ ${parseFloatPrompt1} + ${parseFloatPrompt2} = ${parseFloatPrompt1 + parseFloatPr
 
 
 
+
+
 // ************************** JavaScript Live Class 3, Part 2 - Basic CGPA Calculator in javaScript by Prompt with student id and roll
+
+
+
 
 /*
 let stdnName = prompt('Whats your name?');
@@ -923,9 +1076,17 @@ Bellow is you marksheet,
 
 `);
 */
+
+
+
+
 // ****************************** JavaScript Live Class 3, Part 3 - Switch Statement in JavaScript
 
+
+
+
 // swithch, casw, default মূলত এক ধরনের conditional statement just if-else condition এর short form কিন্তু এক্ষেত্রে কোন রকম range define করা যায় না এটা অর্থাৎ এখানে case কাজ করে if == value হিসেবে আর default কাজ করে else হিসেবে কোন range নেয়া যায় না
+
 /*
 // this function will not work if you just use prompt only cause switch may work on only number typeof data type. !!!???
 
@@ -948,6 +1109,7 @@ switch (height) {
 }
 */
 
+
 /*
 const expr = 'Papayas';
 switch (expr) {
@@ -964,9 +1126,16 @@ switch (expr) {
 }
 */
 
+
+
+
 // ***************************** 19-8 (advanced) while and for loop break and continue
 
+
+
+
 // use of break
+
 /*
 for (let i = 1; i < 20; i++) {
     console.log(i + ` i love u satu `);
@@ -977,6 +1146,7 @@ for (let i = 1; i < 20; i++) {
 */
 
 // use of continue
+
 /*
 for (let i = 1; i < 10; i++) {
     if (i == 5) {
@@ -985,6 +1155,7 @@ for (let i = 1; i < 10; i++) {
     console.log(i + ` i love u satu `);
 }
 */
+
 
 // use of continue on array
 
@@ -995,6 +1166,9 @@ for (let i = 0; i < anArray.length; i++) {
     console.log(element); // সবগুলো উপাদানকে দেখতে
 }
 */
+
+
+
 /*
 let anArray = [00, 11, 22, 33, 44, 55, 66, 77, 88, 99, 111];
 for (let i = 0; i < anArray.length; i++) {
@@ -1005,6 +1179,8 @@ for (let i = 0; i < anArray.length; i++) {
     console.log(element); // continue এর effect দেখতে
 }
 */
+
+
 /*
 let anArray = [00, 11, 22, 33, 44, 55, 66, 77, 88, 99, 111];
 for (let i = 0; i < anArray.length; i++) {
@@ -1015,6 +1191,7 @@ for (let i = 0; i < anArray.length; i++) {
     console.log(element); // break এর effect দেখতে
 }
 */
+
 
 // 5. একটা লুপ এর সাহায্যে ৭ ঘরের নামতা লিখো 
 /*
@@ -1027,7 +1204,12 @@ for (let i = 1; i <= 10; i++) {
 */
 
 
+
+
 // ********************************** JavaScript Live Class 3, Part 4 - undefined, NULL, empty value in JavaScript
+
+
+
 
 // undefined, NULL, empty এই তিনটা জিনিসই অর্থগত/বাহ্যিক দিক থেকে একই মনে হলেও এরা ৩ টি আলাদা আলাদা data type . specially they are different from the angle of typeof.
 
@@ -1045,11 +1227,18 @@ console.log(aNullData);
 console.log(typeof aNullData); //null is a object type data অর্থাৎ আমি একটা data নিয়েছি কিন্তু ইচ্ছাকৃত ভাবে এর value হিসেবে null কে বা শূন্য assign করেছে তাই এর value দেখাচ্ছে null
 */
 
+
+
+
 // *************************** JavaScript Live Class 3, Part 5 - Ternary Operator & Null Coalescing Operator in JavaScript
+
+
+
 
 // Ternary Operator হচ্ছে ifelse condition এর short form এখানে কিন্তু else if condition কাজ করবে না অর্থাৎ সংক্ষিপ্ত বা ছোট condition run করার জন্য ব্যবহৃত হয়। বড় condition এর ক্ষেত্রে তখন ifelse elseif use করাই উত্তম।
 
 // ifelse condition:
+
 /*
 let age = prompt('How old are you?','20');
 
@@ -1059,6 +1248,7 @@ if (age >= 21) {
     console.log('Boy! You can\'t marry. (Else)');    
 }
 */
+
 
 // উপরের এই condition টার short form বা ternary operator form:
 /*
@@ -1099,7 +1289,12 @@ console.log(moja);//aNulledValuedData এটার value null না দেখ�
 */
 
 
+
+
 // ********************************* JavaScript Live Class 3, Part 6 Loop - For, While, Do-While loop in JavaScript
+
+
+
 
 // for loop examfa:
 
@@ -1120,6 +1315,7 @@ for (let index = 1; index <= 100; index++) {
 */
 
 // ৩. ৫০ থেকে ৮০ এর মধ্যে যতো বিজোড় সংখ্যা আছে সেগুলাকে দেখাবে। 
+
 /*
 for (let index = 50; index <= 80; index++) {
     if (index % 2 != 0) {
@@ -1244,12 +1440,12 @@ for (let index = 1; index <= 100; index++) {
 
 // project:প্রতিদিন তোমার কাজ কি? ১) রাত ৮ টা বাজে মডিউল আনলক করো  ২) ফটাফট ভিডিও দেখে দেখে প্রাকটিস করো ৩) ভিডিও দেখতে দেখতে নোটস নাও ৪) মডিউল শেষ হলে পুরা মডিউল নিজে নিজে প্রাকটিস করো ৫) কোন কিছু বুঝতে না পারলে (চিন্তা করে দেখো এইখানে কিন্তু একটা শর্ত আছে ), সাপোর্ট সেশনে জয়েন করো .এখন তোমার কাজ হচ্ছে একটা for লুপ ১০ বার চালিয়ে উপরের জিনিসগুলা আউটপুট হিসেবে দেখানো। আবার একই জিনিস while লুপ চালিয়ে ১০ বার দেখানো। 
 
-
-// let myDailyTask = ["১) রাত ৮ টা বাজে মডিউল আনলক করো", "২) ফটাফট ভিডিও দেখে দেখে প্রাকটিস করো", "৩) ভিডিও দেখতে দেখতে নোটস নাও", "৪) মডিউল শেষ হলে পুরা মডিউল নিজে নিজে প্রাকটিস করো", "৫) কোন কিছু বুঝতে না পারলে (চিন্তা করে দেখো এইখানে কিন্তু একটা শর্ত আছে ), সাপোর্ট সেশনে জয়েন করো"];
+/*
+let myDailyTask = ["১) রাত ৮ টা বাজে মডিউল আনলক করো", "২) ফটাফট ভিডিও দেখে দেখে প্রাকটিস করো", "৩) ভিডিও দেখতে দেখতে নোটস নাও", "৪) মডিউল শেষ হলে পুরা মডিউল নিজে নিজে প্রাকটিস করো", "৫) কোন কিছু বুঝতে না পারলে (চিন্তা করে দেখো এইখানে কিন্তু একটা শর্ত আছে ), সাপোর্ট সেশনে জয়েন করো"];
 
 
 // to see all the element in console as a list
-/*
+
 console.log(myDailyTask);
 
 for (let index = 0; index < myDailyTask.length; index++) {
@@ -1258,7 +1454,9 @@ for (let index = 0; index < myDailyTask.length; index++) {
 
 }
 */
+
 // solve of the math
+
 /*
 for (let i = 0; i < myDailyTask.length; i++) {
 
@@ -1274,6 +1472,7 @@ for (let i = 0; i < myDailyTask.length; i++) {
 // while loop: সব same just structure টা ভিন্ন
 
 // to print 1 to 10 by both for and while
+
 /*
 for (i = 1; i <= 10; i++){
     console.log(i);
@@ -1304,7 +1503,11 @@ do {
 }while (do_i <= 10)
 */
 
+
+
 // ***************************** JavaScript Live Class 4, JavaScript Function Part-1
+
+
 
 // same code যাতে বার বার লিখতে না হয় সেই জন্যে function use করা হয়
 
@@ -1334,7 +1537,11 @@ function function2() {
 */
 
 
+
 // ***************************** f2.  making a simply dinamic dyStage1 type Function: Function with parameter
+
+
+
 
 //  dynamic করার জন্য আমাদেরকে function declaration এর সময় এর মধ্যে parameter দিয়ে দিতে হবে যা অনেকটা variable এর মত কাজ করবে আর function invocking এর সময় এর মধ্যে arguments দিয়ে দিতে হবে যা অনেকটা variable এর valueর মত কাজ করবে। আর arguments খালি রাখলে parameter undefined অথবা default value দেখাবে।
 
@@ -1359,7 +1566,11 @@ takaAse(taka);
 
 
 
+
+
 // ************************* default valued parameter 
+
+
 
 // example with multiple  parameter: multiple  parameter এর ক্ষেত্রে parameterগুলো কমা দিয়ে দিয়ে লিখতে হবে এবং argumentsগুলো parameter অনু
 
@@ -1386,17 +1597,22 @@ function takaAse(taka) {
 }
 let potatoPieceQty = takaAse(taka);
 console.log(`ddokandar  : ei nen mama ${potatoPieceQty} ta potato nen`);
+*/
 
 // explaining project f2 : ১) taka prompt থেকে value নিচ্ছে line-1108; 2) taka prompt থেকে পাওয়া value পাঠিয়ে দিচ্ছে  takaAse এর আর্গুমেন্ট হিসিবে line-1108;  ৩) takaAse তার আর্গুমেন্ট কে পাঠিয়ে দিচ্ছে function এর takaAse এর value হিসিবে line-1110;  ৪) সেই value console এ প্রিন্ট হচ্ছে line-1111; ৫) আবার সেই value চলে গেছে potatoQty এর মান বের করতে line-1113; ৬) এখন return potatoQty লিখার মাধ্যমে পুরা function এর output হিসেবে potatoQty তার value return করে বসে আছে আর তা পাঠিয়ে দিয়েছে line-1116 তে ivoke function takaAse(taka) এর কাছে; ৭) আর তারপর সেই return value console এ প্রিন্ট হচ্ছে line-1117;
-*/
+
+
 
 
 // ****************** 19-4 (advanced) Multiple parameter add, multiplication, et
 
 
+
+
 // বিঃ দ্রঃ : (১) variable হল যা function এর বাহিয়ে declared ।। আর parameter হল এমন variable যা শুধু function এর জন্য নির্ধারিত ও কেবল মাত্র function ভিতরেই কাজ করে। (২) যাকে return করা হবে সে মুলত full function এর value কে hold করে
 
 // project f3 : দুটা parameter কে যোগ করতে হবে
+
 /*
 let numberOne = 50;
 let numberTwo = 150;
@@ -1563,7 +1779,12 @@ console.log(`The result is ${finalResultOfSquare}`);
 */
 
 
+
+
 // ******************************** 20-2 Unit Convert Inch to Feet, miles to kilometer
+
+
+
 
 // Convert Inch to Feet
 /*
@@ -1604,6 +1825,7 @@ resultInFeet = inches2feets(dadaInches);
 console.log(`${inches}" = ${resultInFeet}'`);
 */
 
+
 // Convert miles to kilometer
 /*
 let miles = Number(prompt("Type value in miles"));
@@ -1619,7 +1841,14 @@ let resultInKm = miles2Km(miles);
 console.log(`${miles} miles = ${resultInKm} Km`);
 */
 
+
+
+
 // *********************** 20-3 Check even and odd number using function
+
+
+
+
 /*
 let inputNumber = prompt(`Type The Number You Want To Check`);
 
@@ -1639,7 +1868,13 @@ let outPutResult = checkOddEven(inputNumber);
 console.log(`${inputNumber} |||   ${outPutResult}`);
 */
 
+
+
+
 // ***************************	20-4 Check whether a year is a Leap Year or not
+
+
+
 
 /*
 let year = prompt(`Type The year You Want To Check`);
@@ -1670,7 +1905,12 @@ resultOfChecking = isYearLeapYear(mammasYear);
 console.log(`${mammasYear} -  ${resultOfChecking}`);
 */
 
+
+
 // ************************************ 20-5 Calculate Factorial of a number using for loop // ********************************* 20-6 Recalculate factorial multiple times using a function
+
+
+
 
 
 // Factorial of 7 by loop
@@ -1712,7 +1952,12 @@ console.log(`Factorial of ${factorialOf} is, ${resulOfFactorial}`);
 // explanation: (১) requirement টা লাইন নাম্বার 1535 এ factorialOf এ feed দেয়া হল; (২) তারপর লাইন নাম্বার 1536 এ একটা function declared করা হল;; (৩) তারপর লাইন নাম্বার 1538 function টা defining শুরু করা হল; (৪) function এর ভিতরে একটা foreign variable নেইয়া হল factorial নামে যাতে ফ্যক্টরিয়ালের নিয়ম অনুযায়ী গুন চালানো যায়; (৫) for loop চালানো হল  (৬) এখন loop অনুযায়ী যখন i = ১ তখন factorial এর value update হয়ে হল ১ X ১ = ১ ; যখন i = ২ তখন factorial এর value update হয়ে হল ১ X ২ = ২; যখন i = ৩ তখন factorial এর value update হয়ে হল ২ X ৩ = ৬;  যখন i = ৪ তখন factorial এর value update হয়ে হল ৬ X ৪ = ২৪; এভাবে চলতে চলতে যখন শর্ত শেষ হবে বের হয়ে রেজাল্ট দেখাবে
 
 
+
+
 // *****************************●	20-7 Factorial using a while loop or a decrementing loop
+
+
+
 
 /*
 let needFactorialOf = 7;
@@ -1867,7 +2112,19 @@ console.log(printedOrderSlip);
 
 
 
-// ******************************* unsolved problems of curses 
+
+
+
+
+
+
+
+
+
+// ******************************* unsolved problems of curses
+
+
+
 // project 9 || বন্ধুদের নাম+mark জানা আছে তাদের নাম বসিয়ে দিলে মার্ক + রেজালতের গ্রেড বের  হবে। 
 
 // 2. তিনটি সংখ্যার মধ্যে বড়ো সংখ্যাটি বের কর showing sequence
