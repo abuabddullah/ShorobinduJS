@@ -281,7 +281,8 @@ const mixedArray = [26, "hello", true, undefined, null, {
 let value = Array.isArray(numbersArray); // variable টা আসলে arry কিনা জানার জন্য
 let lastRemovedItem = numbersArray.pop(); // আবার pop করা item টাকে অন্য একটা variable এ declare ও করা যায় এখানে pop করা item 77 টাকে lastRemovedItem এ assigned হয়ে গেছে
 
-numbersArray.splice(1, 3)
+let spliced = numbersArray.splice(1, 3); // numbersArray এর index no-1 থেকে index no-3  পর্যন্ত element গুলোকে splice করে নতুন variable splicedএ রাখার জন্য
+
 
 numbersArray.reverse(); // array এর উপাদান গুলোকে  উলটো ক্রমানুসারে সাজাতে
 
@@ -301,6 +302,7 @@ let ExtraAnotherNewValue = numbersArray.find(over50);
 
 // Output
 console.log(numbersArray);
+console.log(spliced);
 console.log(newValue);
 console.log(AnotherNewValue);
 console.log(ExtraAnotherNewValue);
@@ -2112,9 +2114,249 @@ console.log(printedOrderSlip);
 
 
 
+// ****************************** 21-1 Module Introduction, Math and Random number
 
 
 
+/*
+let myNum = -5;
+let absOfMyNum = Math.abs(myNum); // যেকোন সঙ্খ্যাকে তার পরমমানে অর্থাৎ + / - value ছাড়া বানাতে 
+console.log(absOfMyNum); // to see output
+
+
+let myCelingNum = 5.8755;
+let ceilOfMCN = Math.ceil(myCelingNum); // দশমিকে পরে কোন কিছুই থাকলে তা পরবর্তি পুর্ন সংখ্যাকে দেখাবে
+console.log(ceilOfMCN); // to see output
+
+
+let myFloorNum = 465.8755;
+let ceilOfMFN = Math.floor(myFloorNum); // দশমিকে পরে যা কিছুই থাক তা পুর্ববর্তি পুর্ন সংখ্যাকে দেখাবে
+console.log(ceilOfMFN); // to see output
+
+
+let myRoundNum = 50.5;
+let ceilOfMRN = Math.round(myRoundNum); // দশমিকে পরে 0.4 এর উপরে থাকলে পরবর্তি পুর্ন সংখ্যাকে দেখাবে নইলে পুর্ববর্তি পুর্ন সংখ্যাকে দেখাবে
+console.log(ceilOfMRN); // to see output
+
+
+let mathRandomNum = Math.random(); // এটা ০ - ১ পর্যন্ত continously random কিচু number দেখাতে থাকে
+console.log(mathRandomNum); // to see output 0 - 1
+console.log(mathRandomNum * 10); // to see output 0 - 10
+console.log(mathRandomNum * 100); // to see output 1 - 100
+
+let roundedRandomNum = Math.round(mathRandomNum * 100); // to see output 1 - 100 in rounded form
+console.log(roundedRandomNum); // to see output
+*/
+
+
+/*
+let anotherArray = [10, 20, 30, 40]
+
+const min = Math.min(...anotherArray) // আররে তে কোনটা বড় এলেইমিন্ট
+console.log(min) // to see output
+
+const max = Math.max(...anotherArray) // আররে তে কোনটা ছোট এলেইমিন্ট
+console.log(max) // to see output
+*/
+
+
+
+// একটা ফাংশন লিখ যেটা টানা ১০ টা random number দিবে
+/*
+for (let index = 1; index <= 10; index++) {
+    let output = Math.random();
+    console.log(index, output * 100);
+    output++;
+}
+*/
+
+
+
+
+// *************************** 21-2 Swap variable, swap without temp, destructing একটার value আরেকটায় রাখা বা Swap 
+
+
+
+/*
+let value1 = 10;
+let value2 = 20;
+console.log(value1, value2);
+
+// conventional method swaping these variables value interchange between them
+let thidParty = value1;
+value1 = value2;
+value2 = thidParty;
+console.log(value1, value2);
+
+// Distructring method swaping these variables value interchange between them
+
+let v1 = 100;
+let v2 = 200;
+console.log(v1, v2);
+[v1, v2] = [v2, v1];
+console.log(v1, v2);
+*/
+
+
+
+
+// ************************ 21-3 Find max of two values, find max of three values
+
+
+
+
+// ৩টা সংখ্যার মাঝে বড় কন্টা এবং ছোট কোনটা বের করার ফানশন using math method
+/*
+let n1 = Number(prompt("num1"));
+let n2 = Number(prompt("num2"));
+let n3 = Number(prompt("num3"));
+
+
+findLargestNLowest(n1, n2, n3);
+
+function findLargestNLowest(v1, v2, v3) {
+    let largestNum = Math.max(v1, v2, v3);
+    let lowestNum = Math.min(v1, v2, v3);
+    return `largestNum is ${largestNum} and lowestNum is ${lowestNum}`;
+}
+let outputOfOpt = findLargestNLowest(n1, n2, n3);
+console.log(outputOfOpt);
+*/
+
+
+
+// ********************************* 21-4 Sum of all numbers in an array
+
+
+
+
+/*
+// without function
+let anArray = [10, 20, 30, 40];
+
+let sum = 0;
+for (let i = 0; i < anArray.length; i++) {
+    sum += anArray[i]
+}
+console.log(sum);
+
+
+// with function
+
+let anArray1 = [100, 200, 300, 400];
+sumOfArray(anArray1);
+
+function sumOfArray(arr1) {
+    let finalSum = 0;
+    for (let i = 0; i < arr1.length; i++) {
+        const element = arr1[i];
+        finalSum += element;
+    }
+    return finalSum;
+}
+let resultOfArraySum = sumOfArray(anArray1);
+console.log(resultOfArraySum);
+*/
+
+
+
+
+
+// **************************** 21-5 Find the largest and lowest element of an array
+
+
+
+// largest  element of an array
+
+
+/*
+let forPickArray = [10, 520, 5, 54, 556];
+
+function checkThePick(arr) {
+    let pick = Math.max(...arr);
+    return pick;
+}
+let resultPick = checkThePick(forPickArray);
+console.log(resultPick);
+
+
+
+// lowest  element of an array
+
+let forBottomArray = [100, 520, 50, 54, 5560];
+
+function checkTheBottom(arr) {
+    let bottom = Math.min(...arr);
+    return bottom;
+}
+let resultBottom = checkTheBottom(forBottomArray);
+console.log(resultBottom);
+*/
+
+
+
+
+// ************************************** 21-6 Create a Fibonacci Series using a for loop
+
+
+/*
+fibonacci series:  0,1,1,2,3,5,8,13,21,34,55,89....
+
+explain:
+3rd = 2nd + 1st
+4th = 3rd + 2nd
+5th = 4th + 3rd
+6th = 5th + 4th
+
+so we can formulate,
+nth = (n-1)th + (n-2)th
+ith = (i-1)th + (i-2)th
+
+so we can write,
+(i)fibo = (i-1)fibo + (i-2)fibo
+fibo[i] = fibo[i-1] + fibo[i-2]
+
+*/
+
+
+/*
+let fiboLimit = 10;
+
+getFiboSeries(fiboLimit);
+
+function getFiboSeries(limit) {
+    let fiboSeries = [0, 1];
+    for (let i = 2; i < limit; i++) {
+        fiboSeries.push(fiboSeries[i - 1] + fiboSeries[i - 2]);
+    }
+    return fiboSeries;
+}
+
+let theSeries = getFiboSeries(fiboLimit);
+console.log(theSeries);
+*/
+
+// fibonacci series লিখ যা কোন wrong iput দিলে alert করবে
+
+/*
+let fiboLimit = prompt("type the limit");
+
+getFiboSeries(fiboLimit);
+
+function getFiboSeries(limit) {
+    if (typeof limit != Number && limit < 2) {
+        return `plz give input a number type data and must be above 2`
+    }
+    let fiboSeries = [0, 1];
+    for (let i = 2; i < limit; i++) {
+        fiboSeries.push(fiboSeries[i - 1] + fiboSeries[i - 2]);
+    }
+    return fiboSeries;
+}
+
+let theSeries = getFiboSeries(fiboLimit);
+console.log(theSeries);
+*/
 
 
 
@@ -2128,3 +2370,35 @@ console.log(printedOrderSlip);
 // project 9 || বন্ধুদের নাম+mark জানা আছে তাদের নাম বসিয়ে দিলে মার্ক + রেজালতের গ্রেড বের  হবে। 
 
 // 2. তিনটি সংখ্যার মধ্যে বড়ো সংখ্যাটি বের কর showing sequence
+/*
+let n1 = Number(prompt("num1"));
+let n2 = Number(prompt("num2"));
+let n3 = Number(prompt("num3"));
+
+
+findLargestNLowest(n1, n2, n3);
+
+function findLargestNLowest(v1, v2, v3) {
+    let largestNum = Math.max(v1, v2, v3);
+    let lowestNum = Math.min(v1, v2, v3);
+    let arr = [v1, v2, v3];
+
+    return `largestNum is ${largestNum} and lowestNum is ${lowestNum}`;
+}
+let outputOfOpt = findLargestNLowest(n1, n2, n3);
+console.log(outputOfOpt);
+*/
+
+/*
+Q15: What code you have to write to know the number of “a” in a string
+
+var sentence = "I am hardworking. I am determined. I will be a web developer.";
+var count = 0;
+for(var i = 0; i < sentence.length; i++){
+  var letter = sentence[i];
+  if(________?______){
+    count++;
+  }
+}
+console.log(count)
+*/
