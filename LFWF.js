@@ -235,6 +235,58 @@ console.log(`
 
 
 
+
+// ************************************** 22-3 string methods
+
+
+
+/*
+myString = "Hello ! How are you?"
+
+console.log(myString.length); // to know the total no of char including white-space
+console.log(myString[9]); // to know the char at specific position
+console.log(myString.indexOf("w")); // to know the position of a specific char
+
+console.log(`---------------------seperator------------------------`);
+
+// to print all the char as a list manner in console
+for (let letter of myString) {
+    console.log(letter);
+}
+
+console.log(`---------------------seperator------------------------`);
+
+// push and pop don't work for string.
+
+// console.log(myString.push("w")); // Uncaught TypeError: myString.push is not a function
+// console.log(myString.pop()); // Uncaught TypeError: myString.pop is not a function
+*/
+
+// project: একটা string কে উল্টা করে print করতে হবে
+/*
+let theStringIs = "Hi ! Yes, I am the string to be reversed."
+
+
+function reverseYourString(string2Breversed) {
+    let theNewStringis = "";
+    for (const letter of string2Breversed) {
+        theNewStringis = letter + theNewStringis;
+    }
+    return theNewStringis;
+}
+
+reverseYourString(theStringIs);
+let resultOfRevisedStringIs = reverseYourString(theStringIs);
+console.log(resultOfRevisedStringIs);
+
+*/
+
+
+
+
+
+
+
 // ****************************************** Array example:
 
 
@@ -321,6 +373,29 @@ console.log(newiee); // length of array1
 console.log(array1.length)
 console.log(newiee == array1.length);
 */
+
+
+// arrayProject : একটা array এর ভিতরের সব elemnt গুলোকে একটা list আকারে console এ print করতে
+
+/*
+let anArrayIs = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+console.log(anArrayIs);
+
+// first way
+
+for (let i = 0; i < anArrayIs.length; i++) {
+    const element = anArrayIs[i];
+    console.log(element);
+}
+
+
+// second way
+
+for (let elements of anArrayIs) {
+    console.log(elements);
+}
+*/
+
 
 
 
@@ -2293,6 +2368,52 @@ let resultBottom = checkTheBottom(forBottomArray);
 console.log(resultBottom);
 */
 
+// Second method by jhankar sir
+
+
+// largest no in an array
+/*
+let arr = [10, 20, 50, 560, 240];
+
+findLargest(arr);
+
+function findLargest(params) {
+    largeNo = params[0];
+    for (let i = 0; i < params.length; i++) {
+        const element = params[i];
+        if (element > largeNo) {
+            largeNo = element
+        }
+    }
+    return largeNo;
+}
+
+let theLargestNoIs = findLargest(arr);
+console.log(theLargestNoIs);
+
+
+// lowest no in an array
+
+let arr2 = [10, 20, 50, 560, 240];
+
+findLowest(arr2);
+
+function findLowest(params) {
+    lowestNo = params[0];
+    for (let i = 0; i < params.length; i++) {
+        const element = params[i];
+        if (element < lowestNo) {
+            lowestNo = element
+        }
+    }
+    return lowestNo;
+}
+
+let theLowestNoIs = findLowest(arr2);
+console.log(theLowestNoIs);
+*/
+
+
 
 
 
@@ -2318,7 +2439,26 @@ fibo[i] = fibo[i-1] + fibo[i-2]
 
 */
 
+// first method : 
+/*
+let fiboLimit = 10;
 
+getFiboSeries(fiboLimit);
+
+function getFiboSeries(limit) {
+    let fiboSeries = [0, 1];
+    for (let i = 2; i < limit; i++) {
+        fibo[i] = fibo[i-1] + fibo[i-2];
+    }
+    return fiboSeries;
+}
+
+let theSeries = getFiboSeries(fiboLimit);
+console.log(theSeries);
+*/
+
+
+// alternative easy way
 /*
 let fiboLimit = 10;
 
@@ -2362,6 +2502,138 @@ console.log(theSeries);
 
 
 
+// ************************************** 22-1 recap js
+
+// largest no in an array
+// lowest no in an array
+
+
+
+
+
+// ************************************** 22-2 Remove duplicate items from an array
+
+
+
+
+/*
+let names = ['asif', 'basif', 'casif', 'dasif', 'fasif', 'gasif', 'hasif', 'jasif', 'asif', 'basif', 'casif', 'dasif']
+console.log(names);
+
+
+
+// my solution 
+
+function removeDuplicates(arrOfName) {
+    let uniqueNames = [];
+    for (let i = 0; i < arrOfName.length; i++) {
+        const element = arrOfName[i];
+        if (uniqueNames.indexOf(element) == -1) {
+            uniqueNames.push(element); // first way of solve
+            // uniqueNames[i] = element; // second way of solve
+        }
+    }
+    return uniqueNames;
+}
+
+removeDuplicates(names);
+let arrOfUniqueNames = removeDuplicates(names);
+console.log(arrOfUniqueNames);
+
+
+
+// and vai solution by forOf loop
+
+function exfailDups(mixNames) {
+    let unqNames = [];
+    for (let elements of mixNames) {
+        if (unqNames.indexOf(elements) == -1) {
+            unqNames.push(elements);
+        }
+    }
+    return unqNames
+
+}
+
+exfailDups(names);
+let resultArrOfUniqueNames = exfailDups(names);
+console.log(resultArrOfUniqueNames);
+*/
+
+
+
+
+
+// ************************************** 22-5 Creat a order slip of buying wooden products 
+
+
+
+
+
+// একটা ফাংশন বানাও যেখানে চেয়ারে লাগে ৫ cfp, টেবিলে লাগে ১৫ cfp, খাটে  লাগে ৫০ cfp করে কাঠ । প্রতিটা আইটেম এর ভিন্ন ভিন্ন qty এর জন্য বানাও
+/*
+let rqdWood4Chair = 10;
+let rqdWood4table = 10;
+let rqdWood4bBed = 10;
+let customerName = prompt("Write name?", "Asif");
+
+// totalRQDwoodFunc(rqdWood4Chair, rqdWood4table, rqdWood4bBed, customerName);
+
+function totalRQDwoodFunc(chairCFP, tableCFP, bedCFP, customer) {
+    let rqdChairQTY = Number(prompt("chair qty"));
+    let rqdTableQTY = Number(prompt("table qty"));
+    let rqdBedQTY = Number(prompt("wood qty"));
+
+    // wood calculation
+
+    let totalWood4chair = chairCFP * rqdChairQTY;
+    let totalWood4table = tableCFP * rqdTableQTY;
+    let totalWood4bed = bedCFP * rqdBedQTY;
+
+    let inTotalWoodRQD = totalWood4chair + totalWood4table + totalWood4bed;
+
+    return `hi! ${customer},
+    thanks for ordering us.
+    
+    Your invoice is bellow,
+    ordered chair qty = ${rqdChairQTY}
+    ordered table qty = ${rqdTableQTY}
+    ordered bed qty = ${rqdBedQTY}
+    --------------------------------
+    total wood rqd = ${inTotalWoodRQD}`;
+}
+
+// for writen function
+
+// totalRQDwoodFunc(rqdWood4Chair, rqdWood4table, rqdWood4bBed, customerName);
+// let resulOfWoodCalc = totalRQDwoodFunc(rqdWood4Chair, rqdWood4table, rqdWood4bBed, customerName);
+// console.log(resulOfWoodCalc);
+
+
+
+// for a new requiremetns
+
+let myWood = totalRQDwoodFunc(10, 10, 10, customerName);
+console.log(myWood);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ******************************* unsolved problems of curses
 
@@ -2389,16 +2661,16 @@ let outputOfOpt = findLargestNLowest(n1, n2, n3);
 console.log(outputOfOpt);
 */
 
-/*
-Q15: What code you have to write to know the number of “a” in a string
 
+// Q15: What code you have to write to know the number of “a” in a string
+/*
 var sentence = "I am hardworking. I am determined. I will be a web developer.";
 var count = 0;
-for(var i = 0; i < sentence.length; i++){
-  var letter = sentence[i];
-  if(________?______){
-    count++;
-  }
+for (var i = 0; i < sentence.length; i++) {
+    var letter = sentence[i];
+    if (letter == 'a') {
+        count++;
+    }
 }
 console.log(count)
 */
