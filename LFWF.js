@@ -2629,7 +2629,7 @@ console.log(myWood);
 
 // একটা ফাংশন বানাও যেখানে একটা নির্দিষ্ট range এর ভিতর যদি কোন সংখ্যা ৫ দিয়ে ভাগ যায় তাহলে foo print হবে, যদি কোন সংখ্যা ৩ দিয়ে ভাগ যায় তাহলে bar print হবেযদি কোন সংখ্যা ৫ ও ৩ দুটা দিয়ে ভাগ যায় তাহলে foobar print হবে
 /*
-let lowerRange = 30;
+let lowerRange = 0;
 let upperRange = 90;
 
 printAsRqd(lowerRange, upperRange);
@@ -2644,12 +2644,141 @@ function printAsRqd(lowValue, upValue) {
         } else if (i % 5 == 0) {
             console.log(`foo`);
         } else {
+
             console.log(i);
         }
 
     }
 }
+
+// learning: (1) complex condition first এ রাখতে হয়ে লাইন-২৬৪০; (২) সবসময় function এ return এর দরকার পরে না। 
 */
+
+
+
+// ************************************** 22-7 find the cheapest phone from an array where object is inside  
+
+/*
+let phones = [{
+        brand: "symphony",
+        price: 10000,
+        ram: "6GB",
+        camera: "100mp"
+    },
+    {
+        brand: "samsung",
+        price: 100000,
+        ram: "60GB",
+        camera: "1000mp"
+    },
+    {
+        brand: "nokia",
+        price: 1000,
+        ram: ".6GB",
+        camera: "10mp"
+    }
+]
+
+let cheapestPhone = phones[0];
+// console.log(cheapestPhone);
+
+for (let i = 0; i < phones.length; i++){
+    const mobile = phones[i];
+    if (mobile.price < cheapestPhone.price) {
+        cheapestPhone = mobile;
+        console.log(cheapestPhone);
+    }
+
+}
+*/
+
+
+
+
+// ************************************** 22-8 total cost of a shopping cart
+
+
+
+/*
+let cart = [{
+        item: "shirt",
+        pcsPrice: 200,
+        qty: 2
+    },
+    {
+        item: "pant",
+        pcsPrice: 2000,
+        qty: 20
+    },
+    {
+        item: "tShirt",
+        pcsPrice: 100,
+        qty: 200
+    },
+    {
+        item: "shorts",
+        pcsPrice: 300,
+        qty: 2000
+    }
+]
+
+let totalShoppingCost = 0;
+// for (const product of cart)
+for (let i = 0; i < cart.length; i++) {
+
+    const product = cart[i];
+    let OneItemAllQtyPrice = product.pcsPrice * product.qty;
+    totalShoppingCost = totalShoppingCost + OneItemAllQtyPrice;
+}
+console.log(totalShoppingCost);
+*/
+
+
+
+
+
+
+// ************************************** 22-9 animal desity in sundarban upto a fixed miles
+
+
+
+
+// একটা ফাংশন বানাও যেখানে একটা নির্দিষ্ট দুরত্ব পর্যন্ত animal density কত হবে তা বের করবে যেখানে 1st 10 miles animal density = 10/mile; 2nd 10 miles animal density = 100/mile; rest miles animal density = 1000/mile;
+/*
+let visitedMiles = 30;
+
+findAnimalDensity(visitedMiles);
+
+function findAnimalDensity(distance) {
+    let lowLevelAnimalDensity = 10;
+    let midLevelAnimalDensity = 100;
+    let deepLevelAnimalDensity = 1000;
+    if (distance <= 10) {
+        let firstLevelTotalAnimalFound = distance * lowLevelAnimalDensity;
+        return firstLevelTotalAnimalFound;
+    } else if (distance <= 20) {
+        let firstLevelAnimalFound = lowLevelAnimalDensity * 10;
+        let restMiles = distance - 10;
+        let secondLevelAnimalFound = restMiles * midLevelAnimalDensity;
+        let secondLevelTotalAnimalFound = firstLevelAnimalFound + secondLevelAnimalFound;
+        return secondLevelTotalAnimalFound
+
+
+    } else {
+        let firstLevelAnimalFound = lowLevelAnimalDensity * 10;
+        let secondLevelAnimalFound = midLevelAnimalDensity * 10;
+        let restMilesIntoDeep = distance - 20;
+        let deepLevelAnimalFound = restMilesIntoDeep * 1000;
+        let deepLevelTotalAnimalFound = firstLevelAnimalFound + secondLevelAnimalFound + deepLevelAnimalFound;
+        return deepLevelTotalAnimalFound
+
+    }
+}
+
+let animalFound = findAnimalDensity(visitedMiles);
+console.log(animalFound);
+*/
+
 
 
 
@@ -2672,6 +2801,10 @@ function printAsRqd(lowValue, upValue) {
 
 
 // project 9 || বন্ধুদের নাম+mark জানা আছে তাদের নাম বসিয়ে দিলে মার্ক + রেজালতের গ্রেড বের  হবে। 
+
+
+
+
 
 // 2. তিনটি সংখ্যার মধ্যে বড়ো সংখ্যাটি বের কর showing sequence
 /*
@@ -2706,3 +2839,65 @@ for (var i = 0; i < sentence.length; i++) {
 }
 console.log(count)
 */
+
+
+
+
+// **************************************************  22-7 find the cheapest phone from an array where object is inside  
+
+
+
+/*
+let phones = [{
+        brand: "a",
+        price: 10,
+        ram: "6GB",
+        camera: "100mp"
+    },
+    {
+        brand: "b",
+        price: 20,
+        ram: "60GB",
+        camera: "1000mp"
+    },
+    {
+        brand: "c",
+        price: 30,
+        ram: ".6GB",
+        camera: "10mp"
+    },
+    {
+        brand: "d",
+        price: 40,
+        ram: ".65GB",
+        camera: "1mp"
+    },
+    {
+        brand: "e",
+        price: 50,
+        ram: ".650GB",
+        camera: "1mp"
+    }
+]
+
+let cheapestPhone = phones[0];
+for (const mobile of phones) {
+    if (mobile.price < cheapestPhone.price) {
+        cheapestPhone = mobile;
+        console.log(cheapestPhone);
+    }
+}
+*/
+
+let dress1 = {
+    item: "pant",
+    pcsPrice: 2000,
+    qty: 20
+}
+
+delete(dress1.item)
+console.log(dress1);
+
+let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+array[array.length] = 100;
+console.log(array);
