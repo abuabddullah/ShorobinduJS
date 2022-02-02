@@ -2621,6 +2621,38 @@ console.log(myWood);
 
 
 
+// ************************************** 22-6 print foo and bar if divisible by n1 & n2
+
+
+
+
+
+// একটা ফাংশন বানাও যেখানে একটা নির্দিষ্ট range এর ভিতর যদি কোন সংখ্যা ৫ দিয়ে ভাগ যায় তাহলে foo print হবে, যদি কোন সংখ্যা ৩ দিয়ে ভাগ যায় তাহলে bar print হবেযদি কোন সংখ্যা ৫ ও ৩ দুটা দিয়ে ভাগ যায় তাহলে foobar print হবে
+/*
+let lowerRange = 30;
+let upperRange = 90;
+
+printAsRqd(lowerRange, upperRange);
+
+function printAsRqd(lowValue, upValue) {
+    for (let i = lowValue; i <= upValue; i++) {
+
+        if (i % 3 == 0 && i % 5 == 0) {
+            console.log(`foobar`);
+        } else if (i % 3 == 0) {
+            console.log(`bar`);
+        } else if (i % 5 == 0) {
+            console.log(`foo`);
+        } else {
+            console.log(i);
+        }
+
+    }
+}
+*/
+
+
+
 
 
 
