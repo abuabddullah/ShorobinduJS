@@ -3121,14 +3121,48 @@ console.log(paperRequirements(100, 100, 100));
 
 
 
+// ======================================== test four: ================================
+/*
+let bestFriends = ["asif", "samiya sultana", "abdullah", "sayma", "mubashshira", "sohan"]
+
+function bestFriend(friendArr) {
+
+    let bigFriend = "";
+    for (const friend of friendArr) {
+        if (friend.length > bigFriend.length) {
+            bigFriend = friend;
+        }
+    }
+    return bigFriend;
+}
+bestFriend(bestFriends);
+let myBestiIs = bestFriend(bestFriends);
+console.log(`i love you . you ar my myBestiIs ${myBestiIs}`);
+*/
 
 
 
 
 
+// ======================================== test four: ================================
+/*
+let anArrOfNum = [10, 20, 652, 10, 540, 45, 454, 2120, -1, 50, 45464, 5645654654674, 654];
 
-
-
+function funcForPosNum(theArrIs) {
+    let anotherArrOfPosNum = [];
+    for (const element of theArrIs) {
+        if (element >= 0) {
+            anotherArrOfPosNum.push(element);
+        } else{
+            break;
+        }
+    }
+    return anotherArrOfPosNum;
+}
+funcForPosNum(anArrOfNum);
+let theNewArrOfPosNumIs = funcForPosNum(anArrOfNum);
+console.log(theNewArrOfPosNumIs);
+*/
 
 
 
