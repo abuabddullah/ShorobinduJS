@@ -3168,6 +3168,32 @@ console.log(theNewArrOfPosNumIs);
 
 
 
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[final math word cound]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+/*
+let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
+
+function countWord(theSentece) {
+    let count = 0;
+    for (let i = 0; i < theSentece.length; i++) {
+
+        if (theSentece[i] == '' && theSentece[i - 1] != '') {
+            count++;
+        }
+        count++
+        return count
+
+    }
+}
+countWord(aSentenceIs);
+let totalWordInSentenceIs = countWord(aSentenceIs);
+console.log(totalWordInSentenceIs);
+*/
+
+
+
+
+
+
 
 
 
