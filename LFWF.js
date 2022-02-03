@@ -464,6 +464,7 @@ let propertyNameProcessor = "processors"; // (৩-১) pc1 এর processors pro
 pc1[propertyNameProcessor] = "GigaByte 3000g"; // (৩-২) propertyNameProcessor variable এর সাহায্যে pc1 processors property এর value কে change করে "MSI 3400g" করার জন্য
 console.log(pc1); // pc1 এর recent updated value কে concole এ দেখার জন্য
 
+// [[[[[[[[[[[No-(1) is preferable for set obj value]]]]]]]]]]]]
 
 
 let dress1 = {

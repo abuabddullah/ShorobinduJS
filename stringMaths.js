@@ -1,3 +1,21 @@
+// ========================== only string math ===========
+
+// add suffix with last name and print full name 
+/*
+let fName = "Asif"
+let lName = " Abdul"
+
+let fullName = fName + lName;
+console.log(fullName);
+
+// now
+lName += " Owadud";
+fullName = fName + lName;
+console.log(fullName);
+*/
+
+
+
 // ====================== string + loop related maths ==============
 
 
