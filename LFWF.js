@@ -76,13 +76,13 @@ document.getElementsByClassName('items')[7].innerHTML = 'আমি item-8 ছি
 document.getElementsByTagName('p')[8].innerHTML = 'আমি item-9 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemNine</span> হইয়া গেছি TagName এর বদৌলতে';
 */
 
-// querySelector for class name
+// querySelector for id name
 
 /*
 document.querySelector('#queryItem10').innerHTML = 'আমি item-10 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemTen</span> হইয়া গেছি grap id by querySelector এর বদৌলতে';
 */
 
-// querySelector for id name
+// querySelector for class name
 
 /*
 ocument.querySelector('.queryItems').innerHTML = 'আমি item-10 ছিলাম আর এখন <span style="color: red; font-weight: bold;">itemTen</span> হইয়া গেছি class by querySelector এর বদৌলতে';
@@ -122,7 +122,7 @@ document.querySelector('p').style.textAlign = 'justify';
 
 
 
-// ******************* first JS apk
+// ******************* first JS apk take a name from user and ask his favourite food name
 
 
 
@@ -219,6 +219,7 @@ console.log(typeof varBooleanYouAreAKidRight);
 console.log(typeof varArrayWriteYourAim);
 */
 
+// take alu , ptol price as varibale and add them in another variable and prit the oreder slip
 /*
 let আলু = 50;
 let পটল = 20;
