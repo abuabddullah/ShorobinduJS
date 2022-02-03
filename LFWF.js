@@ -361,6 +361,14 @@ console.log(ExtraAnotherNewValue);
 */
 
 
+/*
+let array = [10, 2, 3, 40, 5, 6, 70, 8, 9, 102]
+
+console.log(array); // to see the array on cnsl
+array[array.length] = 100; // to push 100 as element at the last of the array 
+console.log(array);// to see the updated array on cnsl
+*/
+
 
 // Experiment
 /*
@@ -454,7 +462,27 @@ console.log(pc1); // pc1 এর recent updated value কে concole এ দে�
 let propertyNameProcessor = "processors"; // (৩-১) pc1 এর processors property কে propertyNameProcessor variable এর value হিসেবে assign করতে হবে
 pc1[propertyNameProcessor] = "GigaByte 3000g"; // (৩-২) propertyNameProcessor variable এর সাহায্যে pc1 processors property এর value কে change করে "MSI 3400g" করার জন্য
 console.log(pc1); // pc1 এর recent updated value কে concole এ দেখার জন্য
+
+
+
+let dress1 = {
+    item: "pant",
+    pcsPrice: 2000,
+    qty: 20,
+    pcPrice: 2000,
+    qty: 20,
+    pcsPric: 2000,
+    ty: 20,
+}
+
+
+console.log(dress1); // to see the dress1 obj on cnsl
+delete(dress1.item) // to delete item prop from dress1
+console.log(dress1); // to see the updated dress1 obj on cnsl
 */
+
+
+
 
 // Module 19 ||  ৫) pizza নামের একটা object কে নিচের উদাহরণ মতো define করবা:const pizza = {toppings: ['cheese', 'sauce', 'pepperoni']crust: 'deep dish', serves: 2} এবং pepperoni print করবা।
 /*
@@ -976,6 +1004,26 @@ else if(number2 > number3){
 else{
     console.log("Number3 is big");
 }
+*/
+
+
+// 2. তিনটি সংখ্যার মধ্যে বড়ো-ছোট ও মাঝারি সংখ্যাটি বের কর showing sequence wise
+/*
+let n1 = 20 // Number(prompt("num1"));
+let n2 = 200 // Number(prompt("num2"));
+let n3 = 2000 // Number(prompt("num3"));
+
+let creatArr = [n1, n2, n3];
+
+let B2LnoArr = creatArr.sort(function (x, y) {
+    return y - x;
+}); // array এর উপাদান গুলোকে বড় থেকে ছোট ক্রমানুসারে সাজাতে+
+
+console.log(B2LnoArr);
+
+console.log(`the biggest no is ${B2LnoArr[0]}`);
+console.log(`the 2nd biggest no is ${B2LnoArr[1]}`);
+console.log(`the smallest no is ${B2LnoArr[B2LnoArr.length-1]}`);
 */
 
 
@@ -2802,31 +2850,6 @@ console.log(animalFound);
 
 // project 9 || বন্ধুদের নাম+mark জানা আছে তাদের নাম বসিয়ে দিলে মার্ক + রেজালতের গ্রেড বের  হবে। 
 
-
-
-
-
-// 2. তিনটি সংখ্যার মধ্যে বড়ো সংখ্যাটি বের কর showing sequence
-/*
-let n1 = Number(prompt("num1"));
-let n2 = Number(prompt("num2"));
-let n3 = Number(prompt("num3"));
-
-
-findLargestNLowest(n1, n2, n3);
-
-function findLargestNLowest(v1, v2, v3) {
-    let largestNum = Math.max(v1, v2, v3);
-    let lowestNum = Math.min(v1, v2, v3);
-    let arr = [v1, v2, v3];
-
-    return `largestNum is ${largestNum} and lowestNum is ${lowestNum}`;
-}
-let outputOfOpt = findLargestNLowest(n1, n2, n3);
-console.log(outputOfOpt);
-*/
-
-
 // Q15: What code you have to write to know the number of “a” in a string
 /*
 var sentence = "I am hardworking. I am determined. I will be a web developer.";
@@ -2888,16 +2911,3 @@ for (const mobile of phones) {
     }
 }
 */
-
-let dress1 = {
-    item: "pant",
-    pcsPrice: 2000,
-    qty: 20
-}
-
-delete(dress1.item)
-console.log(dress1);
-
-let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-array[array.length] = 100;
-console.log(array);
