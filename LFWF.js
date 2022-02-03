@@ -2741,6 +2741,49 @@ for (let i = 0; i < phones.length; i++){
 */
 
 
+// 22-7 find the cheapest phone from an array where object is inside 
+/*
+let phones = [{
+        brand: "a",
+        price: 10000,
+        ram: "6GB",
+        camera: "100mp"
+    },
+    {
+        brand: "b",
+        price: 20000000,
+        ram: "60GB",
+        camera: "1000mp"
+    },
+    {
+        brand: "c",
+        price: 30000,
+        ram: ".6GB",
+        camera: "10mp"
+    },
+    {
+        brand: "d",
+        price: 40,
+        ram: ".65GB",
+        camera: "1mp"
+    },
+    {
+        brand: "e",
+        price: 500000000,
+        ram: ".650GB",
+        camera: "1mp"
+    }
+]
+
+let cheapestPhone = phones[0];
+for (const mobile of phones) {
+    if (mobile.price < cheapestPhone.price) {
+        cheapestPhone = mobile;
+    }
+}
+console.log(cheapestPhone);
+*/
+
 
 
 // ************************************** 22-8 total cost of a shopping cart
@@ -2831,6 +2874,257 @@ console.log(animalFound);
 
 
 
+// ************************************** 22-5-1 Basic  JavaScript concept checklist
+
+
+
+// ======================================== test one: ================================
+/*
+let theStringVarIs = "I am the string typr variable";
+let amIaBooleanVar = true;
+let theNoVarIs = 2000;
+
+console.log(`theStringVar is = ${theStringVarIs}
+theNoVarIs = ${theNoVarIs}
+amIaBooleanVar = ${amIaBooleanVar}`);
+*/
+
+
+// ======================================== test two: ================================
+/*
+let changeAbleVarIs = "Me. I am change able";
+const mobileNo = "+88-019-3903-2974";
+
+console.log(`changeAbleVarIs = ${changeAbleVarIs}
+theConstantVarIs = ${mobileNo}`);
+
+changeAbleVarIs = "look, i told you that i am changeable now i am changed";
+
+
+console.log(`changeAbleVarIs = ${changeAbleVarIs}
+theConstantVarIs = '${mobileNo}' and i am unchangeable`);
+*/
+
+
+// ======================================== test three ================================
+/*
+let var1 = 10;
+let var2 = 20;
+
+let sumOfVar = var1 + var2;
+console.log(`sumOfVar is = ${sumOfVar}`);
+
+let subsOfVar = var1 - var2;
+console.log(`subsOfVar is = ${subsOfVar}`);
+
+let dividesOfVar = var1 / var2;
+console.log(`dividesOfVar is = ${dividesOfVar}`);
+
+let multiOfVar = var1 * var2;
+console.log(`multiOfVar is = ${multiOfVar}`);
+
+let moduOfVar = var2 % var1;
+console.log(`moduOfVar is = ${moduOfVar}`);
+*/
+
+
+
+// ======================================== test four: ================================
+/*
+let compVar1 = 250;
+let compVar2 = 150;
+
+console.log(`${compVar1} > ${compVar2} = ${compVar1 > compVar2}`);
+console.log(`${compVar1} < ${compVar2} = ${compVar1 < compVar2}`);
+console.log(`${compVar1} == ${compVar2} = ${compVar1 == compVar2}`);
+console.log(`${compVar1} != ${compVar2} = ${compVar1 != compVar2}`);
+console.log(`${compVar1} <= ${compVar2} = ${compVar1 <= compVar2}`);
+console.log(`${compVar1} >= ${compVar2} = ${compVar1 >= compVar2}`);
+*/
+
+
+
+// ======================================== test five + six: ================================
+/*
+let varOne = 100;
+let varTwo = "100";
+
+if (varOne == varTwo && typeof varOne == typeof varTwo) {
+    console.log(`Both are equal in the manner of value and type`);
+} else if (varOne == varTwo || typeof varOne == typeof varTwo) {
+    console.log(`Both are equal in the manner of either value or type`);
+} else {
+    console.log(`Both not equal in the manner of neither value nor type`);
+}
+*/
+
+
+
+// ======================================== test seven: ================================
+/*
+let i = 7;
+while (i <= 19) {
+    if (i % 2 != 0) {
+        console.log(i, "id odd no.");
+    } else {
+        console.log(i);
+    }
+    i++
+}
+*/
+
+
+// ======================================== test eight: ================================
+/*
+let anArrayIs = [5240, 564564, 65465, 565456, 655456, 4, 5, 5465, 5, 45]
+
+console.log(anArrayIs);
+console.log(anArrayIs.length);
+
+anArrayIs[3] = "five lacs sixty five thousand fou hundred fifty six";
+console.log(anArrayIs);
+
+anArrayIs.push("first Item added")
+console.log(anArrayIs);
+anArrayIs.push("second Item added")
+console.log(anArrayIs);
+
+anArrayIs.shift()
+console.log(anArrayIs);
+*/
+
+
+
+// ======================================== test nine: ================================
+/*
+let getAnArr = ["first item", "second item", "third item", "fourth item", "fifth item", ]
+
+console.log(getAnArr);
+for (let i = 0; i < getAnArr.length; i++) {
+    const element = getAnArr[i];
+    console.log(element);
+}
+console.log(`--------------------------seperator-----------------------------`);
+for (const element of getAnArr) {
+    console.log(element);
+}
+*/
+
+
+
+// ======================================== test ten: ================================
+/*
+let getanotherArr = [5535, 356, 50, 20, 564, 2, 56, 1, 20, 30, 50, 600]
+
+console.log(getanotherArr);
+for (const element of getanotherArr) {
+    if (element > 80) {
+        console.log(element);
+    }
+}
+*/
+
+
+
+// ======================================== test elaven: ================================
+/*
+function getMultiplicatin(n1, n2, n3) {
+    let resulOfMulti = n1 * n2 * n3;
+    return resulOfMulti;
+}
+
+getMultiplicatin(10, 20, 30);
+let resultOfMultiplication = getMultiplicatin(10, 20, 30);
+console.log(resultOfMultiplication);
+*/
+
+
+
+
+// ======================================== test twelve: ================================
+/*
+let anObj = {
+    item: "comber",
+    noOftheeth: 50,
+    TPI: 50,
+    color: "blue"
+}
+let anObj2 = {
+    item: "pc",
+    ram: "8gb",
+    HDD: "1tb",
+    color: "black"
+}
+
+console.log(anObj, anObj2);
+anObj.noOftheeth = 30;
+console.log(anObj);
+*/
+
+
+
+
+
+
+
+
+
+
+// ************************************** 22-5-1 Basic  JavaScript problem solving checklist
+
+
+
+// ======================================== test one: ================================
+/*
+function feetToInch(getFeet) {
+    let inch = getFeet * 12;
+    return inch
+}
+
+feetToInch(5);
+console.log(feetToInch(5));
+*/
+
+
+
+// ======================================== test two: ================================
+/*
+function centimeteToMeter(getCenti) {
+    let meter = getCenti / 100;
+    return meter
+}
+
+centimeteToMeter(500);
+console.log(centimeteToMeter(500));
+*/
+
+
+
+// ======================================== test three: ================================
+/*
+function paperRequirements(book1NoOfCopy, book2NoOfCopy, book3NoOfCopy) {
+    let paperRequiredforBook1 = 100;
+    let paperRequiredforBook2 = 200;
+    let paperRequiredforBook3 = 300;
+
+    let totalpaperRequiredforBook1 = paperRequiredforBook1 * book1NoOfCopy;
+    let totalpaperRequiredforBook2 = paperRequiredforBook2 * book2NoOfCopy;
+    let totalpaperRequiredforBook3 = paperRequiredforBook3 * book3NoOfCopy;
+
+    let totalpaperRequiredforAllBooks = totalpaperRequiredforBook1 + totalpaperRequiredforBook2 + totalpaperRequiredforBook3;
+    return totalpaperRequiredforAllBooks;
+}
+paperRequirements(100, 100, 100);
+console.log(paperRequirements(100, 100, 100));
+*/
+
+
+
+
+
+
+
+
 
 
 
@@ -2863,51 +3157,5 @@ for (var i = 0; i < sentence.length; i++) {
 console.log(count)
 */
 
-
-
-
-// **************************************************  22-7 find the cheapest phone from an array where object is inside  
-
-
-
-/*
-let phones = [{
-        brand: "a",
-        price: 10,
-        ram: "6GB",
-        camera: "100mp"
-    },
-    {
-        brand: "b",
-        price: 20,
-        ram: "60GB",
-        camera: "1000mp"
-    },
-    {
-        brand: "c",
-        price: 30,
-        ram: ".6GB",
-        camera: "10mp"
-    },
-    {
-        brand: "d",
-        price: 40,
-        ram: ".65GB",
-        camera: "1mp"
-    },
-    {
-        brand: "e",
-        price: 50,
-        ram: ".650GB",
-        camera: "1mp"
-    }
-]
-
-let cheapestPhone = phones[0];
-for (const mobile of phones) {
-    if (mobile.price < cheapestPhone.price) {
-        cheapestPhone = mobile;
-        console.log(cheapestPhone);
-    }
-}
-*/
+// how to know the length of an object and how to change any property with value in ab obj
+// recursion of function
