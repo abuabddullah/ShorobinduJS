@@ -3178,6 +3178,9 @@ console.log(theNewArrOfPosNumIs);
 
 
 
+
+//project ৮: user তার নাম ও জন্ম সাল লিখবে এবং automatic age calculate হবে by month date year
+
 // project 9 || বন্ধুদের নাম+mark জানা আছে তাদের নাম বসিয়ে দিলে মার্ক + রেজালতের গ্রেড বের  হবে। 
 
 // Q15: What code you have to write to know the number of “a” in a string
