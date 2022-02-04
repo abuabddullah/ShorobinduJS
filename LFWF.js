@@ -3172,6 +3172,116 @@ console.log(theNewArrOfPosNumIs);
 
 
 
+// ====================================final math word cound=
+/*
+let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
+
+// space er age space thaka jabe na
+function wordCount(sentenceCollection) {
+    var count = 0;
+
+    for (var i = 0; i < sentenceCollection.length; i++) {
+        // console.log(sentenceCollection[i]);
+        if (sentenceCollection[i] == " " && sentenceCollection[i - 1] != " ") {
+            count = count + 1
+            // count = 0 + 1 = 1
+            // count = 1+1 = 2
+        }
+    }
+    count++
+
+    return count;
+}
+
+var firstCount = wordCount(aSentenceIs)
+console.log(firstCount);
+*/
+
+
+
+
+// ========================================write a function to find no of vowel in a String
+/*
+let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
+
+function countWord(theSentece) {
+    let count = 0;
+    for (let i = 0; i < theSentece.length; i++) {
+
+        if (theSentece[i] == 'a' || theSentece[i] == 'e' || theSentece[i] == 'i' || theSentece[i] == 'o' || theSentece[i] == 'u') {
+            count++;
+        }
+        count++
+        return count
+
+    }
+}
+countWord(aSentenceIs);
+let totalWordInSentenceIs = countWord(aSentenceIs);
+console.log(totalWordInSentenceIs);
+*/
+
+
+
+// ============================ ==================== find prime no 
+/*
+let aNumber = 9561;
+
+function findPrimeNo(theNoIs) {
+    for (let i = 2; i < theNoIs; i++) {
+        if (theNoIs % i == 0) {
+            return `${theNoIs} is not a prime number`;
+            break;
+        } else {
+
+            return `${theNoIs} is a prime number`;
+        }
+
+    }
+}
+console.log(findPrimeNo(aNumber));
+*/
+
+
+
+//=============================== creat a function to find all the prime no between 1 to 100
+/*
+let primeNoList = [];
+for (let i = 2; i < 100; i++) {
+    let isPrime = true;
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    if (isPrime) {
+        primeNoList.push(i);
+    }
+}
+console.log(primeNoList);
+*/
+
+
+// Calculate the average of all the numbers that is divisible by 3 from 1 - n;
+/*
+function average(n){
+    let sum = 0, count = 0;
+    for(let i = 1; i < n; i++){
+      if(i%3 == 0){
+        sum = sum + i;
+        count = count + 1;
+      }
+    }
+  
+    let avg = sum / count;
+    return avg;
+  }
+  
+  let result = average(100);
+  
+  console.log(result)
+  */
 
 
 
@@ -3208,100 +3318,4 @@ console.log(count)
 
 // how to know the length of an object and how to change any property with value in ab obj
 // recursion of function
-
-
-
-// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[final math word cound]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-/*
-let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
-
-// space er age space thaka jabe na
-function wordCount(sentenceCollection) {
-    var count = 0;
-
-    for (var i = 0; i < sentenceCollection.length; i++) {
-        // console.log(sentenceCollection[i]);
-        if (sentenceCollection[i] == " " && sentenceCollection[i - 1] != " ") {
-            count = count + 1
-            // count = 0 + 1 = 1
-            // count = 1+1 = 2
-        }
-    }
-    count++
-
-    return count;
-}
-
-var firstCount = wordCount(aSentenceIs)
-console.log(firstCount);
-*/
-
-// write a function to find no of vowel in a String
-
-// ======================================== test four: ================================
-/*
-let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
-
-function countWord(theSentece) {
-    let count = 0;
-    for (let i = 0; i < theSentece.length; i++) {
-
-        if (theSentece[i] == 'a' || theSentece[i] == 'e' || theSentece[i] == 'i' || theSentece[i] == 'o' || theSentece[i] == 'u') {
-            count++;
-        }
-        count++
-        return count
-
-    }
-}
-countWord(aSentenceIs);
-let totalWordInSentenceIs = countWord(aSentenceIs);
-console.log(totalWordInSentenceIs);
-*/
-
-
-
-// ============================  find prime no 
-/*
-let aNumber = 9561;
-
-function findPrimeNo(theNoIs) {
-    for (let i = 2; i < theNoIs; i++) {
-        if (theNoIs % i == 0) {
-            return `${theNoIs} is not a prime number`;
-            break;
-        } else {
-
-            return `${theNoIs} is a prime number`;
-        }
-
-    }
-}
-console.log(findPrimeNo(aNumber));
-*/
-
-
-
-
-
 // ১. একটা ফাংশন লিখবা যেটা ১৩ এর নামতা (multiplication table) আউটপুট হিসেবে দেখাবে। 
-
-
-
-// creat a function to find all the prime no between 1 to 100
-/*
-let primeNoList = [];
-for (let i = 2; i < 100; i++) {
-    let isPrime = true;
-    for (let j = 2; j < i; j++) {
-        if (i % j == 0) {
-            isPrime = false;
-            break;
-        }
-    }
-    if (isPrime) {
-        primeNoList.push(i);
-    }
-}
-console.log(primeNoList);
-*/
