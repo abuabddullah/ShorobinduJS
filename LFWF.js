@@ -3215,21 +3215,25 @@ console.log(count)
 /*
 let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
 
-function countWord(theSentece) {
-    let count = 0;
-    for (let i = 0; i < theSentece.length; i++) {
+// space er age space thaka jabe na
+function wordCount(sentenceCollection) {
+    var count = 0;
 
-        if (theSentece[i] == '' && theSentece[i - 1] != '') {
-            count++;
+    for (var i = 0; i < sentenceCollection.length; i++) {
+        // console.log(sentenceCollection[i]);
+        if (sentenceCollection[i] == " " && sentenceCollection[i - 1] != " ") {
+            count = count + 1
+            // count = 0 + 1 = 1
+            // count = 1+1 = 2
         }
-        count++
-        return count
-
     }
+    count++
+
+    return count;
 }
-countWord(aSentenceIs);
-let totalWordInSentenceIs = countWord(aSentenceIs);
-console.log(totalWordInSentenceIs);
+
+var firstCount = wordCount(aSentenceIs)
+console.log(firstCount);
 */
 
 // write a function to find no of vowel in a String
@@ -3255,32 +3259,9 @@ let totalWordInSentenceIs = countWord(aSentenceIs);
 console.log(totalWordInSentenceIs);
 */
 
-// write a function to calculate the total no of words in a String
-
-// ======================================== test four: ================================
-/*
-let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
-
-function countWord(theSentece) {
-    let count = 0;
-    for (let i = 0; i < theSentece.length; i++) {
-
-        if (theSentece[i] == ' ') {
-            count++;
-        }
-        count++
-        return count
-
-    }
-}
-countWord(aSentenceIs);
-let totalWordInSentenceIs = countWord(aSentenceIs);
-console.log(totalWordInSentenceIs);
-*/
 
 
-
-// find prime no 
+// ============================  find prime no 
 /*
 let aNumber = 9561;
 
@@ -3301,13 +3282,13 @@ console.log(findPrimeNo(aNumber));
 
 
 
-// creat a function to find all the prime no between 1 to 100
+
 
 // ১. একটা ফাংশন লিখবা যেটা ১৩ এর নামতা (multiplication table) আউটপুট হিসেবে দেখাবে। 
 
 
 
-//create a prime number list with for loop
+// creat a function to find all the prime no between 1 to 100
 /*
 let primeNoList = [];
 for (let i = 2; i < 100; i++) {
