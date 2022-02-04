@@ -955,8 +955,10 @@ if (colors.indexOf(askiiElement) == -1) {
 
 
 // second way
-
 /*
+let colors = ["Red", "Green", "Yellow", "Blue"];
+let askiiElement = "Green" // prompt("Write the color?");
+
 for (let i = 0; i < colors.length; i++) {
 
     const element = colors[i];
@@ -1809,9 +1811,9 @@ function getReminder(number1, number2) {
 
 
 console.log(getReminder(12, "5"));
-console.log(typeof (getReminder(12, "5")));
-
+console.log(typeof (getReminder(12, "5"))); // typeof number দেখাবে
 */
+
 // ১. একটা ফাংশন লিখবা যেটা ১৩ এর নামতা (multiplication table) আউটপুট হিসেবে দেখাবে। 
 /*
 let count = 1;
@@ -3168,26 +3170,8 @@ console.log(theNewArrOfPosNumIs);
 
 
 
-// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[final math word cound]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
-/*
-let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
 
-function countWord(theSentece) {
-    let count = 0;
-    for (let i = 0; i < theSentece.length; i++) {
 
-        if (theSentece[i] == '' && theSentece[i - 1] != '') {
-            count++;
-        }
-        count++
-        return count
-
-    }
-}
-countWord(aSentenceIs);
-let totalWordInSentenceIs = countWord(aSentenceIs);
-console.log(totalWordInSentenceIs);
-*/
 
 
 
@@ -3224,3 +3208,99 @@ console.log(count)
 
 // how to know the length of an object and how to change any property with value in ab obj
 // recursion of function
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[final math word cound]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+/*
+let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
+
+function countWord(theSentece) {
+    let count = 0;
+    for (let i = 0; i < theSentece.length; i++) {
+
+        if (theSentece[i] == '' && theSentece[i - 1] != '') {
+            count++;
+        }
+        count++
+        return count
+
+    }
+}
+countWord(aSentenceIs);
+let totalWordInSentenceIs = countWord(aSentenceIs);
+console.log(totalWordInSentenceIs);
+*/
+
+// write a function to find no of vowel in a String
+
+// ======================================== test four: ================================
+/*
+let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
+
+function countWord(theSentece) {
+    let count = 0;
+    for (let i = 0; i < theSentece.length; i++) {
+
+        if (theSentece[i] == 'a' || theSentece[i] == 'e' || theSentece[i] == 'i' || theSentece[i] == 'o' || theSentece[i] == 'u') {
+            count++;
+        }
+        count++
+        return count
+
+    }
+}
+countWord(aSentenceIs);
+let totalWordInSentenceIs = countWord(aSentenceIs);
+console.log(totalWordInSentenceIs);
+*/
+
+// write a function to calculate the total no of words in a String
+
+// ======================================== test four: ================================
+/*
+let aSentenceIs = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora corporis animi cupiditate accusantium ex. Nam ipsam aliquid aspernatur non veniam voluptate sapiente repudiandae voluptates rerum. Temporibus, provident harum ducimus ratione laborum cupiditate, similique accusantium alias accusamus nesciunt porro voluptatum iure voluptate excepturi doloribus labore magnam eveniet fugiat quasi saepe sit?'
+
+function countWord(theSentece) {
+    let count = 0;
+    for (let i = 0; i < theSentece.length; i++) {
+
+        if (theSentece[i] == ' ') {
+            count++;
+        }
+        count++
+        return count
+
+    }
+}
+countWord(aSentenceIs);
+let totalWordInSentenceIs = countWord(aSentenceIs);
+console.log(totalWordInSentenceIs);
+*/
+
+
+
+// find prime no 
+/*
+let aNumber = 9561;
+
+function findPrimeNo(theNoIs) {
+    for (let i = 2; i < theNoIs; i++) {
+        if (theNoIs % i == 0) {
+            return `${theNoIs} is not a prime number`;
+            break;
+        } else {
+
+            return `${theNoIs} is a prime number`;
+        }
+
+    }
+}
+console.log(findPrimeNo(aNumber));
+*/
+
+
+
+// creat a function to find all the prime no between 1 to 100
+
+// ১. একটা ফাংশন লিখবা যেটা ১৩ এর নামতা (multiplication table) আউটপুট হিসেবে দেখাবে। 
