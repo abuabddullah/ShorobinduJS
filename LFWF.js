@@ -3285,6 +3285,158 @@ function average(n){
 
 
 
+// =============================================== Count the number of vowels in a string
+/*
+function countVowel(sentence) {
+
+    let count = 0;
+    let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+
+    for (const letter of sentence) {
+        // let letter = sentence[i].toLowerCase();
+        if (vowels.indexOf(letter) > -1) {
+            count = count + 1;
+        }
+    }
+    return count;
+
+}
+
+let string = "Quick brown fox jumps over the lazy dog";
+console.log(countVowel(string));
+*/
+
+
+
+
+// ========================================== Mular dam For first 2 kg - 30 tk per kg For more than 2 kg - 25 tk per kg write a function to calculate total price based on given uantity. + handle errors
+/*
+function mularDam(quantity){
+    if(typeof quantity != "number"){
+      return "Please enter a valid quantity";
+    }
+    else if(quantity <= 0){
+      return "Please enter a valid quantity";
+    }
+    else if(quantity > 20){
+      return "Please want less than that";
+    }
+  
+    let price = 0;
+    if(quantity <= 2){
+      price = quantity * 30;
+    } else {
+      price = quantity * 25;
+    }
+    return price;
+  }
+  
+  console.log(mularDam(50))
+*/
+
+
+
+
+// Calculate Electricity bill For first 100 unit - 5 tk per unit For more than 100 unit 6 tk for every unit more than 100 For more than 200 it 7 tk for every unit more than 200
+/*
+function electricityBill(unit){
+    let bill;
+    if (unit > 200) {
+      // 250 unit
+      // 100 * 5;
+      // 100 * 6;
+      // (unit - 200) * 7
+      let first100Bill = 100 * 5;
+      let secondBill = 100 * 6;
+      let remainingBill = (unit - 200) * 7;
+  
+      bill = first100Bill + secondBill + remainingBill;
+  
+    } else if (unit > 100) {
+      // 120 unit
+      // 100 * 5 = 500
+      // (unit - 100) * 6 = 120
+      let firstBill = 100 * 5;
+      let remainingBill = (unit - 100) * 6;
+      bill = firstBill + remainingBill;
+    } else if (unit <= 100) {
+      bill = unit * 5;
+    } 
+  
+    // if (unit <= 100) {
+    //   bill = unit * 5;
+    // } else if (unit <= 200) {
+    //   let firstBill = 100 * 5;
+    //   let remainingBill = (unit - 100) * 6;
+    //   bill = firstBill + remainingBill;
+    // } else {
+    //   let first100Bill = 100 * 5;
+    //   let secondBill = 100 * 6;
+    //   let remainingBill = (unit - 200) * 7;
+  
+    //   bill = first100Bill + secondBill + remainingBill;
+    // } 
+  
+    return bill;
+  }
+  
+  console.log(electricityBill(300));
+*/
+
+
+
+
+
+
+
+
+// // ============================================  Find the largest element of an array
+
+/*
+// function largestElement(array){
+//   let largest = array[0];
+//   for(const element of array){
+//     if(element > largest){
+//       largest = element;
+//     }
+//   }
+//   return largest;
+// }
+
+// let array = [3, 5, 7, 1, 9];
+
+// console.log(largestElement(array))
+
+// Find the second largest element of an array
+
+function secondLargestElement(array){
+    let largest = array[0];
+    let secondLargest = array[0];
+  
+    for(let i = 0; i < array.length; i++){
+      let element = array[i];
+      if(element > largest){
+        secondLargest = largest;
+        largest = element;
+      } else if(element > secondLargest){
+        secondLargest = element;
+      }
+    }
+  
+    return secondLargest;
+  
+  }
+  
+  let array = [45, 41, 56, 35, 64, 60];
+  
+  // let result = secondLargestElement(array);
+  // console.log(result[0], result[1])
+  console.log(secondLargestElement(array))
+*/
+
+
+
+
 
 
 

@@ -1,27 +1,28 @@
-let phones = [{
-        brand: "symphony",
-        price: 10000,
-        ram: "6GB",
-        camera: "100mp"
-    },
-    {
-        brand: "samsung",
-        price: 100000,
-        ram: "60GB",
-        camera: "1000mp"
-    },
-    {
-        brand: "nokia",
-        price: 1000,
-        ram: ".6GB",
-        camera: "10mp"
-    }
-]
+const array1 = ['a', 'b', 'c', 'd'];
+const array2 = ['a', 'c', 'd'];
 
-let cheapestPhone = phones[0];
-for (const mobile of phones) {
-    if (mobile.price < cheapestPhone.price) {
-        cheapestPhone = mobile;
+// Function definition with passing two arrays
+function findCommonElement(array1, array2) {
+
+    // Loop for array1
+    for (let i = 0; i < array1.length; i++) {
+
+        // Loop for array2
+        for (let j = 0; j < array2.length; j++) {
+
+            // Compare the element of each and
+            // every element from both of the
+            // arrays
+            if (array1[i] === array2[j]) {
+
+                // Return if common element found
+                console.log(true);
+            }
+        }
     }
+
+    // Return if no common element exist
+    console.log(false);
 }
-console.log(cheapestPhone);
+
+console.log(findCommonElement(array1, array2));
