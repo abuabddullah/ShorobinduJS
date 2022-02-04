@@ -3304,3 +3304,23 @@ console.log(findPrimeNo(aNumber));
 // creat a function to find all the prime no between 1 to 100
 
 // ১. একটা ফাংশন লিখবা যেটা ১৩ এর নামতা (multiplication table) আউটপুট হিসেবে দেখাবে। 
+
+
+
+//create a prime number list with for loop
+/*
+let primeNoList = [];
+for (let i = 2; i < 100; i++) {
+    let isPrime = true;
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+    if (isPrime) {
+        primeNoList.push(i);
+    }
+}
+console.log(primeNoList);
+*/
