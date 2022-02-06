@@ -673,6 +673,93 @@ console.log(getArrayOfRange);
 
 
 
+// ********************************** Creat a function on array of object to print requirements using break and continue statements.
+
+let anArrayOfElectronicProducts3 = [{
+        "name": "apple watch",
+        "price": "1000",
+        "brand": "apple",
+        "type": "watch"
+    },
+    {
+        "name": "samsung watch",
+        "price": "2000",
+        "brand": "samsung",
+        "type": "watch"
+    },
+    {
+        "name": "sony mobile",
+        "price": "3000",
+        "brand": "sony",
+        "type": "mobile"
+    },
+    {
+        "name": "nokia mobile",
+        "price": "4000",
+        "brand": "nokia",
+        "type": "mobile"
+    },
+    {
+        "name": "asus laptop",
+        "price": "5000",
+        "brand": "asus",
+        "type": "laptop"
+    },
+    {
+        "name": "hp laptop",
+        "price": "6000",
+        "brand": "hp",
+        "type": "laptop"
+    }
+]
+
+// by using loop to break loop if the condition is true
+/*
+for (const product of anArrayOfElectronicProducts3) {
+    if (product.price > 3000) {
+        break;
+    }
+    console.log(product);
+}
+*/
+
+// by using loop to skip by continue loop if the condition is true
+/*
+for (const product of anArrayOfElectronicProducts3) {
+    if (product.price == 3000) {
+        continue;
+    }
+    console.log(product);
+}
+*/
+
+
+
+
+
+function getPrintUptoRange(array, range) {
+    for (const product of array) {
+        if (product.price > range) {
+            break
+        }
+        return product;
+    }
+}
+
+getPrintUptoRange(anArrayOfElectronicProducts3, 3000)
+let getPrintUptoRangeVar = getPrintUptoRange(anArrayOfElectronicProducts3, 3000);
+console.log(getPrintUptoRangeVar);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
