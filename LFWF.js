@@ -742,13 +742,13 @@ function getPrintUptoRange(array, range) {
         if (product.price > range) {
             break
         }
-        return product;
+        console.log(product);
     }
 }
 
 getPrintUptoRange(anArrayOfElectronicProducts3, 3000)
-let getPrintUptoRangeVar = getPrintUptoRange(anArrayOfElectronicProducts3, 3000);
-console.log(getPrintUptoRangeVar);
+// let getPrintUptoRangeVar = getPrintUptoRange(anArrayOfElectronicProducts3, 3000);
+// console.log(getPrintUptoRangeVar);
 
 
 
