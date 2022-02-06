@@ -499,6 +499,184 @@ console.log(pizza.toppings[2]);
 
 
 
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[Special methods on  Array of Object]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+/*
+let cars = [{
+        "color": "purple",
+        "type": "minivan",
+        "registration": new Date('2017-01-03'),
+        "capacity": 7
+    }, {
+        "color": "green",
+        "type": "minivan1",
+        "registration": new Date('2017-01-03'),
+        "capacity": 9
+    }, {
+        "color": "black",
+        "type": "minivan2",
+        "registration": new Date('2017-01-03'),
+        "capacity": 10
+    },
+    {
+        "color": "red",
+        "type": "station wagon",
+        "registration": new Date('2018-03-03'),
+        "capacity": 5
+    }
+]
+
+// print all the objects in anArrayOfDevices as per diff requirements
+for (const car of cars) {
+    console.log(car); // to print all the objects in cars array
+    console.log(car.type); // to print all the types of car in cars array
+
+
+
+    // to print all the car includes "mivan" in the type of car in cars array
+    if (car.type.includes("minivan")) {
+        console.log(car);
+    }
+
+
+
+    // to print all the car whic capacity is bellow 9 capacity of car in cars array
+    if (car.capacity < 9) {
+        console.log(car);
+    }
+
+}
+*/
+
+
+
+// *********************************** Problems: creat a function as collect of new array of only watches/laptop/mobile from the parent array containing objescts of multiple electronic products.
+/*
+let anArrayOfElectronicProducts = [{
+        "name": "apple watch",
+        "price": "1000",
+        "brand": "apple",
+        "type": "watch"
+    },
+    {
+        "name": "samsung watch",
+        "price": "2000",
+        "brand": "samsung",
+        "type": "watch"
+    },
+    {
+        "name": "sony mobile",
+        "price": "3000",
+        "brand": "sony",
+        "type": "mobile"
+    },
+    {
+        "name": "nokia mobile",
+        "price": "4000",
+        "brand": "nokia",
+        "type": "mobile"
+    },
+    {
+        "name": "asus laptop",
+        "price": "5000",
+        "brand": "asus",
+        "type": "laptop"
+    },
+    {
+        "name": "hp laptop",
+        "price": "6000",
+        "brand": "hp",
+        "type": "laptop"
+    }
+]
+
+
+function getElementsFromParent(elementArray, searchKeywords) {
+    let arrayOfSearchKeywords = [];
+    for (const element of elementArray) {
+        if (element.type.includes(searchKeywords)) {
+            arrayOfSearchKeywords.push(element);
+        }
+
+    }
+    return arrayOfSearchKeywords;
+}
+getElementsFromParent(anArrayOfElectronicProducts, "watch");
+let getOfSearchKeywords = getElementsFromParent(anArrayOfElectronicProducts, "watch");
+console.log(getOfSearchKeywords);
+*/
+
+
+
+
+
+// *********************************** Problems: creat a function as collect of new array of only products price <= 3000 from the parent array containing objescts of multiple electronic products.
+/*
+let anArrayOfElectronicProducts2 = [{
+        "name": "apple watch",
+        "price": "1000",
+        "brand": "apple",
+        "type": "watch"
+    },
+    {
+        "name": "samsung watch",
+        "price": "2000",
+        "brand": "samsung",
+        "type": "watch"
+    },
+    {
+        "name": "sony mobile",
+        "price": "3000",
+        "brand": "sony",
+        "type": "mobile"
+    },
+    {
+        "name": "nokia mobile",
+        "price": "4000",
+        "brand": "nokia",
+        "type": "mobile"
+    },
+    {
+        "name": "asus laptop",
+        "price": "5000",
+        "brand": "asus",
+        "type": "laptop"
+    },
+    {
+        "name": "hp laptop",
+        "price": "6000",
+        "brand": "hp",
+        "type": "laptop"
+    }
+]
+
+function getProducArrayOfRange(arrayOfProducts, range) {
+    let arrayOfProductsInRange = [];
+    for (const product of arrayOfProducts) {
+        if (product.price <= range) {
+            arrayOfProductsInRange.push(product);
+        }
+    }
+    return arrayOfProductsInRange;
+
+}
+getProducArrayOfRange(anArrayOfElectronicProducts2, 3000);
+let getArrayOfRange = getProducArrayOfRange(anArrayOfElectronicProducts2, 3000);
+console.log(getArrayOfRange);
+*/
+
+
+
+
+
+
+
+
+
+
+
 // ******************************** JavaScript Live Class 2, Part 4 - Operators অপারেটরস কি?
 
 
@@ -3433,6 +3611,128 @@ function secondLargestElement(array){
   // console.log(result[0], result[1])
   console.log(secondLargestElement(array))
 */
+
+
+
+// *********************************** 23_5-1 Understand for loop in a forward and reverse way
+
+
+
+
+// repeat 5 to 1 all numbers by for loop and recursion way
+
+
+// by for loop
+/*
+//       (1) || (2) || (3)
+for (let i = 5; i > 0; i--) {
+    console.log(i);
+}
+// here (1) is the initialization of the loop and (2) is the condition of the loop and (3) is the increment of the loop
+
+*/
+
+// by recursion way and 
+/*
+function recursion(i) {
+    if (i == 0) { // (2) set condition to stop recursion
+        return;
+    }
+    console.log(i);
+    recursion(i - 1); // (3) increment and decrement i value and call recursion function again
+}
+recursion(5); // (1) set initial value
+*/
+
+// loop vs recursion : in recursion function initial value is set during invoking and condition is set just before printing and increment or decrement done after printing
+
+
+
+
+
+// *************************************** 23_5-2 Understand recursion using sum of numbers
+
+
+
+// calculate sum from 1 to n using recursion and loop
+
+// by using loop
+/*
+let sum = 0;
+for (let i = 0; i <= 4; i++) {
+    sum += i;
+}
+console.log(sum);
+*/
+
+// by using recursion
+/*
+function getSum(params) {
+    if (params == 1) {
+        return 1;
+    }
+    return params + getSum(params - 1);
+}
+
+getSum(4);
+console.log(getSum(4));
+*/
+/*
+    expalnation of "return params + getSum(params - 1);"
+    returned 4 + getSum(3);   |||   first time params = 4
+    returned 4 +  returned 3 + getSum(2);   |||   second time params = 3
+    returned 4 +  returned 3 + returned 2 + getSum(1);   |||   third time params = 2
+    returned 4 +  returned 3 + returned 2 + returned 1;   |||   fourth time params = 1 and break the recursion loop
+*/
+
+
+
+
+// *************************************** 23_5-3 Explore Factorial Recursion using a for loop concept
+
+
+// find factorial of a number using recursion and loop
+
+// by using loop
+/*
+let factorial = 1;
+for (let i = 1; i <= 4; i++) {
+    factorial *= i;
+}
+console.log(factorial);
+*/
+
+// by using recursion
+/*
+function getFactorial(n) {
+    if (n == 1) {
+        return 1;
+    }
+    return n * getFactorial(n - 1);
+}
+getFactorial(4);
+console.log(getFactorial(4));
+*/
+/*
+    expalnation of "return n * getFactorial(n - 1);"
+    returned 4 * getFactorial(3);   |||   first time n = 4
+    returned 4 *  returned 3 * getFactorial(2);   |||   second time n = 3
+    returned 4 *  returned 3 * returned 2 * getFactorial(1);   |||   third time n = 2
+    returned 4 *  returned 3 * returned 2 * returned 1;   |||   fourth time n = 1 and break the recursion loop
+
+
+
+
+// ******************************************** 23_5-4 (advanced) Find the matching product by searching products
+
+
+
+
+
+
+
+
+
 
 
 
