@@ -106,22 +106,12 @@ console.log(listItem2.childNodes);
 
 
 
-// ****************************** 24-8 Create HTML elements using Javascript and appendChild
+// ****************************** 24-8 Create HTML elements using Javascript and appendChild classList.add
 
 
 
-/* 
-এখানে style দিলে নতুন যেগুলো JS দিয়ে বানানো হয়েছে তারা পাবে না তাই এটাকে নিচে নিয়ে যেতে হবে
-
-let blogItem = document.querySelectorAll(".blogItem");
-console.log(blogItem);
-for (const blog of blogItem) {
-    blog.style.border = "1px solid orange";
-    blog.style.margin = "10px";
-    blog.style.padding = "10px 20px";
-    blog.style.borderRadius = "10px";
-}
-*/
+/*
+// এখানে style দিলে নতুন যেগুলো JS দিয়ে বানানো হয়েছে তারা পাবে না তাই এটাকে নিচে নিয়ে যেতে হবে
 
 // একটা নতুন but same style এর article add করতে হবে blog section এর ভিতরে
 
@@ -187,3 +177,4 @@ for (const blog of blogItem) {
     blog.style.padding = "10px 20px";
     blog.style.borderRadius = "10px";
 }
+*/
