@@ -714,24 +714,24 @@ let anArrayOfElectronicProducts3 = [{
 ]
 
 // by using loop to break loop if the condition is true
-/*
+
 for (const product of anArrayOfElectronicProducts3) {
     if (product.price > 3000) {
         break;
     }
     console.log(product);
 }
-*/
+
 
 // by using loop to skip by continue loop if the condition is true
-/*
+
 for (const product of anArrayOfElectronicProducts3) {
     if (product.price == 3000) {
         continue;
     }
     console.log(product);
 }
-*/
+
 
 
 
@@ -747,10 +747,10 @@ function getPrintUptoRange(array, range) {
 }
 
 getPrintUptoRange(anArrayOfElectronicProducts3, 3000)
-    // let getPrintUptoRangeVar = getPrintUptoRange(anArrayOfElectronicProducts3, 3000);
-    // console.log(getPrintUptoRangeVar);
-    *
-    /
+// let getPrintUptoRangeVar = getPrintUptoRange(anArrayOfElectronicProducts3, 3000);
+// console.log(getPrintUptoRangeVar);
+*/
+
 
 
 
