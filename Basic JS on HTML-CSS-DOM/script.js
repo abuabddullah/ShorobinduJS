@@ -47,7 +47,7 @@ for (const h2 of allH2) {
 }
 
 // console.log("---------------------------special note---------------------------");
-// innerHTML helps to get child Element with tag name   |||   but innerText helps to get text of child Element without tag name
+// "innerHTML" helps to get child Element with tag name but as text  |||   but "innerText" helps to get text of child Element without tag name but with css style   ||| on the othe hand "textContent" get text of child Element without tag name and css style 
 // console.log("---------------------------special note---------------------------");
 
 
@@ -231,3 +231,111 @@ let itemBlogINBlogSection = blogSection.children;
 console.log(itemBlogINBlogSection); // children shows only the child tags inside section.blogSection tag
 blogSection.removeChild(itemBlogINBlogSection[2]); // remove the second child tag inside section.blogSection tag
 */
+
+
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 25  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+// ******************************** 25-1 What is Event, different types of event in web
+
+
+// useing inline css Button এ ক্লিক করলে কনসলে ক্লিকড  লিখা আসবে আর h tag এও ক্লিকে লিখা আসবে [[[  plz visit index.html line-128-129  ]]]
+
+
+
+
+// ******************************** 25-2 Add onclick handler directly or via javascript
+
+
+
+/*
+// button এ ক্লিক করলে body tag এর background color টাই change হয়ে যাবে
+
+// system - ১ : "onclick" attribute এর মধ্যেই inline js দিয়ে define করে দেয়া [[সাধারনত এই পদ্ধতি use করা হয় না]]
+
+
+
+// system - ২ : "onclick" attribute in the html tag and external javascript file
+function onclickBody2Green() {
+    document.body.style.backgroundColor = "green";
+}
+
+
+
+// system - ৩ : html tag এ "onclick" attribute না দিয়ে external javascript file এ getElementById দিয়ে ধরে ধরে ".onclick" use করে + normal function add করে 
+let btn4Body2Blue = document.getElementById('changeBodyColor2BLUE'); // (1)gettint the button by id
+
+btn4Body2Blue.onclick = changeBodyColor2BLUE; /// 2)add onclick handler to the button but dont call here
+
+// (3)declare the function in details bellow 
+function changeBodyColor2BLUE() {
+    document.body.style.backgroundColor = "blue";
+}
+
+
+
+// system - 4 : html tag এ "onclick" attribute না দিয়ে external javascript file এ queryselector দিয়ে ধরে ধরে ".onclick" use করে + Anonymous function add করে 
+
+let btn4Body2YELLOW = document.getElementById('changeBodyColor2YELLOW'); // (1)gettint the button by id
+
+
+// (2)declare the anonymous function in details bellow
+btn4Body2YELLOW.onclick = function () {
+    document.body.style.backgroundColor = "yellow";
+}
+
+
+
+// system - 5 : external javascript file এ getElementById দিয়ে ধরে ধরে ".addevenlistener" use করে + normal function add করে 
+
+let btn4Body2GOLDENROD = document.getElementById('changeBodyColor2GOLDENROD'); // (1)gettint the button by id
+
+// (2)declare the  function in details bellow using ".addevenlistener"
+btn4Body2GOLDENROD.addEventListener('click', changeBodyColor2GOLDENROD);
+
+function changeBodyColor2GOLDENROD() {
+    document.body.style.backgroundColor = "goldenrod";
+}
+
+
+
+// system - 6 : external javascript file এ getElementById দিয়ে ধরে ধরে ".addevenlistener" use করে + Anonymous function add করে 
+
+let btn4Body2HOTPINK = document.getElementById('changeBodyColor2HOTPINK'); // (1)gettint the button by id
+
+// (2)declare the Anonymous function in details bellow using ".addevenlistener"
+btn4Body2HOTPINK.addEventListener('click', function () {
+    document.body.style.backgroundColor = "hotpink";
+});
+
+
+
+// system - 7 [[  mostly used system to apply js  ]]: external javascript file এ কোন variable delcaration ছাড়াই getElementById দিয়ে ধরে ধরে ".addevenlistener" use করে + Anonymous function add করে
+
+document.getElementById('changeBodyColor2ORANGE').addEventListener('click', function () {
+    document.body.style.background = 'orange';
+});
+*/
+
+// console.log("---------------------------special note---------------------------");
+/*
+system 1 + 2 প্রায় same same : inline js system by onclick method
+system 3 + 4 প্রায় same same : external js system by onclick method
+system 5 + 6 প্রায় same same : external js system by addEventListener method
+system 7 : external js system by addEventListener method
+
+mostly used method is system 7 and system 3
+*/
+// console.log("---------------------------special note---------------------------");
+
+
+
+
+
+// ******************************** 25-4 Most common ways to set Event Handlers
