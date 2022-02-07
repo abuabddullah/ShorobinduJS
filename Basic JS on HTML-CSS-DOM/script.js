@@ -81,7 +81,7 @@ document.querySelectorAll(".midleItems")[1].style.background = "rgba(0,0,0,0.5)"
 // *************************************24-7 NodeList, htmlcollection, setAttribute, parentNode, childnodes
 
 
-
+/*
 //HTML এর প্রতিটা জিনিসই একেক্টা Node অর্থাৎ অনেকটা members in document-family। এদের একেক রকম নাম আছে যেমন comment গুলো হচ্ছে comment-node ||| text গুলো text-node ||| attribute গুলো attribute-node ||| document গুলো document-node ||| doctype গুলো doctype-node etc | যার ফলে JS দিইয়ে select করলে NodeList, htmlcollection ইত্যাদি show করে এবং array এর মতন দেখায় কিন্তু এগুলো array না বরং array type object তাই এদের উপরে array এর অনেক method apply করা যায় যেমনঃ forOf(),length,indexOf() কিন্তু সব methodই না যেমন push() apply হবে না।
 
 
@@ -102,3 +102,88 @@ console.log(listItem2.parentNode.parentNode.parentNode.parentNode.parentNode.par
 
 // to know the Child grandChild grandGrandChild so bellow use childnodes
 console.log(listItem2.childNodes);
+*/
+
+
+
+// ****************************** 24-8 Create HTML elements using Javascript and appendChild
+
+
+
+/* 
+এখানে style দিলে নতুন যেগুলো JS দিয়ে বানানো হয়েছে তারা পাবে না তাই এটাকে নিচে নিয়ে যেতে হবে
+
+let blogItem = document.querySelectorAll(".blogItem");
+console.log(blogItem);
+for (const blog of blogItem) {
+    blog.style.border = "1px solid orange";
+    blog.style.margin = "10px";
+    blog.style.padding = "10px 20px";
+    blog.style.borderRadius = "10px";
+}
+*/
+
+// একটা নতুন but same style এর article add করতে হবে blog section এর ভিতরে
+
+// convetional way to add "My Blog_3 : This is a new article added by JavaScript in Conventional way"
+
+// step-1: creat a article tag
+
+let aNewArticle = document.createElement("article"); // article tag created
+aNewArticle.classList.add("blogItem"); // "blogItem" class added
+
+
+// step-2: creat a h3 and p tag
+
+// add h3 tag
+let h3OfANewArticle = document.createElement("h3"); // h3 tag created
+h3OfANewArticle.innerText = "My Blog_3 : This is a new article added by JavaScript"; // text content added
+
+// add p tag
+let pOfANewArticle = document.createElement("p"); // p tag created
+pOfANewArticle.innerText = "This is a new PARAGRAPH added by JavaScript This is a new PARAGRAPH added by JavaScript This is a new PARAGRAPH added by JavaScript "; // text content added
+
+
+
+// step-3: append h3 and p tag inside article tag
+
+aNewArticle.appendChild(h3OfANewArticle); // h3 tag added inside article tag
+aNewArticle.appendChild(pOfANewArticle); // p tag added inside article tag
+
+
+
+// step-3: append article tag inside section.blogSection tag of HTML
+
+let blogSection = document.querySelector(".blogSection"); // section.blog tag selected
+// console.log(blogSection);
+blogSection.appendChild(aNewArticle); // article tag added inside section.blogSection tag 
+
+
+
+
+// modern way with BackTik method
+
+// creat a new article tag
+let anotherNewArticle = document.createElement("article"); // anotherNewArticle tag created
+anotherNewArticle.classList.add("blogItem"); // "blogItem" class added
+
+// creat a new h3 and p tag inside anotherNewArticle tag
+anotherNewArticle.innerHTML = `
+    <h3>My Blog_4 : This is a new article added by JavaScript modern way with BackTik method</h3>
+    <p>This is a new PARAGRAPH added by JavaScript modern way with BackTik method This is a new PARAGRAPH added by JavaScript modern way with BackTik method This is a new PARAGRAPH added by JavaScript modern way with BackTik method </p>`;
+
+// append article tag inside section.blogSection tag of HTML
+blogSection.appendChild(anotherNewArticle); // anotherNewArticle tag added inside section.blogSection tag
+
+
+
+// নতুন blog টা add হবার পরেও তাতে কোন style পরেনি কারন javaScript এ যদি style add করার পরে নিচে কোন নতুন same class add করা হয়ও তাতে style add হবে না । style add করার জন্য style গুলোকে same class add করা নতুন element এর নিচে নিয়ে আসতে হবে
+
+let blogItem = document.querySelectorAll(".blogItem");
+// console.log(blogItem);
+for (const blog of blogItem) {
+    blog.style.border = "1px solid orange";
+    blog.style.margin = "10px";
+    blog.style.padding = "10px 20px";
+    blog.style.borderRadius = "10px";
+}
