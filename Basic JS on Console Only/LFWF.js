@@ -674,7 +674,7 @@ console.log(getArrayOfRange);
 
 
 // ********************************** Creat a function on array of object to print requirements using break and continue statements.
-
+/*
 let anArrayOfElectronicProducts3 = [{
         "name": "apple watch",
         "price": "1000",
@@ -747,8 +747,20 @@ function getPrintUptoRange(array, range) {
 }
 
 getPrintUptoRange(anArrayOfElectronicProducts3, 3000)
-// let getPrintUptoRangeVar = getPrintUptoRange(anArrayOfElectronicProducts3, 3000);
-// console.log(getPrintUptoRangeVar);
+    // let getPrintUptoRangeVar = getPrintUptoRange(anArrayOfElectronicProducts3, 3000);
+    // console.log(getPrintUptoRangeVar);
+    *
+    /
+
+
+
+
+
+
+
+
+
+
 
 
 
