@@ -34,7 +34,7 @@ for (const p of allP) {
 // ************************** 24-5 || 24-6 Capture and change Element css by using getElementById || getElementsByClassName || querySelector || querySelectorAll
 
 
-
+/*
 // JS দিয়ে কোন id কে ধরে CSS ও apply করা যায় by using getElementById 
 
 // styling mainTitle
@@ -57,6 +57,48 @@ for (const blog of titleOfBlog) {
 
 
 
-// JS দিয়ে কোন id/class/tag কে ধরে একদম CSS style এ CSS ও apply করা যায় by using querySelector || querySelectorAll
+// JS দিয়ে কোন id/class/tag কে ধরে একদম CSS মতন করে CSS ও apply করা যায় by using querySelector || querySelectorAll
 
-//যদি same class/tag এর একাধিক element এর মধ্যে কেবল মাত্র প্রথমটাকেই stylilng করতে চাই use querySelector
+//যদি same class/tag এর একাধিক element এর মধ্যে কেবল মাত্র প্রথমটাকেই stylilng করতে চাই use querySelector   |||   যদি সব গুলোকে styling করতে চাই use querySelectorAll   |||   যদি specific কোন একটা কে styling করতে চাই use querySelectorAll[indexNo]
+
+// style applied only on firs item  using querySelector
+document.querySelector('.lists1 ul li').style.color = "red";
+
+// style applied only on midleItems classes  using querySelectorAll
+let midItems = document.querySelectorAll(".midleItems");
+for (const item of midItems) {
+    item.style.color = "yellow";
+    item.style.background = "rgba(0,0,0,1)";
+}
+
+// style applied only on second mid item using querySelectorAll[indexNo]
+document.querySelectorAll(".midleItems")[1].style.background = "rgba(0,0,0,0.5)";
+*/
+
+
+
+
+// *************************************24-7 NodeList, htmlcollection, setAttribute, parentNode, childnodes
+
+
+
+//HTML এর প্রতিটা জিনিসই একেক্টা Node অর্থাৎ অনেকটা members in document-family। এদের একেক রকম নাম আছে যেমন comment গুলো হচ্ছে comment-node ||| text গুলো text-node ||| attribute গুলো attribute-node ||| document গুলো document-node ||| doctype গুলো doctype-node etc | যার ফলে JS দিইয়ে select করলে NodeList, htmlcollection ইত্যাদি show করে এবং array এর মতন দেখায় কিন্তু এগুলো array না বরং array type object তাই এদের উপরে array এর অনেক method apply করা যায় যেমনঃ forOf(),length,indexOf() কিন্তু সব methodই না যেমন push() apply হবে না।
+
+
+let listItem2 = document.querySelector("#list2");
+console.log(listItem2);
+console.log(listItem2.getAttribute("class"));
+listItem2.setAttribute("title", "This is a list item-2");
+
+// to know the father grandFather grandGrandFather so above use parentNode
+console.log(listItem2.parentNode);
+console.log(listItem2.parentNode.parentNode);
+console.log(listItem2.parentNode.parentNode.parentNode);
+console.log(listItem2.parentNode.parentNode.parentNode.parentNode);
+console.log(listItem2.parentNode.parentNode.parentNode.parentNode.parentNode);
+console.log(listItem2.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+console.log(listItem2.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode);
+
+
+// to know the Child grandChild grandGrandChild so bellow use childnodes
+console.log(listItem2.childNodes);
