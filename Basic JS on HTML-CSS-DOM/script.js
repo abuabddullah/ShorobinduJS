@@ -519,3 +519,72 @@ btn4delete.addEventListener('click', function () {
     item4delete.remove();
 });
 */
+
+
+
+
+
+
+
+// ******************************** 25-7 (semi-advanced) Event bubble and Stop propagating
+
+
+
+
+
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+/*
+         event bubble হচ্ছে ধরি কোন একটা document এর structur হল নিম্নরূপ যার প্রতিটা stage এ addlistener হিসেবে same effect "click" দেয়া আছে আর output effect দেয়া আছে console(tagName),
+
+            "html>body>main>section>div>ul>li"
+
+browser এর কাছে li ঘরের মত যার ফ্ল্যাট ul যার বাড়ি div যার মহল্লা section যার গ্রাম main যার থানা body আর ডিস্ট্রিক্ট html.
+
+এখন যদি li এ ক্লিক পরে তাহলে browser সব গুলার effect কেই cocsole এ print করবে কারণ 
+
+li ক্লিক মানে কি html এর কোথাও ক্লিক ? - হ্যা[তাহলে html effect show করাবে]
+
+li ক্লিক মানে কি body এর কোথাও ক্লিক ? - হ্যা[তাহলে body effect show করাবে]
+
+li ক্লিক মানে কি main এর কোথাও ক্লিক ? - হ্যা[তাহলে main effect show করাবে]
+
+li ক্লিক মানে কি section এর কোথাও ক্লিক ? - হ্যা[তাহলে section effect show করাবে]
+
+li ক্লিক মানে কি div এর কোথাও ক্লিক ? - হ্যা[তাহলে div effect show করাবে]
+
+li ক্লিক মানে কি ul এর কোথাও ক্লিক ? - হ্যা[তাহলে ul effect show করাবে]
+
+li ক্লিক মানে ত li এ ক্লিকই তাই effect show করাবে
+
+
+আর এই event bubble off করার way হচ্ছে যেই stage থেকে আর উপরের দিকে effect কে continue করতে চাই না তার মাঝে ".addlistener('click', function(event){event.stopPropagation();})" add করতে হবে
+*/
+// console.log("---------------------------special note---------------------------");
+
+
+
+/*
+let grandFather = document.querySelector('.grandFather');
+let father = document.querySelector('.father');
+let SpecialChild3 = document.querySelector('#SpecialChildNo3');
+
+SpecialChild3.addEventListener('click', function (event) {
+    console.log('Special Child 3 clicked');
+
+    // stop propagation added যার ফলে special child কে ক্লিক করলে আর তার parent এর event handler activate হব না
+    event.stopPropagation();
+});
+
+father.addEventListener('click', function () {
+    console.log('father.ul clicked');
+});
+
+
+grandFather.addEventListener('click', function () {
+    console.log('grandFather.div clicked');
+});
+*/
