@@ -538,7 +538,9 @@ btn4delete.addEventListener('click', function () {
 
 // console.log("---------------------------special note---------------------------");
 /*
-         event bubble হচ্ছে ধরি কোন একটা document এর structur হল নিম্নরূপ যার প্রতিটা stage এ addlistener হিসেবে same effect "click" দেয়া আছে আর output effect দেয়া আছে console(tagName),
+* event parameter হচ্ছে যাকে কোণ event-handller দেয়া হয়েছে
+
+* event bubble হচ্ছে ধরি কোন একটা document এর structur হল নিম্নরূপ যার প্রতিটা stage এ addlistener হিসেবে same effect "click" দেয়া আছে আর output effect দেয়া আছে console(tagName),
 
             "html>body>main>section>div>ul>li"
 
@@ -588,3 +590,16 @@ grandFather.addEventListener('click', function () {
     console.log('grandFather.div clicked');
 });
 */
+
+
+
+
+
+
+
+// ******************************** 25-8 (advanced) Event delegate and benefit of Event bubble
+
+
+
+
+// <!-- // event delegation দিয়ে ক্লিক target কে "even.target.removeChild()" করা -->
