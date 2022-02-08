@@ -283,32 +283,53 @@
 
 
 
-    <!-- // event delegation দিয়ে ক্লিক target কে remove করতে "even.target.parentNode.removeChild()" করা -->
+    <!-- // event delegation দিয়ে  target কে ক্লিক করে remove  করা -->
 
 
     <main>
         <h1>Event delegation</h1>
         <div class="BDelegated">
-            <ul>
+            <p>press the item to remove</p>
+            <ul id="itemHolder">
                 <li class="listItem">Lorem, ipsum.</li>
                 <li class="listItem">Omnis, vitae?</li>
                 <li class="listItem">Debitis, unde?</li>
                 <li class="listItem">Voluptatibus, aliquid!</li>
                 <li class="listItem">Magni, dolore.</li>
             </ul>
+            <button id="btn2addItem">add item</button>
         </div>
     </main>
 
     <script>
-
+        let itemCoverer = document.getElementById('itemHolder');
+        let itemAdder = document.getElementById('btn2addItem');
         let items = document.querySelectorAll(".listItem");
-        console.log(items);
+
+
+
+        // to enble item adding power in btn
+        itemAdder.addEventListener('click', function () {
+            let itemInli = document.createElement("li");
+            itemInli.innerHTML = "brand new item";
+            itemInli.classList.add("listItem");
+            itemCoverer.appendChild(itemInli);
+        })
+
+        // conventional way to enable removing powe in target it has lacking of not being able to remove elment creat by js which was not in raw html
         for (const singleListItem of items) {
-            console.log(singleListItem);
+
+            // by using "even.target.parentNode.removeChild()"
             singleListItem.addEventListener('click', function (event) {
                 event.target.parentNode.removeChild(event.target);
             });
         }
+
+
+        // moder way
+
+
+
 
 
 
