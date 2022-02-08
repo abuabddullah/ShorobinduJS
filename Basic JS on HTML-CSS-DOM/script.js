@@ -339,3 +339,183 @@ mostly used method is system 7 and system 3
 
 
 // ******************************** 25-4 Most common ways to set Event Handlers
+
+
+
+// button এ ক্লিক করলে h1 tag এর ভিতরের text change হয়ে যাবে
+
+/*
+// Click2ChangeBySystem3Method
+let btn4ChangeBySystem3Method = document.getElementById("system3Method2ApplyJS");
+let h1TAGToChangeBySystem3_7 = document.getElementById('h1ToChangeBySystem3_7')
+
+function system3Method() {
+    h1TAGToChangeBySystem3_7.innerHTML = 'The primary text by System3 method'
+}
+
+
+
+// Click2ChangeBySystem7Method   ||   The direct method
+document.getElementById('system7Method2ApplyJS').addEventListener('click', function () {
+    h1TAGToChangeBySystem3_7.innerHTML = 'The primary text by System7 method'
+});
+*/
+
+
+// button এ ক্লিক করলে input tag এর ভিতরের text change হয়ে খালি হয়ে h1 tag এর ভিতরে চলে যাবে 
+
+/*
+// getting all required tags in a variable
+let btn4UploadInput2H1 = document.getElementById("input2h1Btn");
+let input4UploadInput2H1 = document.getElementById("input4Upload2H1");
+let h1Tag4ShowingUploads = document.getElementById("h1forShowingUploads");
+
+// direct sytem 7 method
+btn4UploadInput2H1.addEventListener("click", function () {
+    h1Tag4ShowingUploads.innerHTML = input4UploadInput2H1.value;
+    input4UploadInput2H1.value = "";
+});
+*/
+
+
+
+
+// ******************************** 25-5 Create a comment box and display comment
+
+
+
+
+// comment box এর comment Upload হবার সাথে সাথে facebook এর মত উপরে new comment হিসেবে add হবে
+
+/*
+// gett all required tags in variable
+let btn4CommentUpload = document.getElementById('btn4Comment');
+let newComment = document.getElementById('commentBox');
+let comment2AppendIn = document.getElementById('commentsHolder');
+
+// start functioning of comment box
+btn4CommentUpload.addEventListener('click', function () {
+    // step 1 : creat a new li tag and insert text in it
+    let newCommentHolder = document.createElement('li');
+    newCommentHolder.innerHTML = newComment.value;
+
+    // step 2 : append new li tag in comment box
+    comment2AppendIn.appendChild(newCommentHolder);
+
+    // step 3 : clear comment box
+    newComment.value = '';
+});
+*/
+
+
+
+
+// ******************************** 25-6 Simple github like delete confirmation button
+
+
+
+
+//  button এ ক্লিক করলে ul থেকে li কে delete করতে হবে display-none / remove child use করে
+
+/*
+let btn4Delete = document.querySelector('#btn4deleteChils');
+let btn4Add = document.querySelector('#btn4AddChils');
+let ol4Delete = document.querySelector('ol');
+
+
+// li কে delete করতে
+btn4Delete.addEventListener('click', function () {
+    ol4Delete.removeChild(ol4Delete.lastElementChild);
+});
+
+// li কে Add করতে
+btn4Add.addEventListener('click', function () {
+    let li4Add = document.createElement('li');
+    li4Add.textContent = 'item-new';
+    ol4Delete.appendChild(li4Add);
+});
+*/
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[[[input field এর উপরে বিভিন্ন addlistener effect]]]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+/*
+let btn4delete = document.getElementById('deleteBtn');
+let item4delete = document.getElementById('item4delete');
+let inputField = document.getElementById('inputField');
+
+
+
+// effect of focus 
+inputField.addEventListener('focus', function () {
+    item4delete.style.background = 'lightblue';
+    item4delete.innerHTML = 'yap input field now focused';
+});
+
+// effect of  blur
+inputField.addEventListener('blur', function () {
+    item4delete.style.background = 'lightgreen';
+    item4delete.innerHTML = 'yap input field now out of  focused and blured';
+});
+
+// effect of  keyup
+inputField.addEventListener('keyup', function () {
+    item4delete.style.background = 'red';
+    item4delete.innerHTML = inputField.value;
+});
+
+// effect of  change
+inputField.addEventListener('change', function () {
+    item4delete.style.background = 'blue';
+    item4delete.innerHTML = inputField.value;
+});
+*/
+
+
+/*
+
+// console.log("---------------------------special note---------------------------");
+
+// keydown and keypress are very less in use
+
+// console.log("---------------------------special note---------------------------");
+
+        // effect of  keydown
+        inputField.addEventListener('keydown', function () {
+            item4delete.style.background = 'blue';
+
+                });
+
+        // effect of  keypress
+        inputField.addEventListener('keypress', function () {
+            item4delete.style.background = 'orange';            
+            item4delete.innerHTML = inputField.value;      
+                });
+        */
+
+
+// [[[[[[[[[[[[// project :  input field এ delete লিখলে paragraph এর delete me টা মুছে যাবে]]]]]]]]]]]]
+
+/*
+// step - 1 : button এ disable attribute লাগাতে হবে
+btn4delete.setAttribute('disabled', true);
+
+
+// step - 2 : inpu এর ভিতরে 'delete' লিখলে button এr disable attribute উঠারে হবে
+inputField.addEventListener('keyup', function (event) {
+
+    // item4delete.innerHTML = event.target.value;
+    if (event.target.value == "delete") {
+        btn4delete.removeAttribute('disabled');
+    } else {
+        btn4delete.setAttribute('disabled', true);
+    }
+});
+
+
+// step - 3 :  button এ চাপ দিয়ে paragraph কে delete করতে হবে
+btn4delete.addEventListener('click', function () {
+    item4delete.remove();
+});
+*/
