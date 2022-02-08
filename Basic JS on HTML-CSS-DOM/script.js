@@ -602,4 +602,48 @@ grandFather.addEventListener('click', function () {
 
 
 
+
+// console.log("---------------------------special note---------------------------");
+/*
+যেহেতু আমরা জানি যে event bubble এর কারনে parent এর মাঝে দেয়া event handler effect child এর মধ্ যেও পরে তাই কো ন কারনে কখনো যদি এমন হয় যে child এ effect দিয়ে কো ন লাভ হচ্ ছে না তাহলে সেই effect event bubble এর সাহায্ যে parent থেকে child কে manupulate করা যায় এতাই event bubble
+*/
+// console.log("---------------------------special note---------------------------");
+
 // <!-- // event delegation দিয়ে ক্লিক target কে "even.target.removeChild()" করা -->
+
+
+/*
+let itemCoverer = document.getElementById('itemHolder');
+let itemAdder = document.getElementById('btn2addItem');
+let items = document.querySelectorAll(".listItem");
+
+
+
+// to enble item adding power in btn
+itemAdder.addEventListener('click', function () {
+    let itemInli = document.createElement("li");
+    itemInli.innerHTML = "brand new item";
+    itemInli.classList.add("listItem");
+    itemCoverer.appendChild(itemInli);
+})
+
+
+
+// conventional way to enable removing powe in target it has lacking of not being able to remove elment creat by js which was not in raw html
+
+
+// for (const singleListItem of items) {
+
+//     // by using "even.target.parentNode.removeChild()"
+//     singleListItem.addEventListener('click', function (event) {
+//         event.target.parentNode.removeChild(event.target);
+//     });
+// }
+
+
+
+// modern way to enable removing powe in target  by event bubble method
+itemCoverer.addEventListener('click', function (event) {
+    event.target.parentNode.removeChild(event.target);
+})
+*/

@@ -286,7 +286,7 @@
     <!-- // event delegation দিয়ে  target কে ক্লিক করে remove  করা -->
 
 
-    <main>
+    <!-- <main>
         <h1>Event delegation</h1>
         <div class="BDelegated">
             <p>press the item to remove</p>
@@ -299,34 +299,9 @@
             </ul>
             <button id="btn2addItem">add item</button>
         </div>
-    </main>
+    </main> -->
 
     <script>
-        let itemCoverer = document.getElementById('itemHolder');
-        let itemAdder = document.getElementById('btn2addItem');
-        let items = document.querySelectorAll(".listItem");
-
-
-
-        // to enble item adding power in btn
-        itemAdder.addEventListener('click', function () {
-            let itemInli = document.createElement("li");
-            itemInli.innerHTML = "brand new item";
-            itemInli.classList.add("listItem");
-            itemCoverer.appendChild(itemInli);
-        })
-
-        // conventional way to enable removing powe in target it has lacking of not being able to remove elment creat by js which was not in raw html
-        for (const singleListItem of items) {
-
-            // by using "even.target.parentNode.removeChild()"
-            singleListItem.addEventListener('click', function (event) {
-                event.target.parentNode.removeChild(event.target);
-            });
-        }
-
-
-        // moder way
 
 
 
