@@ -14,78 +14,88 @@
     <main>
         <h1 class="display-3 text-center py-5">Let's get some <span class="text-danger fw-bold">Mooooney</span> !!!</h1>
     </main>
-    <div class="container bg-light p-5">
-        <div class="row row-cols-1 row-cols-sm-3 g-4 mb-3">
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Deposite</h5>
-                        <h3 class="card-text text-center">$ <span>00</span></h3>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
+    <div class="container p-5 bg-light">
+        <div class="row mb-3">
+            <div class="col-sm-3 m-1 bg-success text-white">
+                <div class="text-center">
+                    <h6>Deposite</h6>
+                    <h2>$<span id="depAmmount">00</span></h2>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Withdraw</h5>
-                        <h3 class="card-text text-center">$ <span>00</span></h3>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
+            <div class="col-sm-3 m-1 bg-success text-white">
+                <div class="text-center">
+                    <h6>Withdraw</h6>
+                    <h2>$<span id="drawAmmount">00</span></h2>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Balance</h5>
-                        <h3 class="card-text text-center">$ <span>00</span></h3>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
+            <div class="col-sm-3 m-1 bg-success text-white">
+                <div class="text-center">
+                    <h6>Balance</h6>
+                    <h2>$<span id="balAmmount">1000</span></h2>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Plz Deposite</h5>
-                        <div class="input-group input-group-sm mb-3">
-                            <input type="text" class="form-control" aria-label="Sizing example input"
-                                aria-describedby="inputGroup-sizing-sm">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Deposite</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+            <div class="col-sm-5 m-1">
+                <h6>Plz deposite</h6>
+                <input type="text" id="depField">
+                <button id="depBtn">Deposite</button>
             </div>
-            <div class="col-6">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">Plz Withdraw</h5>
-                        <div class="input-group input-group-sm mb-3">
-                            <input type="text" class="form-control" aria-label="Sizing example input"
-                                aria-describedby="inputGroup-sizing-sm">
-                            <span class="input-group-text" id="inputGroup-sizing-sm">Withdraw</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </div>
-                </div>
+            <div class="col-sm-5 m-1">
+                <h6>Plz withdraw</h6>
+                <input type="text" id="drawField">
+                <button id="drawBtn">Withdraw</button>
             </div>
         </div>
-
     </div>
-    </div>
+    <script>
+        let depField = document.getElementById('depField');
+        let depBtn = document.getElementById('depBtn');
+        let drawField = document.getElementById('drawField');
+        let drawBtn = document.getElementById('drawBtn');
+        let depAmmount = document.getElementById('depAmmount');
+        let drawAmmount = document.getElementById('drawAmmount');
+        let balAmmount = document.getElementById('balAmmount');
 
+
+        // console.log(depField);
+        // console.log(drawField);
+        // console.log(drawBtn);
+        // console.log(depAmmount);
+        // console.log(drawAmmount);
+
+        // for depositing
+        depBtn.addEventListener('click', function () {
+
+            let initDep = Number(depAmmount.innerHTML);
+            // console.log(initDep);
+            depAmmount.innerHTML = initDep + Number(depField.value);
+
+
+            // for balancing
+            let initBal = Number(balAmmount.innerHTML);
+            console.log(initBal);
+            balAmmount.innerHTML = initBal + Number(depField.value);
+            depField.value = "";
+        })
+
+        // for withdraw
+        drawBtn.addEventListener('click', function () {
+            console.log(drawBtn);
+            let initDraw = Number(drawAmmount.innerHTML);
+            console.log(initDraw);
+            drawAmmount.innerHTML = initDraw + Number(drawField.value);
+
+
+            // for balancing
+            let initBal = Number(balAmmount.innerHTML);
+            console.log(initBal);
+            balAmmount.innerHTML = initBal - Number(drawField.value);
+            drawField.value = "";
+        })
+
+
+    </script>
 
 
     <script src=" ./script.js"></script>
