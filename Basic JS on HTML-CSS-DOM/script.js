@@ -647,3 +647,17 @@ itemCoverer.addEventListener('click', function (event) {
     event.target.parentNode.removeChild(event.target);
 })
 */
+
+
+
+
+// ************************************************************ Session -Play With Dom and Event Listener
+
+
+/*
+DOM: হচ্ ছে website এর সাদা যে অংশ একে আমরা document.দিয়ে access করতে পারি আবার document কেও আমরা window দিয়ে access করতে পারি আর window হল কো ন link এর under এ জা আছে সব
+
+    --class name দিয়ে কো ন element কে console log করলে ঐ same class name এর সবগুলা element এর একটা html collection নামের arrayTypeObject দেখাবে এখন মনে তাখার বিষয় হল এই html collection নামের arrayTypeObject এর উপরে.style.cssProperties apply হয়ে না এদের উপরে css apply করতে হলে forof loop দিয়ে প্ রতিটা individual element কে access এ নিয়ে তাদের উপরে.style.cssProperties apply করতে হবে।
+
+    --তবে id access এ নিয়ে তাদের উপরে.style.cssProperties apply হয়
+    */
