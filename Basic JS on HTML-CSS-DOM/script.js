@@ -661,3 +661,13 @@ DOM: হচ্ ছে website এর সাদা যে অংশ একে আ
 
     --তবে id access এ নিয়ে তাদের উপরে.style.cssProperties apply হয়
     */
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 26  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+// *************************** 26-1 Project overview, Tailwind review text align text color
