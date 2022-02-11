@@ -65,7 +65,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">Deposite Status</h5>
-                            <p class="card-text fw-bold fs-1">$<span>00</span></p>
+                            <p class="card-text fw-bold fs-1">$<span id="depAmmount">00</span></p>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">Withdraw Status</h5>
-                            <p class="card-text fw-bold fs-1">$<span>00</span></p>
+                            <p class="card-text fw-bold fs-1">$<span id="drawAmmount">00</span></p>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">Balance Status</h5>
-                            <p class="card-text fw-bold fs-1">$<span>00</span></p>
+                            <p class="card-text fw-bold fs-1">$<span id="balAmmount">1000</span></p>
                         </div>
                     </div>
                 </div>
@@ -98,8 +98,8 @@
                             <h5 class="card-title">Plz Deposite</h5>
 
                             <div class="input-group">
-                                <input class="form-control" aria-label="With textarea"></input>
-                                <button class="btn btn-info text-white input-group-text">Deposite</button>
+                                <input class="form-control" aria-label="With textarea" id="depInput"></input>
+                                <button class="btn btn-info text-white input-group-text" id="depBtn">Deposite</button>
                             </div>
                         </div>
                     </div>
@@ -111,8 +111,8 @@
                             <h5 class="card-title">Plz Withdraw</h5>
 
                             <div class="input-group">
-                                <input class="form-control" aria-label="With textarea"></input>
-                                <button class="btn btn-info text-white input-group-text">Withdraw</button>
+                                <input class="form-control" aria-label="With textarea" id="drawInput"></input>
+                                <button class="btn btn-info text-white input-group-text" id="drawBtn">Withdraw</button>
                             </div>
                         </div>
                     </div>
@@ -149,6 +149,56 @@
 
 
     <script>
+
+
+        //  script-2
+        let depAmmount = document.getElementById('depAmmount');
+        let drawAmmount = document.getElementById('drawAmmount');
+        let balAmmount = document.getElementById('balAmmount');
+
+        let depInput = document.getElementById('depInput');
+        let depBtn = document.getElementById('depBtn');
+        let drawInput = document.getElementById('drawInput');
+        let drawBtn = document.getElementById('drawBtn');
+
+
+        depBtn.addEventListener('click', function () {
+            let depnAmmount = Number(depInput.value);
+
+            depdAmmount = Number(depAmmount.innerHTML);
+            depAmmount.innerHTML = depdAmmount + depnAmmount;
+
+            // update balance
+            baldAmmount = Number(balAmmount.innerHTML);
+            balAmmount.innerHTML = baldAmmount + depnAmmount;
+
+
+            // clear depInput value
+            depInput.value = '';
+
+
+        });
+
+
+        drawBtn.addEventListener('click', function () {
+            let drawnAmmount = Number(drawInput.value);
+            console.log(drawnAmmount);
+
+            drawdAmmount = Number(drawAmmount.innerHTML);
+            drawAmmount.innerHTML = drawdAmmount + drawnAmmount;
+
+            // update balance
+            baldAmmount = Number(balAmmount.innerHTML);
+            balAmmount.innerHTML = baldAmmount - drawnAmmount;
+
+
+            // clear drawInput value
+            drawInput.value = '';
+        });
+
+
+
+
         // script-1
         /*
          let depField = document.getElementById('depField');
@@ -197,9 +247,6 @@
          })
          */
 
-
-
-        //  script-2
 
     </script>
 
