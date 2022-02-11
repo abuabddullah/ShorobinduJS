@@ -11,48 +11,10 @@
 </head>
 
 <body>
+
+
+
     <!-- template-1 -->
-    <!-- <main>
-        <h1 class="display-3 text-center py-5">Let's get some <span class="text-danger fw-bold">Mooooney</span> !!!</h1>
-        <div class="container p-5 bg-light">
-            <div class="row mb-3">
-                <div class="col-sm-3 m-1 bg-success text-white">
-                    <div class="text-center">
-                        <h6>Deposite</h6>
-                        <h2>$<span id="depAmmount">00</span></h2>
-                    </div>
-                </div>
-                <div class="col-sm-3 m-1 bg-success text-white">
-                    <div class="text-center">
-                        <h6>Withdraw</h6>
-                        <h2>$<span id="drawAmmount">00</span></h2>
-                    </div>
-                </div>
-                <div class="col-sm-3 m-1 bg-success text-white">
-                    <div class="text-center">
-                        <h6>Balance</h6>
-                        <h2>$<span id="balAmmount">1000</span></h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-5 m-1">
-                    <h6>Plz deposite</h6>
-                    <input type="text" id="depField">
-                    <button id="depBtn">Deposite</button>
-                </div>
-                <div class="col-sm-5 m-1">
-                    <h6>Plz withdraw</h6>
-                    <input type="text" id="drawField">
-                    <button id="drawBtn">Withdraw</button>
-                </div>
-            </div>
-        </div>
-
-    </main> -->
-
-
-    <!-- template-2 -->
 
     <main>
         <h1 class="display-3 my-5 text-center">Have Money from<span class="text-success fw-bold"> Baper
@@ -91,7 +53,7 @@
 
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6  mb-3 mb-md-0">
                     <div class="card bg-primary rounded-3">
 
                         <div class="card-body">
@@ -150,8 +112,70 @@
 
     <script>
 
+        // script-3
 
-        //  script-2
+
+
+        let depBtn = document.getElementById('depBtn');
+        let drawBtn = document.getElementById('drawBtn');
+
+        function getAmmountInputing(inputFieldId) {
+            let inputField = document.getElementById(inputFieldId);
+            let inputInAmmount = Number(inputField.value);
+
+            // clear depInput value
+            inputField.value = '';
+
+            return inputInAmmount;
+        }
+
+        depBtn.addEventListener('click', function () {
+            // let depInput = document.getElementById('depInput');
+            // let depInAmmount = Number(depInput.value);
+            let depInAmmount = getAmmountInputing("depInput");
+
+            // depositing money
+            let depAmmount = document.getElementById('depAmmount');
+            depEdAmmount = Number(depAmmount.innerHTML);
+            depAmmount.innerHTML = depEdAmmount + depInAmmount;
+
+            // update balance
+            let balAmmount = document.getElementById('balAmmount');
+            balEdAmmount = Number(balAmmount.innerHTML);
+            balAmmount.innerHTML = balEdAmmount + depInAmmount;
+
+
+            // // clear depInput value
+            // depInput.value = '';
+
+
+        });
+
+
+        drawBtn.addEventListener('click', function () {
+            // let drawInput = document.getElementById('drawInput');
+            // let drawInAmmount = Number(drawInput.value);
+
+            let drawInAmmount = getAmmountInputing("drawInput");
+
+            // withdrawing money
+            let drawAmmount = document.getElementById('drawAmmount');
+            drawEdAmmount = Number(drawAmmount.innerHTML);
+            drawAmmount.innerHTML = drawEdAmmount + drawInAmmount;
+
+            // update balance
+            let balAmmount = document.getElementById('balAmmount');
+            balEdAmmount = Number(balAmmount.innerHTML);
+            balAmmount.innerHTML = balEdAmmount - drawInAmmount;
+
+
+            // // clear drawInput value
+            // drawInput.value = '';
+        });
+
+
+        // script-1
+        /*
         let depAmmount = document.getElementById('depAmmount');
         let drawAmmount = document.getElementById('drawAmmount');
         let balAmmount = document.getElementById('balAmmount');
@@ -163,14 +187,15 @@
 
 
         depBtn.addEventListener('click', function () {
-            let depnAmmount = Number(depInput.value);
+            let depInAmmount = Number(depInput.value);
 
-            depdAmmount = Number(depAmmount.innerHTML);
-            depAmmount.innerHTML = depdAmmount + depnAmmount;
+            // depositing money
+            depEdAmmount = Number(depAmmount.innerHTML);
+            depAmmount.innerHTML = depEdAmmount + depInAmmount;
 
             // update balance
-            baldAmmount = Number(balAmmount.innerHTML);
-            balAmmount.innerHTML = baldAmmount + depnAmmount;
+            balEdAmmount = Number(balAmmount.innerHTML);
+            balAmmount.innerHTML = balEdAmmount + depInAmmount;
 
 
             // clear depInput value
@@ -181,71 +206,21 @@
 
 
         drawBtn.addEventListener('click', function () {
-            let drawnAmmount = Number(drawInput.value);
-            console.log(drawnAmmount);
+            let drawInAmmount = Number(drawInput.value);
 
-            drawdAmmount = Number(drawAmmount.innerHTML);
-            drawAmmount.innerHTML = drawdAmmount + drawnAmmount;
+            // withdrawing money
+            drawEdAmmount = Number(drawAmmount.innerHTML);
+            drawAmmount.innerHTML = drawEdAmmount + drawInAmmount;
 
             // update balance
-            baldAmmount = Number(balAmmount.innerHTML);
-            balAmmount.innerHTML = baldAmmount - drawnAmmount;
+            balEdAmmount = Number(balAmmount.innerHTML);
+            balAmmount.innerHTML = balEdAmmount - drawInAmmount;
 
 
             // clear drawInput value
             drawInput.value = '';
         });
-
-
-
-
-        // script-1
-        /*
-         let depField = document.getElementById('depField');
-         let depBtn = document.getElementById('depBtn');
-         let drawField = document.getElementById('drawField');
-         let drawBtn = document.getElementById('drawBtn');
-         let depAmmount = document.getElementById('depAmmount');
-         let drawAmmount = document.getElementById('drawAmmount');
-         let balAmmount = document.getElementById('balAmmount');
-
-
-         // console.log(depField);
-         // console.log(drawField);
-         // console.log(drawBtn);
-         // console.log(depAmmount);
-         // console.log(drawAmmount);
-
-         // for depositing
-         depBtn.addEventListener('click', function () {
-
-             let initDep = Number(depAmmount.innerHTML);
-             // console.log(initDep);
-             depAmmount.innerHTML = initDep + Number(depField.value);
-
-
-             // for balancing
-             let initBal = Number(balAmmount.innerHTML);
-             console.log(initBal);
-             balAmmount.innerHTML = initBal + Number(depField.value);
-             depField.value = "";
-         })
-
-         // for withdraw
-         drawBtn.addEventListener('click', function () {
-             console.log(drawBtn);
-             let initDraw = Number(drawAmmount.innerHTML);
-             console.log(initDraw);
-             drawAmmount.innerHTML = initDraw + Number(drawField.value);
-
-
-             // for balancing
-             let initBal = Number(balAmmount.innerHTML);
-             console.log(initBal);
-             balAmmount.innerHTML = initBal - Number(drawField.value);
-             drawField.value = "";
-         })
-         */
+        */
 
 
     </script>
