@@ -671,3 +671,32 @@ DOM: হচ্ ছে website এর সাদা যে অংশ একে আ
 
 
 // *************************** 26-1 Project overview, Tailwind review text align text color
+
+/*
+let btn = document.getElementById("basic-addon2");
+btn.setAttribute("disabled", true);
+let userInput = document.getElementById("userInput");
+console.log(userInput);
+
+userInput.addEventListener("keyup", function () {
+    if (userInput.value == "username@1234") {
+        btn.removeAttribute("disabled");
+        btn.style.color = "green";
+    } else {
+        btn.setAttribute("disabled", true);
+    }
+    btn.addEventListener("click", function () {
+        window.location.href = "bankerHisabNikash.html";
+    })
+});
+*/
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 27  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+// *************************** 27-5 (advanced) Common function to reduce code repeat
