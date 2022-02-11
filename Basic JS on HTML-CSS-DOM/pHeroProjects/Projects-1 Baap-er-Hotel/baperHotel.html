@@ -61,7 +61,7 @@
 
                             <div class="input-group">
                                 <input class="form-control" aria-label="With textarea" id="depInput"></input>
-                                <button class="btn btn-info text-white input-group-text" id="depBtn">Deposite</button>
+                                <button class="btn btn-info text-white input-group-text" id="depBtn" onclick="getReciept()">Deposite</button>
                             </div>
                         </div>
                     </div>
@@ -74,11 +74,44 @@
 
                             <div class="input-group">
                                 <input class="form-control" aria-label="With textarea" id="drawInput"></input>
-                                <button class="btn btn-info text-white input-group-text" id="drawBtn">Withdraw</button>
+                                <button class="btn btn-info text-white input-group-text" id="drawBtn" onclick="getReciept()">Withdraw</button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            
+            <div class="reciept text-dark">            
+            <h3 class="m-5">Transaction Reciept</h3>
+
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Deposite Ammount</th>
+                    <th scope="col">Withdraw Ammount</th>
+                    <th scope="col">Total Deposite</th>
+                    <th scope="col">Total Withdraw</th>
+                    <th scope="col">Total Balalnce</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBody">
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>demoDate</td>
+                    <td>demo1000</td>
+                    <td>demo2000</td>
+                    <td>demo2000</td>
+                    <td>demo2000</td>
+                    <td>demo2000</td>
+                    <td><button id="removeBtn" class="btn btn-danger">Remove</button></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+
             </div>
         </div>
 
@@ -108,63 +141,171 @@
             </div> -->
         </div>
     </main>
-
+    
 
     <script>
-
-        // script-3
-
-
-
         let depBtn = document.getElementById('depBtn');
         let drawBtn = document.getElementById('drawBtn');
+        
+function getSomeMoney(inputFieldId) {
+    let inputfield = document.getElementById(inputFieldId);
+    let fieldValue = inputfield.value;
+    let inputInAmmount = parseInt(fieldValue);
 
-        function getAmmountInputing(inputFieldId) {
-            let inputField = document.getElementById(inputFieldId);
-            let inputInAmmount = Number(inputField.value);
-
-            // clear depInput value
-            inputField.value = '';
-
-            return inputInAmmount;
-        }
-
-        function getAmmountAdded(prevAmmount, inputInAmmount) {
-            let prevAmmountTag = document.getElementById(prevAmmount);
-            addedAmmount = Number(prevAmmountTag.innerHTML);
-            prevAmmountTag.innerHTML = addedAmmount + inputInAmmount;
-            return prevAmmountTag.innerHTML
-        }
-
-        function updateBalance(inputInAmmount, isDeposite) {
-            let balAmmount = document.getElementById('balAmmount');
-            balEdAmmount = Number(balAmmount.innerHTML);
-            if (isDeposite == true) {
-                balAmmount.innerHTML = balEdAmmount + inputInAmmount;
-            } else {
-                balAmmount.innerHTML = balEdAmmount - inputInAmmount;
-            }
-        }
+    inputfield.value = "";
+    return inputInAmmount;
+}
 
 
+function getMoneyAdded(initFieldId,inputInAmmount) {
+    let InitField = document.getElementById(initFieldId);
+    let InitValue = InitField.innerHTML;
+    let InitInAmmount = parseInt(InitValue);
 
-        depBtn.addEventListener('click', function () {
-            let depInAmmount = getAmmountInputing("depInput");
+    InitField.innerHTML = InitInAmmount + inputInAmmount;    
+    return InitValue;
+}
 
-            getAmmountAdded('depAmmount', depInAmmount);
+function getUpdateBal(inputInAmmount, isDeposite) {
+    let balField = document.getElementById('balAmmount');
+    let balValue = balField.innerHTML;
+    let balInAmmount = parseInt(balValue);
 
-            updateBalance(depInAmmount, true)
-        });
+if (isDeposite == true) {
+    balField.innerHTML = balInAmmount + inputInAmmount;
+} else {
+    balField.innerHTML = balInAmmount - inputInAmmount;
+}
+}
 
 
-        drawBtn.addEventListener('click', function () {
-            let drawInAmmount = getAmmountInputing("drawInput");
 
-            getAmmountAdded('drawAmmount', drawInAmmount);
 
-            updateBalance(drawInAmmount)
-        });
 
+
+depBtn.addEventListener('click', function() {
+    let depInAmmount = getSomeMoney('depInput');
+
+if (depInAmmount > 0) {
+let depFinalAmmount = getMoneyAdded('depAmmount',depInAmmount);
+
+getUpdateBal(depInAmmount, true)
+}
+});
+
+
+drawBtn.addEventListener('click', function() {
+    let drawInAmmount = getSomeMoney('drawInput');
+
+    let balField = document.getElementById('balAmmount');
+    let balValue = balField.innerHTML;
+
+    if (drawInAmmount > 0 && drawInAmmount < balValue) {
+let drawFinalAmmount = getMoneyAdded('drawAmmount',drawInAmmount);
+
+getUpdateBal(drawInAmmount, false)
+}
+});
+
+
+
+
+
+
+
+
+let depStat = document.getElementById('depAmmount');
+        let drawStat = document.getElementById('drawAmmount');
+        let balStat = document.getElementById('balAmmount');
+
+        let depInput = document.getElementById('depInput'); 
+        let drawInput = document.getElementById('drawInput');
+
+
+let count = 2
+
+let today = new Date();
+let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+function getReciept(){
+let tr = document.createElement('tr');
+tr.innerHTML = `<th scope="row">${count++}</th>
+<td>${date} ${time}</td>
+<td>${Number(depInput.value)}</td>
+<td>${Number(drawInput.value)}</td>
+<td>${Number(depStat.innerHTML)}</td>
+<td>${Number(drawStat.innerHTML)}</td>
+<td>${Number(balStat.innerHTML) + Number(depInput.value) || Number(balStat.innerHTML) - Number(drawInput.value)}</td>
+<td><button id="removeBtn" class="btn btn-danger">Remove</button></td>`;
+
+let tableBody = document.getElementById('tableBody');
+tableBody.appendChild(tr);
+
+let removeBtn = document.getElementById('removeBtn');
+removeBtn.addEventListener('click', function(event) {
+    event.target.parentElement.remove();
+})
+
+
+}
+
+
+
+        /*
+                // script-2
+        
+        
+        
+                let depBtn = document.getElementById('depBtn');
+                let drawBtn = document.getElementById('drawBtn');
+        
+                function getAmmountInputing(inputFieldId) {
+                    let inputField = document.getElementById(inputFieldId);
+                    let inputInAmmount = Number(inputField.value);
+        
+                    // clear depInput value
+                    inputField.value = '';
+        
+                    return inputInAmmount;
+                }
+        
+                function getAmmountAdded(prevAmmount, inputInAmmount) {
+                    let prevAmmountTag = document.getElementById(prevAmmount);
+                    addedAmmount = Number(prevAmmountTag.innerHTML);
+                    prevAmmountTag.innerHTML = addedAmmount + inputInAmmount;
+                    return prevAmmountTag.innerHTML
+                }
+        
+                function updateBalance(inputInAmmount, isDeposite) {
+                    let balAmmount = document.getElementById('balAmmount');
+                    balEdAmmount = Number(balAmmount.innerHTML);
+                    if (isDeposite == true) {
+                        balAmmount.innerHTML = balEdAmmount + inputInAmmount;
+                    } else {
+                        balAmmount.innerHTML = balEdAmmount - inputInAmmount;
+                    }
+                }
+        
+        
+        
+                depBtn.addEventListener('click', function () {
+                    let depInAmmount = getAmmountInputing("depInput");
+        
+                    getAmmountAdded('depAmmount', depInAmmount);
+        
+                    updateBalance(depInAmmount, true)
+                });
+        
+        
+                drawBtn.addEventListener('click', function () {
+                    let drawInAmmount = getAmmountInputing("drawInput");
+        
+                    getAmmountAdded('drawAmmount', drawInAmmount);
+        
+                    updateBalance(drawInAmmount)
+                });
+         */
 
         // script-1
         /*
