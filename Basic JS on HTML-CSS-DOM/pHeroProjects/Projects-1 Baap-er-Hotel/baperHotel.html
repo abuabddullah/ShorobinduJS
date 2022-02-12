@@ -89,8 +89,8 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Date</th>
-                    <th scope="col">Deposite Ammount</th>
-                    <th scope="col">Withdraw Ammount</th>
+                    <th scope="col">Dep Ammount</th>
+                    <th scope="col">Draw Ammount</th>
                     <th scope="col">Total Deposite</th>
                     <th scope="col">Total Withdraw</th>
                     <th scope="col">Total Balalnce</th>
@@ -100,12 +100,12 @@
                 <tbody id="tableBody">
                   <tr>
                     <th scope="row">1</th>
-                    <td>demoDate</td>
-                    <td>demo1000</td>
-                    <td>demo2000</td>
-                    <td>demo2000</td>
-                    <td>demo2000</td>
-                    <td>demo2000</td>
+                    <td>timeDate</td>
+                    <td>dep1000</td>
+                    <td>draw2000</td>
+                    <td>depTo2000</td>
+                    <td>drawTo2000</td>
+                    <td>balTo2000</td>
                     <td><button id="removeBtn" class="btn btn-danger">Remove</button></td>
                   </tr>
                   
@@ -139,13 +139,16 @@
 
 
             </div> -->
-        </div>
+            
     </main>
     
 
     <script>
-        let depBtn = document.getElementById('depBtn');
-        let drawBtn = document.getElementById('drawBtn');
+/* ====================
+ updating dep draw n bal
+================= */
+let depBtn = document.getElementById('depBtn');
+let drawBtn = document.getElementById('drawBtn');
         
 function getSomeMoney(inputFieldId) {
     let inputfield = document.getElementById(inputFieldId);
@@ -171,11 +174,11 @@ function getUpdateBal(inputInAmmount, isDeposite) {
     let balValue = balField.innerHTML;
     let balInAmmount = parseInt(balValue);
 
-if (isDeposite == true) {
-    balField.innerHTML = balInAmmount + inputInAmmount;
-} else {
-    balField.innerHTML = balInAmmount - inputInAmmount;
-}
+    if (isDeposite == true) {
+        balField.innerHTML = balInAmmount + inputInAmmount;
+    } else {
+        balField.innerHTML = balInAmmount - inputInAmmount;
+    }
 }
 
 
@@ -186,11 +189,11 @@ if (isDeposite == true) {
 depBtn.addEventListener('click', function() {
     let depInAmmount = getSomeMoney('depInput');
 
-if (depInAmmount > 0) {
-let depFinalAmmount = getMoneyAdded('depAmmount',depInAmmount);
+    if (depInAmmount > 0) {
+        let depFinalAmmount = getMoneyAdded('depAmmount',depInAmmount);
 
-getUpdateBal(depInAmmount, true)
-}
+        getUpdateBal(depInAmmount, true)
+    }
 });
 
 
@@ -201,25 +204,29 @@ drawBtn.addEventListener('click', function() {
     let balValue = balField.innerHTML;
 
     if (drawInAmmount > 0 && drawInAmmount < balValue) {
-let drawFinalAmmount = getMoneyAdded('drawAmmount',drawInAmmount);
+        let drawFinalAmmount = getMoneyAdded('drawAmmount',drawInAmmount);
 
-getUpdateBal(drawInAmmount, false)
+        getUpdateBal(drawInAmmount, false)
 }
 });
 
+/* ====================
+ updating dep draw n bal
+================= */
 
 
 
 
 
-
-
+/* ====================
+ updating reciept
+================= */
 let depStat = document.getElementById('depAmmount');
-        let drawStat = document.getElementById('drawAmmount');
-        let balStat = document.getElementById('balAmmount');
+let drawStat = document.getElementById('drawAmmount');
+let balStat = document.getElementById('balAmmount');
 
-        let depInput = document.getElementById('depInput'); 
-        let drawInput = document.getElementById('drawInput');
+let depInput = document.getElementById('depInput'); 
+let drawInput = document.getElementById('drawInput');
 
 
 let count = 2
@@ -230,25 +237,12 @@ let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 
 function getReciept(){
 let tr = document.createElement('tr');
-tr.innerHTML = `<th scope="row">${count++}</th>
-<td>${date} ${time}</td>
-<td>${Number(depInput.value)}</td>
-<td>${Number(drawInput.value)}</td>
-<td>${Number(depStat.innerHTML)}</td>
-<td>${Number(drawStat.innerHTML)}</td>
-<td>${Number(balStat.innerHTML) + Number(depInput.value) || Number(balStat.innerHTML) - Number(drawInput.value)}</td>
-<td><button id="removeBtn" class="btn btn-danger">Remove</button></td>`;
-
-let tableBody = document.getElementById('tableBody');
-tableBody.appendChild(tr);
-
-let removeBtn = document.getElementById('removeBtn');
-removeBtn.addEventListener('click', function(event) {
-    event.target.parentElement.remove();
-})
 
 
 }
+/* ====================
+ updating reciept
+================= */
 
 
 
