@@ -65,7 +65,14 @@
         let buttons = document.querySelectorAll('button');
         for (const button of buttons) {
             button.addEventListener('click', function () {
-                displayScreen.value = button.innerHTML;
+
+                if (button.innerHTML == "C") {
+                    displayScreen.value = "";
+                } else if (button.innerHTML == "=") {
+                    displayScreen.value = eval(displayScreen.value);
+                } else {
+                    displayScreen.value += button.innerHTML;
+                }
 
 
 
