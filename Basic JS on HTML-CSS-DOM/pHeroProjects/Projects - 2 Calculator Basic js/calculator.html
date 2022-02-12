@@ -17,8 +17,8 @@
 
         <div class="container p-5 bg-light text-center">
             <div class="calcBody bg-secondary w-50 mx-auto p-3 rounded-3">
-                <input type="text" value="" id="displayScreen" class="d-block w-100 mb-3 fs-2 fw-bolder"
-                    placeholder="0">
+                <input type="text" value="" id="displayScreen" class="d-block w-100 mb-3 fs-2 fw-bolder" placeholder="0"
+                    style="text-align: right;">
 
                 <div class="allBtn">
                     <div class="line1 mb-3">
@@ -46,6 +46,8 @@
                         <button class="btn btn-info fw-bold fs-3 text-white">/</button>
                     </div>
                     <div class="line5 mb-3">
+                        <button class="btn btn-info fw-bold fs-3 text-white">(</button>
+                        <button class="btn btn-info fw-bold fs-3 text-white">)</button>
                         <button class="btn btn-info fw-bold fs-3 text-white">C</button>
                         <button class="btn btn-info fw-bold fs-3 text-white">=</button>
                     </div>
@@ -58,39 +60,20 @@
 
 
     <script>
-
         let displayScreen = document.getElementById('displayScreen');
-
-
         let buttons = document.querySelectorAll('button');
         for (const button of buttons) {
-            button.addEventListener('click', function () {
-
+            button.addEventListener("click", function () {
                 if (button.innerHTML == "C") {
                     displayScreen.value = "";
                 } else if (button.innerHTML == "=") {
                     displayScreen.value = eval(displayScreen.value);
-                } else {
+                }
+                else {
                     displayScreen.value += button.innerHTML;
                 }
-
-
-
-
-
-
-                /* let value = button.innerHTML;
-                if (value == 'C') {
-                    displayScreen.value = '';
-                } else if (value == '=') {
-                    displayScreen.value = eval(displayScreen.value);
-                } else {
-                    displayScreen.value += value;
-                } */
-            });
-
-
-        }
+            })
+        }        
     </script>
 </body>
 
