@@ -248,11 +248,13 @@
                             <td>${Number(balStat.innerHTML)+Number(depInput.value)}</td>`;
             }
             else {
+                if (drawInput.value > 0) {
             tr.innerHTML = `<th scope="row">${count++}</th>
                             <td>${date} ${time}</td>
                             <td>${depInput.value}</td>
                             <td>${drawInput.value}</td>
                             <td>${Number(balStat.innerHTML)-Number(drawInput.value)}</td>`;
+                }
             };                
 
             let tableBody = document.getElementById('tableBody');
