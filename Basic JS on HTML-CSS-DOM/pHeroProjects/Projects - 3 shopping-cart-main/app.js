@@ -39,9 +39,3 @@ caseQtyPlusBtn.addEventListener('click', function () {
 caseQtyMinusBtn.addEventListener('click', function () {
     updateQtyNPrice("case", 59, false)
 });
-
-
-// null valueing btn
-/* function zeroQtyNPrice(product) {
-    document.getElementById(`#${product}Qty`).value = 0;
-} */
