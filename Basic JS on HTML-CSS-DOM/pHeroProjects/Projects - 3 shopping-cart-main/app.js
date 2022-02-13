@@ -4,38 +4,71 @@ let mobileQtyPlusBtn = document.querySelector('#mobileQtyPlus');
 let mobileQtyMinusBtn = document.querySelector('#mobileQtyMinus');
 
 
-function updateQtyNPrice(product, price, isPlusQty) {
 
-    let QtyTag = document.querySelector(`#${product}Qty`);
-    let Qty = Number(QtyTag.value);
+// personal practice
 
+function updateQyNPrice(product, price, isPlusQty) {
+    let productQtyTag = document.querySelector(`#${product}Qty`);
+    let productQty = parseInt(productQtyTag.value);
+
+    // increase or decrease Qty
     if (isPlusQty == true) {
-        QtyTag.value = Number(Qty + 1);
-    } else if (Qty > 0) {
-        QtyTag.value = Number(Qty - 1);
+        productQtyTag.value = productQty + 1;
+    } else {
+        if (productQty > 0) {
+
+            productQtyTag.value = productQty - 1;
+        }
     }
 
-    // update case price
-    let PriceTag = document.querySelector('#' + product + 'PriceTotal');
-    // let casePrice = Number(PriceTag.innerHTML);
-    PriceTag.innerHTML = Number(price * QtyTag.value);
+
+    // update each product price
+    let productPriceTag = document.querySelector(`#${product}PriceTotal`);
+    let productPrice = parseInt(productPriceTag.innerHTML);
+    productPriceTag.innerHTML = productQtyTag.value * price;
+
+
+    // get reciept total
+    calcTotalAmmount()
 }
-// for mobile qty n price update
-mobileQtyPlusBtn.addEventListener('click', function () {
-    updateQtyNPrice("mobile", 1219, true)
-});
-
-mobileQtyMinusBtn.addEventListener('click', function () {
-    updateQtyNPrice("mobile", 1219, false)
-});
 
 
+// get product by id
+function getProduct(product) {
+    let productQtyTag = document.querySelector(`#${product}Qty`);
+    let productQty = parseInt(productQtyTag.value);
+    return productQty;
+}
 
-// for case qty n price update
+// function for reciept
+function calcTotalAmmount() {
+    let totalCasePrice = getProduct('case') * 59;
+    let totalMobilePrice = getProduct('mobile') * 1219;
+    let totalPrice = totalCasePrice + totalMobilePrice;
+    let totalTax = totalPrice / 10;
+    let totalPayment = totalPrice + totalTax;
+
+    let totalAmmountTag = document.querySelector('#totalAmmount');
+    totalAmmountTag.innerHTML = totalPrice;
+    let totalTaxTag = document.querySelector('#totalTax');
+    totalTaxTag.innerHTML = totalTax;
+    let totalPaymentTag = document.querySelector('#totalPayment');
+    totalPaymentTag.innerHTML = totalPayment;
+}
+
+
 caseQtyPlusBtn.addEventListener('click', function () {
-    updateQtyNPrice("case", 59, true)
+    updateQyNPrice('case', 59, true)
 });
 
 caseQtyMinusBtn.addEventListener('click', function () {
-    updateQtyNPrice("case", 59, false)
+    updateQyNPrice('case', 59, false)
+});
+
+mobileQtyPlusBtn.addEventListener('click', function () {
+    updateQyNPrice('mobile', 1219, true)
+});
+
+mobileQtyMinusBtn.addEventListener('click', function () {
+    updateQyNPrice('mobile', 1219, false)
 });
