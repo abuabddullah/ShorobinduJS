@@ -284,6 +284,14 @@ console.log(resultOfRevisedStringIs);
 
 
 
+let myString = "Hello";
+let myString2 = "hello";
+
+let myStringInLowerCase = myString.toLowerCase();
+console.log(myStringInLowerCase); // output: hello
+let myString2InUpperCase = myString2.toUpperCase();
+console.log(myString2InUpperCase); // output: HELLO
+
 
 
 
@@ -404,6 +412,9 @@ for (let elements of anArrayIs) {
     console.log(elements);
 }
 */
+
+
+
 
 
 
