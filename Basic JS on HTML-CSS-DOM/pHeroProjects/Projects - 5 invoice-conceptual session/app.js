@@ -31,25 +31,40 @@ addProductBtn.addEventListener("click", function () {
     let itemTotalPrice = parseFloat(itemPriceTag.value) * parseFloat(itemQuantityTag.value);
     let tr = document.createElement("tr");
 
-    tr.innerHTML = `
+    if (itemNameTag == "" || itemPriceTag.value < 0 || itemQuantityTag.value < 0 || itemPriceTag.value == "" || itemQuantityTag.value == "") {
+
+        itemNameTag.value = "";
+        itemPriceTag.value = "";
+        itemQuantityTag.value = "";
+
+        alert("SORRY FILL ALL THE FIELDS");
+
+    } else {
+
+        tr.innerHTML = `
     <th >${count++}. ${itemNameTag.value}</th>
     <td>${itemPriceTag.value}</td>
     <td>${itemQuantityTag.value}</td>
     <td class ="itemTotalPrice">${itemTotalPrice}</td>`;
 
-    tableBodyTag.appendChild(tr);
+        tableBodyTag.appendChild(tr);
 
-    // calculate sub-total price
-    let subTotal = 0;
-    let itemTotalPricessss = document.getElementsByClassName("itemTotalPrice");
-    for (const itemTotalPrice of itemTotalPricessss) {
-        iTPAmmount = parseFloat(itemTotalPrice.innerText);
-        subTotal += iTPAmmount;
+        // calculate sub-total price
+        let subTotal = 0;
+        let itemTotalPricessss = document.getElementsByClassName("itemTotalPrice");
+        for (const itemTotalPrice of itemTotalPricessss) {
+            iTPAmmount = parseFloat(itemTotalPrice.innerText);
+            subTotal += iTPAmmount;
+        }
+
+        subTotalTag.innerText = subTotal.toFixed(2);
+        taxTag.innerText = (subTotal * 0.1).toFixed(2);
+        grandTotalTag.innerText = parseFloat(subTotalTag.innerText) + parseFloat(taxTag.innerText);
+        grandTotalTag2.innerText = grandTotalTag.innerText;
+
+        itemNameTag.value = "";
+        itemPriceTag.value = "";
+        itemQuantityTag.value = "";
     }
-
-    subTotalTag.innerText = subTotal.toFixed(2);
-    taxTag.innerText = (subTotal * 0.1).toFixed(2);
-    grandTotalTag.innerText = parseFloat(subTotalTag.innerText) + parseFloat(taxTag.innerText);
-    grandTotalTag2.innerText = grandTotalTag.innerText;
 
 })
