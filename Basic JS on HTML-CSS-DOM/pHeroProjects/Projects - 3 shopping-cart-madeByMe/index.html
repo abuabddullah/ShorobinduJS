@@ -36,14 +36,14 @@
                             <p class="card-text"><small class="text-muted">Last sold 3 mins ago</small></p>
                         </div>
                     </div>
-                    <div class="col-md-3 d-flex justify-content-evenly align-items-center bg-light p-3 px-5">
+                    <div class="col-md-3 d-flex justify-content-evenly align-items-center bg-light p-3 px-2">
                         <span id="mobileMinus"><i class="fas fa-minus    fw-bold text-black"></i></span>
-                        <input id="mobileQty" type="number" value="1"
+                        <input id="mobileQty" type="text" value="1"
                             class="d-inline w-50 text-center fs-4 fw-bold mx-2 form-control">
                         <span id="mobilePlus"><i class="fas fa-plus    fw-bold text-black"></i></span>
                     </div>
                     <div class="col-md-2">
-                        <h3>$<span id="mobilePrice">1219</span></h3>
+                        <h3>$<span id="mobilePrice">1000</span></h3>
                     </div>
                     <div class="col-md-2">
                         <img src="./images/remove.png" width="25px" class="img-fluid rounded-start" alt="...">
@@ -61,13 +61,14 @@
                             <p class="card-text"><small class="text-muted">Last sold 3 mins ago</small></p>
                         </div>
                     </div>
-                    <div class="col-md-3 d-flex justify-content-evenly align-items-center bg-light p-3 px-5">
-                        <span><i class="fas fa-minus    fw-bold text-black"></i></span>
-                        <input type="number" value="1" class="d-inline w-50 text-center fs-4 fw-bold mx-2 form-control">
-                        <span><i class="fas fa-plus    fw-bold text-black"></i></span>
+                    <div class="col-md-3 d-flex justify-content-evenly align-items-center bg-light p-3 px-2">
+                        <span id="caseMinus"><i class="fas fa-minus    fw-bold text-black"></i></span>
+                        <input id="caseQty" type="text" value="1"
+                            class="d-inline w-50 text-center fs-4 fw-bold mx-2 form-control">
+                        <span id="casePlus"><i class="fas fa-plus    fw-bold text-black"></i></span>
                     </div>
                     <div class="col-md-2">
-                        <h3>$<span>59</span></h3>
+                        <h3>$<span id="casePrice">50</span></h3>
                     </div>
                     <div class="col-md-2">
                         <img src="./images/remove.png" width="25px" class="img-fluid rounded-start" alt="...">
@@ -98,9 +99,41 @@
 
     <script>
         let mobileMinusTag = document.getElementById('mobileMinus');
-        let mobileQtyTag = document.getElementById('mobileQty');
         let mobilePlusTag = document.getElementById('mobilePlus');
-        let mobilePriceTag = document.getElementById('mobilePrice');
+
+
+        let caseMinusTag = document.getElementById('caseMinus');
+        let casePlusTag = document.getElementById('casePlus');
+
+
+
+
+        // function to update Qty n Price
+        function upDateQtyNdPrice(product, price, isPlus) {
+            let productQtyTag = document.getElementById(`${product}Qty`);
+            let productQty = parseInt(productQtyTag.value);
+
+            if (isPlus == true) {
+                productQtyTag.value = productQty + 1;
+            } else if (productQty > 0) {
+                productQtyTag.value = productQty - 1;
+            }
+
+            let productPriceTag = document.getElementById(`${product}Price`);
+            let productPrice = parseInt(productPriceTag.innerText);
+            productPriceTag.innerText = productQtyTag.value * price;
+        }
+
+        function catchClicker(tag, product, price, isAdd) {
+            tag.addEventListener('click', function () {
+                upDateQtyNdPrice(product, price, isAdd);
+            })
+        }
+        catchClicker(mobilePlusTag, 'mobile', 1000, true);
+        catchClicker(mobileMinusTag, 'mobile', 1000, false);
+        catchClicker(casePlusTag, 'case', 50, true);
+        catchClicker(caseMinusTag, 'case', 50, false);
+
 
 
 
