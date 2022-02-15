@@ -348,7 +348,7 @@ console.log(concatedString); // output: Hello my dear satu i love you Hello my d
 
 
 
-
+/* 
 let array1 = [0, 1, 2, 3, 4, 5, 6];
 let array2 = ["a", "e", "i", "o", "u"];
 
@@ -384,7 +384,6 @@ console.log(array3); // array3 কে concole এ দেখার জন্য
 
 const numbersArray = [22, 200, 34, 56, 41, 77, 1555, 2555, 3555, 4555, 6555];
 const numbersArray2 = new Array(25, 36, 48, 59);
-const stringArray = ["red", "yellow", "green", "orange"];
 const mixedArray = [26, "hello", true, undefined, null, {
     a: 1,
     b: 2
@@ -400,6 +399,8 @@ let lastRemovedItem = numbersArray.pop(); // আবার pop করা item ট
 console.log(lastRemovedItem);
 
 
+
+// slice /concat / indexof / includes method on array is lik as sting
 let spliced = numbersArray.splice(1, 3); // numbersArray এর index no-1 থেকে index no-4 এর আগ পর্যন্ত element গুলোকে splice করে দিয়েছে এবং numbersArray এর value কেউ চেঞ্জ করে দিয়েছে
 console.log(numbersArray);
 // console.log(spliced);
@@ -430,6 +431,11 @@ console.log(ExtraAnotherNewValue);
 
 
 
+const stringArray = ["red", "yellow", "green", "orange"];
+console.log(stringArray.join()); // expected output: "Fire,Air,Water"
+console.log(stringArray.join('')); // expected output: "FireAirWater"
+console.log(stringArray.join('-')); // expected output: "Fire-Air-Water"
+ */
 
 /*
 let array = [10, 2, 3, 40, 5, 6, 70, 8, 9, 102]
