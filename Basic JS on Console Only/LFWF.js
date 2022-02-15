@@ -292,6 +292,10 @@ console.log(myStringInLowerCase); // output: hello
 let myString2InUpperCase = myString2.toUpperCase();
 console.log(myString2InUpperCase); // output: HELLO
 
+let anArrayOfStrings = ["Laptop Dell h100", "Laptop HP 500e", "Laptop Samsung 500e", "Mobile HP 500e", "Mobile Dell 500e", "Mobile Samsung 500e", "Gadgets Airpod", "Gadgets Bluetooth Keyboard", "Gadgets Bluetooth Mouse"];
+
+let serchResult = [];
+
 
 
 
