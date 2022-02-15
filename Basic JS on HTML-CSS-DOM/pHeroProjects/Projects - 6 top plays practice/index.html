@@ -63,9 +63,9 @@
         <section id="top" class="py-5">
             <div class="container bg-white p-md-5">
                 <article class="topPlayer mb-5">
-                    <h3 class="text-main fw-bold mb-5">Top Players</h3>
+                    <h3 class="text-main fw-bold mb-5 taskOne">Top Players</h3>
 
-                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                    <div id="players" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                         <div class="col">
                             <div class="card p-3 border-0 shadow d-flex flex-row">
                                 <img src="./resources/images/players/compressed/player-1.png" alt="..." height="56px">
@@ -120,7 +120,7 @@
                 <hr class="py-2 my-2 bg-white ">
                 <article class="topBlogs">
 
-                    <h3 class="text-main fw-bold mb-5">Top Blogs</h3>
+                    <h3 class="text-main fw-bold mb-5 taskOne">Top Blogs</h3>
                     <div class="row row-cols-1 row-cols-md-2 g-4">
                         <div class="col">
                             <div class="card p-3 border-0 shadow d-flex flex-row">
@@ -183,8 +183,10 @@
                                                 class="fas fa-star text-warning"></i><i
                                                 class="fas fa-star text-warning"></i><span
                                                 class="text-secondary ms-3">4.99</span></div>
-                                        <div class="col-12 col-lg-4 pill rounded-pill bg-danger text-white p-1 text-center"><i
-                                                class="far fa-clock me-2"></i>1.35Hr</div>
+                                        <div
+                                            class="col-12 col-lg-4 pill rounded-pill bg-danger text-white p-1 text-center">
+                                            <i class="far fa-clock me-2"></i>1.35Hr
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -203,8 +205,10 @@
                                                 class="fas fa-star text-warning"></i><i
                                                 class="fas fa-star text-warning"></i><span
                                                 class="text-secondary ms-3">4.99</span></div>
-                                        <div class="col-12 col-lg-4 pill rounded-pill bg-danger text-white p-1 text-center"><i
-                                                class="far fa-clock me-2"></i>1.35Hr</div>
+                                        <div
+                                            class="col-12 col-lg-4 pill rounded-pill bg-danger text-white p-1 text-center">
+                                            <i class="far fa-clock me-2"></i>1.35Hr
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -223,8 +227,10 @@
                                                 class="fas fa-star text-warning"></i><i
                                                 class="fas fa-star text-warning"></i><span
                                                 class="text-secondary ms-3">4.99</span></div>
-                                        <div class="col-12 col-lg-4 pill rounded-pill bg-danger text-white p-1 text-center"><i
-                                                class="far fa-clock me-2"></i>1.35Hr</div>
+                                        <div
+                                            class="col-12 col-lg-4 pill rounded-pill bg-danger text-white p-1 text-center">
+                                            <i class="far fa-clock me-2"></i>1.35Hr
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -243,6 +249,25 @@
         <p>Copyright <i class="fas fa-copyright    "></i> All rights reserved</p>
     </footer>
 
+
+    <script>
+
+        // task one
+        let taskONeTag = document.querySelectorAll('.taskOne');
+        for (const item of taskONeTag) {
+            item.style.color = 'rgba(196, 87, 255,1)';
+        }
+
+
+        // task two
+        let playersTag = document.querySelectorAll('#players div div');
+        for (const item of playersTag) {
+            item.style.backgroundColor = 'rgba(196, 87, 255,0.5)';
+        }
+
+
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
         crossorigin="anonymous"></script>
