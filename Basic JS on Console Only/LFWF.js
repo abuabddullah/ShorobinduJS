@@ -3896,11 +3896,22 @@ console.log(getFactorial(4));
     returned 4 *  returned 3 * getFactorial(2);   |||   second time n = 3
     returned 4 *  returned 3 * returned 2 * getFactorial(1);   |||   third time n = 2
     returned 4 *  returned 3 * returned 2 * returned 1;   |||   fourth time n = 1 and break the recursion loop
+*/
 
 
 
+// ******************************************** function of arguments
 
-// ******************************************** 23_5-4 (advanced) Find the matching product by searching products
+
+function getSum(params1, params2) {
+    return params1 + params2;
+}
+console.log(getSum(10, 20));
+
+
+// if number of argument is higher than parameters
+let sum = getSum(1, 2, 3, 4, 5);
+console.log(sum);
 
 
 
