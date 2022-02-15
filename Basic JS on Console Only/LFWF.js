@@ -284,17 +284,61 @@ console.log(resultOfRevisedStringIs);
 
 
 
-let myString = "Hello";
-let myString2 = "hello";
+// let myString = "Hello";
+// let myString2 = "hello";
 
-let myStringInLowerCase = myString.toLowerCase();
-console.log(myStringInLowerCase); // output: hello
-let myString2InUpperCase = myString2.toUpperCase();
-console.log(myString2InUpperCase); // output: HELLO
+// let myStringInLowerCase = myString.toLowerCase();
+// console.log(myStringInLowerCase); // output: hello
+// let myString2InUpperCase = myString2.toUpperCase();
+// console.log(myString2InUpperCase); // output: HELLO
 
 let anArrayOfStrings = ["Laptop Dell h100", "Laptop HP 500e", "Laptop Samsung 500e", "Mobile HP 500e", "Mobile Dell 500e", "Mobile Samsung 500e", "Gadgets Airpod", "Gadgets Bluetooth Keyboard", "Gadgets Bluetooth Mouse"];
 
-let serchResult = [];
+// to search the word in an array of strings by using indexOf() / includes / endsWith / startsWith method
+/* 
+let serchResult4IndexOf = [];
+let serchResult4Includes = [];
+let serchResult4StartsWith = [];
+let serchResult4EndsWith = [];
+for (const string of anArrayOfStrings) {
+    if (string.toLowerCase().indexOf("hp") != -1) {
+        serchResult4IndexOf.push(string);
+    } else if (string.toLowerCase().includes("dell")) {
+        serchResult4Includes.push(string);
+    } else if (string.toLowerCase().startsWith("gadgets")) {
+        serchResult4StartsWith.push(string);
+    } else if (string.toLowerCase().endsWith("500e")) {
+        serchResult4EndsWith.push(string);
+    }
+}
+// console.log(serchResult4IndexOf);
+// console.log(serchResult4Includes);
+// console.log(serchResult4StartsWith);
+console.log(serchResult4EndsWith);
+ */
+
+// slice / split / substing / substr / concat methods on string type data
+/* 
+let string2Test = "Hello my dear satu i love you";
+let anotherString2Test = "Hello my dear abdullah i love you too";
+
+
+// let spitedByWhiteSpace = string2Test.split(" "); // here spitedByWhiteSpace is an arry type objects
+// console.log(spitedByWhiteSpace); // output: ["Hello", "my", "dear", "satu", "i", "love", "you"]
+
+// let slicefrom0to3 = string2Test.slice(0, 3); // here slicefrom index-0 to before index-3 is an arry type objects
+// console.log(slicefrom0to3); // output: 
+
+// let substringfrom0to3 = string2Test.substring(0, 3); // as like as slice here slicefrom index-0 to before index-3 is an arry type objects
+// console.log(substringfrom0to3); // output: 
+
+// let substrfrom5to8 = string2Test.substr(5, 8); // as like as slice here slicefrom index-0 to before index-3 is an arry type objects
+// console.log(substrfrom5to8); // output: 
+
+let concatedString = string2Test.concat(" ", anotherString2Test); // here concatedString is an arry type objects
+console.log(concatedString); // output: Hello my dear satu i love you Hello my dear satu i love you
+ */
+
 
 
 
