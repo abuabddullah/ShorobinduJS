@@ -348,7 +348,7 @@ console.log(concatedString); // output: Hello my dear satu i love you Hello my d
 
 
 
-/*
+
 let array1 = [0, 1, 2, 3, 4, 5, 6];
 let array2 = ["a", "e", "i", "o", "u"];
 
@@ -377,9 +377,12 @@ let array3 = array1.concat(array2); // দুইটা array এর উপাদ
 console.log(array3); // array3 কে concole এ দেখার জন্য
 
 
+
+
+
 // special example
 
-const numbersArray = [22, 200, 34, 56, 41, 77];
+const numbersArray = [22, 200, 34, 56, 41, 77, 1555, 2555, 3555, 4555, 6555];
 const numbersArray2 = new Array(25, 36, 48, 59);
 const stringArray = ["red", "yellow", "green", "orange"];
 const mixedArray = [26, "hello", true, undefined, null, {
@@ -387,10 +390,22 @@ const mixedArray = [26, "hello", true, undefined, null, {
     b: 2
 }, new Date()];
 
-let value = Array.isArray(numbersArray); // variable টা আসলে arry কিনা জানার জন্য
-let lastRemovedItem = numbersArray.pop(); // আবার pop করা item টাকে অন্য একটা variable এ declare ও করা যায় এখানে pop করা item 77 টাকে lastRemovedItem এ assigned হয়ে গেছে
 
-let spliced = numbersArray.splice(1, 3); // numbersArray এর index no-1 থেকে index no-3  পর্যন্ত element গুলোকে splice করে নতুন variable splicedএ রাখার জন্য
+
+console.log(numbersArray);
+let value = Array.isArray(numbersArray); // variable টা আসলে arry কিনা জানার জন্য
+console.log(value);
+
+let lastRemovedItem = numbersArray.pop(); // আবার pop করা item টাকে অন্য একটা variable এ declare ও করা যায় এখানে pop করা item 77 টাকে lastRemovedItem এ assigned হয়ে গেছে
+console.log(lastRemovedItem);
+
+
+let spliced = numbersArray.splice(1, 3); // numbersArray এর index no-1 থেকে index no-4 এর আগ পর্যন্ত element গুলোকে splice করে দিয়েছে এবং numbersArray এর value কেউ চেঞ্জ করে দিয়েছে
+console.log(numbersArray);
+// console.log(spliced);
+let spliced2add = numbersArray.splice(1, 3, 1000, 2000, 3000); // নতুন numbersArray এর index no-1 থেকে index no-4 এর আগ পর্যন্ত element গুলোকে splice করে index-4 এর আগে 1000, 2000, 3000 add করে দিয়েছে নতুন variable splicedএ রাখার জন্য
+console.log(numbersArray);
+// console.log(spliced2add);
 
 
 numbersArray.reverse(); // array এর উপাদান গুলোকে  উলটো ক্রমানুসারে সাজাতে
@@ -399,23 +414,21 @@ let newValue = numbersArray.sort(function (x, y) {
     return y - x;
 }); // array এর উপাদান গুলোকে বড় থেকে ছোট ক্রমানুসারে সাজাতে
 
+console.log(newValue);
+
 AnotherNewValue = numbersArray.sort(function (x, y) {
     return x - y;
 }); // array এর উপাদান গুলোকে ছোট থেকে বড় ক্রমানুসারে সাজাতে
+
+console.log(AnotherNewValue);
 
 function over50(num) {
     return num > 20;
 }
 let ExtraAnotherNewValue = numbersArray.find(over50);
-
-
-// Output
-console.log(numbersArray);
-console.log(spliced);
-console.log(newValue);
-console.log(AnotherNewValue);
 console.log(ExtraAnotherNewValue);
-*/
+
+
 
 
 /*
