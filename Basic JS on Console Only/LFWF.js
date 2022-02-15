@@ -283,7 +283,7 @@ console.log(resultOfRevisedStringIs);
 */
 
 
-
+/*
 // let myString = "Hello";
 // let myString2 = "hello";
 
@@ -295,7 +295,7 @@ console.log(resultOfRevisedStringIs);
 let anArrayOfStrings = ["Laptop Dell h100", "Laptop HP 500e", "Laptop Samsung 500e", "Mobile HP 500e", "Mobile Dell 500e", "Mobile Samsung 500e", "Gadgets Airpod", "Gadgets Bluetooth Keyboard", "Gadgets Bluetooth Mouse"];
 
 // to search the word in an array of strings by using indexOf() / includes / endsWith / startsWith method
-/* 
+
 let serchResult4IndexOf = [];
 let serchResult4Includes = [];
 let serchResult4StartsWith = [];
@@ -481,8 +481,28 @@ for (let elements of anArrayIs) {
 */
 
 
+// একটা array এর মধ্যে অনেকগুলা ইংরেজি জাভাস্ক্রিপ্ট রিলেটেড বইয়ের নাম (স্ট্রিং) আছে। জাভাস্ক্রিপ্ট রিলেটেড বইয়ের নাম না জানলে, গুগলে সার্চ দিয়ে বের করো। তারপর একটা লুপ চালিয়ে দেখো কোন কোন বইয়ের নামের মধ্যে "javascript" আছে। তাহলে সেই বইগুলার নাম আরেকটা array এর মধ্যে রাখবে। আর হ্যাঁ, যখন javascript আছে কিনা চেক করবে তখন খেয়াল করবে বড়হাতের নাকি ছোট হাতের অক্ষর সেটা বাদ দিয়ে চেক করতে। অর্থাৎ কেইস ইনসেন্সিটিভ হবে। 
+/* 
+let arrayOfJsBooks = ['A Smarter Way to Learn JavaScript: The new tech-assisted approach that requires half the effort', 'Eloquent JavaScript: A Modern Introduction to Programming', 'JavaScript & JQuery: Interactive Front-End Web Development', 'JavaScript: The Good Parts', 'Learn JavaScript VISUALLY', 'JavaScript: The Definitive Guide', 'Effective JavaScript: 68 Specific Ways to Harness the Power of JavaScript', 'JavaScript for Kids: A Playful Introduction to Programming']
 
+let jsBooks = []
+for (const book of arrayOfJsBooks) {
+    if (book.toLowerCase().includes('javascript')) {
+        jsBooks.push(book)
+    }
+    console.log(jsBooks);
+}
+ */
 
+// অনেকগুলা সংখ্যাওয়ালা একটা array নাও। তারপর সেই array কে sort করো। sort হবে ছোট থেকে বড় সংখ্যার সিরিয়াল অনুসারে। 
+
+/* 
+let thearrayIs = [100, 20, 300, 40, 500, 60, 70, 80, 900, 1000];
+AnotherarrayIs = thearrayIs.sort(function (x, y) {
+    return x - y;
+});
+console.log(AnotherarrayIs);
+ */
 
 
 
