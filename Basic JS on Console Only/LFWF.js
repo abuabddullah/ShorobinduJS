@@ -3902,9 +3902,15 @@ console.log(getFactorial(4));
 
 // ******************************************** function of arguments
 
-
+/* 
 function getSum(params1, params2) {
-    return params1 + params2;
+    // return params1 + params2;
+
+    let sumation = 0;
+    for (const item of arguments) {
+        sumation += item;
+    }
+    return sumation;
 }
 console.log(getSum(10, 20));
 
@@ -3912,6 +3918,8 @@ console.log(getSum(10, 20));
 // if number of argument is higher than parameters
 let sum = getSum(1, 2, 3, 4, 5);
 console.log(sum);
+ */
+
 
 
 
