@@ -103,10 +103,10 @@
               <p class="bold">Delivery Charge</p>
             </div>
             <div class="col-2">
-              <p class="bold">$<span id="best-price">1299</span></p>
-              <p class="bold">$<span id="memory-cost">0</span></p>
-              <p class="bold">$<span id="storage-cost">0</span></p>
-              <p class="bold">$<span id="delivery-cost">0</span></p>
+              <p class="bold">$<span class="allCosts" id="best-price">1000</span></p>
+              <p class="bold">$<span class="allCosts" id="memory-cost">0</span></p>
+              <p class="bold">$<span class="allCosts" id="storage-cost">0</span></p>
+              <p class="bold">$<span class="allCosts" id="delivery-cost">0</span></p>
             </div>
             <div class="col-7">
               <hr class="bold-line" />
@@ -118,7 +118,7 @@
               <p class="bold">Total Price</p>
             </div>
             <div class="col-2">
-              <p class="bold">$<span id="total-price">1299</span></p>
+              <p class="bold">$<span id="total-price">1000</span></p>
             </div>
           </div>
           <!-- ----------promo code section-------------  -->
@@ -149,7 +149,6 @@
     let paiddelivery = document.getElementById('paid-delivery');
 
     let totalPriceTag = document.getElementById('total-price');
-    // console.log(ssd2Btn);
 
     function updateProductCost(productCost, price) {
       let productCostTag = document.getElementById(`${productCost}`);
@@ -160,7 +159,13 @@
       tag.addEventListener('click', function () {
         updateProductCost(productCost, price)
 
+        let allCostsCollections = document.getElementsByClassName('allCosts');
 
+        let sum = 0;
+        for (const cost of allCostsCollections) {
+          sum += parseInt(cost.innerHTML);
+        }
+        totalPriceTag.innerHTML = sum;
       });
     }
 
@@ -174,36 +179,6 @@
     clickedOn(freedelivery, 'delivery-cost', 0)
     clickedOn(paiddelivery, 'delivery-cost', 50)
 
-
-    // eightGbBtn.addEventListener('click', function () {
-    //   updateProductCost('memory-cost', 0)
-    // });
-
-    // sixtnGbBtn.addEventListener('click', function () {
-    //   updateProductCost('memory-cost', 200)
-    // });
-
-
-    // ssd1Btn.addEventListener('click', function () {
-    //   updateProductCost("storage-cost", 0)
-    // });
-
-    // ssd2Btn.addEventListener('click', function () {
-    //   updateProductCost("storage-cost", 500)
-    // });
-
-    // ssd3Btn.addEventListener('click', function () {
-    //   updateProductCost("storage-cost", 750)
-    // });
-
-
-    // freedelivery.addEventListener('click', function () {
-    //   updateProductCost('delivery-cost', 0)
-    // });
-
-    // paiddelivery.addEventListener('click', function () {
-    //   updateProductCost('delivery-cost', 50)
-    // });
 
   </script>
   <!-- -----------Bootstrap Javascript  -------------------->
