@@ -150,6 +150,15 @@
 
     let totalPriceTag = document.getElementById('total-price');
 
+    let promoInputTag = document.getElementById('promo-input');
+    let promoApplyBtn = document.getElementById('apply-btn');
+    // console.log(promoApplyBtn);
+
+
+
+
+
+
     function updateProductCost(productCost, price) {
       let productCostTag = document.getElementById(`${productCost}`);
       productCostTag.innerHTML = price;
@@ -178,6 +187,37 @@
 
     clickedOn(freedelivery, 'delivery-cost', 0)
     clickedOn(paiddelivery, 'delivery-cost', 50)
+
+    let promoCode = "1234";
+    promoApplyBtn.addEventListener("click", function () {
+      if (promoInputTag.value == promoCode) {
+        totalPrice = parseInt(totalPriceTag.innerHTML)
+        discount = totalPrice * 0.1;
+        totalPriceTag.innerHTML = totalPrice - discount;
+        promoInputTag.value = "";
+        promoApplyBtn.setAttribute("disabled", true);
+      } else {
+        alert(`Invalid Promo Code. It will be "1234"`);
+      }
+    })
+
+    /* promoInputTag.addEventListener('keyup', function () {
+      let promoCode = "pHERO";
+      if (promoInputTag.value.length >= 1) {
+        promoApplyBtn.removeAttribute('disabled');
+        promoApplyBtn.addEventListener('click', function () {
+          if (promoInputTag.value == promoCode) {
+            let totalPrice = parseInt(totalPriceTag.innerHTML);
+            let discount = totalPrice * 0.1;
+            totalPriceTag.innerHTML = totalPrice - discount;
+          } else {
+            alert(`Invalid Promo Code. It will be "pHERO"`);
+          }
+        });
+      }
+    }); */
+
+
 
 
   </script>
