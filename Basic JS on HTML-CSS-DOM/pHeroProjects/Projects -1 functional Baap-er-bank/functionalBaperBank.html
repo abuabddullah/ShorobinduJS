@@ -81,6 +81,7 @@
             let spanTagValue = document.getElementById(spanTagId);
             let spanValueAsText = spanTagValue.innerText;
             let spanValueAsNumber = Number(spanValueAsText);
+
             let initSpanValue = spanValueAsNumber;
             let finalSpanValue = initSpanValue + valueImported4SpanTag;
             spanTagValue.innerText = finalSpanValue;
@@ -88,23 +89,15 @@
 
         }
 
-        // function udateBalance
-        function udateBalance(ammountDiposited) {
-            let installedBalanceSpanTag = document.getElementById("balance-total");
-            let installedBalanceSpanTagValueInText = installedBalanceSpanTag.innerText;
-            let installedBalanceSpanTagValueInNumber = Number(installedBalanceSpanTagValueInText);
-            let initBalance = installedBalanceSpanTagValueInNumber;
-            let finalBalance = initBalance + ammountDiposited;
-            installedBalanceSpanTag.innerText = finalBalance;
-            return finalBalance;
-        }
 
         // work with deposit button
         let depositButton = getBtn('deposit-button');
         depositButton.addEventListener('click', function () {
             let depositingAmount = getInputValue('deposit-input');
             let dipositedAmmount = getSpanValue('deposit-total', depositingAmount);
-            udateBalance(dipositedAmmount)
+
+            getSpanValue('balance-total', dipositedAmmount);
+            // udateBalance(dipositedAmmount)
         })
 
         // work with withdraw button
@@ -112,7 +105,9 @@
         withdrawButton.addEventListener('click', function () {
             let withdrawingAmount = getInputValue('withdraw-input');
             let withdrawedAmmount = getSpanValue('withdraw-total', withdrawingAmount);
-            udateBalance(-withdrawedAmmount)
+
+            getSpanValue('balance-total', -withdrawedAmmount);
+            // udateBalance(-withdrawedAmmount)
         })
 
     </script>
