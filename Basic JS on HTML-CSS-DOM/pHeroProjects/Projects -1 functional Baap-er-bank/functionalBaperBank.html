@@ -95,6 +95,12 @@
                 let inputFieldAmount = getInputValue(inputTagid);
                 let AmmountInSpanField = udateValue(spanTagId, inputFieldAmount);
 
+                if (inputTagid != 'balance-total') {
+                    if (inputFieldAmount < 0) {
+                        inputFieldAmount = 0;
+                    }
+                }
+
                 if (isWithdraw == true) {
                     udateValue(span4BalanceTagId, -inputFieldAmount);
                 } else {
