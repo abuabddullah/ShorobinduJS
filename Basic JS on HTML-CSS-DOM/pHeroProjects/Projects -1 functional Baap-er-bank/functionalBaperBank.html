@@ -89,23 +89,27 @@
         }
 
 
-        // work with deposit button
-        let depositButton = getBtn('deposit-button');
-        depositButton.addEventListener('click', function () {
-            let depositingAmount = getInputValue('deposit-input');
-            let dipositedAmmount = udateValue('deposit-total', depositingAmount);
+        function getAllFields(btnTagId, inputTagid, spanTagId, span4BalanceTagId, isWithdraw) {
+            let Button = getBtn(btnTagId);
+            Button.addEventListener('click', function () {
+                let inputFieldAmount = getInputValue(inputTagid);
+                let AmmountInSpanField = udateValue(spanTagId, inputFieldAmount);
 
-            udateValue('balance-total', dipositedAmmount);
-        })
+                if (isWithdraw == true) {
+                    udateValue(span4BalanceTagId, -inputFieldAmount);
+                } else {
+                    udateValue(span4BalanceTagId, inputFieldAmount);
+                }
+            })
+        }
 
-        // work with withdraw button
-        let withdrawButton = getBtn('withdraw-button');
-        withdrawButton.addEventListener('click', function () {
-            let withdrawingAmount = getInputValue('withdraw-input');
-            let withdrawedAmmount = udateValue('withdraw-total', withdrawingAmount);
+        getAllFields('deposit-button', 'deposit-input', 'deposit-total', 'balance-total', false)
 
-            udateValue('balance-total', -withdrawedAmmount);
-        })
+
+
+        getAllFields('withdraw-button', 'withdraw-input', 'withdraw-total', 'balance-total', true)
+
+
 
     </script>
 </body>
