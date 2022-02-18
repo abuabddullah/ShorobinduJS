@@ -76,7 +76,7 @@
             return InputValueAsNumber;
         }
 
-
+        // function udateValue
         function udateValue(spanTagId, valueImported4SpanTag) {
             let spanTagValue = document.getElementById(spanTagId);
             let spanValueAsText = spanTagValue.innerText;
@@ -88,7 +88,7 @@
             return finalSpanValue;
         }
 
-
+        // function getAllFields
         function getAllFields(btnTagId, inputTagid, spanTagId, span4BalanceTagId, isWithdraw) {
             let Button = getBtn(btnTagId);
             Button.addEventListener('click', function () {
@@ -103,10 +103,9 @@
             })
         }
 
+
+
         getAllFields('deposit-button', 'deposit-input', 'deposit-total', 'balance-total', false)
-
-
-
         getAllFields('withdraw-button', 'withdraw-input', 'withdraw-total', 'balance-total', true)
 
 
