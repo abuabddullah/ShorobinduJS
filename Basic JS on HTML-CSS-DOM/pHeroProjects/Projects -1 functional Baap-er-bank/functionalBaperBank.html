@@ -93,19 +93,21 @@
             let Button = getBtn(btnTagId);
             Button.addEventListener('click', function () {
                 let inputFieldAmount = getInputValue(inputTagid);
-                let AmmountInSpanField = udateValue(spanTagId, inputFieldAmount);
 
                 if (inputTagid != 'balance-total') {
                     if (inputFieldAmount < 0) {
                         inputFieldAmount = 0;
+                    } else {
+                        if (isWithdraw == true) {
+                            let AmmountInSpanField = udateValue(spanTagId, inputFieldAmount);
+                            udateValue(span4BalanceTagId, -inputFieldAmount);
+                        } else {
+                            let AmmountInSpanField = udateValue(spanTagId, inputFieldAmount);
+                            udateValue(span4BalanceTagId, inputFieldAmount);
+                        }
                     }
                 }
 
-                if (isWithdraw == true) {
-                    udateValue(span4BalanceTagId, -inputFieldAmount);
-                } else {
-                    udateValue(span4BalanceTagId, inputFieldAmount);
-                }
             })
         }
 
