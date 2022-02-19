@@ -2089,6 +2089,24 @@ nameFunction('RahimArguments', 30, 'Ghum');
 
 
 
+
+// ******************************* function that accepts any number of arguments in JavaScript
+
+
+function sumAnyArguments() {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return sum;
+}
+
+console.log(sumAnyArguments(10, 20, 30, 40, ));
+
+
+
+
+
 // project f2 : টাকা নিয়ে গিয়ে দোকানদার মামার কাছে পটেটো চাওয়ার function লিখতে হবে আর কয়টা পটেটো দিবে তাও জানতে হবে একপিচ ৫ টাকা
 /*
 let taka = prompt("ammount of money");

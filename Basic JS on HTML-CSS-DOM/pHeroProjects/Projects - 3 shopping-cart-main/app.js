@@ -4,6 +4,21 @@ let mobileQtyPlusBtn = document.querySelector('#mobileQtyPlus');
 let mobileQtyMinusBtn = document.querySelector('#mobileQtyMinus');
 
 
+// function for reciept
+function calcTotalAmmount() {
+    let totalCasePrice = getProduct('case') * 59;
+    let totalMobilePrice = getProduct('mobile') * 1219;
+    let totalPrice = totalCasePrice + totalMobilePrice;
+    let totalTax = totalPrice / 10;
+    let totalPayment = totalPrice + totalTax;
+
+    let totalAmmountTag = document.querySelector('#totalAmmount');
+    totalAmmountTag.innerHTML = totalPrice;
+    let totalTaxTag = document.querySelector('#totalTax');
+    totalTaxTag.innerHTML = totalTax;
+    let totalPaymentTag = document.querySelector('#totalPayment');
+    totalPaymentTag.innerHTML = totalPayment;
+}
 
 // personal practice
 
@@ -40,21 +55,6 @@ function getProduct(product) {
     return productQty;
 }
 
-// function for reciept
-function calcTotalAmmount() {
-    let totalCasePrice = getProduct('case') * 59;
-    let totalMobilePrice = getProduct('mobile') * 1219;
-    let totalPrice = totalCasePrice + totalMobilePrice;
-    let totalTax = totalPrice / 10;
-    let totalPayment = totalPrice + totalTax;
-
-    let totalAmmountTag = document.querySelector('#totalAmmount');
-    totalAmmountTag.innerHTML = totalPrice;
-    let totalTaxTag = document.querySelector('#totalTax');
-    totalTaxTag.innerHTML = totalTax;
-    let totalPaymentTag = document.querySelector('#totalPayment');
-    totalPaymentTag.innerHTML = totalPayment;
-}
 
 
 caseQtyPlusBtn.addEventListener('click', function () {
