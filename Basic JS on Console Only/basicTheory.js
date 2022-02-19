@@ -459,6 +459,41 @@ console.log(newiee == array1.length);
 */
 
 
+
+// ******************************* spread method on array
+
+
+
+/* 
+const numbers = [23, 65, 99, 21, 34];
+console.log(numbers); // output : [23, 65, 99, 21, 34]
+console.log(...numbers); // output : 23 65 99 21 34
+
+const max = Math.max(23, 99, 65, 21, 34);
+const maxInArray = Math.max(...numbers); // spread method on array to find max number
+console.log(max, maxInArray); // output : 99 99
+
+// push method on array
+numbers.push(55); // 
+console.log(numbers); // output : [23, 65, 99, 21, 34, 55]
+
+// creating new array coyping numbers array which is adding 88 last to array
+const numbers2 = [...numbers, 88];
+console.log(numbers2); // output : [23, 65, 99, 21, 34, 55, 88]
+
+// creating new array coyping numbers array which is adding 88 first to array
+const numbers3 = [50, 55, ...numbers];
+console.log(numbers3); // output : [50, 55, 23, 65, 99, 21, 34, 55, 88]
+
+// creating new array coyping numbers array which is adding 88 first n  last to array
+const numbers3 = [50, 55, ...numbers, 59, 105];
+console.log(numbers3); // output : [50, 55, 23, 65, 99, 21, 34, 55, 88, 59, 105] */
+
+
+
+
+
+
 // arrayProject : একটা array এর ভিতরের সব elemnt গুলোকে একটা list আকারে console এ print করতে
 
 /*
