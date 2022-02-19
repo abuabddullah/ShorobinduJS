@@ -12,6 +12,45 @@ special note special note special note special note special note
 
 
 
+// ****************************** break up with "var" maximum use "const" if gives error use "let"
+
+/* (i) const dosen't allow re assign value
+const balance = 1240;
+balance = 1340; */
+
+/* (ii) const allows only re use of variable 
+const userName = 'janpahi potas potas';
+const weTogether = 'ami ' + userName;
+console.log(weTogether); */
+// userName = 'moyna pakhi';
+
+/* (iii) in case of array declared by const will allow push / pop, value edit etc but no re assign
+const numbers = [45, 23, 89, 60];
+// numbers = [99, 145, 3]; // not allowed
+numbers.push(555);
+numbers[1] = 333;
+
+let sum = 0;
+for (let i = 0; i < numbers.length; i++) {
+    const number = numbers[i];
+    console.log(number);
+    sum = sum + number;
+} */
+
+
+/* (iv) in case of object const will allow the modification of values not re assign
+const student = {
+    roll: 101,
+    name: 'mofij',
+    job: 'intern'
+};
+student.name = 'MOfazzol';
+// student = { name: 'mofazzol' }; */
+
+
+
+
+
 // [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 24  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
 /*
 topics:
@@ -250,11 +289,11 @@ blogSection.removeChild(itemBlogINBlogSection[2]); // remove the second child ta
 
 
 
-// ******************************** 25-2 Add onclick handler directly or via javascript
+// ******************************** 25-2 differernt methods to declare a function aproximately 10+ methods Add onclick handler directly or via javascript
 
 
 
-/*
+/* 
 // button এ ক্লিক করলে body tag এর background color টাই change হয়ে যাবে
 
 // system - ১ : "onclick" attribute এর মধ্যেই inline js দিয়ে define করে দেয়া [[সাধারনত এই পদ্ধতি use করা হয় না]]
@@ -315,13 +354,89 @@ btn4Body2HOTPINK.addEventListener('click', function () {
 });
 
 
-
 // system - 7 [[  mostly used system to apply js  ]]: external javascript file এ কোন variable delcaration ছাড়াই getElementById দিয়ে ধরে ধরে ".addevenlistener" use করে + Anonymous function add করে
 
 document.getElementById('changeBodyColor2ORANGE').addEventListener('click', function () {
     document.body.style.background = 'orange';
 });
-*/
+ */
+
+
+
+// *************************** arrow function declareing methods starts
+
+
+
+/* 
+// system - 8 [[  mostly used system to apply js  ]]: external javascript file এ কোন variable এর ভিতরে একটা full function কে declare করা
+
+
+// function expression (normal)
+const add1 = function add2(num1, num2) {
+    return num1 + num2;
+}
+const result1 = add1(10, 20);
+console.log(result1);
+
+
+// function expression (anonymous)
+const add2 = function (num1, num2) {
+    return num1 + num2;
+}
+const result2 = add2(10, 20);
+console.log(result2);
+
+
+//arrow function structure -1: 
+// structure -1 : (if just single line code to return from multiple parameters)
+// keyWord variableName = (parameter1,parameter2) => {return statement}
+
+const add3 = (num1, num2) => num1 + num2;
+const result3 = add3(10, 20);
+console.log(result3);
+
+
+//arrow function structure -2: 
+// structure -2 : (if just single line code to return from single parameter)
+// keyWord variableName = parameter1 => {return statement}
+
+const add4 = num1 => num1 * 10;
+const result4Is10TimesOfArguments = add4(10);
+console.log(result4Is10TimesOfArguments);
+
+
+//arrow function structure -3: 
+// structure -3 : (if just single line code to return from no parameter)
+// keyWord variableName = () => {return statement}
+
+const getStatement5 = () => `return statement`;
+const result5 = getStatement5();
+console.log(result5);
+
+
+//arrow function structure -4: 
+// structure -4 : (if just multi line code to return from multiple parameters)
+// keyWord variableName = (parameter1,parameter2) => {return statement}
+
+const add6 = (num1, num2) => {
+    let sum = num1 + num2;
+    let diff = num1 - num2;
+    let output = sum / diff;
+    return output;
+}
+const result6 = add6(10, 20);
+console.log(result6);
+
+
+//arrow function structure -5:
+// structure -5 : (use of arrow function with addEventListener )
+document.getElementById('changeBodyColor2ORANGE').addEventListener('click', () => {
+    return `return statement`;
+});
+ */
+
+
+
 
 // console.log("---------------------------special note---------------------------");
 /*
