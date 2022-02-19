@@ -2093,7 +2093,7 @@ nameFunction('RahimArguments', 30, 'Ghum');
 // ******************************* function that accepts any number of arguments in JavaScript
 
 
-function sumAnyArguments() {
+/* function sumAnyArguments() {
     let sum = 0;
     for (let i = 0; i < arguments.length; i++) {
         sum += arguments[i];
@@ -2101,7 +2101,8 @@ function sumAnyArguments() {
     return sum;
 }
 
-console.log(sumAnyArguments(10, 20, 30, 40, ));
+console.log(sumAnyArguments(10, 20, 30, 40)); 
+*/
 
 
 
