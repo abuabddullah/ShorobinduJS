@@ -870,7 +870,9 @@ console.log(name,processors,ram,rom); */
 
 
 // console.log("---------------------------special note---------------------------");
+
 // এখানে শর্টকাটে সবগুলা property এর same নামে একসাথে অনেক গুলা variable নেয়া হয়েছে ।
+
 // console.log("---------------------------special note---------------------------");
 
 
@@ -988,3 +990,193 @@ console.log(company?.backend?.tech?.third); */
 
 
 // ************************************ 32-4 Array map to do one line loop magic
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+
+// map use করা হয় শুধুমাত্র array এর উপরে , ধরুন কোন array এর সবগুলা উপাদান কে কোন নির্দিষ্ট কাজ করবেন হতে পারে সবগুলাকে ২গুন করবেন, সবগুলার length জানবেন ইত্যাদে অতঃপর সেগুলো নিয়ে নতুন একটা array তৈরি করবেন ।
+
+
+// console.log("---------------------------special note---------------------------");
+
+// কোন array এর সবগুলা উপাদানকে দ্বীগুন করে তাদের নিয়ে নত্যন একটা variable এ ্র রাখব
+
+// style : 1  conventional way "loop+push"
+const numbers = [4, 6, 8, 10];
+let outPut = []
+for (const number of numbers) {
+    result = number * 2;
+    outPut.push(result);
+}
+console.log(outPut);
+
+
+// style : 2  conventional way "arrayFunction+loop+push"
+let doubleIt = param => param * 2;
+const numbers2 = [40, 60, 80, 100];
+let outPut2 = []
+for (const number of numbers2) {
+    result = doubleIt(number);
+    outPut2.push(result);
+}
+console.log(outPut2);
+
+// style : 3  mdertn way "callingFunction+map"
+
+let numbers3 = [45, 65, 85, 105];
+let outPut3 = numbers3.map(doubleIt);
+console.log(outPut3);
+
+
+
+
+// style : 4  mdertn way "arrayFunction+map"
+// example for doubling value
+let numbers4 = [450, 650, 850, 1050];
+let outPut4 = numbers4.map(x => x * 2);
+console.log(outPut4);
+
+// example for squiring value
+let numbers5 = [405, 605, 805, 1005];
+let output5 = numbers5.map(x => x * x);
+console.log(output5);
+
+
+
+// console.log("---------------------------special note---------------------------");
+
+
+/* let numbers5 = [405, 605, 805, 1005];
+let output5 = numbers5.map(element => element * element);
+console.log(output5);
+
+বাংলা তর্জমাঃ console তুমি output5 রে পাইতে চাও? তাইলে এক কাজ কর numbers5 এর তল্লাশি চালাও তার map দেখ তার element রে ধর তাদের কে ধইরা ধইরা স্কয়ার কর element * element */
+
+// console.log("---------------------------special note---------------------------");
+
+
+
+
+// ****************************** 32-5 Map string array, array of objects map, foreach
+
+
+
+
+// project; use map and get an array of lentgh of each string
+let anArrayIs = ['a', 'b2', 'c33', 'd444', 'e5555'];
+let lengthArray = anArrayIs.map(param => param.length);
+console.log(lengthArray);
+
+
+// map on array of objects
+
+const products = [{
+        name: 'water bottle',
+        price: 50,
+        color: 'yellow'
+    },
+    {
+        name: 'mobile phone',
+        price: 15000,
+        color: 'black'
+    },
+    {
+        name: 'smart watch',
+        price: 3000,
+        color: 'black'
+    },
+    {
+        name: 'sticky note',
+        price: 30,
+        color: 'pink'
+    },
+    {
+        name: 'water glass',
+        price: 3,
+        color: 'white'
+    }
+];
+
+// spread method
+let newProduct = [...products]
+console.log(newProduct);
+
+// destructuring
+const [waterBottle, mobilePhone, smartWatch] = products;
+console.log(waterBottle, mobilePhone, smartWatch);
+
+// project : get an array of price of each product using map
+// conventional
+let productsPrice = []
+for (const product of products) {
+    let price = product.price;
+    productsPrice.push(price);
+}
+console.log(productsPrice);
+
+// using map
+let productPrice = products.map(p => p.price);
+console.log(productPrice);
+let productName = products.map(n => n.name);
+console.log(productName);
+
+
+// project : printing all element of an array using map
+let allProducts = products.map(p => console.log(p));
+
+
+
+
+
+// printing all element of an array using foreach
+let allProducts2 = products.forEach(p => console.log(p));
+
+
+// console.log("---------------------------special note---------------------------");
+
+// forEach is used insted of map when no need of return
+
+// console.log("---------------------------special note---------------------------");
+
+
+
+
+
+
+// ********************************* 32-6 (advanced) Implement filter, find on an array of objects
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+
+
+
+/* const numbers = [5, 13, 7, 41, 30, 5, 2, 19];
+const bigNumbers = numbers.filter(number => number > 20);
+console.log(bigNumbers);
+const smallNumbers = numbers.filter(number => number < 10);
+console.log(smallNumbers);
+
+বাংলা তর্জমাঃ console তুমি bigNumbers রে পাইতে চাও? তাইলে এক কাজ কর numbers5 এর তল্লাশি চালাও তারে filter কইরা দেখ তার element রে ধর তাদের কে ধইরা ধইরা চেক কর শর্ত মানলে নিজের মধ্যে ঢুকায়া নাও নইলে ignore  কর */
+
+// console.log("---------------------------special note---------------------------");
+
+// filter on array of objects
+/* const products = [
+    { name: 'water bottle', price: 50, color: 'yellow' },
+    { name: 'mobile phone', price: 15000, color: 'black' },
+    { name: 'smart watch', price: 3000, color: 'black' },
+    { name: 'sticky note', price: 30, color: 'pink' },
+    { name: 'water glass', price: 3, color: 'white' }
+];
+
+const expensive = products.filter(product => product.price > 100);
+// console.log(expensive);
+const blacks = products.filter(product => product.color == 'pink');
+// console.log(blacks);
+
+const whiteItem = products.find(product => product.color == 'black');
+console.log(whiteItem); */
