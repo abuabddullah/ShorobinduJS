@@ -908,3 +908,83 @@ const {
     thirdTech
 } = company.web.technology;
 console.log(secondTech, thirdTech); */
+
+
+
+
+
+// ********************************** 32-3 (advanced) Array Destructuring, nested object Optional chaining
+
+
+
+//recap object destructuring declare variable based on the name of an object property
+/* const myObject = {
+    x: 2,
+    y: 50,
+    z: 600,
+    a: 25,
+    b: 68
+};
+const {
+    x,
+    b
+} = myObject;
+console.log(x, b); 
+
+
+// direct object destructuring
+const { sky, color, money } = { sky: 'blue', soil: 'matti', color: 'red', money: 500 };
+console.log(sky, color, money); */
+
+
+// destructuring array 
+/* const colors = ['red', 'green', 'blue', 'yellow']; // at first arra declacred
+const [color1, color2, color3, color4] = colors; // then destructuring array use করে পর্যাক্রমে নতুন কিছু variable declare করা হয়েছে ।
+console.log(color1, color2, color3, color4);
+
+
+// direct array destructuring
+const [p, q] = [45, 37, 91, 86];
+console.log(p, q); */
+
+
+
+
+//chaining
+/* 
+const company = {
+    name: 'GP',
+    ceo: {
+        id: 1,
+        name: 'ajmol',
+        food: 'fuchka'
+    },
+    web: {
+        work: 'website development',
+        employee: 22,
+        framework: 'react',
+        tech: {
+            first: 'html',
+            second: 'css',
+            third: 'js'
+        }
+    },
+};
+
+// printing third tech of company
+// console.log(company.web.tech.third);
+
+
+
+// error handling "Cannot read properties of undefined"
+
+// console.log(company.backend.tech.third); // এখানে "backend" নামের কোন variable declare করা হয় নি  তাই এরর "Cannot read properties of undefined" দিচ্ছে
+
+// handling "Cannot read properties of undefined" by chaining
+console.log(company?.backend?.tech?.third); */
+
+
+
+
+
+// ************************************ 32-4 Array map to do one line loop magic
