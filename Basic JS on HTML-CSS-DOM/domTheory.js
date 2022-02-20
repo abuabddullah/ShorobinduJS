@@ -809,13 +809,17 @@ userInput.addEventListener("keyup", function () {
 
 
 
-// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 27  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 32  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
 
 
 
 
-// *************************** 32-1 Module Introduction and Basic ES6 Recap+
+// *************************** 32-1 Module Introduction and Basic ES6 Recap
 
+
+
+
+/* 
 // -reject "var" use "let" and "const"
 const hubby = 'Omor Sani';
 let phone = 'iphone 15';
@@ -833,8 +837,27 @@ const myNotes = `I am mojnu of ${hubby}. I have a ${phone}.`
 console.log(myNotes);
 
 // 4. arrow function
-/* function square(x) {
-    return x * x;
-} */
 const square = x => x * x;
 console.log(square(9));
+ */
+
+
+
+
+// ***************************** 32-2 Destructuring Object to extract values to variables
+
+
+
+
+let pc1 = {
+    name: "Asus",
+    processors: "intel core i3 10 gen",
+    ram: "8 gb",
+    rom: "120gb ssd + 500 hdd"
+};
+
+let processors = pc1.processors;
+let ram = pc1.ram;
+let rom = pc1.rom;
+
+console.log(processors, ram, rom);
