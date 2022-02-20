@@ -849,15 +849,62 @@ console.log(square(9));
 
 
 
-let pc1 = {
+/* let pc1 = {
     name: "Asus",
     processors: "intel core i3 10 gen",
     ram: "8 gb",
     rom: "120gb ssd + 500 hdd"
-};
+}; */
 
-let processors = pc1.processors;
+// storing prorperty value of a object in a variable
+/* let processors = pc1.processors;
 let ram = pc1.ram;
 let rom = pc1.rom;
+console.log(processors, ram, rom); */
 
-console.log(processors, ram, rom);
+
+// we can store prorperty value of a object in a variable by using destructuring
+/* const {name,processors,ram,rom} = pc1;
+console.log(name,processors,ram,rom); */
+
+
+
+// console.log("---------------------------special note---------------------------");
+// এখানে শর্টকাটে সবগুলা property এর same নামে একসাথে অনেক গুলা variable নেয়া হয়েছে ।
+// console.log("---------------------------special note---------------------------");
+
+
+// example of object inside object 
+
+/* const company = {
+    name: 'GP',
+    ceo: {
+        id: 1,
+        name: 'ajmol',
+        food: 'fuchka'
+    },
+    web: {
+        work: 'website development',
+        employee: 22,
+        framework: 'react',
+        technology: {
+            firstTech: 'html',
+            secondTech: 'css',
+            thirdTech: 'js'
+        }
+    },
+}; */
+
+
+// taking employee and framework property of web object and store in a variable
+/* const {
+    employee,
+    framework
+} = company.web;
+console.log(employee, framework);
+
+const {
+    secondTech,
+    thirdTech
+} = company.web.technology;
+console.log(secondTech, thirdTech); */
