@@ -1417,18 +1417,16 @@ console.log(id,names);
 
 // ******************************************* conceptual session on ES6 new JS properties
 
-
+/* 
 1. What is Es6 & why we should use it ?
 
-    2.
+2.
 let
 --Redeclare kora jabena.
     --Declare korar age define kora jabena
     --Block scope feature
 
-let x = 10
-
-{
+let x = 10 {
     let x = 2
     console.log('Inside block', x)
 }
@@ -1439,18 +1437,21 @@ const
 --cannot reassign
 --has other features of
     let
+
 const age = 45
 age = 56
-console.log(age)
+console.log(age) // will show error
 
 4. Template Literal
 let name = 'Nazrul'
 let message = 'How are you?'
+
 Old way
 let fullMessage = 'Hello ' + name + ', ' + message
 let fullMessage = `Hi, ${9 + 9}, ${message}`
-
 console.log(fullMessage)
+
+
 5. Arrow Function
 
 function sum(a, b) {
@@ -1571,4 +1572,4 @@ console.log(result)
 
 const myArrowFunc = (a, b) => a + b
 const newResult = myArrowFunc(34, 90)
-console.log(newResult)
+console.log(newResult) */
