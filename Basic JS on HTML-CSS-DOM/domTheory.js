@@ -1700,10 +1700,10 @@ function loadJSONData() {
 
 
 
-// ********************************** 33-4 Load more data, more APIs, send data to function
+// ********************************** 33-4 Load more data, more APIs, send data to function + 33-5 Dynamically display loaded data on your website
 
 
-
+/* 
 // function loadJSONData linking with html
 function loadJSONData() {
     fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -1738,12 +1738,166 @@ function usersNameOnly(params) {
         ul.appendChild(li);
     }
 }
+ */
 
 
 
+
+
+// ********************************** 33-6 Load posts and display on the website with CSS
+
+
+
+
+/* 
 // function loadJSONPosts linking with html
 function loadJSONPosts() {
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then(resposnse => resposnse.json())
-        .then(data => console.log(data))
+        .then(data => loadInHtml(data))
 }
+loadJSONPosts()
+
+function loadInHtml(params) {
+    // console.log(params);
+    let postsSections = document.querySelector('#postsSections');
+    for (const param of params) {
+        // console.log(param);
+        let article = document.createElement('article');
+        // style article
+        article.style.border = '1px solid black';
+        article.style.margin = '10px';
+        article.style.padding = '10px';
+        article.style.background = '#f5f5f5';
+        article.innerHTML = `
+        <small> postSL : ${param.id} </small>
+        <h4>postTitle : ${param.title}</h4> 
+        <p>postBody : ${param.body}</p>`;
+        postsSections.appendChild(article);
+    }
+} */
+
+
+
+
+
+
+// ********************************** 33-7 GET, POST, PATCH, DELETE, CRUD, GET Vs POST + 33-8 Debug API, Network tab,Status code, headers, bad API
+
+/* 
+let sample = {
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+}
+
+
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify(sample),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+    }
+})
+.then(response => response.json())
+.then(data => console.log(data))
+
+
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'PUT',
+    body: JSON.stringify({
+        id: 1,
+        title: 'foo',
+        body: 'bar',
+        userId: 1,
+    }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+    }
+})
+.then(response => response.json())
+.then(data => console.log(data))
+
+
+// SAme of patch and delete */
+
+
+
+
+
+
+// ********************************** 33-9 Module Summary and two homeworks albums+comments+photos
+
+
+
+/* 
+let blogSection = document.querySelector("#blogSection");
+let blogArticle = document.querySelector("article");
+let imgHolder = document.querySelector("#imgHolder");
+
+
+
+// display comments 
+function loadcomments4mComments(params) {
+    fetch("https://jsonplaceholder.typicode.com/comments")
+        .then(response => response.json())
+        .then(data => commentsdisplayOnHtml(data))
+}
+loadcomments4mComments()
+
+function commentsdisplayOnHtml(params) {
+    for (const param of params) {
+        let small = document.createElement("small");
+        small.innerText = param.body;
+        blogArticle.appendChild(small);
+    }
+}
+
+
+// display title of album
+function loadTitles4mAlbum(params) {
+    fetch("https://jsonplaceholder.typicode.com/albums")
+        .then(response => response.json())
+        .then(data => titledisplayOnHtml(data))
+}
+loadTitles4mAlbum()
+
+function titledisplayOnHtml(params) {
+    for (const param of params) {
+        let h3 = document.createElement("h3");
+        h3.innerText = param.title;
+        blogArticle.appendChild(h3);
+    }
+}
+
+
+// display photos
+function loadphotos4mPhotos(params) {
+    fetch("https://jsonplaceholder.typicode.com/photos")
+        .then(response => response.json())
+        .then(data => photosdisplayOnHtml(data))
+}
+loadphotos4mPhotos()
+
+function photosdisplayOnHtml(params) {
+    // console.log(params);
+    for (const param of params) {
+        let img = document.createElement("img");
+        img.classList.add("imgFluid");
+        img.setAttribute("src", `${param.thumbnailUrl}`);
+        blogArticle.appendChild(img);
+    }
+}
+
+
+
+
+
+
+// function displayOnHtml(params) {
+//     for (const param of params) {
+//         console.log(param);
+//     }
+// } */
