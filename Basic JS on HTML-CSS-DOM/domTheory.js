@@ -1729,10 +1729,13 @@ function loadJSONUsersOnly() {
 
 function usersNameOnly(params) {
     // console.log(params);
+    let ul = document.querySelector('#userList');
     for (const param of params) {
         // console.log(param);
-        console.log(param.name);
-        console.log(param.email);
+        // console.log(param.name);
+        let li = document.createElement('li');
+        li.innerHTML = `userName : ${param.name} ||| userId : ${param.id}`;
+        ul.appendChild(li);
     }
 }
 
