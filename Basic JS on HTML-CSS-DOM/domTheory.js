@@ -1243,6 +1243,12 @@ audi.run()
 
 
 
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 32_5-1  ||| 1 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
 // ********************************************** 32_5-1 ES6 Recap and practice with checklist
 
 
@@ -1415,6 +1421,14 @@ console.log(id,names);
 
 
 
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[conceptual session on ES6  ||| 1 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+
+
 // ******************************************* conceptual session on ES6 new JS properties
 
 /* 
@@ -1573,3 +1587,160 @@ console.log(result)
 const myArrowFunc = (a, b) => a + b
 const newResult = myArrowFunc(34, 90)
 console.log(newResult) */
+
+
+
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 33  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+
+
+
+// ********************************** 33-1 Module Introduction and What is an API
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+
+// API হচ্ছে browser and server এর middleman যা browser থেকে user এর দেয়া information কে নিয়ে গিয়ে server এর কাছে দেয় আবার server থেকে requirement কে নিয়ে গিয়ে browser এর কাছে দেয়  
+
+// console.log("---------------------------special note---------------------------");
+
+
+
+
+
+// ********************************** 33-2 Intro to JSON, JSON Structure, parse, stringify
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+
+// JSON stands for "JavaScript Object Notation." 
+// JSON এর ভিতরে সব কিছুই string format এ হয় যায় কিন্তু কেবল মাত্র number and Boolean type data গুলো string হয় না।
+
+// console.log("---------------------------special note---------------------------");
+
+/* 
+// example : 1
+const user = {
+    id: 11,
+    name: 'Gorib Amir',
+    job: 'actor'
+};
+console.log(user);
+
+// convert js object to jsonformat
+const stringified = JSON.stringify(user);
+console.log(stringified); // its a object type string 
+
+
+
+// example : 2
+const shop = {
+    name: 'Alia Store',
+    address: 'Ranbir road',
+    profit: 15000,
+    products: ['laptop', 'mobile', 'pepsi'],
+    owner: {
+        name: 'Alia Bhatt',
+        profession: 'actor'
+    },
+    isExpensive: false
+};
+console.log(shop);
+
+// convert js object to jsonformat
+const shopStringified = JSON.stringify(shop);
+console.log(shopStringified);
+console.log(shopStringified.owner); // now we can not access the property of converted object
+
+
+// convert Stringified format  to js 
+const Stringified2JsObj = JSON.parse(shopStringified);
+console.log(Stringified2JsObj);
+console.log(Stringified2JsObj.owner); // now we can access the property of converted object
+ */
+
+
+
+
+// ********************************** 33-3 JSON placeholder, GET data, display data on UI
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+
+// fetch('https://jsonplaceholder.typicode.com/todos/1') /  file from json placeholer site
+//     .then(response => response.json())
+//     .then(json => console.log(json))
+
+
+// console.log("---------------------------special note---------------------------");
+
+/* 
+// function loadJSONData linking with html
+function loadJSONData() {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(response => response.json())
+    .then(data => console.log(data))
+}
+*/
+
+
+
+
+
+// ********************************** 33-4 Load more data, more APIs, send data to function
+
+
+
+// function loadJSONData linking with html
+function loadJSONData() {
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(data => console.log(data))
+}
+
+// function loadJSONUsers linking with html
+function loadJSONUsers() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(resposnse => resposnse.json())
+        .then(data => console.log(data))
+}
+
+
+
+// function loadJSONUsersOnly linking with html
+function loadJSONUsersOnly() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(resposnse => resposnse.json())
+        .then(data => usersNameOnly(data))
+}
+
+function usersNameOnly(params) {
+    // console.log(params);
+    for (const param of params) {
+        // console.log(param);
+        console.log(param.name);
+        console.log(param.email);
+    }
+}
+
+
+
+// function loadJSONPosts linking with html
+function loadJSONPosts() {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+        .then(resposnse => resposnse.json())
+        .then(data => console.log(data))
+}
