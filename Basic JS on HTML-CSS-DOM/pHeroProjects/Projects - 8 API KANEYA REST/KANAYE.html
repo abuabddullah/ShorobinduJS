@@ -14,7 +14,29 @@
 
 <body>
 
+
+    <main class="m-5 p-5 text-center">
+        <h1 title="https://api.kanye.rest/">Quotes of Kaneya.Rest</h1>
+        <button onclick="loadQuotes()">Click 2 Refresh</button>
+        <blockquote id="kaneyaQuotes" class="m-5 bg-light p-5 rounded-pill shadow-lg text-center">
+
+        </blockquote>
+    </main>
+
     <script>
+        let kaneyaQuotes = document.getElementById('kaneyaQuotes');
+
+        let loadQuotes = () => {
+            fetch("https://api.kanye.rest/")
+                .then(res => res.json())
+                .then(data => displayQuotes(data))
+        }
+
+        const displayQuotes = params => {
+            // console.log(params.quote);
+            kaneyaQuotes.innerHTML = `<h5>"${params.quote}"</h5>`;
+        }
+
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
