@@ -17,6 +17,9 @@
 
     <main class="p-5 text-center">
         <h1 title="https://restcountries.com/">countries API</h1>
+        <section id="specificCountryInfo">
+
+        </section>
         <div id="displayCountries" class="row">
             <!-- <div class="col-md-4">
                 <div class="card">
@@ -44,8 +47,7 @@
                 let cardDiv = document.createElement('div');
                 cardDiv.classList.add('col-md-4');
                 cardDiv.classList.add('mb-2');
-                cardDiv.classList.add('shadow');
-                console.log(elem)
+                // console.log(elem)
 
                 let APIcountryName = elem.name.common
                 let APIcapitalName = elem.capital
@@ -54,11 +56,44 @@
                     <div class="card-body">
                         <h5 class="card-title">${APIcountryName}</h5>
                         <h6 class="card-title">${APIcapitalName}</h6>
+            <button onclick="viewDetails('${APIcountryName}')">details</button>
                     </div>
                 </div>`
                 displayCountries.appendChild(cardDiv)
 
             })
+        }
+
+        const viewDetails = param => {
+            fetch(`https://restcountries.com/v3.1/name/${param}`)
+                .then(res => res.json())
+                .then(data => displayDetails(data))
+        }
+
+        const displayDetails = params => {
+            let displayDetailsSect = document.getElementById("specificCountryInfo")
+            params.forEach(elem => {
+                // console.log(elem);
+                // console.log(elem.languages);
+                for (const language in elem.languages) {
+                    var lang = `${language}: ${elem.languages[language]}`;
+                    break
+                }
+                // console.log(elem.name.common);
+                // console.log(elem.name.population);
+                // console.log(elem.flags.png);
+                let aDiv = document.createElement("div")
+                aDiv.innerHTML = `
+                <ul>
+                    <li>Country:${elem.name.common}</li>
+                    <li>population:${elem.name.population}</li>
+                    <li>languages:${lang}</li>
+                    <li>flags: <img src="${elem.flags.png}" width = "300px"></li>
+                </li>
+                `
+                displayDetailsSect.appendChild(aDiv)
+            })
+
         }
 
 
