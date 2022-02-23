@@ -24,16 +24,15 @@
     </main>
 
     <script>
-        let kaneyaQuotes = document.getElementById('kaneyaQuotes');
+        const kaneyaQuotes = document.getElementById('kaneyaQuotes');
 
-        let loadQuotes = () => {
+        const loadQuotes = () => {
             fetch("https://api.kanye.rest/")
                 .then(res => res.json())
                 .then(data => displayQuotes(data))
         }
 
         const displayQuotes = params => {
-            // console.log(params.quote);
             kaneyaQuotes.innerHTML = `<h5>"${params.quote}"</h5>`;
         }
 
