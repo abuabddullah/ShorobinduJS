@@ -111,6 +111,7 @@
                 const mealName = elem.strMeal
                 const mealInfoFull = elem.strInstructions
                 const mealId = elem.idMeal
+                const link = elem.strYoutube
 
 let modalFadeDiv = document.createElement('div')
 
@@ -129,7 +130,7 @@ modalFadeDiv.innerHTML = `
                             </div>
                             <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <a type="button" target="_blank" href='${link}' class="btn btn-primary">Watch Video</a>
                             </div>
                         </div>
                         </div>
