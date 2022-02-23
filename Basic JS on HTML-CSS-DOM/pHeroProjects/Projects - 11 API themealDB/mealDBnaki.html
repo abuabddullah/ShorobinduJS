@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> themealDB</title>
+
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <main class="m-5 p-5 text-center">
+        <h1 title="https://randomuser.me/"> themealDB API</h1>
+        <div class="input-group mb-3">
+            <input id="searchBox" type="text" class="form-control" placeholder="search ur meal"
+                aria-label="search ur meal" aria-describedby="searchBtn">
+            <button class="input-group-text" id="searchBtn">Search</button>
+        </div>
+        <section>
+            <div id="displaySearchResults" class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <!-- <div class="card h-100">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                                additional content. This card has even longer content than the first to show that equal
+                                height action.</p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        let searchInputTag = document.getElementById('searchBox')
+        let searchBtn = document.getElementById('searchBtn')
+        searchBtn.addEventListener('click', () => {
+
+            // catch the searched KeyWords
+            let searchKeyWords = searchInputTag.value;
+            searchInputTag.value = ''
+
+            // get data from API
+            let urlAsSearchResult = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchKeyWords}`
+            fetch(urlAsSearchResult)
+                .then(res => res.json())
+                .then(data => displayMeals(data.meals))
+        })
+
+        const displayMeals = params => {
+            let displaySearchResultsDiv = document.getElementById('displaySearchResults')
+            params.forEach(elem => {
+                const mealPic = elem.strMealThumb
+                const mealName = elem.strMeal
+                const mealInfo = elem.strInstructions.slice(0, 201)
+
+                let aDiv = document.createElement('div')
+                aDiv.classList.add('col')
+                aDiv.innerHTML = `
+
+                <div class="card h-100">
+                    <img src="${mealPic}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">${mealName}</h5>
+                      <p class="card-text">${mealInfo}</p>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                </div>`
+            displaySearchResultsDiv.appendChild(aDiv)
+            })
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
