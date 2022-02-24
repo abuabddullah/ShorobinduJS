@@ -104,6 +104,29 @@
             mealdb এর মতো। আবার কোন একটাতে ক্লিক করলে সেটার ডিটেল দেখাবে।
         </small><br>
 
+        <section class="shadow m-5 p-5 overflow-auto" style="height: 500px;">
+
+            <h3 class=" text-center">Search realated to sports</h3>
+
+            <div class="input-group mb-3">
+                <input id="searchBox" type="text" class="form-control" placeholder="search ur sports"
+                    aria-label="search ur meal" aria-describedby="searchBtn">
+                <button class="input-group-text" id="searchBtn" onclick="search()">Search</button>
+            </div>
+            <div class="row row-cols-3 g-4" id="task8OutputInHTML">
+                <!-- <div class="col">
+                    <div class="card h-100">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
     </main>
 
     <script>
@@ -232,6 +255,53 @@
                 task6OutputInHTMLDiv.appendChild(aDiv);
             })
         }
+
+
+
+
+
+
+
+        // task 8
+        const search = () => {
+            let searchBtn = document.querySelector('#searchBtn');
+            let searchInputTag = document.querySelector('#searchBox');
+            let searchKeywords = searchInputTag.value;
+            searchInputTag.value = '';
+
+            if (searchKeywords == "") {
+                alert('please enter a keyword');
+            } else {
+                let url = `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${searchKeywords}`
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => displaySearchResults(data.player))
+            }
+        }
+
+        const displaySearchResults = params => {
+            let task8OutputInHTML = document.querySelector('#task8OutputInHTML');
+            task8OutputInHTML.innerHTML = '';
+            params.forEach(elem => {
+                let aDiv = document.createElement('div');
+                aDiv.className = 'col';
+                aDiv.innerHTML = `
+                    <div class="card h-100">
+                        <img src="${elem.strThumb}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${elem.strSport}</h5>
+                            <p class="card-text">${elem.strDescriptionEN.slice(0, 101)}</p>
+                        </div>
+                    </div>`
+                task8OutputInHTML.appendChild(aDiv);
+
+
+                console.log(elem);
+            })
+        }
+
+
 
 
     </script>
