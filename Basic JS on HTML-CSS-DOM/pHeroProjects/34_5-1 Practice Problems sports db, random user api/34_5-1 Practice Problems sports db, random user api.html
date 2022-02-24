@@ -15,14 +15,198 @@
 <body>
 
 
-    <main class="m-5 p-5 text-center">
-        <h1 title="https://randomuser.me/">34_5-1 Practice Problems sports db, random user api</h1>
-        <div id="userDetails" class="p-5 bg-light m-5">
+    <main class="m-5">
+        <h1 class=" text-center">34_5-1 Practice Problems sports db, random user api</h1>
+        <!-- task one -->
+        <small>১. একদম প্রাথমিক স্টেপ হিসেবে jsonplaceholder এর ওয়েবসাইট থেকে ডাটা fetch করে সেটাকে কনসোল এ দেখাতে হবে।
+            ধরো তুমি তাদের ওয়েবসাইট এ comments এর API এর লিংক কোনটা সেটা জাভাস্ক্রিপ্ট দিয়ে কোড করে সেই ডাটা কনসোল এ
+            দেখতে পারতেছো কিনা। </small>
+        <br><br>
 
-        </div>
+        <!-- task two -->
+        <small>২. যে কমেন্ট এর ডাটাগুলো কনসোল এ দেখাতে পারছো।
+            সেগুলা আবার
+            তুমি
+            html এ দেখাতে পারতেছো কিনা। একটা সিস্টেম
+            হবে তোমার একটা বাটন। থাকবে সেটাতে ক্লিক করলে ডাটা লোড হবে। তারপর সেই ডাটা তুমি ওয়েবসাইট এ দেখাবে।
+        </small><br>
+
+        <section class="shadow m-5 p-5" id="task2OutputInHTML" style="height: 250px; overflow-y: scroll;">
+            <!-- postId: 100, 
+            id: 499, 
+            name: 'excepturi sunt cum a et rerum quo voluptatibus quia', email: 'Wilburn_Labadie@araceli.name', 
+            body: 'et necessitatibus tempora ipsum quaerat inventore …t ut\nratione sit numquam culpa a rem\natque aut et' -->
+        </section>
+        <button id="task2Btn" onclick="loadCommentsOfJsonPlaceholder()">task2Btn</button><br><br>
+
+
+        <!-- task three + 4 +5-->
+        <small>৩. আরেকটা সিস্টেম হবে। তুমি যে ডাটা লোড করেছো। সেটা কোন বাটনে ক্লিক করা লাগবে না। ওয়েবসাইট লোড হলেই
+            সরাসরি ডাটা লোড হয়ে তারপর সেই ডাটা ওয়েবসাইট এ দেখাবে। চেষ্টা করবে লোড করা ডাটা এর দুইটা প্রপার্টি অবশ্যই
+            দেখাবে।
+            <br>
+            ৪. তুমি যে ডাটা লোড করেছো। বা ডাটা ওয়েবসাইট এ দেখাচ্ছ। সেই কোড এর মধ্যে arrow ফাংশন ইউজ করতে পারতেছো কিনা।
+            যখন লুপ চালাচ্ছ সেখানে forEach ইউজ করতে পারতেছো কিনা।
+            <br>
+            ৫. ডাইনামিক ডাটা লোড। কোন একটা কমেন্ট এ ক্লিক করলে (কমেন্ট এর div এ বা কোন একটা বাটন এ )সেই কমেন্ট এর আইডি
+            নিয়ে সেটা api এর url এ বসিয়ে (ডাইনামিকভাবে টেমপ্লেট স্ট্রিং দিয়ে) সেই ডাটা লোড করে। সেই ডাটা ওয়েবসাইট এ
+            দেখাতে পারতেছো কিনা।
+        </small><br>
+
+        <section class="shadow m-5 p-5" id="task3OutputInHTML" style="height: 250px; overflow-y: scroll;">
+            <!-- postId: 100, 
+            id: 499, 
+            name: 'excepturi sunt cum a et rerum quo voluptatibus quia', email: 'Wilburn_Labadie@araceli.name', 
+            body: 'et necessitatibus tempora ipsum quaerat inventore …t ut\nratione sit numquam culpa a rem\natque aut et' -->
+        </section>
+
+
+
+
+        <!-- task six -->
+        <small>৬. randomuser এর ওয়েবসাইট এ গিয়ে (randomuser.me) এ গিয়ে সেখান থেকে ডাটা লোড করবে। তারপর ইউজারের ছবি
+            দেখাবে। শুধু সেটাও না। ইউজারের location এর মধ্যে যত কিছু আছে। সব দেখাবে ওয়েবসাইট এ। অর্থাৎ street, city,
+            coordinates, timezone যেকোন একভাবে দেখলেই হবে। তবে দেখাতে হবে।
+        </small><br>
+
+        <section class="shadow m-5 p-5 overflow-auto" style="height: 500px;">
+            <div class="row row-cols-2 g-4" id="task6OutputInHTML">
+                <!-- <div class="col">
+                    <div class="card h-100">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <button class="btn btn-outline-primary mt-5 btn-lg d-block mx-auto"
+                onclick="refreshUsers()">Refresh</button>
+        </section>
+
     </main>
 
     <script>
+
+
+
+        // task one + two
+        const loadCommentsOfJsonPlaceholder = () => {
+            let url = `https://jsonplaceholder.typicode.com/comments`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => display4Task4(data))
+
+        }
+        // output of task one "auto"
+        // loadCommentsOfJsonPlaceholder();
+
+
+        const display4Task4 = params => {
+            let task2Btn = document.querySelector('#task2Btn');
+            let task2OutputInHTML = document.querySelector('#task2OutputInHTML');
+            params.forEach(elem => {
+                let task2OutputDiv = document.createElement('div');
+                task2OutputDiv.innerHTML = `
+                ${elem.postId}<br>
+                ${elem.id}<br>
+                ${elem.name}<br>
+                ${elem.body}<br>
+                `
+                task2OutputInHTML.appendChild(task2OutputDiv);
+            });
+        }
+
+
+
+
+
+
+        // <!-- task three + 4 +5-->
+
+        // task one + two
+        const load4task3 = () => {
+            let url = `https://jsonplaceholder.typicode.com/comments`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => display4Task3(data))
+
+        }
+        // output of task 3
+        load4task3();
+
+
+        const display4Task3 = params => {
+            let task3OutputInHTML = document.querySelector('#task3OutputInHTML');
+            params.forEach(elem => {
+                let task3OutputDiv = document.createElement('div');
+                task3OutputDiv.innerHTML = `
+                ${elem.postId}<br>
+                ${elem.id}<br>
+                ${elem.name}<br>
+                ${elem.body}<br>
+
+                <!-- Button trigger modal -->
+<a target="_blank" href="https://jsonplaceholder.typicode.com/comments/${elem.id}" type="button" class="btn btn-primary">
+  Launch Data
+</a>`
+                task3OutputInHTML.appendChild(task3OutputDiv);
+            });
+        }
+
+
+
+
+
+
+        // task six
+        let randomNum = Math.round(Math.random() * 5000);
+        // console.log(randomNum)
+
+        const refreshUsers = () => {
+            let url = `https://randomuser.me/api/?results=50`;
+            // let url = `https://www.thesportsdb.com/api/v1/json/2/all_sports.php`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => display4Task6(data.results))
+        }
+
+        const display4Task6 = params => {
+            let task6OutputInHTMLDiv = document.querySelector('#task6OutputInHTML');
+            task6OutputInHTMLDiv.innerHTML = ''
+            params.forEach(elem => {
+                console.log(elem);
+                let namelocation = elem.location.street.name;
+                let namecountry = elem.location.country;
+                let nameemail = elem.email;
+                let namePicture = elem.picture.thumbnail;
+                let nameTitle = elem.name.title;
+                let nameFirst = elem.name.first;
+                let nameLast = elem.name.last;
+                let aDiv = document.createElement('div');
+                aDiv.className = 'col';
+
+                aDiv.innerHTML = `
+
+                                <div class="card h-100">
+                                        <img src="${namePicture}" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${nameTitle} ${nameFirst} ${nameLast}</h5>
+                                            <p class="card-text"><address>
+                Written by 
+                Visit us at:<br>
+                ${nameemail}<br>
+                ${namelocation}<br>
+                ${namecountry}
+                </address></p>
+                                        </div>
+                                    </div>`
+                task6OutputInHTMLDiv.appendChild(aDiv);
+            })
+        }
+
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
