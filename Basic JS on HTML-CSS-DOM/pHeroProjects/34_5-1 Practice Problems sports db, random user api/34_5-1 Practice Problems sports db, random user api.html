@@ -127,6 +127,21 @@
             </div>
         </section>
 
+        <section class="shadow m-5 p-5 overflow-auto" style="height: 500px;">
+            <div class="row row-cols-1 g-4" id="task8FinalOutputDiv">
+                <!-- <div class="col">
+                    <div class="card h-100">
+                        <img src="..." class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in
+                                to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </section>
+
     </main>
 
     <script>
@@ -269,7 +284,7 @@
             let searchKeywords = searchInputTag.value;
             searchInputTag.value = '';
 
-            if (searchKeywords == "") {
+            if (searchKeywords == "" || isNaN(searchKeywords) == false) {
                 alert('please enter a keyword');
             } else {
                 let url = `https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${searchKeywords}`
@@ -287,7 +302,7 @@
                 let aDiv = document.createElement('div');
                 aDiv.className = 'col';
                 aDiv.innerHTML = `
-                    <div class="card h-100">
+                    <div onclick="playerDetails('${elem.idPlayer}')" class="card h-100">
                         <img src="${elem.strThumb}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${elem.strSport}</h5>
@@ -297,9 +312,61 @@
                 task8OutputInHTML.appendChild(aDiv);
 
 
-                console.log(elem);
+                // console.log(elem);
+                // console.log(elem.idPlayer);
             })
         }
+
+        const playerDetails = async paramOfId => {
+            let url = `https://www.thesportsdb.com/api/v1/json/2/lookupplayer.php?id=${paramOfId}`
+
+            try {
+
+                let response = await fetch(url);
+                let data = await response.json();
+                disPlayDetaislOfId(data.players);
+            }
+            catch (err) {
+                console.log(err);
+            }
+        }
+
+        const disPlayDetaislOfId = params => {
+            let task8FinalOutputDiv = document.querySelector('#task8FinalOutputDiv');
+            task8FinalOutputDiv.innerHTML = '';
+            params.forEach(elem => {
+
+                let aDiv = document.createElement('div');
+                aDiv.className = 'col';
+                aDiv.innerHTML = `
+                    <div class="card h-100">
+                        <img src="${elem.strThumb}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">${elem.idPlayer}</h5>
+
+
+                            <ul class="list-unstyled">
+                                <li>dateBorn : ${elem.dateBorn}</li>
+                                <li>strBirthLocation : ${elem.strBirthLocation}</li>
+                                <li>strGender : ${elem.strGender}</li>
+                                <li>strHeight : ${elem.strHeight}</li>
+                                <li>strNationality : ${elem.strNationality}</li>
+                                <li>strWeight : ${elem.strWeight}</li>
+                            </ul>
+
+                            <p class="card-text">${elem.strDescriptionEN}</p>
+
+                        </div>
+                    </div>`
+                task8FinalOutputDiv.appendChild(aDiv);
+                console.log(elem);
+
+            })
+        }
+
+
+
+
 
 
 
