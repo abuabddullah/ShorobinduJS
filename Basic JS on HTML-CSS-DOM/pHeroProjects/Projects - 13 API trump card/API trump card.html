@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API trump card</title>
+
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <main class="m-5 p-5 text-center">
+        <section class="searchingFeild">
+            <div class="container">
+                <h1 title="https://deckofcardsapi.com/api/deck/new/draw/?count=52">API trump card</h1>
+                <div class="input-group my-5">
+                    <input id="searchInputTag" type="text" class="form-control" placeholder="Search Your Cards"
+                        aria-label="Search Your Cards" aria-describedby="basic-addon2">
+                    <a type="button" id="searchBtnTag" class="btn btn-primary input-group-text">Search</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- spinner -->
+        <section class="spinner">
+            <div id="spinnerDiv" class="spinner-border text-info d-none text-center mx-auto mb-5" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </section>
+
+        <section class="searchResultGround">
+            <div class="container bg-light p-4">
+
+                <div id="resultDisplayerDiv" class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- <div class="col">
+                        <div class="card h-100">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This card has even longer content than the first to
+                                    show that equal height action.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const spinnerControl = (remove, add) => {
+            let spinnerDiv = document.getElementById('spinnerDiv');
+            spinnerDiv.classList.remove(remove);
+            spinnerDiv.classList.add(add);
+        }
+
+
+        let searchInputTag = document.getElementById('searchInputTag');
+        let searchBtnTag = document.getElementById('searchBtnTag');
+        let resultDisplayerDiv = document.getElementById('resultDisplayerDiv');
+
+        searchBtnTag.addEventListener('click', () => {
+            spinnerControl("d-none", "d-block");
+
+            let searchKeyword = searchInputTag.value;
+            searchInputTag.value = '';
+
+            // to make empty resultDisplayerDiv after each click on "search" btn
+            resultDisplayerDiv.innerHTML = '';
+
+            // error handle of serach keyword
+            if (isNaN(searchKeyword) == true || searchKeyword == "" || searchKeyword <= 0 || searchKeyword > 52) {
+                resultDisplayerDiv.innerHTML = `
+                <div class="alert alert-danger d-block w-100" role="alert">
+                Please Enter a valid Number
+                </div>`;
+            }
+            else {
+                // load required cards
+                let url4LoadingCard = `https://deckofcardsapi.com/api/deck/new/draw/?count=${searchKeyword}`
+
+                fetch(url4LoadingCard)
+                    .then(response => response.json())
+                    .then(data => f4DisplayCards(data.cards))
+            }
+        });
+
+        const f4DisplayCards = params4cards => {
+            params4cards.forEach(elem => {
+                let aDiv4card = document.createElement('div');
+                aDiv4card.classList.add('col');
+                aDiv4card.innerHTML = `
+                
+                <div onclick="f4CardDetail('${elem.code}')" class="card h-100 p-2">
+                            <img src="${elem.image}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${elem.value} of ${elem.suit}</h5>
+                                <p class="card-text">This is <strong>${elem.value}</strong> of <strong>${elem.suit}</strong> a wider card with supporting text. The code of the card is <strong>${elem.code}</strong>.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                `
+                resultDisplayerDiv.appendChild(aDiv4card);
+                spinnerControl("d-block", "d-none");
+                // console.log(elem);
+            })
+        }
+
+        const f4CardDetail = param4CardsCode => {
+            resultDisplayerDiv.innerHTML = '';
+            spinnerControl("d-none", "d-block");
+
+            // load required cards
+            let url4LoadingCard = `https://deckofcardsapi.com/api/deck/new/draw/?count=52`
+
+            fetch(url4LoadingCard)
+                .then(response => response.json())
+                .then(data => f4displayCardDetail(data.cards, param4CardsCode))
+        }
+
+        const f4displayCardDetail = (params4CardsDetail, param4CardsCode) => {
+            params4CardsDetail.forEach(elem => {
+                if (elem.code == param4CardsCode) {
+                    let aDiv4card = document.createElement('div');
+                    aDiv4card.classList.add('col');
+                    aDiv4card.innerHTML = `
+                
+                <div onclick="f4CardDetail('${elem.code}')" class="card h-100 p-2">
+                            <img src="${elem.image}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${elem.value} of ${elem.suit}</h5>
+                                <p class="card-text">This is <strong>${elem.value}</strong> of <strong>${elem.suit}</strong> a wider card with supporting text. The code of the card is <strong>${elem.code}</strong>.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                `
+                    resultDisplayerDiv.appendChild(aDiv4card);
+                    spinnerControl("d-block", "d-none");
+                    // console.log(elem);
+
+                }
+
+            })
+        }
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
