@@ -2252,6 +2252,11 @@ console.log(clock1()); */
 
 
 /* 
+What is a callback function ?
+-A function passed as a argument of another function. */
+
+
+/* 
 function welcomeMessage(name, greetHandler) {
     greetHandler(name);
 }
