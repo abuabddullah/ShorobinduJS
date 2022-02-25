@@ -2204,7 +2204,7 @@ const favNum = 27;
 function add(first, second) {
     // console.log(mood); // hoisting
     const result = first + second;
-
+    
     if (result > 9) {
         let mood = 'happy';
         mood = 'cranky';
@@ -2216,6 +2216,68 @@ const sum = add(11, 35);
 // console.log(mood);
 
 for (let i = 0; i < 10; i++) {
-
+    
 }
 // console.log(i); */
+
+
+
+
+
+
+// ********************************** 35-7 (advanced) Closure, encapsulation, private variable
+
+
+
+
+
+/* 
+function stopWatch() {
+    let counter = 0;
+    return function () {
+        counter++;
+        return counter;
+    }
+}
+let clock1 = stopWatch();
+console.log(clock1());
+console.log(clock1()); */
+
+
+
+
+
+// ********************************** 35-8 (advanced) Callback function and pass different functions
+
+
+
+/* 
+function welcomeMessage(name, greetHandler) {
+    greetHandler(name);
+}
+// const names = ['Tom Hanks', 'Tom Brady', 'Tom Cruise']
+// const myObj = { name: 'Tom Chinku', age: 11 };
+function greetMorning(name) {
+    console.log('Good morning', name);
+}
+
+function greetEvening(name) {
+    console.log('Good Evening', name);
+}
+
+function greetAfternoon(name) {
+    console.log('Good afternoon', name);
+}
+welcomeMessage('Tom Hanks', greetMorning);
+welcomeMessage('Sakib Hanks', greetAfternoon);
+welcomeMessage('Bappa Raj', greetEvening);
+
+function handleClick() {
+    console.log('button is clicked');
+}
+
+document.getElementById('my-btn').addEventListener('click', handleClick)
+
+document.getElementById('btn').addEventListener('click', function () {
+    console.log('buttn is clicked');
+}) */
