@@ -2253,36 +2253,33 @@ console.log(clock1()); */
 
 /* 
 What is a callback function ?
--A function passed as a argument of another function. */
+-A function passed as a argument of another function. 
+What is a highOrder function ?
+-The function accepts another function as a parameter. */
 
 
 /* 
-function welcomeMessage(name, greetHandler) {
-    greetHandler(name);
+function highOrderFunction(param, callbackFunction) {
+    callbackFunction(param);
 }
-// const names = ['Tom Hanks', 'Tom Brady', 'Tom Cruise']
-// const myObj = { name: 'Tom Chinku', age: 11 };
+
+
+
 function greetMorning(name) {
     console.log('Good morning', name);
 }
+highOrderFunction('Tom Hanks', greetMorning);
+
+
 
 function greetEvening(name) {
     console.log('Good Evening', name);
 }
+highOrderFunction('Bappa Raj', greetEvening);
+
+
 
 function greetAfternoon(name) {
     console.log('Good afternoon', name);
 }
-welcomeMessage('Tom Hanks', greetMorning);
-welcomeMessage('Sakib Hanks', greetAfternoon);
-welcomeMessage('Bappa Raj', greetEvening);
-
-function handleClick() {
-    console.log('button is clicked');
-}
-
-document.getElementById('my-btn').addEventListener('click', handleClick)
-
-document.getElementById('btn').addEventListener('click', function () {
-    console.log('buttn is clicked');
-}) */
+highOrderFunction('Sakib Hanks', greetAfternoon); */
