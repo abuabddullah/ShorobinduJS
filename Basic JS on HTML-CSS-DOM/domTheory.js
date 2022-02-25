@@ -2112,3 +2112,110 @@ const myObj = {
     name: 'samad',
     profession: null
 } */
+
+
+
+
+
+
+
+// ********************************** 35-5 double equal (==) vs triple equal (===), implicit conversion
+
+
+
+
+
+
+/* 
+// 1. same digits in number vs string format double equal checks the value only but triple equal checks value and data type both
+let first = '2';
+let second = 2;
+console.log(first == second);; // true
+console.log(first === second);; // false
+
+
+
+
+// 2. for digits in string vs boolean false and true , for boolean true js takes the value 1 in number and for false takes 1
+first = false; // js takes 0 as boolean format
+second = '10'; // js takes 10 as number format
+console.log(first == second);; // false
+console.log(first === second);; // false
+
+first = true; // js takes 1 as boolean format
+second = '10'; // js takes 10 as number format
+console.log(first == second);; // false
+console.log(first === second);; // false
+
+first = false; // js takes 0 as boolean format
+second = '0'; // js takes 0 as number format
+console.log(first == second);; // true
+console.log(first === second);; // false
+
+first = true; // js takes 1 as boolean format
+second = '1'; // js takes 1 as number format
+console.log(first == second);; // true
+console.log(first === second);; // false
+
+
+
+
+//3. for boject and array data type each and every comparision will be false cause of its nature. it keeps the referece from store. 
+let a = {
+    name: 'ali'
+};
+let b = {
+    name: 'ali'
+};
+console.log(first == second);; // false
+console.log(first === second);; // false
+
+a = [];
+b = [];
+console.log(first == second);; // false
+console.log(first === second);; // false */
+
+
+
+
+
+
+// ********************************** 35-6 Block scope, global scope, Hoisting
+
+
+
+
+
+
+/* global:  js এর open field অর্থাৎ কোন ব্রাকেট এর বাইরের জায়গাকে gobal space বলে . 
+-nonKeyWord / var  দিয়ে declare করা varible গুলো block space
+-এদেরকে hoisting করা যায় অর্থাৎ delcare এর আগে console.log করা যায়
+
+block : js এর ভিতরের কোন ব্রাকেট থাকলে ঐ ব্রাকেটের ভিতরের জায়গাকে block space বলে। 
+-let / const  দিয়ে declare করা varible গুলো block space
+-এদেরকে hoisting করা যায় না অর্থাৎ delcare এর আগে console.log করা যায় না */
+
+
+
+/* 
+// examplesssz:
+const favNum = 27;
+
+function add(first, second) {
+    // console.log(mood); // hoisting
+    const result = first + second;
+
+    if (result > 9) {
+        let mood = 'happy';
+        mood = 'cranky';
+    }
+    // console.log(mood);
+    return result;
+}
+const sum = add(11, 35);
+// console.log(mood);
+
+for (let i = 0; i < 10; i++) {
+
+}
+// console.log(i); */
