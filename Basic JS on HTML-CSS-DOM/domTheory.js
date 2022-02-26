@@ -2218,7 +2218,22 @@ const sum = add(11, 35);
 for (let i = 0; i < 10; i++) {
     
 }
-// console.log(i); */
+// console.log(i);  */
+
+
+
+/* // incase of object by using function property value can be changed which is a problem
+function scope4Obj(params) {
+    return params.age = 5050
+ }
+ let anObj = {personName : "Hajil", age : 20, height : `5'6"`}
+ console.log(anObj); // here age is 20
+ 
+ console.log(anObj); // here age is 5050 
+ 
+ 
+ // this problem can be solved by using clone and etc advance methodsss
+ */
 
 
 
@@ -2283,3 +2298,26 @@ function greetAfternoon(name) {
     console.log('Good afternoon', name);
 }
 highOrderFunction('Sakib Hanks', greetAfternoon); */
+
+
+
+
+
+// ********************************** 35-9 Module summary pass by reference pass by value
+
+
+/* 
+// function type data
+let triple = x =>{}
+console.log(triple.length); // we can access lenth method to function 
+
+triple = (x,y,z) =>{}
+console.log(triple.length);
+
+
+
+// null data type
+console.log(typeof null); // though null is a datatype bun in console it will show obj */
+
+
+
