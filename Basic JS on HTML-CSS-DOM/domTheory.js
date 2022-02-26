@@ -359,7 +359,17 @@ btn4Body2HOTPINK.addEventListener('click', function () {
 document.getElementById('changeBodyColor2ORANGE').addEventListener('click', function () {
     document.body.style.background = 'orange';
 });
- */
+ 
+
+
+
+// system - 8 : কোন function কে variable এর value হিসেবে define করা হলে তাকে কল করার সময়  "variable(params)" এভাবেও কল করা যায়। 
+const funcVAr = function (a, b) {
+    return a + b;
+}
+console.log(funcVAr(10, 20));
+*/
+
 
 
 
@@ -368,7 +378,7 @@ document.getElementById('changeBodyColor2ORANGE').addEventListener('click', func
 
 
 /* 
-// system - 8 [[  mostly used system to apply js  ]]: external javascript file এ কোন variable এর ভিতরে একটা full function কে declare করা
+// system - 9 [[  mostly used system to apply js  ]]: external javascript file এ কোন variable এর ভিতরে একটা full function কে declare করা
 
 
 // function expression (normal)
@@ -2321,3 +2331,123 @@ console.log(typeof null); // though null is a datatype bun in console it will sh
 
 
 
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 36  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+
+
+
+// ********************************** 36-1 Module introduction Different way to Create Object
+
+
+
+/* 
+// 1. using object literal
+const student = {
+    name: 'Sakib AL Hasan',
+    job: 'cricketer'
+};
+console.log(`student =`, student);
+
+
+
+// 2. constructor
+const person = new Object();
+console.log(`person =`, person); // output : {}
+
+// adding key and values as property
+person.name = 'Ford';
+person.age = '30';
+person.dob = 1997;
+console.log(`person =`, person); // output : {name: 'Ford', age: '30', dob: 1997}
+
+
+
+
+// 3. অন্যকোন object কে নিজের বাপ বানিয়ে তাদের সমত্তিএর অংশিদার হওয়া 
+const human = Object.create(student); // এখানে human Object এর বাপ হিসেবে student Object কে বসানো হয়েছে তাই এখন human Object তার বাপের student Object সব property এর excess পাবে
+console.log(`human.name =`, human.name); // output : Sakib AL Hasan
+console.log(`human.job =`, human.job); // output : cricketer
+
+// আর যদি বাপ বানানোর কোন সুযোগ না থাকে তাহলে null বসাতে হবে নইলে Error আসবে
+const human2 = Object.create(null);
+console.log(`human2 =`, human2); // output : {}
+
+
+
+
+
+// 4. object creating with class : class দিয়ে একটা নির্দিষ্ট object এর "mould বা ছাচ বা নকশা" তৈরি করে সেই class কে বিভিন্ন নতুন object তৈরি করা অনেকটা ৩ নাম্বার এর বাপ বেটার মতই 
+class People {
+    constructor(name, age) {
+        this.name = name; // এখানে this == People object নিজেই
+        this.age = age;
+    }
+}
+const insaan = new People('Abdullah', 2); // এখানে inssan নামের ্নতুন একটা obj বানানো হচ্ছে People object এর ্নকশা ব্যবহার করে
+console.log(insaan); // output : People {name: 'Abdullah', age: 2}
+
+
+
+
+// 5. object creating with function : এটা পুরা টাই object creating with class এর পেটের ভিতরের constructor এর format টাই এটা দিইয়েও obj বানান যায়
+function Manus(name) {
+    this.name = name;
+}
+const man = new Manus('kader');
+console.log(man); // output : Manus {name: 'kader'} */
+
+
+
+
+
+
+// ********************************** 36-2 Object method property review
+
+
+
+
+/* // আমরা জানি function calling system - 8 module : 25-2  অনুযায়ী কোন function কে variable এর value হিসেবে define করা হলে তাকে কল করার সময়  "variable(params)" এভাবেও কল করা যায়। 
+const funcVAr = function (a, b) {
+    return a + b;
+}
+console.log(funcVAr(10, 20)); */
+
+/* 
+const student1 = {
+    id: 101,
+    money: 5000,
+    name: 'RJ Kibria',
+    major: 'mathematics',
+    isRich: false,
+    subjects: ['english', 'economics', 'math 101', 'calculus'],
+    bestFriend: {
+        name: 'kundu',
+        major: 'mathematics'
+    },
+    takeExam: function () {
+        console.log('taking exam by', this.name);
+    },
+    treatDey: function (expense, boksis) {
+        this.money = this.money - expense - boksis;
+        return this.money;
+    }
+}
+
+student1.takeExam(); // like function calling system - 8
+const remaining1 = student1.treatDey(900, 100);
+console.log(remaining1);
+const remaining2 = student1.treatDey(500, 50);
+console.log(remaining2); */
+
+
+
+
+
+// ********************************** 36-3 Keys, values, entries, delete, seal, freeze
