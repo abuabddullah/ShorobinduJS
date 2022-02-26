@@ -2535,7 +2535,7 @@ for(const prop in student){} // object
 /* // array destructuring example
 const [index0, index1, index2, index3] = entries;
 console.log(index0, index1, index2, index3);
- */
+*/
 
 // console.log("---------------------------special note---------------------------");
 
@@ -2568,16 +2568,138 @@ const twoDimensionalArray = Object.entries(bottle2);
 console.log(twoDimensionalArray);
 
 // for (const array of twoDimensionalArray) {
-//     console.log(array);
+    //     console.log(array);
+    
+    //     // array disructureing
+    //     [key, value] = array;
+    //     console.log(`${key} : ${value}`);
+    // }
+    
+    // inshort of the above for of loop in array 
+    for (const [key, value] of Object.entries(bottle2)) {
+        console.log(`${key} : ${value}`);
+    }
+    
+    */
 
-//     // array disructureing
-//     [key, value] = array;
-//     console.log(`${key} : ${value}`);
-// }
 
-// inshort of the above for of loop in array 
-for (const [key, value] of Object.entries(bottle2)) {
-    console.log(`${key} : ${value}`);
+
+
+
+// ********************************** 36-5 (advanced) Compare objects, referential integrity
+
+
+
+
+
+
+/* 
+const first = {
+    a: 1,
+    b: 2
+};
+const second = {
+    a: 1,
+    b: 2
+};
+
+// normal comparing with obj to obj 
+console.log(`first == second ? - ${first == second}`);
+console.log(`first === second ? - ${first === second}`);
+
+
+const third = first;
+console.log(`first == third ? - ${first == third}`);
+console.log(`first === third ? - ${first === third}`);
+
+
+// using stringify method for comparing
+let firstStringified = JSON.stringify(first);
+let secondtringified = JSON.stringify(second);
+console.log(`firstStringified = ${firstStringified}`);
+console.log(`secondtringified = ${secondtringified}`);
+
+
+console.log(`firstStringified == secondtringified ? - ${firstStringified == secondtringified}`);
+console.log(`firstStringified === secondtringified ? - ${firstStringified === secondtringified}`);
+
+
+
+
+// problem in stringify comparision : এটা compare করে string এর index ধরে ধরে তাই sequence same না হলে false দেখাবে
+const first2 = {
+    a: 1,
+    b: 2
+};
+const second2 = {
+    b: 2,
+    a: 1
+};
+console.log(JSON.stringify(first2));
+console.log(JSON.stringify(second2));
+
+console.log(`stringifyfirst2 == stringifysecond2 ? - ${JSON.stringify(first2) == JSON.stringify(second2)}`);
+console.log(`stringifyfirst2 === stringifysecond2 ? - ${JSON.stringify(first2) === JSON.stringify(second2)}`);
+
+
+
+// using conditions and loops to compare objects
+let first3 = {
+    a: 1,
+    b: 2
+};
+let second3 = {
+    a: 1,
+    b: 2
+};
+
+let objFirst3KeysArray = Object.keys(first3);
+let objSecond3KeysArray = Object.keys(second3);
+
+if (objFirst3KeysArray.length !== objSecond3KeysArray.length) {
+    console.log(`first3 and second3 are not same in count of properties`);
+} else {
+    for (const prop in first3) {
+        if (first3[prop] !== second3[prop]) {
+            console.log(`first3 and second3 are not same in value of properties`);
+            break;
+        }
+    }
+    
+    console.log(`first3 and second3 are same`);
 }
 
- */
+
+
+// using function and loops to compare objects
+const first4 = {
+    a: 1,
+    b: 2,
+    c: 2
+};
+const second4 = {
+    b: 2,
+    a: 1
+};
+
+
+function compareObjects(obj1, obj2) {
+    if (Object.keys(obj1).length !== Object.keys(obj2).length) {
+        return false;
+    }
+    for (const prop in obj1) {
+        if (obj1[prop] !== obj2[prop]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+const isEqual = compareObjects(first4, second4);
+console.log(isEqual); */
+
+
+
+
+
+// ********************************** 36-6 (advanced) Use bind to borrow method from another object
