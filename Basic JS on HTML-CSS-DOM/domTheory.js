@@ -2412,12 +2412,15 @@ console.log(man); // output : Manus {name: 'kader'} */
 
 
 
+// console.log("---------------------------special note---------------------------");
 
 /* // আমরা জানি function calling system - 8 module : 25-2  অনুযায়ী কোন function কে variable এর value হিসেবে define করা হলে তাকে কল করার সময়  "variable(params)" এভাবেও কল করা যায়। 
 const funcVAr = function (a, b) {
     return a + b;
 }
 console.log(funcVAr(10, 20)); */
+
+// console.log("---------------------------special note---------------------------");
 
 /* 
 const student1 = {
@@ -2451,3 +2454,130 @@ console.log(remaining2); */
 
 
 // ********************************** 36-3 Keys, values, entries, delete, seal, freeze
+
+
+
+
+/* 
+const bottle = {
+    color: 'yellow',
+    hold: 'water',
+    price: 50,
+    isCleaned: true,
+    height: 10
+};
+console.log(bottle);
+
+
+bottle.nickName = 'kolos';
+console.log(bottle); // nickName is added
+
+// getting all properties names in an array
+const keys = Object.keys(bottle);
+console.log(keys);
+
+
+// get all values names in an array
+const values = Object.values(bottle);
+console.log(values);
+
+
+// get all properties+values couple as an array in an array (2 dimensional array)
+const pairs = Object.entries(bottle);
+console.log(pairs);
+
+
+// to delete an property from an object
+delete bottle.isCleaned;
+console.log(bottle); // isCleaned is deleted
+
+
+// to prevent deleting + adding properties ta an object but you can change them
+Object.seal(bottle);
+delete bottle.price;
+console.log(bottle); // price not is deleted
+
+bottle.price = 100;
+console.log(bottle); // price value is changed
+
+bottle.shape = 'round';
+console.log(bottle); // shape is not added
+
+
+
+// to prevent deleting + adding + changeing properties from an object
+Object.freeze(bottle);
+delete bottle.height;
+console.log(bottle); // height is not deleted
+
+bottle.height = 16;
+console.log(bottle); // height value is not changed
+
+bottle.shape = 'round';
+console.log(bottle); // shape is not added */
+
+
+
+
+
+// ********************************** 36-4 Loop through an object using for in, for of, object entries
+
+
+
+// console.log("---------------------------special note---------------------------");
+
+/* 
+for(let i = 0; i<10;i++){}
+for(const num of numbers){} // array
+for(const prop in student){} // object
+*/
+
+/* // array destructuring example
+const [index0, index1, index2, index3] = entries;
+console.log(index0, index1, index2, index3);
+ */
+
+// console.log("---------------------------special note---------------------------");
+
+/* 
+const bottle2 = {
+    color: 'yellow',
+    hold: 'water',
+    price: 50,
+    isCleaned: true
+};
+
+// getting access to the properties of an object by using for...in loop
+for (const prop in bottle2) {
+    // console.log(prop); // only property name
+    // console.log(bottle2[prop]); // only property value using method "set object value (iii)"
+    console.log(`${prop} : ${bottle2[prop]}`); // property name and property value
+}
+
+// getting access to the properties of an object by using for...of loop
+const keys = Object.keys(bottle2);
+console.log(keys);
+for (const prop of keys) {
+    console.log(`${prop} : ${bottle2[prop]}`);
+}
+
+
+
+// advanced : getting access to the properties of an object by using for...of loop and entries
+const twoDimensionalArray = Object.entries(bottle2);
+console.log(twoDimensionalArray);
+
+// for (const array of twoDimensionalArray) {
+//     console.log(array);
+
+//     // array disructureing
+//     [key, value] = array;
+//     console.log(`${key} : ${value}`);
+// }
+
+// inshort of the above for of loop in array 
+for (const [key, value] of Object.entries(bottle2)) {
+    console.log(`${key} : ${value}`);
+}
+
+ */
