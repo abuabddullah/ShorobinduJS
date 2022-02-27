@@ -62,18 +62,65 @@
             (plz check console)
         </small><br><br>
 
-        <section class="shadow m-5 p-5" id="task2OutputInHTML" style="height: 250px; overflow-y: scroll;">
-            <!-- postId: 100, 
-            id: 499, 
-            name: 'excepturi sunt cum a et rerum quo voluptatibus quia', email: 'Wilburn_Labadie@araceli.name', 
-            body: 'et necessitatibus tempora ipsum quaerat inventore …t ut\nratione sit numquam culpa a rem\natque aut et' -->
-        </section>
+        <!-- task five -->
+        <small>৬. সিম্পল একটা জাভাস্ক্রিপ্ট অবজেক্ট এর কোন একটা প্রোপার্টিকে ভেরিয়েবল হিসেবে ডিক্লেয়ার করার জন্য
+            destructuring ইউজ করো। array এর destructuring করবে আর সেটা করার জন্য তুমি এরে এর সেকেন্ড পজিশন এর উপাদান কে
+            destructuring করে 'balance' নামক একটা ভেরিয়েবল এ রাখবে।<br>
+            (plz check console)
+        </small><br><br>
 
+        <!-- task seven -->
+        <div class="taskSeven">
+            <small>৭. একদম প্রাথমিক স্টেপ হিসেবে jsonplaceholder এর ওয়েবসাইট থেকে ডাটা fetch করে সেটাকে কনসোল এ দেখাতে
+                হবে।
+                ধরো তুমি তাদের ওয়েবসাইট এ photos এর API এর লিংক কোনটা সেটা জাভাস্ক্রিপ্ট দিয়ে কোড করে সেই ডাটা কনসোল এ
+                দেখতে
+                পারতেছো কিনা। তারপর কয়েকটা কার্ড বানাবে (হতে পারে বুটস্ট্রাপ এর কার্ড) সেগুলা আবার তুমি html দিয়ে
+                ওয়েবসাইট এ
+                ছবি এবং ছবির নিচে ছবির টাইটেল দেখাবে।<br>
+                ৮. প্রত্যেকটা ফটোতে ক্লিক করলে উপরে আরেকটা div থাকবে। ক্লিক করার পর ডাইনামিকভাবে ওই ফটো এর ডাটা লোড
+                করবে। সেটা করার জন্য আগের ডাটা লোড করার API এর লিংক এর পরে photos এর পরে ডাইনামিকভাবে ${id} বসিয়ে দিবে।
+                এরপর ডিটেইল অংশে photo এর url দিয়ে মেইন ইমেজ এবং thumbnail ইমেজ দুইটাই দেখাবে। সাথে সাথে title
+                প্রপার্টিও দেখাবে। <br>
+
+                ৯. তুমি যে ডাটা লোড করেছো। বা ডাটা ওয়েবসাইট এ দেখাচ্ছ। সেই কোড এর মধ্যে arrow ফাংশন ইউজ করতে পারতেছো
+                কিনা। যখন লুপ চালাচ্ছ সেখানে forEach ইউজ করতে পারতেছো কিনা।
+            </small><br><br>
+
+            <section class="shadow m-5 p-5" id="task7OutputInHTML">
+
+
+                <div id="spinner" class="spinner-border text-info mx-auto my-5 d-none" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+
+
+                <div id="gallery4JsonPhotos" class="row row-cols-1 row-cols-md-3 g-4">
+                    <!-- <div class="col">
+                        <div class="card h-100">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to
+                                    additional content. This card has even longer content than the first to show that
+                                    equal
+                                    height action.</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+        </div>
 
 
     </main>
 
-    <script>
+    <!-- <script>
+
         //task one
         const objOfTask1 = {
             objectType: 'student',
@@ -147,7 +194,7 @@
         //task five
         const task5Array = [10, 20, 30, 40];
 
-        //use of map when need to return anything
+        //use of map when need to return anything in array
         let sumByMap = 0;
         task5Array.map(elem => {
             sumByMap = sumByMap + elem;
@@ -155,19 +202,133 @@
         });
         console.log(`task five output for map method : ${sumByMap}`);
 
-
         //use of forEach when no need to return anything
         task5Array.forEach(elem => console.log(`task five output for forEach method : ${elem}`));
 
+        //use of filter when need to return anything in array
+        let task5ByFilter = task5Array.filter(elem => elem >= 30);
+
+        console.log(task5ByFilter);
+
+        //use of find when no need to return 
+        let task5ByFind = task5Array.find(elem => elem >= 30);
+        console.log(task5ByFind);
 
 
 
 
+
+        //task six
+        const task6Obj = {
+            name: 'Rash',
+            age: 30,
+            nickNames: ['Rashed', 'Rashid', 'Rash'],
+            isGood: true
+        }
+
+        // obj distructuring
+        const { name, age, isGood } = task6Obj;
+        console.log(`obj distructuring task six output : name = ${name}; age = ${age}; isGood = ${isGood}`);
+
+        // array distructuring
+        const { nickNames } = task6Obj;// obj distructurin
+        console.log(nickNames);
+        let secondNicknames = nickNames[1]
+        console.log(secondNicknames);
+
+        [humpty, balance, dumpty] = nickNames;  // array distructuring
+        console.log(`array distructuring task six output :balance = ${balance}`);
+    </script> -->
+
+    <script>
+        // for task 7 and onwards
+
+        const gallery4JsonPhotosDiv = document.getElementById('gallery4JsonPhotos');
+
+        const controlSpinner = displayProperty => {
+            document.getElementById('spinner').style.display = displayProperty;
+        }
+
+
+
+        const loadJsonPhotos = () => {
+            let url = 'https://jsonplaceholder.typicode.com/photos';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => displayJsonPhotos(data.slice(0, 12)))
+        }
+        loadJsonPhotos();
+
+        const displayJsonPhotos = params => {
+            params.forEach(elem => {
+                let div = document.createElement('div');
+                div.classList.add('col');
+                div.innerHTML = `
+                
+                <div onclick = "loadPhotoDetail('${elem.id}')" class="card h-100">
+                            <img src="${elem.thumbnailUrl}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${elem.title}</h5>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                `
+                gallery4JsonPhotosDiv.appendChild(div);
+                // console.log(elem);
+                // console.log(elem.id);
+                // console.log(elem.thumbnailUrl);
+                // console.log(elem.title);
+            })
+
+        }
+
+        const loadPhotoDetail = photoId => {
+            // common way
+            let url = 'https://jsonplaceholder.typicode.com/photos';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => displayClickedPhoto(data.slice(0, 12), photoId))
+        }
+
+        const displayClickedPhoto = (params, photoId) => {
+            gallery4JsonPhotosDiv.innerHTML = '';
+            controlSpinner('block');
+            // console.log(params);
+            params.forEach(elem => {
+
+                let div = document.createElement('div');
+                div.classList.add('col');
+
+                if (elem.id == photoId) {
+                    div.innerHTML = `
+
+                        <div class="card h-100">
+                            <img src="${elem.thumbnailUrl}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${elem.id}</h5>
+                                <p class="card-text">${elem.title}</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                `
+                }
+                gallery4JsonPhotosDiv.appendChild(div);
+                controlSpinner('none');
+            })
+        }
 
 
 
 
     </script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
