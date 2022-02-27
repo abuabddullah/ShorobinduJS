@@ -13,9 +13,8 @@
 </head>
 
 <body>
+    <header class=" p-5 text-center">
 
-
-    <main class="m-5 p-5 text-center">
         <h1 title="https://www.thesportsdb.com/api.php">Projects - 14 API CONCEPTUAL SPORTSDB</h1>
         <div class="input-group my-5">
             <input type="text" class="form-control" placeholder="Search Your Player Here ..."
@@ -23,10 +22,13 @@
             <span class="input-group-text" id="searchBtnTag">Search</span>
         </div>
         <h5 id="errorAlert" class="mb-5 d-none"><small><code>Plz enter Valid Keywords</code></small></h5>
+    </header>
 
+    <main class=" p-5 text-center">
         <section id="outPutGallery">
             <div class="row row-cols-1 row-cols-md-2 g-4">
                 <div id="holdResults" class="col">
+
                     <div class="card h-100">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
@@ -37,7 +39,7 @@
                     </div>
                 </div>
                 <div id="holdDescription" class="col">
-                    <div class="card shadow">
+                    <div class="card">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
@@ -62,6 +64,7 @@
 
         // loadData fom sports db
         searchBtnTag.addEventListener('click', () => {
+
             let searchKey = searchInputTag.value;
             searchInputTag.value = ''; // emptying input field
 
@@ -98,7 +101,7 @@
                             <p class="card-text">${elem.strDescriptionEN.slice(0, 100)}</p>
                         </div>
                         
-<button onclick="loadPlayerData('${elem.idPlayer}')" type="button" class="btn btn-info">Info</button>
+                    <button onclick="loadPlayerData('${elem.idPlayer}')" type="button" class="btn btn-info">Info</button>
                     </div>
                 `
                 holdResults.appendChild(aDiv);
@@ -123,10 +126,11 @@
 
             holdDescription.innerHTML = '';
 
+
             let aDiv = document.createElement('div');
             aDiv.classList.add('card', 'shadow');
             aDiv.innerHTML = `
-                    <div onclick="loadPlayerData('${elem.idPlayer}')" class="mb-2 shadow">
+                    <div class="mb-2 shadow">
                         <img src="${elem.strThumb}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">${elem.strPlayer}</h5>
@@ -141,15 +145,15 @@
 
                         </div>
                         
-<button onclick="deleteFunc(this)" type="button" class="btn btn-info">Delete</button>
+                        <button onclick="deleteFunc(event)" type="button" class="btn btn-info">Delete</button>
                     </div>
                 `
             holdDescription.appendChild(aDiv);
         }
 
         // delete data
-        function deleteFunc(e) {
-            e.parentNode.parentNode.innerHTML = ''
+        function deleteFunc(event) {
+            event.target.parentNode.parentNode.style.display = 'none';
         }
 
 
