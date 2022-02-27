@@ -2703,3 +2703,177 @@ console.log(isEqual); */
 
 
 // ********************************** 36-6 (advanced) Use bind to borrow method from another object
+
+
+
+/* 
+const kibria = {
+    id: 101,
+    money: 5000,
+    name: 'RJ Kibria',
+    treatDey: function (expense) {
+        this.money = this.money - expense;
+        console.log('here5555', this);
+        return this.money;
+    }
+}
+kibria.treatDey(100);
+
+
+
+// we can use this treatDey function for other object also. the structure will be  [[[ functionHolderObj.function.bind(funcUsing4ObjAsThis) ]]]
+
+//example 1
+const heroBalam = {
+    id: 102,
+    money: 6000,
+    name: 'Hero Balam'
+}
+const heroTreatDey = kibria.treatDey.bind(heroBalam); // এখানে this = heroBalam
+heroTreatDey(500);
+heroTreatDey(300);
+
+
+
+//example 2
+const normalGolam = {
+    id: 102,
+    money: 8000,
+    name: 'Normal Golam'
+}
+const normalTreatDey = kibria.treatDey.bind(normalGolam); // এখানে this = heroBalam
+normalTreatDey(200);
+
+
+// এখানে function গুলো নিজেদের জন্য্ আলাদা আলাদ closoure তইরি করবে তাই আবার যখন কল করবে আগের কলের পরের থেকে কাজ হবে
+kibria.treatDey(1000);
+heroTreatDey(3000);
+normalTreatDey(2000); */
+
+
+
+
+
+// ********************************** 36-7 (advanced) Difference between bind, call and apply 
+
+
+
+
+
+/* 
+
+const kibria = {
+    id: 101,
+    money: 5000,
+    name: 'RJ Kibria',
+    treatDey: function (expense, boksis, tax) {
+        this.money = this.money - expense - boksis - tax;
+        console.log('here5555', this);
+        return this.money;
+    }
+}
+
+const heroBalam = {
+    id: 102,
+    money: 6000,
+    name: 'Hero Balam'
+}
+const normalGolam = {
+    id: 102,
+    money: 8000,
+    name: 'Normal Golam'
+}
+
+
+//call
+kibria.treatDey.call(heroBalam, 500, 100, 50);
+kibria.treatDey.call(heroBalam, 300, 50, 30);
+
+// apply
+kibria.treatDey.apply(heroBalam, [500, 100, 50]);
+kibria.treatDey.apply(normalGolam, [700, 100, 70]) */
+
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+/* 
+bind কে use করতে হয় আগে একটা function declare করে তারপর তার ভিতরে arugments গুলা pass করে করে 
+
+
+const heroTreatDey = kibria.treatDey.bind(heroBalam); // এখানে this = heroBalam
+heroTreatDey(500);
+heroTreatDey(300);
+
+
+আর call and apply use করতে হয় direct 
+
+
+kibria.treatDey.call(heroBalam, 300, 50, 30);
+kibria.treatDey.apply(heroBalam, [500, 100, 50]); */
+
+// console.log("---------------------------special note---------------------------");
+
+
+
+
+
+// ********************************** 36-8 ( super advanced) Understand this keyword in JavaScript
+
+
+
+
+
+/* 
+-this মানে হচ্ছে execution context
+-in the global scope this === window
+-normally this === এর বাম পাশে যে আছে সেটাকে তার execution context হিসেবে নেয়
+-arrow function এর ক্ষেত্রে this === তার just immidiate উপরের level এর টাকে তার execution context হিসেবে নেয়
+-কোনো DOM এর elelment এ click করলে, this === event অর্থাৎ  সেই event টাই this বুঝাবে  
+*/
+
+/* 
+console.log(this); // here this === window
+
+const kibria = {
+    id: 101,
+    money: 5000,
+    name: 'RJ Kibria',
+    treatDey: function (expense) {
+        this.money = this.money - expense;
+        console.log('here5555', this); // here this === kibria
+        return this.money;
+    },
+    treatDeyArrow: () => {
+        console.log(this); // here this === window
+    },
+    treatDeyInside: function () {
+        const myArrow = () => console.log(this); // here this === kibria
+        myArrow();
+    }
+}
+kibria.treatDey()
+kibria.treatDeyArrow()
+kibria.treatDeyInside()
+
+const heroBalam = {
+    id: 102,
+    money: 6000,
+    name: 'Hero Balam'
+}
+
+
+heroBalam.treatDey = kibria.treatDey
+console.log(heroBalam.treatDey(1000)); // here this === heroBalam
+
+kibria.treatDey() // here this === kibria
+
+
+let myTreatDey = kibria.treatDey
+console.log(myTreatDey);
+console.log(myTreatDey()); // here this === window
+
+function log4this() {
+    console.log(this); // here this === window
+} */
