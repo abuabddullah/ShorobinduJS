@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36_5-1 Practice Problems</title>
+
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <main class="m-5">
+        <h1 class=" text-center">36_5-1 Practice Problems</h1>
+        <!-- task one -->
+        <small>১. একটা অবজেক্ট ডিক্লেয়ার করো। সেই অবজেক্ট এর মিনিমাম পাঁচটা প্রপার্টি থাকবে। তারপর একটা প্রপার্টি এর মান
+            হবে অন্য আরেকটা অবজেক্ট , আরেকটা প্রপার্টি এর মান হবে একটা array । একটা প্রপার্টি এর মান হবে একটা
+            ফাংশন(মেথড) । এই মেথড কে কল করলে সে মেথড এর ভিতর থেকে অবজেক্ট এর যেকোন একটা প্রপার্টি রিটার্ন করবে। আর বাকি
+            দুইটা তোমার ইচ্ছা মতো।<br>
+            (plz check console) </small>
+        <br><br>
+
+        <!-- task two -->
+        <small>২. একটা টেম্পলেট স্ট্রিং দিয়ে একটা স্ট্রিং ভেরিয়েবল ডিক্লেয়ার করো। সেটার মধ্যে উপরের অবজেক্ট এর একটা
+            তিনটা প্রপার্টি এর মান তোমার টেমপ্লেট স্ট্রিং এর মধ্যে বসাও। এর মধ্যে একটা প্রপার্টি সেট করবে--যেটা নেস্টেড
+            অবজেক্ট আছে সেটার প্রপার্টি থেকে। আরেকটা প্রপার্টি হবে যে প্রপার্টি এর মান একটা array সেটার সেকেন্ড পজিশন এর
+            উপাদান দিয়ে। আর বাকি একটা তোমার ইচ্ছা মতো বসাতে পারো।<br>
+            (plz check console)
+        </small><br><br>
+
+        <!-- task three -->
+        <small>
+            ৩.১. শূন্য প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন লিখবে যেটা ৮৯ রিটার্ন করবে।<br>
+            (plz check console)<br>
+
+            ৩.২. এক প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন ডিক্লেয়ার করবে। এই ফাংশনের কাজ হবে যে প্যারামিটার নিবে সেটাকে ৭
+            দিয়ে ভাগ করে ভাগফল রিটার্ন করবে।<br>
+            (plz check console)<br>
+
+            ৩.৩ দুই, প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন লিখবে। এই ফাংশনের কাজ হবে যে দুইটা প্যারামিটার ইনপুট নিবে। সেই
+            দুইটা প্যারামিটারকে যোগ করে যোগফলকে দুই দিয়ে ভাগ করে ভাগফল রিটার্ণ করে দাও।<br>
+            (plz check console)<br>
+
+            ৩.৪ একাধিক লাইন ওয়ালা অ্যারো ফাংশন লিখো। সেটাতে দুইটা প্যারামিটার নিবে। ওই arrow ফাংশনটা হবে অনেকগুলা
+            লাইনের। সেখানে প্রত্যেকটা ইনপুট প্যারামিটার এর সাথে ৭ যোগ করবে তারপর যোগফল দুইটাকে আবার যোগ করবে। ক্যামনে
+            করবে সেটা চিন্তা করে বের করার চেষ্টা করো।<br>
+            (plz check console)
+        </small><br><br>
+
+        <!-- task four -->
+        <small>৪. অনেকগুলা সংখ্যার একটা array হবে। তারপর তোমার কাজ হবে array এর উপরে map ইউজ করে। প্রত্যেকটা উপাদানকে ৭
+            দিয়ে ভাগ করে ভাগফল আরেকটা array হিসেবে রাখবে। পুরা কাজটা এক লাইনে হবে।
+        </small><br><br>
+
+        <section class="shadow m-5 p-5" id="task2OutputInHTML" style="height: 250px; overflow-y: scroll;">
+            <!-- postId: 100, 
+            id: 499, 
+            name: 'excepturi sunt cum a et rerum quo voluptatibus quia', email: 'Wilburn_Labadie@araceli.name', 
+            body: 'et necessitatibus tempora ipsum quaerat inventore …t ut\nratione sit numquam culpa a rem\natque aut et' -->
+        </section>
+
+
+
+    </main>
+
+    <script>
+        //task one
+        const objOfTask1 = {
+            objectType: 'student',
+            name: 'Rashed',
+            age: 20,
+            nickNames: ['Rashed', 'Rashid', 'Rash'],
+            address: {
+                city: 'Dhaka',
+                country: 'Bangladesh',
+                zipCode: 1234
+            },
+            isGood: true,
+            pocketMoneyExpenses: function (moneyGot4mHome) {
+                let eatingExpenses = 1000;
+                let transportationExpenses = 2000;
+                let totalExpenses = eatingExpenses + transportationExpenses;
+                let pocketMoney = moneyGot4mHome - totalExpenses;
+                return pocketMoney;
+            }
+        }
+        console.log(objOfTask1);
+
+
+
+
+
+        //task two
+        const task2StringVar = `Hi! I am ${objOfTask1.name}. I am from ${objOfTask1.address.city}. Peoples call me ${objOfTask1.nickNames[1]}`
+        console.log(task2StringVar);
+
+
+
+
+
+        //task three 3.1
+        const noParamArrowFunct = () => 89;
+        console.log(`task three 3.1 output : ${noParamArrowFunct()}`);
+
+        //task three 3.2
+        const oneParamArrowFunct = param1 => param1 / 7;
+        console.log(`task three 3.2 output : ${oneParamArrowFunct(70)}`);
+
+        //task three 3.3
+        const twoParamArrowFunct = (param1, param2) => (param1 + param2) / 2;
+        console.log(`task three 3.3 output : ${twoParamArrowFunct(10, 20)}`);
+
+        //task three 3.3
+        const multiLineArrowFunct = (param1, param2) => {
+            let param1v2 = param1 + 7;
+            let param2v2 = param2 + 7;
+            return param1v2 + param2v2;
+        }
+        console.log(`task three 3.4 output : ${multiLineArrowFunct(7, 7)}`);
+
+
+
+
+
+        //task four
+        const task4Array = [7, 14, 21, 28, 35, 42, 49, 56, 63, 70];
+        const task4OutPutarray = []
+
+
+        task4Array.map(elem => task4OutPutarray.push(elem / 7));
+        console.log(task4OutPutarray);
+
+
+
+
+
+
+
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
