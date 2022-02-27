@@ -2877,3 +2877,72 @@ console.log(myTreatDey()); // here this === window
 function log4this() {
     console.log(this); // here this === window
 } */
+
+
+
+
+
+
+
+// ********************************** 36-8 ( super advanced) Understand this keyword in JavaScript
+
+
+
+
+
+
+/* 
+-different ways to create object
+-method or function in the object as object element
+-getting an array of all the keys in an object by using Object.keys()
+-getting an array of all the values in an object by using Object.values()
+-get value or keys in obje using for in loop 
+-comparing two objects by using 
+-binding a function to an object using .bind()
+-call and apply
+-what the heck is this
+*/
+
+
+/* 
+const pen = {
+    brand: 'econo',
+    price: 10,
+
+
+
+    writePoem: function (food) {
+        console.log(food);
+    }
+}
+
+
+
+
+const keys = Object.keys(pen);
+const values = Object.values(pen);
+
+
+
+for (const key in pen) {
+    console.log(pen[key]);
+}
+
+
+
+const a = {
+    a: 1
+};
+const b = {
+    a: 1
+};
+const c = a;
+
+if (a === b) {
+
+}
+// optional
+const aBounded = pen.writePoem.bind(a);
+aBounded();
+
+ */
