@@ -2799,6 +2799,10 @@ kibria.treatDey.apply(normalGolam, [700, 100, 70]) */
 
 // console.log("---------------------------special note---------------------------");
 /* 
+
+Why do we use the bind method?
+-To borrow method from another object
+
 bind কে use করতে হয় আগে একটা function declare করে তারপর তার ভিতরে arugments গুলা pass করে করে 
 
 
