@@ -127,8 +127,17 @@
                 করো। অনেকটা mealdb এর মতো। আবার কোন একটাতে ক্লিক করলে সেটার ডিটেল দেখাবে।
             </small><br><br>
 
-            <section class="shadow m-5 p-5" id="task10OutputInHTML">
+            <section class="shadow m-5 p-5 overflow-auto" id="task10OutputInHTML">
 
+                <h4 class="text-center">Search By First Letter</h4>
+                <div class="input-group mb-3">
+                    <input id="serachInputTag" type="text" class="form-control" placeholder="Search By Letter"
+                        aria-label="Search By Letter" aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="searchBtn">Search</span>
+                </div>
+            </section>
+
+            <section class="shadow m-5 p-5 overflow-auto" id="task10OutputInHTML" style="height: 500px;">
 
                 <div id="spinner" class="spinner-border text-info mx-auto my-5 d-none" role="status">
                     <span class="visually-hidden">Loading...</span>
@@ -402,6 +411,91 @@
 
     </script>
 
+
+    <script>
+        // task 10
+        let searchBtnTag = document.getElementById('searchBtn');
+        let serachInputTag = document.getElementById('serachInputTag');
+        let gallery4cocktailDbDiv = document.getElementById('gallery4cocktailDb');
+
+
+        // load data from cocktai
+
+        searchBtnTag.addEventListener('click', () => {
+            let searchValue = serachInputTag.value;
+            serachInputTag.value = '';
+
+            if (isNaN(searchValue) == true && searchValue != "") {
+
+                let url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${searchValue}`;
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => displayDrinks(data.drinks))
+            } else {
+                alert('please enter a valid value');
+            }
+
+        })
+
+        const displayDrinks = drinks => {
+            gallery4cocktailDbDiv.innerHTML = '';
+            drinks.forEach(drink => {
+                let div = document.createElement('div');
+                div.classList.add('col');
+                div.innerHTML = `
+
+                <div onclick = "loadDetails('${drink.idDrink}')" class="card h-100">
+                            <img src="${drink.strDrinkThumb}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${drink.strDrinkThumb}</h5>
+                                <p class="card-text">${drink.strInstructions.slice(0, 150)}</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                `
+                gallery4cocktailDbDiv.appendChild(div);
+                // console.log(drink);
+                // console.log(drink.strDrink);
+                // console.log(drink.strDrinkThumb);
+                // console.log(drink.idDrink);
+                // console.log(drink.strInstructions);
+            })
+        }
+
+
+        const loadDetails = drinkId => {
+            let url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => displayDrinkDetails(data.drinks[0]))
+        }
+
+        const displayDrinkDetails = details => {
+            console.log(details);
+            gallery4cocktailDbDiv.innerHTML = '';
+
+
+            let div = document.createElement('div');
+            div.classList.add('col');
+            div.innerHTML = `
+
+                <div onclick = "loadDetails('${details.idDrink}')" class="card h-100">
+                            <img src="${details.strDrinkThumb}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">${details.strDrinkThumb}</h5>
+                                <p class="card-text">${details.strInstructions}</p>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">Last updated 3 mins ago</small>
+                            </div>
+                        </div>
+                `
+            gallery4cocktailDbDiv.appendChild(div);
+
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
