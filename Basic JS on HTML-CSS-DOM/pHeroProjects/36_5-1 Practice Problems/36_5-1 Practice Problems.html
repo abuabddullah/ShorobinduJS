@@ -57,6 +57,11 @@
             দিয়ে ভাগ করে ভাগফল আরেকটা array হিসেবে রাখবে। পুরা কাজটা এক লাইনে হবে।
         </small><br><br>
 
+        <!-- task five -->
+        <small>৫. জাভাস্ক্রিপ্ট এ array এর map, forEach, filter, find কোনটা দিয়ে কি হয়। সেটার একটা সামারি লিখে ফেলো।<br>
+            (plz check console)
+        </small><br><br>
+
         <section class="shadow m-5 p-5" id="task2OutputInHTML" style="height: 250px; overflow-y: scroll;">
             <!-- postId: 100, 
             id: 499, 
@@ -135,6 +140,24 @@
         task4Array.map(elem => task4OutPutarray.push(elem / 7));
         console.log(task4OutPutarray);
 
+
+
+
+
+        //task five
+        const task5Array = [10, 20, 30, 40];
+
+        //use of map when need to return anything
+        let sumByMap = 0;
+        task5Array.map(elem => {
+            sumByMap = sumByMap + elem;
+            return sumByMap;
+        });
+        console.log(`task five output for map method : ${sumByMap}`);
+
+
+        //use of forEach when no need to return anything
+        task5Array.forEach(elem => console.log(`task five output for forEach method : ${elem}`));
 
 
 

@@ -1184,13 +1184,24 @@ console.log(smallNumbers);
     { name: 'water glass', price: 3, color: 'white' }
 ];
 
-const expensive = elem.filter(elem => elem.price > 100);
+const expensive = products.filter(elem => elem.price > 100);
 // console.log(expensive);
-const blacks = elem.filter(elem => elem.color == 'pink');
+const blacks = products.filter(elem => elem.color == 'pink');
 // console.log(blacks);
 
-const whiteItem = elem.find(elem => elem.color == 'black');
+
+
+// ************************************** foreach foreach foreach foreach 
+const whiteItem = products.find(elem => elem.color == 'black');
 console.log(whiteItem); */
+
+
+// console.log("---------------------------special note---------------------------");
+
+// find is used insted of filter when no need of return array
+// forEach হল map এর আপন ছোট ভাই তাই এটা return করতে পারেনা বাকি সব পারে তবে এটা্র কিন্তু একটা প্রব্লেম আছে, কোন array মধ্যে যদি একাধিক element শর্ত পুরন করলেও এটা শুধু প্রথম টাকেই দেখাবে
+
+// console.log("---------------------------special note---------------------------");
 
 
 
