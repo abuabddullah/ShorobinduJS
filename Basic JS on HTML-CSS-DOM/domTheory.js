@@ -2961,3 +2961,307 @@ const aBounded = pen.writePoem.bind(a);
 aBounded();
 
  */
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 37.5  ||| 5 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+
+
+
+
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 38  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+
+
+// *************************** 38-1 Module Introduction and how internet works
+
+// show video
+
+
+
+
+// *************************** 38-2 How Browser works, DOM tree, Render Tree
+
+
+
+/* 
+Browser কী?
+-Browser হল এক ধরনের desktop software যা pc তে install করে ব্যবহার করতে হয়। 
+
+
+কোন একটা browser এ static website দেখানোর steps:
+
+-browser আমাদের html file কে একটা tree তে পরিবর্তন করে যা DOM tree 
+-html file এর উপর style দেওয়ার জন্য browser একটা style tree তৈরী করে
+-DOM tree এবং style tree মিলে তৈরি হয় reder tree যা website এর layout কে নির্দেশ করে। DOM tree / render tree তে কোন কিছু update হলে সেই অনুযায়ী re-rendering হয়
+-Render tree পাওয়ার পর সেটার উপর paint করা হয়। Re-rendering হলে re-paint (reflow) হয়
+-সবশেষে user Interface(UI) এ output টা display করা হয়
+ */
+
+
+
+
+// *************************** 38-3 JavaScript Engine V8 Internal mechanism
+
+
+
+
+// show video
+// -it interprete js code as JIT interpreter
+
+
+
+
+// *************************** 38-4 setTimeout simple Asynchronous JS using
+
+
+
+
+// synchronous: উপরথেকে নিচের দিকে দিকে sequence অনুযায়ি পড়ে পড়ে + execute করতে করতে ্কাজ করা
+
+// Asynchronous: উপরথেকে নিচের দিকে দিকে sequence অনুযায়ি পড়ে পড়ে + execute করতে করতে ্কাজ না করে বরং সাইডে চলে যায় (queue) তারপর দের setTimeout অনুযায়ী কাজ করা আর যদি setTimeout না থাকে তাহলে সবার last এ কাজ করা . example:
+/* 
+//synchronous execute
+console.log(`one`);
+console.log(`two`);
+console.log(`three`);
+
+
+//Asynchronous execute
+console.log(`a`);
+console.log(`b`);
+
+// will execute afet 5s of all stack load
+setTimeout(() => {
+    console.log(`c) setTimeout = 5000`);
+}, 5000);
+
+// will execute afet 3s of all stack load thats mean befor setTimeout 5000
+setTimeout(() => {
+    console.log(`d) setTimeout = 3000`);
+}, 3000);
+
+console.log(`e`);
+console.log(`f`); */
+
+
+
+
+// *************************** 38-5 Recognize fetch as an Asynchronous activity
+
+
+
+
+// show video
+
+
+
+
+// *************************** 38-6 setInterval and clearInterval with x++ and ++x
+
+
+
+
+// যখন কোন একটা কজ কে একটা নির্দিষ্ট সময় পর পর বার বার repeat করা লাগে তখন setInterval use হয় আর সেই repeated কাজ কে বন্ধ করার জন্য কোন শর্ত দিয়ে তার পর clearInterval use করতে হয় . setInterval without clearInterval এটাকে ভুলেও browser এ রান করা যাবে না নইলে কম্পিউটার বাতিল হয় যাবে
+
+/* 
+// examle for setInterval without clearInterval:
+console.log(1);
+console.log(2);
+
+// আর terminal এ রান করলেও যদি repeatation off করতে চাই তাহলে Ctrl + C করলেও বন্ধ হয়
+
+setInterval(() => {
+    console.log(3);
+}, 3000)
+
+console.log(4);
+console.log(5);
+
+
+// examle for setInterval with clearInterval:
+console.log(`one`);
+console.log(`two`);
+
+let counter = 0
+const setIntervalToggler = setInterval(() => {
+    counter++;
+    if (counter === 5) {
+        clearInterval(setIntervalToggler);
+    }
+    console.log(`three- ${counter}`);
+}, 2000)
+
+console.log(`four`);
+console.log(`five`); */
+
+
+
+
+// *************************** 38-7 (advanced) JavaScript event loop and concurrency
+
+
+
+
+// stack : stack হচ্ছে js code এর মধ্যের থাকা regular expression 
+// qeue : qeue হচ্ছে js code এর মধ্যের থাকা setinterval or settimeout or fetche etc relaeate expression যা  stack গুলা run comlete হবার পরে interval অনুযায়ী run হয়
+
+
+// show video
+
+
+
+
+// *************************** 38-8 Integrate chrome devtool console with VS Code
+
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+
+/* 
+-fetch বা এরকম অনেক ফাংশান আছে যারা terminal এ কাজ করেনা
+-vs code এর ভিতরের run and debug option এর ভিতরে ঢুকলে debugg console নামের যে option আছে সেটা হুবহু browser এর console panel এর মত
+ */
+
+// console.log("---------------------------special note---------------------------");
+
+
+
+// *************************** 38-9 Module summary and HTTP layers
+
+
+
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module : 39  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+
+
+// *************************** 39-1 Module Overview, BOM vs DOM, Browser API
+
+
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+/* 
+1) javascript এর মাঝে কিছু কিছু জিনিস এটা direct access able but কিছু জিনিস আছে যা সরাসরি html এর সাথে সম্পর্কিত অর্থাৎ html + js file linked না থাকলে কাজ করবে না বা error দেখাবে। এদের মাঝে,
+
+-fetch
+-document. -------- দিয়ে যে কোন কিছুই 
+ইত্যাদে।
+
+
+2) third party API এর মত (placeholder,randomuser etc) browser এর মাঝেও কিছু API (session / local storage etc.) থাকে
+*/
+// console.log("---------------------------special note---------------------------");
+
+/* 
+const name = 15;
+const student = {
+    name: 'Jolil',
+    friend: 'borsha',
+    job: 'Business',
+    makeMovie: function (name) {
+        console.log(name);
+    }
+};
+
+student.makeMovie('Din raat'); // as a fresh not related to dom
+
+// document.getElementById('name'); // related to dom
+ */
+
+
+
+
+
+// *************************** 39-2 Browser alert, confirm, prompt with examples
+
+
+
+// liked with DOM
+
+
+
+// console.log("---------------------------special note---------------------------");
+/* 
+-alert() dont take any Boolean value as return from users just show a banner 
+-confirm() take Boolean value as return from users and show a banner 
+-prompt() take string value as return from users and set it in any variable
+ */
+// console.log("---------------------------special note---------------------------");
+
+/* 
+console.log('i am here');
+
+alert('Ma is coming!!'); // to creat an illusion like modal
+
+const maComing = () => {
+    alert('Ammu is coming. Open the book');
+}
+
+const askPicnic = () => {
+    const response = confirm('Are you going to picnic?');
+    console.log(response);
+    if (response === true) {
+        alert('amake fee ta bKash kore de');
+    } else {
+        console.log('DGM !!! Door e giya mor!!!');
+    }
+}
+
+const askName = () => {
+    const name = prompt('What is your name?');
+    if (name) {
+        console.log(name)
+    }
+}
+*/
+
+
+
+
+
+// *************************** 39-3 Location , Url Parts, Query String, Href, Hash, Assign, Reload-3.mp4
+
+
+
+/* 
+// visit : `https: //www.examples.org:8080/foo/bar?q=baz#bang`
+
+here,
+-address bar(where website address is writen in the browser)
+-`https: //` : protocol
+-`www` : subdomain
+-`examples.org` : domain name
+-`8080` : prot or রাস্তা বা দরজা
+-`https: //www.examples.org` : origin
+-`https: //www.examples.org:8080/foo/bar` : path name
+-`q=baz` : search
+-`#bang` : hash
+
+নিচের command গুলার সাহায্যে আমরা চাইলে browser এর console এ লিখে লিখে অনেক কাজ করা যায়,
+
+- 
+*/
