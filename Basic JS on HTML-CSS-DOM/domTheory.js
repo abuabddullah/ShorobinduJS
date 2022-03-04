@@ -3247,6 +3247,15 @@ const askName = () => {
 
 
 
+
+
+// console.log("---------------------------special note---------------------------");
+
+
+// study source: https://developer.mozilla.org/en-US/docs/Web/API/History_API
+
+
+
 /* 
 // visit : `https: //www.examples.org:8080/foo/bar?q=baz#bang`
 
@@ -3263,5 +3272,275 @@ here,
 
 নিচের command গুলার সাহায্যে আমরা চাইলে browser এর console এ লিখে লিখে অনেক কাজ করা যায়,
 
-- 
+
+// visit : `https: //www.examples.org:8080/foo/bar?q=baz#bang`
+
+`
+location // to see the link details in console
+location.ancestorOrigins
+
+location.assign(`www.programming-hero.com`) // to change location by assigning new location
+
+location.hash // to change the section id of a DOM
+
+location.href // to have the full url in console
+location.href = `www.programming-hero.com` // to change location by setting new href
+
+location.origin
+location.pathname
+location.port
+location.reload() // to reload the link
+location.replace()
+
+visit: `'https://www.youtube.com/watch?v=BJG3RdnyFYo&t=120s'`
+location.search // open any youtube video "location.search" will give u the search key if multiple search key available the they will be attached with "&"
+
+location.toString()
+location.valueOf()
+location.host
+location.hostname
+`
 */
+// console.log("---------------------------special note---------------------------");
+
+
+
+
+/* 
+const refreshPage = () => {
+    location.reload();
+}
+const visitPH = () => {
+    location.assign('https://web.programming-hero.com/');
+} */
+
+
+
+
+
+
+// *************************** 39-4 History api to navigate back, forward, go, history length
+
+
+
+
+
+
+// যদি একাধিক tab or webpage এ visit করা হয়  নিচের command গুলার সাহায্যে আমরা চাইলে browser এর console এ লিখে লিখে সেই page গুলাকে access করতে পারি
+
+/* 
+history.back() // to move to the previous page
+history.forward() // to move to the previous backed page
+
+history.go() || history.go(0) // to reload current page
+history.go(-1) // To move back one page (the equivalent of calling back()):
+window.history.go(1) // To move forward a page, just like calling forward():
+
+history.length // to see the total page visited
+
+
+// console.log("---------------------------special note---------------------------");
+
+যখন আমরা কোন website এ লগিন করি তখন ২ ধরনের কাজ হয়।
+-sign in for new user এ click করলে আমাদের নতুন একটা web page এ নিয়ে যায় আর যেখানে থেকে এই sign in page এ আসলাম সেটার একটা record browser রেখে দেয় (mostly used)
+
+-location change করে দেয়
+
+// console.log("---------------------------special note---------------------------");
+
+
+*/
+
+
+
+
+
+// *************************** 39-5 (advanced) Cookies, dev tool application tab, get cookie value
+
+
+
+
+
+/* 
+source for study : browser API cockies
+
+যখন আমরা কোন website visit করি তখন সেই site আমাদের সম্পর্কে কিছু ডাটা নির্দিষ্ট সময় বা সারাজীবনের জন্য নিজেদের কাছে রেখে দেয় যাকে cockies বলে। নিচের command গুলার সাহায্যে আমরা চাইলে browser এর console এ লিখে লিখে সেই গুলাকে access করতে পারি 
+
+
+// সব গুলা Cookies এর নাম আর তাদের ভেলুকে পাবার জন্য
+const allCookies = document.cookie
+console.log(allCookies)
+
+const arrayOfCookies = allCookies.split(';')
+console.log(arrayOfCookies)
+
+arrayOfCookies.forEach(attachedPairOfCookie => {
+    console.log(attachedPairOfCookie) 
+    
+    const splitedPairOfCookie = attachedPairOfCookie.split('=')
+    console.log(splitedPairOfCookie)
+    
+    const cookieName = splitedPairOfCookie[0]
+    const cookieValue = splitedPairOfCookie[1]
+    console.log(`${cookieName} : ${cookieValue}`)   
+    
+    
+    // inshort way to access cookie value
+    // const cookieName = attachedPairOfCookie.split('=')[0]
+    // const cookieValue = attachedPairOfCookie.split('=')[1]
+    // console.log(`${cookieName} : ${cookieValue}`)
+})
+
+
+
+
+// কোন নির্দিষ্ট Cookies এর ভেলু পাবার জন্য ফাংশন হবে,
+
+const getCookie = (cookieName) => {
+    const cookie = document.cookie
+    const arrayOfCookies = allCookies.split('; ')
+    arrayOfCookies.forEach(attachedPairOfCookie => {
+        const splitedPairOfCookie = attachedPairOfCookie.split('=')
+        
+        const searchedCookieName = splitedPairOfCookie.includes(cookieName);
+        if(searchedCookieName){
+            const cookieValue = splitedPairOfCookie[1]
+            return cookieValue
+        }
+    })
+}
+*/
+
+
+
+
+
+
+// *************************** 39-6 local storage, session storage, storage info in browser storage
+
+
+
+
+
+
+// console.log("---------------------------special note---------------------------");
+/* 
+যখন আমরা কোন website visit করি তখন সেই site আমাদের সম্পর্কে কিছু ডাটা cockies এর মত করে নির্দিষ্ট সময় বা সারাজীবনের জন্য নিজেদের কাছে রেখে দেয়
+
+local storage : permanent কিছু information store করে রাখে দেয়
+session storage : temporary কিছু information store করে রাখে দেয়
+
+নিচের command গুলার সাহায্যে আমরা চাইলে browser এর console এ লিখে লিখে সেই গুলাকে access করতে পারি 
+
+sessionStorage // to see session storage
+sessionStorage.setItem('amarItem','amarItemএরValue') // to set storage item applicalbel for local storage also
+sessionStorage.getItem('amarItem') // to see a specific storage item applicalbel for local storage also
+sessionStorage.amarItem // to see a specific storage item applicalbel for local storage also
+
+
+// for any github to edit or add any information in local storage
+localStorage // to see local storage
+localStorage.getItem('anyStorageNameInLocalStorage') // to see details of any specific storage 
+let jsonData = localStorage.getItem('anyStorageNameInLocalStorage') // to fix a variable for that specific storage
+jsonData // to see the variable of storage
+parseJsonData = JSON.parse(jsonData) // to parse the variable of storage
+parseJsonData // to see the variable of storage in js object format
+parseJsonData.newProp1 = 'newValue1' // to add new property in storage
+parseJsonData.newProp2 = 'newValue2' // to add new property in storage
+parseJsonData  // to see update of the variable of storage in js object format
+const stringifyparseJsonData = JSON.stringify(parseJsonData) // to stringify the variable of storage in JSON format
+stringifyparseJsonData  // to see the variable of storage in JSON format
+localStorage.setItem('feature-callout:codespaces_code_tab',stringifyparseJsonData) // to set stringifyparseJsonData as value storage item in JSON format
+localStorage.getItem('feature-callout:codespaces_code_tab') // to see the value of storage item in JSON format
+
+
+
+
+*/
+
+
+
+
+
+
+
+// *************************** 39-7 Dynamically set and read from local, session storage
+
+
+// document.body.contentEditable = true;
+
+
+
+
+
+const displayProduct = name => {
+    const ul = document.getElementById('products');
+    const li = document.createElement('li');
+    li.innerText = name;
+    ul.appendChild(li);
+}
+
+
+const getCart = () => {
+    const cart = localStorage.getItem('cart');
+    let cartObj;
+    if (cart) {
+        cartObj = JSON.parse(cart);
+    } else {
+        cartObj = {};
+    }
+    return cartObj;
+}
+
+
+const addProductToCart = name => {
+    const cart = getCart();
+    if (cart[name]) {
+        cart[name] = cart[name] + 1;
+    } else {
+        cart[name] = 1;
+    }
+    const cartStringified = JSON.stringify(cart);
+    localStorage.setItem('cart', cartStringified);
+}
+
+
+
+const displayLocalStorageCart = () => {
+    const cart = getCart();
+    for (const name in cart) {
+        displayProduct(name);
+    }
+}
+
+
+const addItem = () => {
+    const nameField = document.getElementById('product-name');
+    const name = nameField.value;
+    if (!name) {
+        return;
+    }
+    // display in the ui
+    displayProduct(name);
+
+    // add to local storage
+    addProductToCart(name);
+
+    //clear
+    nameField.value = '';
+}
+
+
+const placeOrder = () => {
+    document.getElementById('products').textContent = '';
+    localStorage.removeItem('cart');
+}
+
+displayLocalStorageCart();
+
+
+
+
+
+
+// *************************** 39-9 Module Summary, ContentEditable, chrome restart
