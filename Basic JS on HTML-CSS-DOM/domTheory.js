@@ -3467,12 +3467,11 @@ localStorage.getItem('feature-callout:codespaces_code_tab') // to see the value 
 // *************************** 39-7 Dynamically set and read from local, session storage
 
 
-// document.body.contentEditable = true;
 
 
 
 
-
+/* 
 const displayProduct = name => {
     const ul = document.getElementById('products');
     const li = document.createElement('li');
@@ -3536,11 +3535,90 @@ const placeOrder = () => {
     localStorage.removeItem('cart');
 }
 
-displayLocalStorageCart();
+displayLocalStorageCart(); */
 
 
+
+
+
+//MY STRUCTURE
+const addItem = () => {
+
+
+    // step-1 : get the product name from user
+    let productNameInputTag = document.getElementById('product-name')
+    let productName = productNameInputTag.value
+    productNameInputTag.value = ''
+
+
+    // step-2 : error handleing of product name from user
+    if (!isNaN(productName)) {
+        alert(`plz enter valid product name`)
+        return
+    }
+
+
+    // step-3 : get the product name in the ul
+    let ulOfProducts = document.getElementById('products')
+    let liOfProduct = document.createElement('li')
+    liOfProduct.innerHTML = productName
+    ulOfProducts.appendChild(liOfProduct)
+
+
+    // step-4 : check or creat does the side have any cartStore earlied.
+    let cartInLocalStorage = localStorage.getItem("cart")
+    let objFormatOFCart;
+
+    cartInLocalStorage ? objFormatOFCart = JSON.parse(cartInLocalStorage) : objFormatOFCart = {}
+
+    // inbroad 
+    // if (cartInLocalStorage) {
+    //     objFormatOFCart = JSON.parse(cartInLocalStorage)
+    // } else {
+    //     objFormatOFCart = {}
+    // }
+
+
+    // step-5 : add item in the cart of the same name inserted by user
+    if (objFormatOFCart[productName]) {
+        objFormatOFCart[productName] += 1
+    } else {
+        objFormatOFCart[productName] = 1
+    }
+
+    stringifiedObjOfCart = JSON.stringify(objFormatOFCart)
+    localStorage.setItem('cart', stringifiedObjOfCart)
+    console.log(localStorage.getItem("cart"));
+}
+
+
+// step-6 : get the product name in the ul while reload
+const getProductInUI = () => {
+    let cartInLocalStorage = localStorage.getItem("cart")
+    let objFormatOFCart;
+    objFormatOFCart = JSON.parse(cartInLocalStorage)
+
+    for (const productName in objFormatOFCart) {
+
+        let ulOfProducts = document.getElementById('products')
+        let liOfProduct = document.createElement('li')
+        liOfProduct.innerHTML = productName
+        ulOfProducts.appendChild(liOfProduct)
+    }
+}
+getProductInUI()
+
+
+// step-7 : clear ui and local storage during ordering 
+const placeOrder = () => {
+    document.getElementById('products').textContent = '';
+    localStorage.removeItem('cart');
+}
 
 
 
 
 // *************************** 39-9 Module Summary, ContentEditable, chrome restart
+
+
+// document.body.contentEditable = true;
