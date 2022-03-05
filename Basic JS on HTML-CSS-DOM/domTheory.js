@@ -3540,7 +3540,7 @@ displayLocalStorageCart(); */
 
 
 
-
+/* 
 //MY STRUCTURE
 const addItem = () => {
 
@@ -3614,7 +3614,7 @@ const placeOrder = () => {
     document.getElementById('products').textContent = '';
     localStorage.removeItem('cart');
 }
-
+ */
 
 
 
