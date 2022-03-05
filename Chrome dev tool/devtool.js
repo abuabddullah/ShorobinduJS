@@ -46,3 +46,32 @@
 
 
 // ******************************************* 40-3 Console tab, preserve log, log levels, console api
+
+
+
+
+
+// visit by search : "software engineering log levels"
+// visit by search : "chrome devtool console log api"
+
+
+/* 
+// in the browser console special methods: 
+-different log levels : console.assert(error, warning, info, debug, verbose ... etc ...)
+
+-monitor(functionName) // to monitor the function
+-unmonitor(functionName) // to stop monitoring the function
+
+-monitorEvents(variableOfAny) // to monitor all the events with a variable
+-monitorEvents(variableOfAny,['click','mouseout']) // to monitor specific events with a variable
+-unmonitorEvents(variableOfAny) // to stop monitoring the events with a variable
+
+-getEventListeners(variableOfAny) // to see the no of eventListeners used on the variable
+
+-copy() // to copy the console
+-clear() // to clear the console
+*/
+
+
+// in the file dev tools
+-console.count("the function is clicked for") // need to use in the function of the js file 
