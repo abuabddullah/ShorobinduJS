@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40_5-1 Practice Browser api with checklist and a must work</title>
+
+    <!-- bs5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <style>
+        .cusorPointer {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <main class="m-5">
+        <h1 class=" text-center">40_5-1 Practice Browser api with checklist and a must work</h1>
+
+        <!-- task one -->
+        <small>১. setTimeout এর ভিতরে একটা কিছু কনসোল লগ করবে যেটা সাড়ে তিন সেকেন্ড পরে আউটপুট দেখাবে। <br> ,<br>
+            (plz check console) </small>
+        <br><br>
+
+        <!-- task two -->
+        <small>২. prompt দিয়ে ইউজারের কাছ থেকে একটা সংখ্যা নাও। সেটার সাথে ২০০যোগ করো। যোগ করতে গেলে parse করা লাগলে
+            সেটা করো। তারপর সেই রেজাল্টকে alert দিয়ে আউটপুট দেখাও <br> ,<br>
+            (plz uncomment the codes)
+        </small>
+        <br><br>
+
+        <!-- task three -->
+        <small>৩. ব্রাউজারে একটা confirm করে জিজ্ঞেস করো তুমি কি তোমার ওয়েবসাইট এর লোকেশন দেখতে চাও। যদি বলে দেখতে চাই
+            তাহলে সেই ওয়েবসাইট এর লোকেশন এর href জিনিসটা কনসোল লগ করে দেখাও <br> ,<br>
+            (plz uncomment the codes)
+        </small>
+        <br><br>
+
+        <!-- task four -->
+        <small>৪. Cookies কি জিনিস। এইটা দিয়ে কি করা হয়। সেটা ইংরেজিতে ৫ থেকে ৭ লাইনের মধ্যে লিখে ফেলো।
+            <ul id="coockies">
+                <li></li>
+            </ul>
+        </small>
+        <br><br>
+
+        <!-- task five -->
+        <small>৫. local storage আর session storage এর মধ্যে তিনটা পার্থক্য লিখে ফেলো। ইংরেজিতে। (নিজের মতো করে লিখবে )
+            <br> ,<br>
+            <strong>localStorageNotes</strong>
+            <ul id="localStorageNotes">
+                <li></li>
+            </ul>
+            <strong>sessionStorage</strong>
+            <ul id="sessionStorage">
+                <li></li>
+            </ul>
+        </small>
+        <br><br>
+
+        <!-- task six -->
+        <small>৬. জাভাস্ক্রিপ্ট এর কোড কিভাবে ব্রাউজারের মধ্যে রান করে। দরকার হলে গুগল বা ইউটিউবে সার্চ দিয়ে একটু ভালো
+            করে দেখে রাখো।
+
+            <section class="shadow m-5 p-5 overflow-auto" id="task10OutputInHTML">
+                <div class="row">
+                    <div class="col-md-6 text-center mb-5">
+                        <img src="./download.jfif" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <ul id="jsWorks" class=" list-unstyled">
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </small>
+        <br><br>
+
+        <!-- task seven -->
+        <small>৭. জাভাস্ক্রিপ্ট এর কোন কোন জিনিস asynchronous সেটার একটা লিষ্ট গুগলে সার্চ দিয়ে বের করে ফেলো। এবং এই
+            asynchronous বলতে কি বুঝায় সেটাও দেখে রাখো।
+            <ul id="asynchronous">
+                <li></li>
+            </ul>
+        </small>
+        <br><br>
+
+        <!-- task eight -->
+        <small>৮. event loop লুপ কি জিনিস। এই রিলেটেড পুরা জিনিসটা আজকে অনেকেই বুঝবে না। তাও আরেকবার দেখে রাখবে। <br>
+            ,<br>
+            (plz check console)
+
+            <section class="shadow m-5 p-5 overflow-auto" id="task10OutputInHTML">
+                <div class="row">
+                    <div class="col-md-6 text-center mb-5">
+                        <img src="./0_TFNP5xrCj3wT8eHO.gif" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+
+
+                        <div class="shadow p-4 mb-5 text-success">
+
+                            console.log(`start`); <br>
+                            setTimeout(() => {
+                            console.log(`Timeout`);
+                            }, 3500); <br>
+                            Promise.resolve(`Promise!`)
+                            .then(res => console.log(res)) <br>
+                            console.log(`end`);</div>
+
+                        <ul id="eventLoops" class=" list-unstyled">
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </small>
+        <br><br>
+
+        <!-- task eight -->
+        <small>৯. একটা সিম্পল ওয়েবসাইট বানাও। সেখানে দুইটা ইনপুট ফিল্ড থাকবে। একটা ফিল্ডে লিখবে প্রোডাক্ট এর নাম। আর
+            সেকেন্ড ইনপুট ফিল্ডে থাকবে প্রোডাক্ট এর প্রাইস। তারপর একটা বাটন থাকবে। সেই বাটনে চাপ দিলে। প্রোডাক্ট এর নাম
+            আর দাম ব্রাউজারের লোকাল স্টোরেজে সেইভ হয়ে যাবে। এবং চাইলে একাধিক প্রোডাক্ট এবং সেটার দাম লোকাল স্টোরেজে সেইভ
+            করতে পারবে।<br><br>
+
+            ১০. যখন একটা প্রোডাক্ট এবং দাম লোকাল স্টোরেজে সেভ করবে। সেটা ওয়েবসাইট এ ও দেখাবে। এমনকি যদি ওয়েবসাইট নতুন
+            করে লোড করে করে তাহলেও লোকাল স্টোরেজে এ সেভ হয়ে থাকা ডাটা থেকে বের করে এনে ওয়েবসাইট এ দেখাবে।
+
+            <section class="shadow m-5 p-5 overflow-auto" id="task10OutputInHTML">
+
+                <div id="inputData">
+                    <div class="input-group mb-3">
+                        <input id="productNameField" type="text" class="form-control" placeholder="Product Name"
+                            aria-label="Product Name">
+                        <button id="addBtn" class="btn btn-block btn-success input-group-text cusorPointer">Add to
+                            Cart</button>
+                        <input id="productPriceField" type="text" class="form-control" placeholder="Product Price"
+                            aria-label="Product Price">
+                    </div>
+                </div>
+                <div id="cartDetails">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Product Price</th>
+                                <th scope="col">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr>
+                                <!-- <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>
+                                    <button id="removeBtn" class="btn btn-outline-danger">
+                                        remove
+                                    </button>
+                                </td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="orderNow" class="text-center">
+                    <button id="orderBtn" class="btn btn-block btn-success">Order Now</button>
+                </div>
+
+            </section>
+
+        </small>
+        <br><br>
+
+    </main>
+
+
+    <script>
+
+
+        // < !--task one-- >
+        /*   const function2 = () => {
+              setTimeout(() => {
+                  console.log(`Hello its me the annomious function3 inside the function2`);
+              }, 3500);
+          }
+  
+          const function1 = () => {
+              console.log(`Hello its me function1 starting with hello`);
+              function2();
+              console.log(`Hello its me function1 ending with Bye`);
+          }
+          function1(); */
+
+
+        // <!-- task two -->
+        /* let aNumberIs = prompt(`Please enter a number`);
+        let theNumberIs = parseInt(aNumberIs);
+        let theResultIs = theNumberIs + 200;
+        alert(`task two : The result is ${theResultIs}`); */
+
+
+        // <!-- task three -->
+        /* let aQuestionIs = confirm(`Do you want to see my website`);
+        if (aQuestionIs) {
+            console.log(location.href)
+        }
+        else {
+            console.log(`You are not interested in my website`);
+        } */
+
+
+        // <!-- task four -->
+        let coockies = document.getElementById(`coockies`);
+        coockies.innerHTML = `
+        <li>can be sent to server site</li>
+        <li>Expires depending on term and condito / manually</li>
+        <li>Send with request of user</li>
+        <li>maximum size is 4kb</li>
+        `;
+
+
+        // <!-- task five -->
+        let localStorageNotes = document.getElementById(`localStorageNotes`);
+        localStorageNotes.innerHTML = `
+        <li>cannot be sent to server site</li>
+        <li>Expires manually</li>
+        <li>accessible from any window</li>
+        <li>maximum size is 50mb</li>
+        `;
+        let sessionStorage = document.getElementById(`sessionStorage`);
+        sessionStorage.innerHTML = `
+        <li>cannot be sent to server site</li>
+        <li>Expires on closing tab</li>
+        <li>accessible from specific tab</li>
+        <li>maximum size is 50mb</li>
+        `;
+
+
+        // <!-- task six -->
+        let jsWorks = document.getElementById(`jsWorks`);
+        jsWorks.innerHTML = `
+                <li>-- first v8 engine parse i.e checks the code from starting to end if any error happens returs with alert</li>
+                <li>-- after successive persing it turns into Abstract syntax tree (AST)</li>
+                <li>-- then the Ast is sent for conveting into machine readable code after that the code runs in browser</li>
+                `;
+
+
+        // <!-- task seven -->
+        let asynchronous = document.getElementById(`asynchronous`);
+        asynchronous.innerHTML = `
+                <li>-- Callback functions</li>
+                <li>-- setTimeout() functions</li>
+                <li>-- setInterval(); functions</li>
+                <li>-- fetching</li>
+                `;
+
+
+        // <!-- task eight -->
+        let eventLoops = document.getElementById(`eventLoops`);
+        eventLoops.innerHTML = `
+                <li>-- Normally js use to add the codes in the call stack field and executes but any asynchronise functions comes then</li>
+                <li>-- it sends them in the WEB API for its functioning after that</li>
+                <li>-- those async functions are sent to the micro or macro qeue depending on its requirement after that</li>
+                <li>-- when all the execution are clear in the stack then first event loops starts to executing from the micro qeue and last micro qeue</li>
+                `;
+
+
+
+
+
+    </script>
+
+    <script>
+
+        // < !--task 9 and 10-- >
+        // get all the global variables
+        let productNameField = document.getElementById(`productNameField`);
+        let productPriceField = document.getElementById(`productPriceField`);
+        let addBtn = document.getElementById(`addBtn`);
+        let tableBody = document.getElementById(`tableBody`);
+        let removeBtn = document.getElementById(`removeBtn`);
+
+        let slCount = 1;
+
+        // add event listener to the add button
+        addBtn.addEventListener('click', () => {
+
+            // step-1 : get the product name from user
+            let productName = productNameField.value;
+            let productPriceSring = productPriceField.value;
+            let productPrice = parseInt(productPriceSring);
+
+            // clean the field
+            productNameField.value = '';
+            productPriceField.value = '';
+
+
+            // step-2 : error handleing of product name from user
+            if (productName == '' || productPrice == '' || !isNaN(productName) || isNaN(productPrice) || productPrice < 0) {
+                alert(`Please enter the product name and price`);
+                return;
+            }
+
+
+            // step-3 : get the product name in the ul
+            let tr = document.createElement(`tr`);
+            tr.innerHTML = `
+                                <th scope="row">${slCount++}</th>
+                                <td>${productName}</td>
+                                <td>${productPrice}</td>
+                                <td>
+                                    <button id="removeBtn" class="btn btn-outline-danger">
+                                        remove
+                                    </button>
+                                </td>            
+            `;
+            tableBody.appendChild(tr);
+
+
+            // step-4 : check or creat does the side have any
+            let jsonCartInLocalStorage = localStorage.getItem("cart")
+            let objFormatOfCart;
+
+            if (jsonCartInLocalStorage) {
+                objFormatOfCart = JSON.parse(jsonCartInLocalStorage);
+            } else {
+                objFormatOfCart = {};
+            }
+
+
+            // step-5 : add item in the cart of the same name
+            if (objFormatOfCart[productName]) {
+                objFormatOfCart[productName] += productPrice;
+            } else {
+                objFormatOfCart[productName] = productPrice;
+            }
+
+
+            stringifiedObjOfCart = JSON.stringify(objFormatOfCart)
+            localStorage.setItem('cart', stringifiedObjOfCart)
+            console.log(localStorage.getItem("cart"));
+
+        })
+
+        // step-6 : get the product name in the ul while reload
+        // step-7 : clear ui and local storage during ordering
+
+
+    </script>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
