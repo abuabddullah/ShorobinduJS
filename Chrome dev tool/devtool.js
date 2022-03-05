@@ -73,5 +73,25 @@
 */
 
 
+
+
+/* 
 // in the file dev tools
--console.count("the function is clicked for") // need to use in the function of the js file 
+-console.count("the function is clicked for") // need to use in the function of the js file  */
+
+
+
+
+
+// ******************************************* 40-4 sources, tab, break point, call stack, event, break
+
+
+
+
+/* 
+// all shortcuts for source tab of chrome and 
+-Ctrl+G // to go to the line no of code
+-Ctrl+Shift+O // to see the list of funtions in the file and go to the required line
+-Esc // to open console tab bellow the sources tab
+
+*/
