@@ -161,13 +161,13 @@
                         <tbody id="tableBody">
                             <tr>
                                 <!-- <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>
-                                    <button id="removeBtn" class="btn btn-outline-danger">
-                                        remove
-                                    </button>
-                                </td> -->
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>
+                                                <button id="removeBtn" class="btn btn-outline-danger">
+                                                    remove
+                                                </button>
+                                            </td> -->
                             </tr>
                         </tbody>
                     </table>
@@ -181,25 +181,30 @@
         </small>
         <br><br>
 
+        <!-- task eleven -->
+        <small>
+            ১১. stackoverflow নামে একটা ওয়েবসাইট আছে। সেখানে গিয়ে একাউণ্ট খুলবে। এবং মিনিমাম ৩০ মিনিট সেখানে স্পেন্ড
+            করবে। দেখবে কিভাবে কি উত্তর দেয়।
+        </small>
+        <br><br>
+
     </main>
 
 
     <script>
-
-
         // < !--task one-- >
         /*   const function2 = () => {
-              setTimeout(() => {
-                  console.log(`Hello its me the annomious function3 inside the function2`);
-              }, 3500);
-          }
-  
-          const function1 = () => {
-              console.log(`Hello its me function1 starting with hello`);
-              function2();
-              console.log(`Hello its me function1 ending with Bye`);
-          }
-          function1(); */
+            setTimeout(() => {
+                console.log(`Hello its me the annomious function3 inside the function2`);
+            }, 3500);
+        }
+        
+        const function1 = () => {
+            console.log(`Hello its me function1 starting with hello`);
+            function2();
+            console.log(`Hello its me function1 ending with Bye`);
+        }
+        function1(); */
 
 
         // <!-- task two -->
@@ -273,22 +278,16 @@
                 <li>-- those async functions are sent to the micro or macro qeue depending on its requirement after that</li>
                 <li>-- when all the execution are clear in the stack then first event loops starts to executing from the micro qeue and last micro qeue</li>
                 `;
-
-
-
-
-
     </script>
 
     <script>
-
         // < !--task 9 and 10-- >
         // get all the global variables
         let productNameField = document.getElementById(`productNameField`);
         let productPriceField = document.getElementById(`productPriceField`);
         let addBtn = document.getElementById(`addBtn`);
         let tableBody = document.getElementById(`tableBody`);
-        let removeBtn = document.getElementById(`removeBtn`);
+        let orderBtn = document.getElementById(`orderBtn`);
 
         let slCount = 1;
 
@@ -296,7 +295,7 @@
         addBtn.addEventListener('click', () => {
 
             // step-1 : get the product name from user
-            let productName = productNameField.value;
+            let productName = (productNameField.value).toUpperCase();
             let productPriceSring = productPriceField.value;
             let productPrice = parseInt(productPriceSring);
 
@@ -306,7 +305,8 @@
 
 
             // step-2 : error handleing of product name from user
-            if (productName == '' || productPrice == '' || !isNaN(productName) || isNaN(productPrice) || productPrice < 0) {
+            if (productName == '' || productPrice == '' || !isNaN(productName) || isNaN(productPrice) ||
+                productPrice < 0) {
                 alert(`Please enter the product name and price`);
                 return;
             }
@@ -319,7 +319,7 @@
                                 <td>${productName}</td>
                                 <td>${productPrice}</td>
                                 <td>
-                                    <button id="removeBtn" class="btn btn-outline-danger">
+                                    <button onclick="removeBtn()" class="btn btn-outline-danger">
                                         remove
                                     </button>
                                 </td>            
@@ -348,14 +348,78 @@
 
             stringifiedObjOfCart = JSON.stringify(objFormatOfCart)
             localStorage.setItem('cart', stringifiedObjOfCart)
-            console.log(localStorage.getItem("cart"));
 
         })
 
         // step-6 : get the product name in the ul while reload
-        // step-7 : clear ui and local storage during ordering
+        const getProductInUi = () => {
+            let jsonCartInLocalStorage = localStorage.getItem("cart")
+            let objFormatOfCart;
+            objFormatOfCart = JSON.parse(jsonCartInLocalStorage);
+            tableBody.innerHTML = ''
+            for (const productName in objFormatOfCart) {
+                let productPrice = objFormatOfCart[productName]
+
+                let tr = document.createElement(`tr`);
+                tr.innerHTML = `
+                                <th scope="row">${slCount++}</th>
+                                <td>${productName}</td>
+                                <td>${productPrice}</td>
+                                <td>
+                                    <button onclick="removeBtn()" class="btn btn-outline-danger">
+                                        remove
+                                    </button>
+                                </td>            
+            `;
+                tableBody.appendChild(tr);
+                // console.log(productName, objFormatOfCart[productName]);
+            }
+
+        }
+        getProductInUi()
 
 
+        // step-7 : clear ui and local storage during ordering 
+        orderBtn.addEventListener('click', () => {
+            tableBody.textContent = '';
+            localStorage.removeItem('cart');
+        })
+
+
+
+        // step-8 : clearing single item ui and local storage during removing
+        // const removeBtn = () => {
+
+        //     let theProductToRemove = parseInt(event.target.parentElement.parentElement.children[1].textContent)
+        //     let priceToMinus = parseInt(event.target.parentElement.parentElement.children[2].textContent)
+
+
+        //     // get the cart of json format
+        //     let jsonCartInLocalStorage = localStorage.getItem("cart")
+        //     let objFormatOfCart = JSON.parse(jsonCartInLocalStorage);
+
+
+        //     // get the product in obj and update local storage price while removing 
+        //     for (const productName in objFormatOfCart) {
+        //         let productPrice = objFormatOfCart[productName]
+        //         let updatePriceAfterRemoving;
+        //         if (productName == theProductToRemove) {
+        //             let updatePriceAfterRemoving = productPrice - priceToMinus
+        //         }
+
+        //         if (updatePriceAfterRemoving < 0) {
+        //             updatePriceAfterRemoving = 0
+        //         }
+
+        //         objFormatOfCart[productName] = updatePriceAfterRemoving
+        //     }
+        //     stringifiedObjOfCart = JSON.stringify(objFormatOfCart)
+        //     localStorage.setItem('cart', stringifiedObjOfCart)
+
+
+        //     // remove the row from ui
+        //     event.target.parentElement.parentElement.remove()
+        // }
     </script>
 
 
@@ -363,8 +427,8 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
