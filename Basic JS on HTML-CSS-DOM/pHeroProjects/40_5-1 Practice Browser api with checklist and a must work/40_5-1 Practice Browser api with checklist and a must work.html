@@ -388,38 +388,36 @@
 
 
         // step-8 : clearing single item ui and local storage during removing
-        // const removeBtn = () => {
+        const removeBtn = () => {
 
-        //     let theProductToRemove = parseInt(event.target.parentElement.parentElement.children[1].textContent)
-        //     let priceToMinus = parseInt(event.target.parentElement.parentElement.children[2].textContent)
-
-
-        //     // get the cart of json format
-        //     let jsonCartInLocalStorage = localStorage.getItem("cart")
-        //     let objFormatOfCart = JSON.parse(jsonCartInLocalStorage);
+            // STEP-0: get the product name and product price of the removed row
+            let productNameOfRemovedRow = event.target.parentElement.parentElement.children[1].textContent;
+            // let productPriceOfRemovedRow = event.target.parentElement.parentElement.children[2].textContent;
 
 
-        //     // get the product in obj and update local storage price while removing 
-        //     for (const productName in objFormatOfCart) {
-        //         let productPrice = objFormatOfCart[productName]
-        //         let updatePriceAfterRemoving;
-        //         if (productName == theProductToRemove) {
-        //             let updatePriceAfterRemoving = productPrice - priceToMinus
-        //         }
-
-        //         if (updatePriceAfterRemoving < 0) {
-        //             updatePriceAfterRemoving = 0
-        //         }
-
-        //         objFormatOfCart[productName] = updatePriceAfterRemoving
-        //     }
-        //     stringifiedObjOfCart = JSON.stringify(objFormatOfCart)
-        //     localStorage.setItem('cart', stringifiedObjOfCart)
+            // STEP-I: REMOVE THE ROW FROM UI
+            event.target.parentElement.parentElement.remove()
 
 
-        //     // remove the row from ui
-        //     event.target.parentElement.parentElement.remove()
-        // }
+            // STEP-II: REMOVE THE ITEM FROM LOCAL STORAGE
+            let jsonCartInLocalStorage = localStorage.getItem("cart")
+            let objFormatOfCart = JSON.parse(jsonCartInLocalStorage);
+
+
+            // STEP-III: get the same naming prduct from local storage and minus the price
+            for (const productName in objFormatOfCart) {
+                if (productName == productNameOfRemovedRow) {
+                    delete objFormatOfCart[productName];
+                    break
+                }
+            }
+
+            // STEP-IV: set the value in the local storage
+            stringifiedObjOfCart = JSON.stringify(objFormatOfCart)
+            localStorage.setItem('cart', stringifiedObjOfCart)
+        }
+
+
     </script>
 
 
@@ -428,7 +426,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+        </script>
 </body>
 
 </html>
