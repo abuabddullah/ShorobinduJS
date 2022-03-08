@@ -168,4 +168,5 @@ console.log(name);
 function myFunction() {
   console.log("My Name"; // SyntaxError: Unexpected token ';'
 }
- */
+*/
+

@@ -3622,3 +3622,30 @@ const placeOrder = () => {
 
 
 // document.body.contentEditable = true;
+//console.table
+//console.table(data, ['name', 'age'])
+
+
+
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module 41  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+
+
+// ******************************************* 41-8 Simple Introduction to Regular expression
+
+
+
+
+
+// let text = 'regular expression is a special text string that is used to search for patterns in strings.'
+
+// const keyword = "is a"
+
+// console.log(``);
