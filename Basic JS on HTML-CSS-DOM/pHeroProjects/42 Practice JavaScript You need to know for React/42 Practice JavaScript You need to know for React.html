@@ -385,6 +385,12 @@
         console.log(myObject.name); // output: Abdur Rahman
         console.log(myObject.sister.name); // output: Sakina
 
+        // from module object এর ভিতরের property এর value কে ধরার ৩টা সূত্র আছে
+        const myVariable = 'age';
+
+        console.log(student.age); // direct by property
+        console.log(student['age']);// access via property name string 
+        console.log(student[myVariable]); // access via property name in a variable
 
     </script>
 
