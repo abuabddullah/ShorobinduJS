@@ -247,46 +247,32 @@
 
 
             <!-- task three -->
-            <small>৩.১. শূন্য প্যারামিটারওয়ালা একটা অ্যারো ফাংশন লিখবে যেটা ৯ রিটার্ন করবে।
-                <br>
-                ৩.২. এক প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন ডিক্লেয়ার করবে। এই ফাংশনের কাজ হবে যে প্যারামিটার নিবে
-                সেটাকে ১২ দিয়ে গুণ করে গুণফল রিটার্ন করবে।
-                <br>
-                ৩.৩ দুই, প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন লিখবে। এই ফাংশনের কাজ হবে যে দুইটা প্যারামিটার ইনপুট নিবে।
-                সেই দুইটা প্যারামিটারকে যোগ করে যোগফলকে চার দিয়ে ভাগ করে ভাগফল রিটার্ণ করে দাও।
-                <br>
-                ৩.৪ একাধিক লাইনওয়ালা অ্যারো ফাংশন লিখো। সেটাতে দুইটা প্যারামিটার নিবে। ওই arrow ফাংশনটা হবে অনেকগুলা
-                লাইনের। সেখানে প্রত্যেকটা ইনপুট প্যারামিটার এর সাথে ৫ যোগ করবে তারপর যোগফল দুইটাকে আবার গুণ করবে।
-                ক্যামনে করবে সেটা চিন্তা করে বের করার চেষ্টা করো। <br>
-                (plz check console) </small>
+            <small>৩. লজিক্যাল এন্ড (&&) আর লজিক্যাল or (।।) এই দুইটা সম্পর্কে হালকা ধারণা <br>
+                (previouslly discussed) </small>
             <br><br>
 
             <!-- task four -->
 
-            <small>৪. সিম্পল একটা জাভাস্ক্রিপ্ট অবজেক্ট এর কোন একটা প্রোপার্টিকে ভেরিয়েবল হিসেবে ডিক্লেয়ার করার জন্য
-                destructuring ইউজ করো। array এর destructuring করবে আর সেটা করার জন্য তুমি এরে এর সেকেন্ড পজিশন এর উপাদান
-                কে destructuring করে 'balance' নামক একটা ভেরিয়েবল এ রাখবে। <br>
+            <small>৪. JSON এর stringify এবং parse কখন কোনটা ইউজ করে <br>
                 (plz check console) </small>
             <br><br>
 
             <!-- task five -->
 
 
-            <small>৫. shorthand দিয়ে অবজেক্ট কিভাবে ডিক্লেয়ার করে, {a , b } স্টাইলে। <br>
+            <small>৫. ++, --, +, +'', +=, -= এইগুলা কি জিনিস। কোনটা দিয়া কি করে সেটা বুঝলেই হবে। তাছাড়া active = !active
+                এইটা এর মানে কি। <br>
                 (plz check console) </small>
             <br><br>
 
             <!-- task six -->
 
 
-            <small>৬. ফাংশন এর মধ্যে ডিফল্ট প্যারামিটার কিভাবে ডিক্লেয়ার করে <br>
+            <small>৬. Object.keys, Object.values জিনিসগুলা জানা থাকলেও ভালো <br>
                 (plz check console) </small>
             <br><br>
 
-            <!-- task seven -->
-            <small>৭. অপশনাল চেইনিং কি জিনিস, সেটা কখন কিভাবে ইউজ করে ? না জানলে গুগলে সার্চ দাও <br>
-                (plz check console) </small>
-            <br><br>
+
 
 
 
@@ -426,6 +412,23 @@
         let filteredArray = copyOfES6task2Adding50.filter(elem => elem > 5)
         console.log(filteredArray);
 
+        // next example
+        const numbers = [89, 35, 98, 12];
+        // spread operator
+        const newNumbers = [...numbers]; // array যেহেতু একটা non-primitive data তাই এভাবে ... নাদিয়ে করলে ভবিষয়তে যদি কোন কারনে numbers এর ভিতরে কোন পরিবর্তন আনা হয় তাহলে তা newNumbers কেউ পরিবর্তিত করে ফেলে।
+
+
+        // create a new array from an older array and add an element
+        const currentNumbers = [...numbers, 55];
+
+
+        numbers.push(99);
+        numbers.push(99);
+        numbers.push(99);
+
+        console.log(numbers); // pushed 99 3 times
+        console.log(newNumbers); // ducplicate of initial numbers by spread opt
+        console.log(currentNumbers); // copy of newNumbers but 55 added at the last
 
         console.log(`===============task three===============`);
 
@@ -473,6 +476,62 @@
         let [one, balance, three] = nicknames
         console.log("balance", balance);
 
+
+        // next example
+        // 1. array destructuring
+        const numbers = [42, 65];
+
+
+        const [x, y] = [42, 65]
+
+
+        [x, y] = numbers;
+
+        // array destructuring by function
+        function boxifyArrayMaker(num1, num2) {
+            const nums = [num1, num2];
+            return nums;
+        }
+        console.log(boxifyArrayMaker(90, 34)); // array made
+        const [first, second] = boxifyArrayMaker(90, 34);
+
+
+
+
+        const student = {
+            name: 'Salib Khan',
+            age: 32,
+            movies: ['king khan', 'Dhakar Mastan']
+        }
+
+        const [firstMovie, secondMovie] = student.movies;
+
+
+        // object destructuring
+        const { name, age } = { name: 'alu', age: 14 };
+        { name, age } = {
+            id: 12, name: 'alu', salary : 3400, age : 14
+        };
+
+        const employee = {
+            ide: 'VS Code',
+            designation: 'developer',
+            machine: 'mac',
+            languages: ['html', 'css', 'js'],
+            specification: {
+                height: 66,
+                weight: 67,
+                address: 'kumarkhali',
+                drink: 'water',
+                watch: {
+                    color: 'black', price: 500, brand: 'garmin'
+                }
+            }
+        }
+
+        const { machine, ide } = employee;
+        const { weight, address } = employee.specification;
+        const { brand } = employee?.specification?.watch;
 
         console.log(`===============task five===============`);
 
@@ -605,6 +664,64 @@
         myArray.find(elem => {
             elem % 2 ? console.log(elem) : null;
         }); // map returns an array thats why we need another var to store it
+
+
+
+
+        // next example
+        const products = [{
+            name: 'laptop',
+            price: 3200,
+            brand: 'lenovo',
+            color: 'silver'
+        },
+        {
+            name: 'phone',
+            price: 7000,
+            brand: 'iphone',
+            color: 'golden'
+        },
+        {
+            name: 'watch',
+            price: 3000,
+            brand: 'casio',
+            color: 'yellow'
+        },
+        {
+            name: 'sungalss',
+            price: 300,
+            brand: 'ray',
+            color: 'black'
+        },
+        {
+            name: 'camera',
+            price: 9000,
+            brand: 'canon',
+            color: 'gray'
+        }
+        ];
+
+        const brands = products.map(product => product.brand);
+        console.log(brands); // কোন array of object থেকে কোন নির্দিষ্ট item কে নিয়ে আরেকটা array বানানোর জন্য map use করা হয়
+        const prices = products.map(product => product.price);
+        console.log(prices);
+
+
+        products.forEach(product => console.log(product)) // কোন array of object থেকে কোন নির্দিষ্ট item কে নিয়ে কোন কিছু করতে চাইলে forEach use করা হয় এক্ষেত্রে কোন return কাজ করে না return লিখলে undefined দেখাবে
+        products.forEach(product => console.log(product.color))
+
+
+        // 3. filter
+        const cheap = products.filter(product => product.price <= 5000);
+        console.log(cheap); // কোন array of object থেকে কোন শর্তসাপেক্ষে নির্দিষ্ট item কে নিয়ে আরেকটা array বানানোর জন্য filter use করা হয়
+
+        const specificName = products.filter(p => p.name.includes('n'));
+        console.log(specificName);
+
+
+        //4. find
+        const special = products.find(p => p.name.includes('n'));
+        console.log(special); // কোন array of object থেকে কোন শর্তসাপেক্ষে নির্দিষ্ট item নিয়ে কোন কিছু করতে চাইলে find use করা হয় এটা শুধুমাত্র শর্ত পুরন করা প্রথম জিনিস্কে দিবে
 
 
 
