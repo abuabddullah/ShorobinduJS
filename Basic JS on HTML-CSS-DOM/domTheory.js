@@ -3644,8 +3644,564 @@ const placeOrder = () => {
 
 
 
-// let text = 'regular expression is a special text string that is used to search for patterns in strings.'
+/* 
+// JavaScript regex matching word in sentences
+var text = "I like cats. I really like cats. I also like dogs. Dogs and cats are pets. Approx. half of pets are cats. Approx. half of pets are dogs. Some cats are v. expensive.";
 
-// const keyword = "is a"
+var keyword = "cats";
 
-// console.log(``);
+let ifFoundItsTrue = /\. +([A-Z]([^.]|.(?! +[A-Z]))*?" + keyword + "([^.]|.(?! +[A-Z]))*?\.(?= +[A-Z]))/.test(text)
+// // console.log(ifFoundItsTrue); // huge time consuming
+
+
+// Regular expression to match at least two special characters in any order
+let spChar = '6564dg$#%564'
+let ifSpCharTrue = /(?:[^`!@#$%^&*\-_=+'\/.,]*[`!@#$%^&*\-_=+'\/.,]){2}/.test(spChar)
+// console.log(ifSpCharTrue);
+
+
+
+// Regex to validate password strength
+let passIs = 'ga5sdg2g2$$#'
+let ifStrongPass = /(?=.*[A-Z].*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8}$/.test(passIs)
+// console.log(ifStrongPass); // huge time consuming
+
+
+
+// function for Validate email address using JavaScript regular expression
+function validateEmail(elementValue){      
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(elementValue); 
+} 
+
+const myEmail = 'asifaowadud@gmail.com'
+console.log(validateEmail(myEmail));
+*/
+
+
+
+
+
+
+
+// [[[[[[[[[[[[[[[[[[[[[[[[[[Module 42  ||| 9 videos]]]]]]]]]]]]]]]]]]]]]]]]]]
+
+
+
+
+
+
+console.log(`// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[42 Practice JavaScript You need to know for React]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]`)
+
+
+
+
+
+
+
+
+console.log(`// ******************************************* প্রোগ্রামিংয়ের ছয়রত্ন কি তুমি কি জানো:`)
+
+
+
+
+
+
+
+console.log(`===============task one // ১. কিভাবে let, const দিয়ে ভেরিয়েবল লিখতে হয়,কখন কোনটা ইউজ করে তুমি কি জানো ? (plz check console)===============`);
+const myFatherIsConstant = 'He is Afzal, my father'
+console.log(myFatherIsConstant); // output: He is Afzal, my father
+let mySonIs = 'abdullah'
+console.log(mySonIs); // output: abdullah
+mySonIs = 'Abdur Rahman'
+console.log(mySonIs); // output: Abdur Rahman
+
+
+
+
+
+console.log(`===============task TWO // ২.১ কিভাবে কন্ডিশন লিখতে হয়, ছয় রকমের কন্ডিশন (>, <,===, !==,>=. <=) কোনটা কোন জিনিসের জন্য ইউজ করবে। এছাড়াও && বা ।। দিয়ে কিভাবে একাধিক কন্ডিশন এর মধ্যে দুইটাই ফুলফিল করতে হবে আবার দুইটার যেকোন একটা ফুলফিল করতে হবে, সেটা কিভাবে করবে ||||  ২.২. এক বা একাধিক কন্ডিশন দিয়ে কিভাবে if-else লিখে আবার কখন if-else-if - else লিখে। সেই রকম একটা উদারহণ চিন্তা করে তুমি লিখে ফেলো (plz check console)===============`);
+let task1Of2 = 2500;
+
+if (task1Of2 > 100 || task1Of2 < 5000 || task1Of2 >= 1000 || task1Of2 <= 5000) {
+    console.log('task 1 of 2 is true');
+} else if (typeof (task1Of2) === "number" && q) {
+    console.log('task 1 of 2 is true');
+} else {
+    console.log('task 1 of 2 is false');
+}
+
+
+
+
+console.log(`===============task three // ৩. array কিভাবে ডিক্লেয়ার করে array এর মধ্যে length, index, push, pop, indexOf, includes এইগুলা কিভাবে কাজ করে। কোনটা দিয়ে কি করে? সেগুলা কি তুমি জানো? (plz check console)===============`);
+let task3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(task3.length); // output: 10
+console.log(task3[0]); // output: 1
+console.log(task3.indexOf(5)); // output: 4
+task3.push(11);
+console.log(task3); // output: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+task3.pop();
+console.log(task3); // output: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+
+
+
+
+console.log(`===============task4 // ৪. দুইটা বেসিক লুপ ,এর মধ্যে for loop তোমাকে জানতেই হবে। while লুপটাও দেখে রাখতে পারো। যদিও আমরা এই দুইটা লুপই কম ইউজ করবো। তাও কখনো লাগলে যেন তুমি বুঝে ফেলতে পারো। (plz check console) ===============`);
+console.log(`===============task4[for loop] ===============`);
+let task4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (let i = 0; i < task4.length; i++) {
+    console.log(task4[i]);
+}
+
+console.log(`===============task4[while loop]===============`);
+let i = 0;
+while (i < task4.length) {
+    console.log(task4[i]);
+    i++;
+}
+
+
+
+
+console.log(`===============task five // ৫. function একটা অবশ্য জিনিস। বিশেষ করে সিম্পল একটা ফাংশন কখন ডিক্লেয়ার করতে হয়। কখন ফাংশন থেকে return করে। আর কিভাবে ফাংশন এর মধ্যে parameter নিতে হয়। (plz check console)===============`);
+
+function myFunction(a, b) {
+    return a + b;
+}
+console.log(myFunction(2, 3)); // output: 5
+
+
+
+
+console.log(`===============task six // ৬. আখেরি রত্ন হচ্ছে Object তাই কোন একটা অবজেক্ট কিভাবে ডিক্লেয়ার করে। সেখান property কিভাবে কিভাবে একসেস করা যায়। এছাড়াও অবজেক্ট এর প্রপার্টি এর ভ্যালু হিসেবে কিভাবে array, object ইউজ করা যায়।(plz check console)===============`);
+let myObject = {
+    name: 'Abdur Rahman',
+    age: 24,
+    nicknames: ['Abdur Rahman', 'Abdullah', 'Abdur Rahim'],
+    sister: {
+        name: 'Sakina',
+        age: 24,
+        nicknames: ['Sakina', 'Sakina', 'Sakina']
+    },
+}
+
+console.log(myObject);
+console.log(myObject.name); // output: Abdur Rahman
+console.log(myObject.sister.name); // output: Sakina
+
+
+console.log(`===============task six // from module ===============`);
+// object এর ভিতরের property এর value কে ধরার ৩টা সূত্র আছে
+const myVariable = 'age';
+
+console.log(myObject.age); // direct by property
+console.log(myObject['age']); // access via property name string 
+console.log(myObject[myVariable]); // access via property name in a variable
+
+
+
+
+
+
+
+
+console.log(`// ******************************************* ES6 রিলেটেড সাতটা জিনিস তোমাকে জানতে হবে`)
+
+
+
+
+
+
+
+console.log(`===============task one // ১. একটা টেম্পলেট স্ট্রিং দিয়ে একটা স্ট্রিং ভেরিয়েবল ডিক্লেয়ার করো। সেটার মধ্যে অবজেক্ট এর প্রপার্টি এর মান কিভাবে বসায় সেটা জানতে হবে। বিশেষ করে নেস্টেড অবজেক্ট আছে সেটার প্রপার্টি থেকে। বা কোন একটা অবজেক্ট এর প্রপার্টি array সেই array থেকে ভ্যালু এনে কিভাবে টেমপ্লেট স্ট্রিং এর মধ্যে বসাতে পারবে ।(plz check console)===============`);
+let myES6Object = {
+    name: 'Abdur Rahman',
+    age: 24,
+    nicknames: ['Abdur Rahman', 'Abdullah', 'Abdur Rahim'],
+    sister: {
+        name: 'Sakina',
+        age: 24,
+        nicknames: ['Sakina1', 'Sakina2', 'Sakina3']
+    },
+}
+let myES6Task1 = `hi i am ${myES6Object.name}. i have some others name too ${myES6Object.nicknames} but i like the name of my sister ${(myES6Object.sister.nicknames[1])}`;
+console.log(myES6Task1);
+
+
+
+
+console.log(`===============task TWO // ২. স্প্রেড অপারেটর (...) কিভাবে কাজ করে। বিশেষ করে একটা array কে কপি করে নতুন করে array বানাবে এবং সেখানে একটা উপাদান যোগ করবে। আবার একটা উপাদান কে বাদ দিয়ে বাকি সব উপাদানকে কিভাবে যোগ করবে (filter ইউজ করে)(plz check console)===============`);
+const ES6task2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let copyOfES6task2Adding50 = [...ES6task2, 50]
+console.log(copyOfES6task2Adding50);
+let filteredArray = copyOfES6task2Adding50.filter(elem => elem > 5)
+console.log(filteredArray);
+
+// next example
+const numbers = [89, 35, 98, 12];
+// spread operator
+const newNumbers = [...numbers]; // array যেহেতু একটা non-primitive data তাই এভাবে ... নাদিয়ে করলে ভবিষয়তে যদি কোন কারনে numbers এর ভিতরে কোন পরিবর্তন আনা হয় তাহলে তা newNumbers কেউ পরিবর্তিত করে ফেলে।
+
+
+// create a new array from an older array and add an element
+const currentNumbers = [...numbers, 55];
+
+
+numbers.push(99);
+numbers.push(99);
+numbers.push(99);
+
+console.log(numbers); // pushed 99 3 times
+console.log(newNumbers); // ducplicate of initial numbers by spread opt
+console.log(currentNumbers); // copy of newNumbers but 55 added at the last
+
+
+
+
+
+console.log(`===============task three // ৩.১. শূন্য প্যারামিটারওয়ালা একটা অ্যারো ফাংশন লিখবে যেটা ৯ রিটার্ন করবে। ||| ৩.২. এক প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন ডিক্লেয়ার করবে। এই ফাংশনের কাজ হবে যে প্যারামিটার নিবে সেটাকে ১২ দিয়ে গুণ করে গুণফল রিটার্ন করবে। ||| ৩.৩ দুই, প্যারামিটার ওয়ালা একটা অ্যারো ফাংশন লিখবে। এই ফাংশনের কাজ হবে যে দুইটা প্যারামিটার ইনপুট নিবে। সেই দুইটা প্যারামিটারকে যোগ করে যোগফলকে চার দিয়ে ভাগ করে ভাগফল রিটার্ণ করে দাও। ||| ৩.৪ একাধিক লাইনওয়ালা অ্যারো ফাংশন লিখো। সেটাতে দুইটা প্যারামিটার নিবে। ওই arrow ফাংশনটা হবে অনেকগুলা লাইনের। সেখানে প্রত্যেকটা ইনপুট প্যারামিটার এর সাথে ৫ যোগ করবে তারপর যোগফল দুইটাকে আবার গুণ করবে। ক্যামনে করবে সেটা চিন্তা করে বের করার চেষ্টা করো।(plz check console)===============`);
+let zeroPara = () => 9
+console.log(zeroPara());
+
+let onePara = para1 => para1 * 12
+console.log(onePara(2));
+
+let twoPara = (para1, para2) => (para1 + para2) / 4
+console.log(twoPara(2, 6));
+
+
+// common function
+const add5 = num => num + 5;
+const multiPly2 = (num1, num2) => num1 * num2;
+
+
+let multiLine = (param1, param2) => {
+    let param1Added5 = add5(param1);
+    let param2Added5 = add5(param2);
+    return multiPly2(param1Added5, param2Added5);
+}
+console.log(multiLine(2, 6));
+
+
+
+
+console.log(`===============task four ৪. সিম্পল একটা জাভাস্ক্রিপ্ট অবজেক্ট এর কোন একটা প্রোপার্টিকে ভেরিয়েবল হিসেবে ডিক্লেয়ার করার জন্য destructuring ইউজ করো। array এর destructuring করবে আর সেটা করার জন্য তুমি এরে এর সেকেন্ড পজিশন এর উপাদান কে destructuring করে 'balance' নামক একটা ভেরিয়েবল এ রাখবে।
+(plz check console)===============`);
+console.log(`===============task four array destructuring===============`);
+// 1. array destructuring
+const numbers2 = [42, 65];
+
+var [x, y] = [42, 65]
+[x, y] = numbers2;
+
+// array destructuring by function
+function boxifyArrayMaker(num1, num2) {
+    const nums = [num1, num2];
+    return nums;
+}
+console.log(boxifyArrayMaker(90, 34)); // array made
+const [first, second] = boxifyArrayMaker(90, 34);
+
+// DISTRUCTURING ARRAY INSIDE OBJ
+const student = { name: 'Salib Khan', age: 32, movies: ['king khan', 'Dhakar Mastan'] }
+const [firstMovie, secondMovie] = student.movies;
+
+
+
+
+
+console.log(`===============task four object destructuring===============`);
+// object destructuring
+var { name, age } = { name: 'alu', age: 14 };
+var { name, age } = { id: 12, name: 'alu', salary: 3400, age: 14 };
+
+const employee = {
+    ide: 'VS Code', designation: 'developer',
+    machine: 'mac',
+    languages: ['html', 'css', 'js'],
+    specification: {
+        height: 66,
+        weight: 67,
+        address: 'kumarkhali',
+        drink: 'water',
+        watch: {
+            color: 'black',
+            price: 500,
+            brand: 'garmin'
+        }
+    }
+}
+
+const { machine, ide } = employee;
+const { weight, address } = employee.specification;
+const { brand } = employee?.specification?.watch;
+
+
+
+
+
+
+console.log(`===============task five // ৫. shorthand দিয়ে অবজেক্ট কিভাবে ডিক্লেয়ার করে, {a , b } স্টাইলে। (plz check console)===============`);
+let cat = 'Miaow';
+let dog = 'Woof';
+let bird = 'Peet peet';
+
+let someObject = { cat, dog, bird }
+console.log(someObject);
+
+
+
+
+
+
+console.log(`===============task six and seven  // ৬. ফাংশন এর মধ্যে ডিফল্ট প্যারামিটার কিভাবে ডিক্লেয়ার করে(plz check console) ||| ৭. অপশনাল চেইনিং কি জিনিস, সেটা কখন কিভাবে ইউজ করে ? না জানলে গুগলে সার্চ দাও(plz check console)===============`);
+const adventurer = {
+    name: 'Alice',
+    cat: {
+        name: 'Dinah'
+    }
+};
+
+const dogName = adventurer.dog?.name;
+console.log(dogName);         // expected output: undefined
+console.log(adventurer.someNonExistentMethod?.()); // expected output: undefined
+
+
+
+
+
+
+
+console.log(`// ******************************************* ব্রাউজার API সম্পর্কে চারটা জিনিস`)
+
+
+
+
+
+
+console.log(`===============task one // ১. লোকাল স্টোরেজ, সেশন স্টোরেজ কোনটা কখন ইউজ করবে। কিভাবে ইউজ করবে `);
+var LocalStorage = `keeps data for long time as brosing record, size is arround 100mb, can get info from the storage after many many days`
+var SessionStorage = `vice versa`
+console.log(`LocalStorage : ${LocalStorage}`);
+console.log(`SessionStorage : ${SessionStorage}`);
+
+
+
+
+console.log(`===============task two and three ২. location API কিভাবে ইউজ করবে ব্রাউজারে |||৩. history API কিভাবে ইউজ করে`);
+var locationApiLink = `https://developer.mozilla.org/en-US/docs/Web/API/Location`
+var historyApiLink = `https://developer.mozilla.org/en-US/docs/Web/API/History_API`
+console.log(`locationApiLink : ${locationApiLink}`);
+console.log(`historyApiLink : ${historyApiLink}`);
+
+
+
+
+
+console.log(`===============task ৪. একদম প্রাথমিক স্টেপ হিসেবে jsonplaceholder এর ওয়েবসাইট থেকে ডাটা fetch করে সেটাকে কনসোল এ দেখাতে হবে। ধরো তুমি তাদের ওয়েবসাইট এ photos এর API এর লিংক কোনটা সেটা জাভাস্ক্রিপ্ট দিয়ে কোড করে সেই ডাটা কনসোল এ দেখতে পারতেছো কিনা। তারপর কয়েকটা কার্ড বানাবে (হতে পারে বুটস্ট্রাপ এর কার্ড) সেগুলা আবার তুমি html দিয়ে ওয়েবসাইট এ ছবি এবং ছবির নিচে ছবির টাইটেল দেখাবে। `);
+
+console.log(`plz check "42 Practice JavaScript You need to know for React"`);
+
+
+
+
+
+
+console.log(`// ******************************************* আরো পাঁচটা জিনিস জানতে হবে।`)
+
+
+
+
+
+
+console.log(`===============task one // ১.১ অনেকগুলা সংখ্যার একটা array হবে। তারপর তোমার কাজ হবে array এর উপরে map ইউজ করে। প্রত্যেকটা ২ দিয়ে গুণ করে গুণফল আরেকটা array হিসেবে রাখবে। পুরা কাজটা এক লাইনে হবে। ||| ১.২. জাভাস্ক্রিপ্ট এ array এর map, forEach, filter, find কোনটা দিয়ে কি হয় সেটার একটা সামারি লিখে ফেলো।`);
+const products = [
+    { name: 'laptop', price: 3200, brand: 'lenovo', color: 'silver' },
+    { name: 'phone', price: 7000, brand: 'iphone', color: 'golden' },
+    { name: 'watch', price: 3000, brand: 'casio', color: 'yellow' },
+    { name: 'sungalss', price: 300, brand: 'ray', color: 'black' },
+    { name: 'camera', price: 9000, brand: 'canon', color: 'gray' }
+];
+
+const brands = products.map(product => product.brand);
+console.log(brands); // কোন array of object থেকে কোন নির্দিষ্ট item কে নিয়ে আরেকটা array বানানোর জন্য map use করা হয়
+const prices = products.map(product => product.price);
+console.log(prices);
+
+
+products.forEach(product => console.log(product)) // কোন array of object থেকে কোন নির্দিষ্ট item কে নিয়ে কোন কিছু করতে চাইলে forEach use করা হয় এক্ষেত্রে কোন return কাজ করে না return লিখলে undefined দেখাবে
+products.forEach(product => console.log(product.color))
+
+
+// 3. filter
+const cheap = products.filter(product => product.price <= 5000);
+console.log(cheap); // কোন array of object থেকে কোন শর্তসাপেক্ষে নির্দিষ্ট item কে নিয়ে আরেকটা array বানানোর জন্য filter use করা হয়
+
+const specificName = products.filter(p => p.name.includes('n'));
+console.log(specificName);
+
+
+//4. find
+const special = products.find(p => p.name.includes('n'));
+console.log(special); // কোন array of object থেকে কোন শর্তসাপেক্ষে নির্দিষ্ট item নিয়ে কোন কিছু করতে চাইলে find use করা হয় এটা শুধুমাত্র শর্ত পুরন করা প্রথম জিনিস্কে দিবে
+
+
+
+console.log(`==========================vaey very special with obj "copy products array and then add newProduct" and " &"`);
+// add or remove from an array
+const products100 = [
+    { name: 'laptop', price: 3200, brand: 'len', color: 'silver' },
+    { name: 'phone', price: 7000, brand: 'HTC', color: 'golden' },
+    { name: 'watch', price: 3000, brand: 'casio', color: 'yellow' },
+    { name: 'sungalss', price: 300, brand: 'ray', color: 'black' },
+    { name: 'camera', price: 9000, brand: 'canon', color: 'gray' }
+];
+
+const newProduct = { name: 'webcam', price: 700, brand: 'Lal' };
+
+
+// copy products array and then add newProduct 
+const newProducts = [...products100, newProduct];
+console.log(newProducts);
+
+
+// create a new array without one specific item 
+// remove phone means create a new array without the phone
+const remaining = products100.filter(p => p.name !== 'phone');
+console.log(remaining);
+
+
+
+
+console.log(`===============task two,three and five // ২. ternary অপারেটর কি ? এইটা দিয়ে শর্টকার্টে কিভাবে if-else লিখে ||| ৩. লজিক্যাল এন্ড (&&) আর লজিক্যাল or (।।) এই দুইটা সম্পর্কে হালকা ধারণা ||| ৫. ++, --, +, +'', +=, -= এইগুলা কি জিনিস। কোনটা দিয়া কি করে সেটা বুঝলেই হবে। তাছাড়া active = !active এইটা এর মানে কি।(plz check console)`);
+
+// ternary
+let isActive = true;
+const showUser = () => console.log('display User');
+const hideUser = () => console.log('hide User');
+isActive ? showUser() : hideUser();
+
+
+// লজিক্যাল এন্ড (&&) আর লজিক্যাল or (।।)
+let Active = false;
+// use && if the left side is true then right side will be executed
+Active && showUser();
+// use || if the left side is false then right side will be executed
+Active || hideUser();
+
+
+// ++, --, +, +'', +=, -= এইগুলা কি জিনিস
+// number to string conversion
+const num1 = 52;
+console.log(num1);
+const numStr = num1 + '';
+console.log(numStr)
+
+// string to number
+const input = '560';
+const inputNum = +input;
+console.log(inputNum);
+
+
+
+
+
+console.log(`===============task four,six // ৪. JSON এর stringify এবং parse কখন কোনটা ইউজ করে  ||| ৬. Object.keys, Object.values জিনিসগুলা জানা থাকলেও ভালো(plz check console)`);
+
+// JSON এর stringify এবং parse
+const student100 = {
+    name: 'Salib Khan',
+    age: 32,
+    movies: ['king khan', 'Dhakar Mastan']
+}
+const studentJSON = JSON.stringify(student100);
+console.log(student100);
+console.log(studentJSON);
+
+const studentObj = JSON.parse(studentJSON);
+console.log(studentObj);
+
+
+// Object.keys, Object.values
+// keys, values
+const keys = Object.keys(student100);
+const values = Object.values(student100);
+console.log("keys",keys);
+console.log("values",values);
+
+
+
+
+
+
+
+console.log(`// ******************************************* summary with beautiful ending`)
+
+
+
+
+
+
+/* 
+Fundamentals
+1.1 variable (let, const) three types variable
+1.2 condition (<. >, ===, !==. <=, >=) && ||, if-else if-else
+1.3 array: declare, length, index, push, pop, indexOf, includes
+1.4 for loop, while
+1.5 function return parameter
+1.6 Object property, including array, object
+
+------------------
+ES6
+1. template string ${}
+2. spread (...) 
+2.1 copy an array then add a new element to an array 
+2.1 use filter to remove an element from an array
+3. Arrow function
+3.1 no parameter ()
+3.2 single parameter 
+3.3 multiple parameters ()
+3.4 multi line 
+4 destructuring : object destructuring array destructuring 
+5. object declaration shorthand
+6. function parameter default value
+7. Optional chaining (?.)
+--------------------------
+Browser API
+1. local storage session stoage
+2. location API
+3. History API
+4. fetch
+--------------------
+Others
+1. array: map, forEach, filter, find
+2. ternary operator 
+3. logical and logical or && ||
+4. JOSN (stringify, parse)
+5. +, 
+
+*/
+
+var  x = 50;
+var  y = 100;
+var obj = {
+    x: x,
+    y: y
+};
+
+// shortchut
+var  obj1 = { x, y }
+console.log(obj1);
+
+var name = 'Solimullah';
+var area = 'Dhaka';
+
+var nobab = {
+    name: name,
+    area: area
+}
+console.log(nobab);
+
+var nobab2 = { name, area };
+console.log(nobab2);

@@ -1,10 +1,7 @@
 // 1. array destructuring
 const numbers = [42, 65];
 
-
 const [x, y] = [42, 65]
-
-
 [x, y] = numbers;
 
 // array destructuring by function
@@ -18,37 +15,17 @@ const [first, second] = boxifyArrayMaker(90, 34);
 
 
 
-const student = {
-    name: 'Salib Khan',
-    age: 32,
-    movies: ['king khan', 'Dhakar Mastan']
-}
+const student = { name: 'Salib Khan', age: 32, movies: ['king khan', 'Dhakar Mastan'] }
 
 const [firstMovie, secondMovie] = student.movies;
 
 
 // object destructuring
-const {
-    name,
-    age
-} = {
-    name: 'alu',
-    age: 14
-};
-const {
-    name,
-    age
-} = {
-    id: 12,
-    name: 'alu',
-    salary: 3400,
-    age: 14
-};
+var { name, age } = { name: 'alu', age: 14 };
+var { name, age } = { id: 12, name: 'alu', salary: 3400, age: 14 };
 
-const employee = {
-    ide: 'VS Code',
-    designation: 'developer',
-    machine: 'mac',
+const employee = { ide: 'VS Code', designation: 'developer',
+    machine: 'mac', 
     languages: ['html', 'css', 'js'],
     specification: {
         height: 66,
@@ -63,14 +40,6 @@ const employee = {
     }
 }
 
-const {
-    machine,
-    ide
-} = employee;
-const {
-    weight,
-    address
-} = employee.specification;
-const {
-    brand
-} = employee ? .specification ? .watch;
+const { machine, ide } = employee;
+const { weight, address } = employee.specification;
+const { brand } = employee?.specification?.watch;
