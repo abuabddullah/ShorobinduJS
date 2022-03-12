@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Temperature Hot</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url(images/bg-image.jpg) no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <div class="my-5 text-center">
+        <img id="slider" src="./images/photo-1.jfif" alt="">
+    </div>
+
+
+    <script>
+        let imgArray = [ 'images/photo-1.jfif', 'images/photo-2.jfif', 'images/photo-3.jfif', 'images/photo-4.jfif', 'images/photo-5.jfif', 'images/photo-6.jfif', 'images/photo-7.jfif']
+
+        let imgIndex = 0;
+
+        setInterval(() => {
+
+            if (imgIndex >= imgArray.length) {
+                imgIndex = 0;
+            }
+document.getElementById('slider').src = imgArray[imgIndex];
+            imgIndex++;
+            
+        }, 1000)
+    </script>
+
+    <!-- bs 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
