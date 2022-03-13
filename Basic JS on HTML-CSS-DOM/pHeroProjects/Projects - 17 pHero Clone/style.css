@@ -23,6 +23,12 @@
     background-color: #612AED;
 }
 
+
+
+.object-fit{
+    
+    object-fit: cover;
+}
 /* navigationBar */
 .navigationBar a{
     color: #fff !important;
