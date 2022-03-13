@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;700&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+
+
+.font-poppins {
+  font-family: 'Poppins', sans-serif;
+}
+.font-hind {
+  font-family: 'Hind Siliguri', sans-serif;
+}
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.text-white{
+    color: #fff;
+}
+
+.text-pHero{
+    color: #612AED;
+}
+
+.bg-pHero{
+    background-color: #612AED;
+}
+
+/* navigationBar */
+.navigationBar a{
+    color: #fff !important;
+}
+.navDropped a{
+    color: #000 !important;
+}
