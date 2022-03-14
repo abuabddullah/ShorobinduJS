@@ -15,6 +15,10 @@
     color: #fff;
 }
 
+.text-333{
+    color: #333;
+}
+
 .text-pHero{
     color: #612AED;
 }
@@ -22,8 +26,15 @@
 .bg-pHero{
     background-color: #612AED;
 }
+.sideBar{
+    height: calc(100vh - 65px) ;
+    position: fixed;
+    width: 280px;
+}
 
-
+.zIndex99{
+z-index: 99;
+}
 
 .object-fit{
     
@@ -35,4 +46,14 @@
 }
 .navDropped a{
     color: #000 !important;
+}
+
+
+.td-none{
+    text-decoration: none;
+}
+
+.sideBar{
+    margin-top: 70px;
+    height: calc(100vh - 70px);
 }
