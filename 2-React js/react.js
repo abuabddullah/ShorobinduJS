@@ -78,7 +78,8 @@ const displayCountries = (countries) => {
     // console.log(countriesList.join(' '));
 
     // show in the html
-    document.getElementById('allCountriesHolder').innerHTML = countriesList.join(' ')
+    document.getElementById('allCountriesHolder').innerHTML = countriesList.join(' ') // যেহেতু map সর্বদা একটা array return করে আর website এ আমাদের সেগুলোকে আলাদা আলাদা বিভিন্ন div এ দেখাতে হবে তাই join করা হয়েছে 
+    
 }
 
 const getHTML4Country = ({ name, capital, population, flags }) => {
@@ -269,6 +270,38 @@ console.log(`   finished----------------------- Special Notes on "state, state m
 console.log(`   // ************************** 44-8 Install React App and explore folder structure and edit  `);
 
 
+
+/* 
+// install and assure the wheel is circulating
+- press Ctrl+l and type "cmd" then press enter
+-type cd folder name then press enter
+-type cd . then press enter
+-type npm start then press enter
+
+we will mainly work on app.js file
+
+// to close react app
+- press Ctrl+C and type "y" then press enter
+ */
+
+
+
+
+
+console.log(`   // ************************** 44-9 Module Summary and concept recap  `);
+
+
+
+/* 
+- components
+- fetch with map
+- 2 way of destructuring object
+- props
+- state
+-Single page app
+-route
+-creat react app
+ */
 
 
 
