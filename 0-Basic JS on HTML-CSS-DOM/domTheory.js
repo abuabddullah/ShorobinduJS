@@ -854,6 +854,7 @@ console.log(square(9));
 
 
 
+
 // ***************************** 32-2 Destructuring Object to extract values to variables
 
 
@@ -994,6 +995,36 @@ const company = {
 
 // handling "Cannot read properties of undefined" by chaining
 console.log(company?.backend?.tech?.third); */
+
+
+
+
+// ************************************ use of rest operator in js object or array
+/* 
+let animal = {
+    name: "dog",
+    color: "brown",
+    age: 7,
+  };
+  let { age, ...rest } = animal;
+  
+  // let { age, ...rest } = animal || {};
+  console.log(rest);
+  
+  // spread operator as rest operator
+  function sum({ name, ...rest }) {
+    console.log(rest);
+  }
+  
+  sum(animal);
+
+
+  let arrayis = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let [a, b, ...restOfArray] = arrayis;
+    console.log(restOfArray);
+ */
+
+
 
 
 
@@ -3690,7 +3721,7 @@ console.log(validateEmail(myEmail));
 
 
 
-
+/*
 console.log(`// [[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[[42 Practice JavaScript You need to know for React]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]`)
 
 
@@ -3903,7 +3934,7 @@ function boxifyArrayMaker(num1, num2) {
 console.log(boxifyArrayMaker(90, 34)); // array made
 const [first, second] = boxifyArrayMaker(90, 34);
 
-// DISTRUCTURING ARRAY INSIDE OBJ
+// Destructuring ARRAY INSIDE OBJ
 const student = { name: 'Salib Khan', age: 32, movies: ['king khan', 'Dhakar Mastan'] }
 const [firstMovie, secondMovie] = student.movies;
 
@@ -4129,14 +4160,14 @@ const keys = Object.keys(student100);
 const values = Object.values(student100);
 console.log("keys",keys);
 console.log("values",values);
+*/
 
 
 
 
 
 
-
-console.log(`// ******************************************* summary with beautiful ending`)
+// console.log(`// ******************************************* summary with beautiful ending`)
 
 
 
@@ -4183,6 +4214,8 @@ Others
 
 */
 
+
+/*
 var  x = 50;
 var  y = 100;
 var obj = {
@@ -4205,13 +4238,5 @@ console.log(nobab);
 
 var nobab2 = { name, area };
 console.log(nobab2);
-
-
-
-/* 
-1- array.length = 0
-2- distructuring from js in one by summit
-3- rest opt
-4- 
-
 */
+
