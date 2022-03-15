@@ -119,7 +119,7 @@
   </svg>
 
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-pHero fw-bold w-100 zIndex99">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-pHero fw-bold fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <i class="fa-solid fa-bars"></i>
@@ -196,56 +196,24 @@
   </header>
 
   <main>
-    <div class="row">
-      <div class="d-none d-md-block col-lg-2">
-        <div class="sideBar d-flex flex-column flex-shrink-0 p-3 bg-light position-fixed overflow-auto"
-          style="width: 280px;">
 
+    <div class="row g-3">
+
+
+
+      <!-- //left side bar -->
+      <div class="col-12 col-md-3 d-none d-md-block">
+
+        <!-- side bar starts -->
+        <div class="sideBar d-flex flex-column flex-shrink-0 p-3 bg-light mt-5">
+          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">Sidebar</span>
+          </a>
+          <hr>
           <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link" aria-current="page">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#home"></use>
-                </svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#speedometer2"></use>
-                </svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#table"></use>
-                </svg>
-                Orders
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#grid"></use>
-                </svg>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#people-circle"></use>
-                </svg>
-                Customers
-              </a>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
             <li class="nav-item">
               <a href="#" class="nav-link active" aria-current="page">
                 <svg class="bi me-2" width="16" height="16">
@@ -286,192 +254,7 @@
                 Customers
               </a>
             </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
           </ul>
-          <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link" aria-current="page">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#home"></use>
-                </svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#speedometer2"></use>
-                </svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#table"></use>
-                </svg>
-                Orders
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#grid"></use>
-                </svg>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#people-circle"></use>
-                </svg>
-                Customers
-              </a>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link active" aria-current="page">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#home"></use>
-                </svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#speedometer2"></use>
-                </svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#table"></use>
-                </svg>
-                Orders
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#grid"></use>
-                </svg>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#people-circle"></use>
-                </svg>
-                Customers
-              </a>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-          </ul>
-          <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-              <a href="#" class="nav-link" aria-current="page">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#home"></use>
-                </svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#speedometer2"></use>
-                </svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#table"></use>
-                </svg>
-                Orders
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#grid"></use>
-                </svg>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#people-circle"></use>
-                </svg>
-                Customers
-              </a>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link active" aria-current="page">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#home"></use>
-                </svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#speedometer2"></use>
-                </svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#table"></use>
-                </svg>
-                Orders
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#grid"></use>
-                </svg>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link link-dark">
-                <svg class="bi me-2" width="16" height="16">
-                  <use xlink:href="#people-circle"></use>
-                </svg>
-                Customers
-              </a>
-            </li>
-
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-          </ul>
-
           <hr>
           <div class="dropdown">
             <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
@@ -490,54 +273,128 @@
             </ul>
           </div>
         </div>
+
       </div>
-      <div class="col-lg-10" id="homeContents">
-        <div class="row d-none d-md-block"">
-          <div class=" col-12 tags border-top border-bottom my-2 p-2 d-flex justify-content-between">
-          <button class="btn btn-outline-dark rounded-pill px-4">All</button>
-          <button class="btn btn-outline-dark rounded-pill px-4">CSS</button>
-          <button class="btn btn-outline-dark rounded-pill px-4">pHero</button>
-          <button class="btn btn-outline-dark rounded-pill px-4">Full Stack</button>
-          <button class="btn btn-outline-dark rounded-pill px-4">Web Development</button>
-          <button class="btn btn-outline-dark rounded-pill px-4">All</button>
-          <button class="btn btn-outline-dark rounded-pill px-4">CSS</button>
-          <button class="btn btn-outline-dark rounded-pill px-4">All</button>
-          <button class="btn btn-outline-dark rounded-pill px-4">Thapa Technical</button>
-          <button class="btn btn-outline-dark rounded-pill px-4">Learn With Sumit BD</button>
-        </div>
-      </div>
-      <div class="row my-4 p-2 pt-4 mt-5 mt-md-0" id="videoCardParent">
-      <div class="col-12 col-md-6 col-lg-3">
-          <div class="videoCard">
-            <img class="img-fluid" src="./resources/img/1607430491834.png" alt="">
-            <div class="row my-3 d-flex justify-content-between">
-              <div class="logo col-2">
-                <a href="#"><img src="./resources/img/proPic.jpg" alt="" height="35" width="35"
-                    class="rounded-circle  object-fit"></a>
-              </div>
-              <div class="info col-10">
-                <p class="mb-2"><strong><a href="#" class="text-333 td-none">Learn Web Development with Jhankar Mahbub |
-                      Programming Hero</a></strong></p>
-                <small><a href="#" class="text-333 td-none">Programming Hero</a></small>
-                <br>
-                <small class="text-333">3.5k views | 2 months ago</small>
+
+
+
+
+      <!-- // right side content -->
+      <div class="col-12 col-md-9">
+
+        <!-- contents starts -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+         
+          <div class="col">
+            <div class="card h-100 my-4">
+              <img src="./resources/img/1622954831110.png" class="card-img-top img-fluid" alt="...">
+              <div class="card-body row">
+                <div class="col-2">
+                  <img src="./resources/img/proPic.jpg" alt="" height="35" width="35"
+                    class="rounded-circle  object-fit">
+                </div>
+                <div class="col-10">
+                  <h5 class="card-title">How Creat pHero and youtube combo package || By Asif</h5>
+                  <p class="card-text mb-0 text-333">5.3k views</p>
+                  <p class="card-text text-333">2 weeks ago</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+
+
+        <!-- test scrolling -->
+        <article class="my-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, tenetur dignissimos assumenda delectus
+          minima sapiente aliquam quibusdam temporibus aliquid repellendus veniam velit atque explicabo! Quod aut
+          voluptate asperiores quo accusantium, dolore officiis quibusdam velit iure molestias possimus harum! Laborum
+          voluptatem iure cum ex itaque? Laboriosam itaque nesciunt nostrum vitae, similique qui aspernatur deleniti
+          ratione voluptates commodi nemo optio exercitationem cumque illo voluptas quia dolore quaerat magni vero earum
+          debitis saepe! Libero velit hic quidem tempora minus quo optio cumque labore dignissimos aliquam dolorem,
+          minima accusantium iure tenetur delectus voluptates doloremque facere amet expedita! Laborum perspiciatis
+          consectetur voluptate, deserunt modi facilis deleniti ea vel quis amet ab maxime sequi ut facere nobis
+          blanditiis beatae, similique optio possimus culpa molestias voluptatum veniam. Laborum, culpa. Sequi
+          doloremque ullam est dignissimos exercitationem, ipsa iure excepturi dolorem repellendus error quam id eius
+          quod saepe mollitia, ex ipsam fuga nemo libero dolorum esse culpa! Eveniet qui eligendi deleniti mollitia
+          expedita esse, corrupti, odio saepe ducimus cupiditate doloribus. Eos vel obcaecati molestiae non ullam minus
+          laboriosam exercitationem repellat possimus corporis sunt dignissimos, nulla temporibus recusandae vero qui
+          rerum ea error nam at voluptatibus illo. Voluptas quis harum consectetur voluptatum asperiores quas quisquam,
+          vel ducimus rerum quibusdam perferendis omnis sapiente, tenetur quidem, dolore quia illo quo corporis corrupti
+          animi dicta pariatur? Veritatis quibusdam quas officia suscipit cupiditate deleniti tenetur amet, itaque, ab
+          sed fuga modi molestias quasi. Aliquid aliquam beatae quod quae neque itaque similique magnam aspernatur
+          expedita molestiae? Magni fugiat blanditiis nam dolorum. Saepe eius velit labore ut ex blanditiis esse nobis
+          placeat, officiis praesentium perspiciatis at accusamus aspernatur molestiae error omnis atque voluptatibus
+          consectetur exercitationem beatae cumque vel. Nulla recusandae dignissimos voluptatum quo in, enim dicta sunt.
+          Quia, nobis autem error deleniti eius soluta quasi beatae possimus qui placeat libero doloribus architecto
+          rerum adipisci doloremque incidunt repudiandae aspernatur iusto maxime perspiciatis et quaerat vero ullam!
+          Aliquid cupiditate consequuntur dignissimos iusto, nobis excepturi corrupti est illo molestiae libero
+          quibusdam? Illo quam blanditiis ea in nesciunt neque placeat corrupti quia nemo fugiat reprehenderit molestias
+          doloremque, assumenda deleniti nisi inventore sit accusamus maiores eaque officiis expedita voluptatem non.
+          Rem exercitationem, dicta repellat nesciunt, facilis consequatur natus libero voluptate obcaecati consectetur
+          nihil dolore delectus eveniet quidem maiores explicabo veritatis, quis velit cumque aperiam voluptas odio.
+          Velit accusamus, sint quod ex fugiat nobis a sunt, repellat sed incidunt soluta libero quae iure eaque
+          suscipit. Alias consequatur amet assumenda facere corporis nihil eum, suscipit porro nam molestiae, delectus
+          cupiditate dolores quidem necessitatibus odio facilis et error in non vitae fugiat expedita. Ipsum eligendi
+          dolore possimus voluptate quaerat. Sunt porro possimus vitae, laudantium quis assumenda alias! Illum, atque.
+          Libero ea tempora accusamus officia nam soluta odio sapiente vitae ipsa at ex, id recusandae cum repellendus
+          provident dolore labore commodi est et tempore quas. Accusantium eum quisquam dolor ducimus enim repellendus
+          sequi, cumque voluptates itaque, explicabo quos tempora esse hic quasi architecto eius harum in corrupti!
+          Voluptate eos, consectetur, hic id reiciendis fugit magnam sapiente eum corporis veniam obcaecati molestias
+          dolore quia! Eligendi architecto nihil fugit autem error itaque hic praesentium. Voluptates corrupti ipsum
+          recusandae dignissimos obcaecati maxime, debitis doloribus aspernatur officiis quasi dolorum ratione fuga
+          quibusdam excepturi doloremque soluta cumque non necessitatibus, eligendi sint! Ipsum, incidunt similique,
+          corporis unde cupiditate beatae, obcaecati voluptatum eveniet commodi repellat repudiandae ratione? Obcaecati
+          ut sint nisi deserunt itaque tempore cum dicta adipisci earum. Perspiciatis excepturi quod ex inventore neque
+          enim modi consequuntur. Dolorem, illum fuga magnam exercitationem doloremque doloribus placeat, architecto at
+          suscipit voluptatem provident vero sit animi qui ex cumque! Nihil harum deserunt reiciendis repellendus quod
+          expedita voluptates sunt ex consequuntur? Architecto eos, ab, earum placeat consectetur harum velit,
+          blanditiis laboriosam fugit quibusdam natus nesciunt reiciendis non vel. Molestias esse dicta commodi officiis
+          sed porro odit expedita saepe ad voluptates ducimus dignissimos repellat minus voluptate fuga, aliquid illum
+          veritatis nesciunt sapiente dolores perspiciatis optio quis. Magni, beatae rem reiciendis reprehenderit
+          commodi at natus id! Accusantium dolores autem quibusdam quos a nostrum suscipit vitae aut aspernatur, odio
+          tempore magni possimus perspiciatis est, illum earum deserunt delectus? Id ex saepe pariatur, provident enim,
+          nostrum cumque a nemo non repudiandae vitae atque quam laboriosam distinctio velit quas quisquam, deserunt
+          quaerat. Beatae facilis consectetur quisquam asperiores earum nam animi architecto hic repudiandae sint
+          officiis sed labore unde eaque ut aut, reprehenderit ipsum et mollitia veritatis ducimus cumque totam, dicta
+          aspernatur. Obcaecati nam velit laboriosam minus nihil, dolore necessitatibus sit rerum totam iure officia
+          repellendus enim animi pariatur, cumque soluta error. Quisquam eligendi inventore sunt vitae, error corrupti
+          aspernatur animi pariatur iure eius, cupiditate, beatae optio nostrum. Consequatur maxime eaque porro
+          repudiandae iusto? Hic atque, dolores placeat consectetur amet iste eligendi deserunt culpa quo? Hic earum
+          placeat, at unde, ex voluptatem esse quaerat ullam eveniet autem adipisci libero atque excepturi aliquam iste?
+          Quia laudantium pariatur neque ex placeat voluptatum mollitia recusandae, vero corporis nobis ea, facere porro
+          iste quis nihil dignissimos tempore. Ducimus voluptatem, amet consequuntur rerum deleniti dolores ex
+          repellendus eum sequi ratione illum aliquid iste nostrum, commodi tenetur beatae assumenda non quasi sint eos
+          aperiam illo. Fugiat libero aspernatur numquam sequi minima repellendus error accusamus ad est, ipsum quo
+          ullam corporis nesciunt laborum inventore perspiciatis nobis similique molestiae officiis ipsam? Quis iste
+          quaerat quisquam aut porro, laborum magni labore necessitatibus omnis ut beatae placeat maxime perspiciatis
+          enim libero exercitationem repellat? Esse numquam, cum quos deleniti rem distinctio blanditiis eligendi
+          perferendis dicta perspiciatis soluta nobis, ipsum a magni, at exercitationem quis. Debitis ipsum nostrum
+          dolorem harum consectetur? Sunt unde, repellendus expedita repellat ab dolores molestiae cumque dicta
+          provident deserunt minus officiis minima itaque cupiditate maiores eaque neque sequi nisi. Itaque, quis ut
+          quia reprehenderit reiciendis eius laboriosam illo voluptatibus magni nulla veniam delectus tempore magnam
+          recusandae iure minus, culpa porro! Accusamus saepe harum quidem possimus quo perspiciatis voluptatem eaque
+          quos. Adipisci pariatur dignissimos eligendi minima quam soluta ducimus voluptatibus doloremque ad illum,
+          deleniti, error nemo possimus ex necessitatibus culpa earum doloribus natus? Repellendus minima dolorum
+          expedita accusantium magni fugit totam soluta corrupti aliquam consectetur? Nemo rerum cumque rem quia
+          provident?
+        </article>
       </div>
-    </div>
-    <div class="col-lg-10" id="videoPlayer">
+
+
 
     </div>
-    </div>
+
+
   </main>
 
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-  </script>
+    </script>
   <script src="./app.js"></script>
 </body>
 

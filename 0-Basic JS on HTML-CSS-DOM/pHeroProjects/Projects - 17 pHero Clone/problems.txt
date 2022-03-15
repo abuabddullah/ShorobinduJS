@@ -1,0 +1,5 @@
+1- sticky top in navbar not working
+2- resposieve not working
+3- side bar height and width and postion fixed problem
+4- content width problem resposieve nai side barer upore chole ase tablet size theke
+4- test articles content er niche chole jasse
