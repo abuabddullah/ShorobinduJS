@@ -378,7 +378,8 @@ console.log(array1.shift()); // arry এর প্রথম উপাদান�
 console.log(array1);
 let array3 = array1.concat(array2); // দুইটা array এর উপাদান গুলোকে concatenate করে নতুন একটা array এর value হিসেবে declare করতে
 console.log(array3); // array3 কে concole এ দেখার জন্য
-
+array3.length = 0; // array3 কে খালি করে ফেলতে
+console.log(array3);
 
 
 

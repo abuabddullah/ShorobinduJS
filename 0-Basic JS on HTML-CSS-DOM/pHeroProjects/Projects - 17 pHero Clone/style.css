@@ -27,13 +27,13 @@
     background-color: #612AED;
 }
 .sideBar{
-    height: calc(100vh - 65px) ;
+    /* height: calc(100vh - 65px) ; */
     position: fixed;
     width: 280px;
 }
 
 .zIndex99{
-z-index: 99;
+/* z-index: 99; */
 }
 
 .object-fit{

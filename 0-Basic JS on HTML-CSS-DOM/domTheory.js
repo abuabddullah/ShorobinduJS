@@ -4205,3 +4205,13 @@ console.log(nobab);
 
 var nobab2 = { name, area };
 console.log(nobab2);
+
+
+
+/* 
+1- array.length = 0
+2- distructuring from js in one by summit
+3- rest opt
+4- 
+
+*/
