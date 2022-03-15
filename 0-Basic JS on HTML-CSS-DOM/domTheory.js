@@ -921,9 +921,15 @@ console.log(name,processors,ram,rom); */
 // console.log("---------------------------special note---------------------------");
 
 
-// example of object inside object
 
-/* const company = {
+
+
+// *******************************  example of object inside object destructuring
+
+
+
+/* 
+const company = {
     name: 'GP',
     ceo: {
         id: 1,
@@ -940,24 +946,41 @@ console.log(name,processors,ram,rom); */
             thirdTech: 'js'
         }
     },
-}; */
+};
 
 
 // taking employee and framework property of web object and store in a variable
-/* const {
-    employee,
-    framework
-} = company.web;
+
+const { employee, framework } = company.web;
 console.log(employee, framework);
 
-const {
-    secondTech,
-    thirdTech
-} = company.web.technology;
-console.log(secondTech, thirdTech); */
+const { secondTech, thirdTech } = company.web.technology;
+console.log(secondTech, thirdTech);
+
+
+// another way to do it
+// const {web: {employee: emp, framework: frm}} = company;
+// console.log(emp, frm);
+
+// const {web: {employee}} = company;
+// console.log(employee);
+
+// const { web: { technology: { firstTech, secondTech, thirdTech } } } = company;
+// console.log(firstTech, secondTech, thirdTech);
 
 
 
+// IF THE OBJECT PROPERTY IS NOT PRESENT IN THE OBJECT THEN we can use default value {}
+
+const {departments: {ItDept} = {}} = company; // departments is not present in the object
+console.log(ItDept);
+
+
+// IF THE childre of OBJECT PROPERTY IS NOT PRESENT IN THE OBJECT THEN we can use default value of any type of data
+
+const {web: {languages = ['js','php']}} = company; // languages is not present in the web props of object
+console.log(languages);
+ */
 
 
 // ********************************** 32-3 (advanced) Array Destructuring, nested object Optional chaining
@@ -1037,7 +1060,7 @@ console.log(company?.backend?.tech?.third); */
 
 
 
-/*
+/* 
 let animal = {
     name: "dog",
     color: "brown",
@@ -1048,20 +1071,25 @@ let { age, ...rest } = animal;
 // let { age, ...rest } = animal || {};
 console.log(rest);
 
-// spread operator as rest operator
+// destructuring as rest operator in function
 function sum({ name, ...rest }) {
+    console.log(name);
     console.log(rest);
 }
-
 sum(animal);
 
 
 let arrayis = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let [a, b, ...restOfArray] = arrayis;
 console.log(restOfArray);
-*/
 
 
+// structure of rest opt in function accepts any number of arguments
+function sumAll(...params) {
+    console.log(params);
+}
+sumAll(1, 2, 3, 4);
+ */
 
 
 // ************************************ 32-4 Array map to do one line loop magic
@@ -4201,7 +4229,7 @@ const hideUser = () => console.log('hide User');
 isActive ? showUser() : hideUser();
 
 
-// লজিক্যাল এন্ড (&&) আর লজিক্যাল or (।।)
+// logical and (&&) আর logical or (।।)
 let Active = false;
 // use && if the left side is true then right side will be executed
 Active && showUser();
