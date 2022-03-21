@@ -1350,7 +1350,32 @@ console.log(whiteItem);
 // console.log("---------------------------special note---------------------------");
 
 
+// ********************************** js advance array method ||  reduce or reducer method ***************************
+const numbers3 = [1, 2, 3, 4, 5];
 
+let adder = (previousValue , element) => previousValue + element;
+const resultz = numbers3.reduce(adder,0); // after comma(,) 0 is the initial value
+console.log(`resultz by reducer method is ${resultz}`);
+
+// in short
+const resultz2 = numbers3.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0);
+console.log(resultz2);
+
+// example:
+
+const cosmetics = [
+            { id: 1, name: 'Shampoo', price: 10 },
+            { id: 2, name: 'Soap', price: 5 },
+            { id: 3, name: 'Lotion', price: 1 },
+            { id: 4, name: 'Shaving cream', price: 20 },
+            { id: 5, name: 'Hair gel', price: 10 }
+        ];
+
+        let addPrices = (previousValue, element) => previousValue + element.price;
+        let totalPrices = cosmetics.reduce(addPrices, 0);
+        console.log(totalPrices);
 
 
 // ******************************* JavaScript Class Concept by Rokibul Hasan Rokib
@@ -3732,7 +3757,7 @@ const addItem = () => {
         objFormatOFCart[productName] = 1
     }
 
-    stringifiedObjOfCart = JSON.stringify(objFormatOFCart)
+    let stringifiedObjOfCart = JSON.stringify(objFormatOFCart)
     localStorage.setItem('cart', stringifiedObjOfCart)
     console.log(localStorage.getItem("cart"));
 }

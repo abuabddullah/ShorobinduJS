@@ -347,7 +347,7 @@ console.log(concatedString); // output: Hello my dear satu i love you Hello my d
 
 
 
-// ****************************************** Array example:
+// ****************************************** Array methods example:
 
 
 
