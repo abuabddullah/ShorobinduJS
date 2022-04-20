@@ -1012,6 +1012,10 @@ console.log(sky, color, money); */
 const [color1, color2, color3, color4] = colors; // then destructuring array use করে পর্যাক্রমে নতুন কিছু variable declare করা হয়েছে ।
 console.log(color1, color2, color3, color4);
 
+// direct specific position er element এর array destructuring,
+const [, , colorThree, colorThree] = colors;
+console.log(colorThree, colorThree); // যে পজিশনের element দরকার সেই position এ শুধু variable এর নাম দেয়া হবে বাদ বাকি সব জায়গায় কমা (,) দিয়ে দিতে হবে   
+
 
 // direct array destructuring
 const [p, q] = [45, 37, 91, 86];
@@ -1350,7 +1354,12 @@ console.log(whiteItem);
 // console.log("---------------------------special note---------------------------");
 
 
+
 // ********************************** js advance array method ||  reduce or reducer method ***************************
+
+
+
+/* 
 const numbers3 = [1, 2, 3, 4, 5];
 
 let adder = (previousValue , element) => previousValue + element;
@@ -1377,7 +1386,7 @@ const cosmetics = [
         let totalPrices = cosmetics.reduce(addPrices, 0);
         console.log(totalPrices);
 
-
+ */
 // ******************************* JavaScript Class Concept by Rokibul Hasan Rokib
 
 
